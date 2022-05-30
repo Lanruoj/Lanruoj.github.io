@@ -1,0 +1,478 @@
+//COLOURS
+$white: rgb(242, 253, 241);
+$mint: rgb(217, 235, 201);
+$brown: rgb(137, 126, 109);
+$pine: rgb(67, 96, 64);
+$black: rgb(22, 22, 22);
+$purple: rgb(64, 0, 255);
+$lavendar: rgb(145, 152, 229);
+$pale-orange: rgb(230, 100, 101);
+$clear: rgb(255,255,255,0);
+//FONTS
+$karla: 'Karla', sans-serif;
+$eczar: 'Eczar', serif;
+$rammetto: 'Rammetto One', cursive;
+$unica: 'Unica One', cursive;
+$dela: 'Dela Gothic One', cursive;
+$cousine: 'Cousine', monospace;
+$monaco: 'Monaco', monospace;
+//MIXINS
+@mixin card() {
+        border-radius: 2em 2em 2em 2em;   
+        padding: 2em;
+        margin: 0em;
+        margin-top: 2em;
+        background-color: rgb(242, 253, 241, 0.1); // no $ cos adjust
+        h2 {
+            color: $pine;
+            text-align: left;
+            left: 2em;
+        }
+}
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+    box-sizing: border-box; // makes it easier to size/pad/margin items
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+    position: relative; // allows me to {fix} other items
+    background-color: $white; // just in case gradient doesn't work
+    font-family: $karla;
+    font-size: 16px;
+    background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white); // red circle gradient from bottom right
+    background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
+}
+
+//////// HEADER MODULE
+header {
+    position: fixed; // keeps header/navbar at top when scrolling
+    z-index: 3; // layers elements depending on index value
+    top: 0; // prevents header from dropping when I adjust <main>!
+    width: 100vw;
+    height: 5.8em;
+    background-color: $white;
+    backdrop-filter: blur(.2em); // !h1 un-fixes when I remove???!
+    box-shadow: 0 0 0.2em gray; // slight box shadow
+    h1 {
+        z-index: 2; // title on top of shape
+        position: fixed;
+        top: 0.9em;
+        right: 2.2em;
+        font-family: $cousine;
+        font-size: 1.5em;
+        color: $purple;
+        padding: 0.3em;
+        padding-right: 0.6em;
+        transition: 0.2s;
+        mix-blend-mode: multiply; // darkens title when meets brown square
+        transform: scale(2, 1) skewX(10deg); // skews title
+    }
+    #head-square {
+        position: fixed;
+        top: -4em;
+        right: -2em;
+        background-color: $brown;
+        height: 9em;
+        width: 15em;
+        transform: skew(10deg, 15deg) rotateX(50deg);
+    }
+    #head-circle {
+        position: fixed;
+        top: -9em;
+        left: -6em;
+        height: 13em;
+        width: 13em;
+        background-color: $mint;
+        border-radius: 50%;
+    }
+}
+
+////////////MOBILE NAV MENU
+#nav-mob {
+    #nav-icon-mob {
+        z-index: 4;
+        position: fixed;
+        top: 0.5em;
+        left: 0.5em;
+        font-size: 3em;
+        color: $brown;
+    }
+    #nav-links-mob {
+        position: fixed;
+        top: 5.1em;
+        left: -22.2em;
+        transition: 0.2s;
+        ul { 
+            height: 100vh; //makes the sidebar take up full vertical height
+            padding-right: 5em;
+            width: 85vw;
+            background-color: $white;
+            box-shadow: 0em 0em 1em 5em $white;
+        }
+        li {
+            list-style: none;
+            font-family: $karla;
+            font-size: 3em;
+            padding: .3em .3em .3em 3.5em;
+            transition: 0.5s;
+            a, a:visited { // changing the menu link style
+                text-decoration: none;
+                color: $brown;
+                font-style: italic;
+            }
+        }
+    }
+    #show {
+        display: none; // HIDES ACTUAL CHECKBOX
+    }
+    #show:checked ~ #nav-links-mob {  // 
+        display: block; // stop being hidden
+        transform: translateX(20em); // slide in from left
+    }
+}
+
+    #nav-icon-desk {
+        display: none; // hides desktop menu icon
+    }
+
+///////MAIN SECTION    
+main {
+    margin: 2em;
+    margin-top: 7em;
+}
+
+section {
+    @include card;
+    background-color: rgb(242, 253, 241, 0.1);
+}
+
+p {
+    font-size: 1.2em; // make a bit easier to read on mobile
+}
+
+
+//////FOOTER/CONTACT BAR
+footer {
+    position: fixed;
+    bottom: 0em;
+    text-align: center;
+    background-color: $white;
+    width: 100vw;
+    box-shadow: 0 0 0.2em gray;
+    form {
+        background-color: $white;
+        width: 3em;
+        height: 3em;
+        bottom: 0em;
+    }
+    #contact-button {
+        position: fixed;
+        bottom: 0.5em;
+        right: 0.5em;
+        background-color: $purple;
+        color: $white;
+        border-radius: 0.4em 0.4em 0.4em 0.4em;
+        font-size: 1em;
+        padding: 0.5em;
+        border: none; // removed default "button" border
+    }
+}
+
+
+
+#nav-desk {
+    display: none;  // hides desktop menu
+}
+
+#expand,
+#expand-icon,
+#expand-text {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//// DESKTOP VERSION
+
+@media only screen and (min-width: 800px) {
+    //////HEADER MODIFICATIONS FOR DESKTOP
+    header {
+        position: relative;
+        overflow: hidden !important;
+        width: 100vw;
+        height: 15em;
+        box-shadow: none; // removes shadow under mobile header 
+        background-color: $clear; // transparent background so gradient shows
+        h1 {
+            font-size: 3.5em;
+            top: 0.4em;
+            right: 3em;
+            font-family: $cousine;
+        }
+        h1:hover {
+        transform: scale(1.5) // hover title animation
+        }
+        #head-circle {
+            position: fixed;
+            left: -3em;
+        }
+        #head-square {
+            position: absolute;
+            top: -8em;
+            right: -8em;
+            background-color: $brown;
+            height: 18em;
+            width: 30em;
+        }
+    }
+    //////////NAVBAR ICON MODIFICATIONS FOR DESKTOP
+    #nav-mob {
+        #nav-links-mob {
+            z-index: 10;
+            position: fixed;
+            top: 8em;
+            left: -23em;
+            height: 25em;
+            width: 25em;
+            transition: 0.2s;
+            border-radius: 50%;
+            border: blue dotted 2em; // adds blue dots around ul
+            ul {
+                z-index: 10;
+                position: fixed;
+                margin-left: 3em;
+                margin-top: 3em;
+                height: 15em;
+                width: 15em;
+                padding-right: 5em;
+                border-radius: 50%;
+                background-color: $white;
+                box-shadow: $white 0em 0em 3em 3em;
+                transform: rotate(-40deg);
+            }
+            li {
+                z-index: 10;
+                list-style: none;
+                font-family: $karla;
+                font-size: 2.3em;
+                padding: .2em .3em .1em 2em;
+                transition: 0.5s;
+                transform: rotate(40deg);
+                a, a:visited {
+                    text-decoration: none;
+                    color: $brown;
+                    font-style: italic;
+                    text-decoration: line-through;
+                    transition: 0.2s;
+                }
+                a:hover {
+                    color: $pale-orange;
+                    font-family: Monaco, monospace;
+                    font-style: normal;
+                    text-decoration: none;
+                    text-transform: lowercase;
+                }
+                a:hover::before {  // turns links into <html> looking code :)
+                    content: '<';
+                }
+                a:hover::after {
+                    content: '>';
+                }
+            }
+        }
+    }
+    #show {
+        display: none;     // hides checkbox
+    }
+    #show:checked ~ #nav-links-mob {
+        display: block;        // shows menu + slides from left
+        transform: translateX(20em);
+    }
+    #nav-mob:hover ~ main {
+        transform: translateX(20em); // slides main to right when hover menu
+    }
+    #nav-icon-mob {
+        display: none; // hide mobile hamburger icon
+    }
+    #nav-icon-desk {
+        display: block; // show desktop menu icon
+        z-index: 11;
+        position: fixed;
+        top: 0.2em;
+        left: 0.5em;
+        font-size: 3em;
+        color: $brown;
+        transition: 0.1s;
+    }
+    #nav-icon-desk:hover {  // hover styling menu icon
+        color: $pale-orange;
+        transform: scale(1.2);
+        cursor: pointer; // making it look like a link
+    }
+
+/////
+
+
+
+
+
+
+    body {
+        background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white); // circle gradient from bottom right
+        overflow-x: hidden; // REMOVES HORIZONTAL SCROLLBAR
+    }
+    main {
+        position: relative;
+        margin-bottom: 30em;  // adds space to bottom of main so clears footer
+        margin-top: -2em;
+        transition: 0.5s;
+        height: 150vh;
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    section {
+        @include card; // includes the card @mixin
+        background-color: rgb(242, 253, 241, 0.1);
+        margin: 2em 0em 0em 2em;
+        width: 100vw;
+        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
+        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+        overflow: hidden; // make cards only hold so much text...
+        position: relative; // then have a hacky "fade-out" effect
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        h2 {
+            color: $pine;
+        }
+    }
+
+    /////////////// EXPAND SYMBOL ON TOP RIGHT
+        .expand {
+            z-index: 50;
+            display: inline-block;
+            opacity: 1;
+            color: $purple;
+            font-size: 1.5em;
+            position: absolute;
+            right: 1.3em;
+            top: 2.5em;
+        }
+        #expand {
+            display: none;
+            transition: 2s;
+        }
+        #expand:checked ~ #sec-intro { //EXPANDS SECTION WHEN CLICK ICON
+            background-color: $white;
+            width: 100vw;
+            max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            flex-wrap: nowrap;
+            -webkit-mask-image: none; // turn off transparent gradient
+            mask-image: none;
+        }
+        #expand-icon {
+            display: inline-block;
+            transition: 0.1s;
+        }
+        #expand-text {
+            display: inline-block;
+            font-family: 'Monaco', monospace;
+            font-size: 1em;
+            right: 0.8em;
+            top: 3.7em;
+            line-height: 0.8em;     ///// reduces vertical space - text
+        }
+        #expand-icon:hover {
+            transform: scale(1.2); // grows icon
+        }
+    //////////////
+
+    ///// HOVER TO FOCUS SECTION v2
+    section:hover {  // increases opacity when hover over section
+            background-color: $white;
+            box-shadow: gray 0em 0em 2em;
+            width: 100vw;
+            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            // overflow:auto;
+        }
+    #expand:hover ~ #sec-intro { // keeps the opacity when hover over icon too
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
+        flex-wrap: nowrap;
+    }
+    ////////////////
+
+    p{
+        font-size: 1.2em;
+    }
+
+    p::selection { // changes text highlight colour
+        background-color: white; 
+    }
+
+    ::selection { // turns off text highlight for pseudo "buttons"
+        background: none;
+    }
+    
+    footer {
+        position: fixed;
+        bottom: 0em;
+        text-align: center;
+        background-color: $white;
+        width: 150vw;
+        border: rgb(183, 183, 183) 1px solid;
+        form {
+            background-color: $white;
+            width: 3em;
+            height: 3em;
+            bottom: 0em;
+        }
+        #contact-button {
+            position: fixed;
+            bottom: 0.5em;
+            right: 0.5em;
+            background-color: rgb(53, 0, 213);
+            color: $white;
+            border-radius: 0.4em 0.4em 0.4em 0.4em;
+            font-size: 1em;
+            padding: 0.5em;
+            border: none;
+            transition: 0.1s;
+        }
+        #contact-button:hover { // act like a link
+            cursor: pointer;
+            background-color: $purple;
+        }
+    }
+
+
+
+
+}
+
+///////////////////////////////////////
