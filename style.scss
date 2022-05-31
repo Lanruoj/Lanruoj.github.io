@@ -17,7 +17,8 @@ $unica: 'Unica One', cursive;
 $dela: 'Dela Gothic One', cursive;
 $cousine: 'Cousine', monospace;
 $monaco: 'Monaco', monospace;
-//MIXINS
+////////MIXINS
+//MOBILE
 @mixin card() {
         border-radius: 2em 2em 2em 2em;   
         padding: 2em;
@@ -30,6 +31,63 @@ $monaco: 'Monaco', monospace;
             left: 2em;
         }
 }
+@mixin card-border() {
+    border-radius: 2em 2em 2em 2em;
+}
+@mixin mob-button() {
+        background-color: $purple;
+        color: $white;
+        border-radius: 0.4em 0.4em 0.4em 0.4em;
+        font-size: 1em;
+        padding: 0.5em;
+        border: none; // removed default "button" border
+}
+
+//DESKTOP
+@mixin card-desk() {
+        @include card(); // includes the card @mixin
+        background-color: rgb(242, 253, 241, 0.1);
+        margin: 2em 0em 0em 2em;
+        width: 100vw;
+        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
+        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+        overflow: hidden; // make cards only hold so much text...
+        position: relative; // then have a hacky "fade-out" effect
+        h2 {
+            color: $pine;
+        }
+    }
+@mixin desk-button() {
+    background-color: rgb(53, 0, 213);
+    color: $white;
+    border-radius: 0.4em 0.4em 0.4em 0.4em;
+    font-size: 1em;
+    padding: 0.5em;
+    border: none;
+    transition: 0.1s;
+    &:hover { // & selects pseudo-selector in a mixin!
+        cursor: pointer;
+        background-color: $purple;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 * {
@@ -39,7 +97,7 @@ $monaco: 'Monaco', monospace;
 }
 
 html, body {
-	height: 100vh;
+	min-height: 100vh;
 }
 
 body {
@@ -97,8 +155,9 @@ header {
 
 ////////////MOBILE NAV MENU
 #nav-mob {
+    z-index: 100;
     #nav-icon-mob {
-        z-index: 4;
+        z-index: 100;
         position: fixed;
         top: 0.5em;
         left: 0.5em;
@@ -108,28 +167,31 @@ header {
     #nav-links-mob {
         position: fixed;
         top: 5.1em;
-        left: -22.2em;
+        // left: -22.2em;
+        left: -30em;
         transition: 0.2s;
         ul {
+            position: relative;
+            z-index: 100; // remove if page name doesnt dissappear
             height: 100vh; //makes the sidebar take up full vertical height
             padding-right: 5em;
-            width: 85vw;
+            width: 100vw;
             background-color: $white;
             box-shadow: 0em 0em 1em 5em $white;
         }
-        li {
-            list-style: none;
-            font-family: $karla;
-            font-size: 3em;
-            // text-shadow: $lavendar 5px 5px 1px;
-            // border: 3px solid $pine;
-            padding: .3em .3em .3em 3.5em;
-            transition: 0.5s;
-            a, a:visited {
-                text-decoration: none;
-                color: $brown;
-                font-style: italic;
-            }
+            li {
+                list-style: none;
+                font-family: $karla;
+                font-size: 3em;
+                // text-shadow: $lavendar 5px 5px 1px;
+                // border: 3px solid $pine;
+                padding: .3em .3em .3em 3.5em;
+                transition: 0.5s;
+                a, a:visited {
+                    text-decoration: none;
+                    color: $brown;
+                    font-style: italic;
+                }
         }
         // li:hover {
         //     // opacity: 95%; //ADD TO DESK
@@ -140,7 +202,7 @@ header {
     }
     #show:checked ~ #nav-links-mob {
         display: block;
-        transform: translateX(20em);
+        transform: translateX(25em);
     }
 }
 
@@ -159,28 +221,58 @@ header {
 main {
     margin: 2em;
     margin-top: 7em;
+    margin-bottom: 5em;
 }
 .mob-page-sub {
     display: block;
     position: absolute;
+    z-index: 1;
     top: 4.1em;
     right: 1em;
     font-family: $monaco;
     color: $dark-purple;
 }
-    .desk-page-sub {
-        display: none;
-    }
+.desk-page-sub {
+    display: none;
+}
 
-section {
-    @include card;
+.card {
+    @include card();
     background-color: rgb(242, 253, 241, 0.1);
 }
 
-#about-me {     
-    min-height: 10vw; ////////////////////////////////////////////// < OLIVER :)
-    // padding-bottom: 5em;
+
+/////ABOUT ME PAGE MOBILE
+#about-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    @include card-border();
 }
+#about-card {
+    @include card();
+}
+#about-buttons { 
+        display: flex;
+        justify-content: space-between;
+        padding: 2em;
+    #personal-button-cont {
+        display: inline;
+            #personal-button {
+                @include mob-button();
+                display: inline;
+            }
+    }
+    #projects-button-cont {
+        display: inline;
+            #projects-button {
+                @include mob-button();
+                display: inline;
+            }
+    }
+}
+
 
 p {
     font-size: 1.2em; // make a bit easier to read on mobile
@@ -206,15 +298,10 @@ footer {
         bottom: 0em;
     }
     #contact-button {
+        @include mob-button();
         position: fixed;
         bottom: 0.5em;
         right: 0.5em;
-        background-color: $purple;
-        color: $white;
-        border-radius: 0.4em 0.4em 0.4em 0.4em;
-        font-size: 1em;
-        padding: 0.5em;
-        border: none; // removed default "button" border
     }
 }
 
@@ -381,10 +468,9 @@ footer {
     }
     main {
         position: relative;
-        margin-bottom: 30em;  // adds space to bottom of main so clears footer
+        margin-bottom: 10em;  // adds space to bottom of main so clears footer
         margin-top: -2em;
         transition: 0.5s;
-        height: 150vh;
         display: flex; 
         flex-direction: row;
         flex-wrap: wrap;
@@ -401,8 +487,8 @@ footer {
         font-size: 1.2em;
         color: $dark-purple;
     }
-    section {
-        @include card; // includes the card @mixin
+    .card {
+        @include card-desk(); // includes the card @mixin
         background-color: rgb(242, 253, 241, 0.1);
         margin: 2em 0em 0em 2em;
         width: 100vw;
@@ -415,6 +501,8 @@ footer {
         }
     }
 
+
+////////// JOURNAL PAGE
     #sec-1 {
         -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
@@ -435,47 +523,7 @@ footer {
         -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
     }
-    /////////////// EXPAND SYMBOL ON TOP RIGHT
-    ////SECTION 1
-        // .expand-1 {
-        //     z-index: 50;
-        //     display: inline-block;
-        //     opacity: 1;
-        //     color: $purple;
-        //     font-size: 1.5em;
-        //     position: absolute;
-        //     right: 1.3em;
-        //     top: 2.5em;   ///// POSITION OF EXPAND ICON
-        // }
-        // #expand-1 {
-        //     display: none;
-        //     transition: 2s;
-        // }
-        // #expand-1:checked ~ #sec-1 { //EXPANDS SECTION WHEN CLICK ICON
-        //     background-color: $white;
-        //     width: 100vw;
-        //     max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-        //     flex-wrap: nowrap;
-        //     -webkit-mask-image: none; // turn off transparent gradient
-        //     mask-image: none;
-        // }
-        // #expand-icon-1 {
-        //     display: inline-block;
-        //     transition: 0.1s;
-        // }
-        // #expand-text-1 {
-        //     display: inline-block;
-        //     font-family: 'Monaco', monospace;
-        //     font-size: 1em;
-        //     right: 0.8em;
-        //     top: 3.7em;
-        //     line-height: 0.8em;     ///// reduces vertical space - text
-        // }
-        // #expand-icon-1:hover {
-        //     transform: scale(1.2); // grows icon
-        // }
-
-
+////////EXPAND FEATURE   
         .expand-1 {
             z-index: 50;
             display: inline-block;
@@ -656,26 +704,14 @@ footer {
             transform: scale(1.02); // grows icon
             opacity: 0.5;
         }
-/////////////// section-1
-
-// #sec-1:hover {
-//     background-color: $white;
-//             width: 100vw;
-//             max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-//             flex-wrap: nowrap;
-//             -webkit-mask-image: none; // turn off transparent gradient
-//             mask-image: none;
-// }
-
-
 
     //////////////
 
     ///// HOVER TO FOCUS SECTION v2
-    section:hover {  // increases opacity when hover over section
-            background-color: $white;
-            box-shadow: gray 0em 0em 2em;
-            width: 100vw;
+    .card:hover {  // increases opacity when hover over section
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
         }
     #expand-1:hover ~ #sec-1 { // keeps the opacity when hover over icon too
         background-color: $white;
@@ -709,6 +745,48 @@ footer {
     }
     ////////////////
 
+/////////ABOUT PAGE DESKTOP
+/////ABOUT ME PAGE
+#about-img-cont {
+    @include card-desk();
+        background: none;
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+    #about-img {
+        @include card-border();
+        max-width: 50vw;
+    }
+}
+#about-card {
+    @include card-desk();
+}
+#about-buttons { 
+        @include card-desk();
+        background: none;
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    #personal-button-cont {
+            #personal-button {
+                @include desk-button();
+            }
+    }
+    #projects-button-cont {
+            #projects-button {
+                @include desk-button();
+            }
+    }
+}
+
+
+
+
+
+
+
+
     p{
         font-size: 1.2em;
     }
@@ -735,20 +813,10 @@ footer {
             bottom: 0em;
         }
         #contact-button {
+            @include desk-button();
             position: fixed;
             bottom: 0.5em;
             right: 0.5em;
-            background-color: rgb(53, 0, 213);
-            color: $white;
-            border-radius: 0.4em 0.4em 0.4em 0.4em;
-            font-size: 1em;
-            padding: 0.5em;
-            border: none;
-            transition: 0.1s;
-        }
-        #contact-button:hover { // act like a link
-            cursor: pointer;
-            background-color: $purple;
         }
     }
 
