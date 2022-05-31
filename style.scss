@@ -118,242 +118,484 @@ html, body {
 	min-height: 100vh;
 }
 
-body {
-    position: relative; // allows me to {fix} other items
-    background-color: $white; // just in case gradient doesn't work
-    font-family: $karla;
-    font-size: 16px;
-    background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // red circle gradient from bottom right
-    background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
-}
 
-//////// HEADER MODULE
-header {
-    position: fixed; // keeps header/navbar at top when scrolling
-    z-index: 3; // layers elements depending on index value
-    top: 0; // prevents header from dropping when I adjust <main>!
-    width: 100vw;
-    height: 5.8em;
-    background-color: $white;
-    backdrop-filter: blur(.2em); // !h1 un-fixes when I remove???!
-    box-shadow: 0 0 0.2em gray; // slight box shadow
-    h1 {
-        z-index: 2; // title on top of shape
-        position: fixed;
-        top: 0.9em;
-        right: 2.2em;
-        font-family: $cousine;
-        font-size: 1.5em;
-        color: $purple;
-        padding: 0.3em;
-        padding-right: 0.6em;
-        transition: 0.2s;
-        mix-blend-mode: multiply; // darkens title when meets brown square
-        transform: scale(2, 1) skewX(10deg); // skews title
-    }
-    #head-square {
-        position: fixed;
-        top: -4em;
-        right: -2em;
-        background-color: $brown;
-        height: 9em;
-        width: 15em;
-        transform: skew(10deg, 15deg) rotateX(50deg);
-    }
-    #head-circle {
-        position: fixed;
-        top: -9em;
-        left: -6em;
-        height: 13em;
-        width: 13em;
-        background-color: $mint;
-        border-radius: 50%;
-    }
-}
 
-////////////MOBILE NAV MENU
-#nav-mob {
-    z-index: 100;
-    #nav-icon-mob {
-        z-index: 100;
-        position: fixed;
-        top: 0.5em;
-        left: 0.5em;
-        font-size: 3em;
-        color: $brown;
+//////// /////////////MOBILE///////////////////////
+// @media only screen and (min-width: 0px) and (max-width:449px) {
+    body {
+        position: relative; // allows me to {fix} other items
+        background-color: $white; // just in case gradient doesn't work
+        font-family: $karla;
+        font-size: 16px;
+        // background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // red circle gradient from bottom right
+        background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
     }
-    #nav-links-mob {
-        position: fixed;
-        top: 5.1em;
-        // left: -22.2em;
-        left: -30em;
-        transition: 0.2s;
-        ul {
-            position: relative;
-            z-index: 100; // remove if page name doesnt dissappear
-            height: 100vh; //makes the sidebar take up full vertical height
-            padding-right: 5em;
-            width: 100vw;
-            background-color: $white;
-            box-shadow: 0em 0em 1em 5em $white;
+
+    //////// HEADER MODULE
+    header {
+        position: fixed; // keeps header/navbar at top when scrolling
+        z-index: 3; // layers elements depending on index value
+        top: 0; // prevents header from dropping when I adjust <main>!
+        width: 100vw;
+        height: 5em;
+        background-color: $white;
+        backdrop-filter: blur(.2em); // !h1 un-fixes when I remove???!
+        box-shadow: 0 0 0.2em gray; // slight box shadow
+        h1 {
+            z-index: 2; // title on top of shape
+            position: fixed;
+            top: 0.4em; 
+            right: 1em;
+            font-family: $rammetto;
+            font-size: 1.7em;
+            color: $purple;
+            padding: 0.3em;
+            padding-right: 0.6em;
+            transition: 0.2s;
+            mix-blend-mode: multiply; // darkens title when meets brown square
+            // transform: scale(2, 1) skewX(10deg); // skews title
         }
-            li {
-                list-style: none;
-                font-family: $karla;
-                font-size: 3em;
-                // text-shadow: $lavendar 5px 5px 1px;
-                // border: 3px solid $pine;
-                padding: .3em .3em .3em 3.5em;
-                transition: 0.5s;
-                a, a:visited {
-                    text-decoration: none;
-                    color: $brown;
-                    font-style: italic;
+        #head-circle {
+            position: fixed;
+            top: -2.5em;
+            right: -1.6em;
+            height: 7em;
+            width: 7em;
+            background-color: $mint;
+            border-radius: 50%;
+        }
+    }
+
+    ////////////MOBILE NAV MENU
+    #nav-mob {
+        z-index: 100;
+        #nav-icon-mob {
+            z-index: 100;
+            position: fixed;
+            top: 0.5em;
+            left: 0.7em;
+            font-size: 2.5em;
+            color: black;
+        }
+        #nav-links-mob {
+            position: fixed;
+            top: 5.1em;
+            // left: -22.2em;
+            left: -30em;
+            transition: 0.2s;
+            ul {
+                position: relative;
+                z-index: 100; // remove if page name doesnt dissappear
+                height: 100vh; //makes the sidebar take up full vertical height
+                padding-right: 5em;
+                width: 100vw;
+                background-color: $white;
+                box-shadow: 0em 0em 1em 5em $white;
+            }
+                li {
+                    list-style: none;
+                    font-family: $karla;
+                    font-size: 3em;
+                    // text-shadow: $lavendar 5px 5px 1px;
+                    // border: 3px solid $pine;
+                    padding: .3em .3em .3em 3.5em;
+                    transition: 0.5s;
+                    a, a:visited {
+                        text-decoration: none;
+                        color: $brown;
+                        font-style: italic;
+                    }
+            }
+        }
+        #show {
+            display: none;
+        }
+        #show:checked ~ #nav-links-mob {
+            display: block;
+            transform: translateX(25em);
+        }
+    }
+
+    #menu-button,
+    #menu-text,
+    #nav-cont {
+        display: none;
+    }
+
+
+
+
+
+
+    ///////MAIN SECTION    
+    main {
+        margin: 2em;
+        margin-top: 7em;
+        margin-bottom: 5em;
+    }
+    .mob-page-sub {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 4.1em;
+        right: 1em;
+        font-family: $monaco;
+        color: $dark-purple;
+    }
+    .desk-page-sub {
+        display: none;
+    }
+
+    .card {
+        @include card();
+        background-color: rgb(242, 253, 241, 0.1);
+    }
+
+
+    /////ABOUT ME PAGE MOBILE
+    #about-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        @include card-border();
+    }
+    #about-card {
+        @include card();
+    }
+    #about-buttons { 
+            display: flex;
+            justify-content: space-between;
+            padding: 2em;
+        #personal-button-cont {
+            display: inline;
+                #personal-button {
+                    @include mob-button();
+                    display: inline;
+                }
+        }
+        #projects-button-cont {
+            display: inline;
+                #projects-button {
+                    @include mob-button();
+                    display: inline;
                 }
         }
     }
-    #show {
-        display: none;
+
+
+    p {
+        font-size: 1.2em; // make a bit easier to read on mobile
     }
-    #show:checked ~ #nav-links-mob {
-        display: block;
-        transform: translateX(25em);
+
+    .blog-time {
+        color: $brown;
     }
-}
-
-#menu-button,
-#menu-text,
-#nav-cont {
-    display: none;
-}
 
 
-
-
-
-
-///////MAIN SECTION    
-main {
-    margin: 2em;
-    margin-top: 7em;
-    margin-bottom: 5em;
-}
-.mob-page-sub {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 4.1em;
-    right: 1em;
-    font-family: $monaco;
-    color: $dark-purple;
-}
-.desk-page-sub {
-    display: none;
-}
-
-.card {
-    @include card();
-    background-color: rgb(242, 253, 241, 0.1);
-}
-
-
-/////ABOUT ME PAGE MOBILE
-#about-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    @include card-border();
-}
-#about-card {
-    @include card();
-}
-#about-buttons { 
-        display: flex;
-        justify-content: space-between;
-        padding: 2em;
-    #personal-button-cont {
-        display: inline;
-            #personal-button {
-                @include mob-button();
-                display: inline;
-            }
-    }
-    #projects-button-cont {
-        display: inline;
-            #projects-button {
-                @include mob-button();
-                display: inline;
-            }
-    }
-}
-
-
-p {
-    font-size: 1.2em; // make a bit easier to read on mobile
-}
-
-.blog-time {
-    color: $brown;
-}
-
-
-//////FOOTER/CONTACT BAR
-footer {
-    position: fixed;
-    bottom: 0em;
-    text-align: center;
-    background-color: $white;
-    width: 100vw;
-    box-shadow: 0 0 0.2em gray;
-    form {
-        background-color: $white;
-        width: 3em;
-        height: 3em;
-        bottom: 0em;
-    }
-    #contact-button {
-        @include mob-button();
+    //////FOOTER/CONTACT BAR
+    footer {
         position: fixed;
-        bottom: 0.5em;
-        right: 0.5em;
+        bottom: 0em;
+        text-align: center;
+        background-color: $white;
+        width: 100vw;
+        box-shadow: 0 0 0.2em gray;
+        form {
+            background-color: $white;
+            width: 3em;
+            height: 3em;
+            bottom: 0em;
+        }
+        #contact-button {
+            @include mob-button();
+            position: fixed;
+            bottom: 0.5em;
+            right: 0.5em;
+        }
     }
-}
 
 
-#expand-1,
-#expand-icon-1,
-#expand-text-1 {
-    display: none;   ////////// card expand text/icon not on mobile
-}
-#expand-2,
-#expand-icon-2,
-#expand-text-2 {
-    display: none;   ////////// card expand text/icon not on mobile
-}
-#expand-3,
-#expand-icon-3,
-#expand-text-3 {
-    display: none;   ////////// card expand text/icon not on mobile
-}
-#expand-4,
-#expand-icon-4,
-#expand-text-4 {
-    display: none;   ////////// card expand text/icon not on mobile
-}
-#expand-5,
-#expand-icon-5,
-#expand-text-5 {
-    display: none;   ////////// card expand text/icon not on mobile
-}
-
-
-
+    #expand-1,
+    #expand-icon-1,
+    #expand-text-1 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-2,
+    #expand-icon-2,
+    #expand-text-2 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-3,
+    #expand-icon-3,
+    #expand-text-3 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-4,
+    #expand-icon-4,
+    #expand-text-4 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-5,
+    #expand-icon-5,
+    #expand-text-5 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+// }
 
 
 
 
 //////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////TABLET VERSION///////////////////////
+@media only screen and (min-width: 450px) and (max-width:799px) {
+    body {
+        position: relative; // allows me to {fix} other items
+        background-color: $white; // just in case gradient doesn't work
+        font-family: $karla;
+        font-size: 16px;
+        // background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // red circle gradient from bottom right
+        background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
+    }
+
+    //////// HEADER MODULE
+    header {
+        position: fixed; // keeps header/navbar at top when scrolling
+        z-index: 3; // layers elements depending on index value
+        top: 0; // prevents header from dropping when I adjust <main>!
+        width: 100vw;
+        height: 5em;
+        background-color: $white;
+        backdrop-filter: blur(.2em); // !h1 un-fixes when I remove???!
+        box-shadow: 0 0 0.2em gray; // slight box shadow
+        h1 {
+            z-index: 2; // title on top of shape
+            position: fixed;
+            top: 0.4em; 
+            right: 1em;
+            font-family: $rammetto;
+            font-size: 1.7em;
+            color: $purple;
+            padding: 0.3em;
+            padding-right: 0.6em;
+            transition: 0.2s;
+            mix-blend-mode: multiply; // darkens title when meets brown square
+            // transform: scale(2, 1) skewX(10deg); // skews title
+        }
+        #head-circle {
+            position: fixed;
+            top: -2.5em;
+            right: -1.6em;
+            height: 7em;
+            width: 7em;
+            background-color: $mint;
+            border-radius: 50%;
+        }
+    }
+
+    ////////////MOBILE NAV MENU
+    #nav-mob {
+        z-index: 100;
+        #nav-icon-mob {
+            z-index: 100;
+            position: fixed;
+            top: 0.5em;
+            left: 0.7em;
+            font-size: 2.5em;
+            color: black;
+        }
+        #nav-links-mob {
+            position: fixed;
+            top: 5.1em;
+            // left: -22.2em;
+            left: -30em;
+            transition: 0.2s;
+            ul {
+                position: relative;
+                z-index: 100; // remove if page name doesnt dissappear
+                height: 100vh; //makes the sidebar take up full vertical height
+                padding-right: 5em;
+                min-width: 60vw;
+                max-width: 65vw;
+                background-color: $white;
+                box-shadow: 0em 0em 1em 5em $white;
+            }
+                li {
+                    list-style: none;
+                    font-family: $karla;
+                    font-size: 3em;
+                    // text-shadow: $lavendar 5px 5px 1px;
+                    // border: 3px solid $pine;
+                    padding: .3em .3em .3em 3.5em;
+                    transition: 0.5s;
+                    a, a:visited {
+                        text-decoration: none;
+                        color: $brown;
+                        font-style: italic;
+                    }
+            }
+        }
+        #show {
+            display: none;
+        }
+        #show:checked ~ #nav-links-mob {
+            display: block;
+            transform: translateX(25em);
+        }
+    }
+
+    #menu-button,
+    #menu-text,
+    #nav-cont {
+        display: none;
+    }
+
+
+
+
+
+
+    ///////MAIN SECTION    
+    main {
+        margin: 2em;
+        margin-top: 7em;
+        margin-bottom: 5em;
+    }
+    .mob-page-sub {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 4.1em;
+        right: 1em;
+        font-family: $monaco;
+        color: $dark-purple;
+    }
+    .desk-page-sub {
+        display: none;
+    }
+
+    .card {
+        @include card();
+        background-color: rgb(242, 253, 241, 0.1);
+    }
+
+
+    /////ABOUT ME PAGE MOBILE
+    #about-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        @include card-border();
+    }
+    #about-card {
+        @include card();
+    }
+    #about-buttons { 
+            display: flex;
+            justify-content: space-between;
+            padding: 2em;
+        #personal-button-cont {
+            display: inline;
+                #personal-button {
+                    @include mob-button();
+                    display: inline;
+                }
+        }
+        #projects-button-cont {
+            display: inline;
+                #projects-button {
+                    @include mob-button();
+                    display: inline;
+                }
+        }
+    }
+
+
+    p {
+        font-size: 1.2em; // make a bit easier to read on mobile
+    }
+
+    .blog-time {
+        color: $brown;
+    }
+
+
+    //////FOOTER/CONTACT BAR
+    footer {
+        position: fixed;
+        bottom: 0em;
+        text-align: center;
+        background-color: $white;
+        width: 100vw;
+        box-shadow: 0 0 0.2em gray;
+        form {
+            background-color: $white;
+            width: 3em;
+            height: 3em;
+            bottom: 0em;
+        }
+        #contact-button {
+            @include mob-button();
+            position: fixed;
+            bottom: 0.5em;
+            right: 0.5em;
+        }
+    }
+
+
+    #expand-1,
+    #expand-icon-1,
+    #expand-text-1 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-2,
+    #expand-icon-2,
+    #expand-text-2 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-3,
+    #expand-icon-3,
+    #expand-text-3 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-4,
+    #expand-icon-4,
+    #expand-text-4 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+    #expand-5,
+    #expand-icon-5,
+    #expand-text-5 {
+        display: none;   ////////// card expand text/icon not on mobile
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -370,29 +612,23 @@ footer {
         position: relative;
         overflow: hidden !important;
         width: 100vw;
-        height: 15em;
+        height: 10em;
         box-shadow: none; // removes shadow under mobile header 
         background-color: $clear; // transparent background so gradient shows
         h1 {
-            font-size: 3.5em;
-            top: 0.4em;
-            right: 3em;
-            font-family: $cousine;
+            font-size: 4em;
+            top: 0em;
+            right: 1.1em;
         }
         h1:hover {
-        transform: scale(1.5) // hover title animation
+        
         }
         #head-circle {
             position: fixed;
-            left: -3em;
-        }
-        #head-square {
-            position: absolute;
-            top: -8em;
-            right: -8em;
-            background-color: $brown;
-            height: 18em;
-            width: 30em;
+            top: -11em;
+            right: -6em;
+            width: 20em;
+            height: 20em;
         }
     }
 
@@ -442,17 +678,17 @@ footer {
 }
 #portrait {
     width: 5em;
-    margin: -2em 1em 0 0;
+    margin: 2em 1em 0 0;
     border-radius: 50%;
     border: 2px $brown solid;
 }
 #menu-text {
     display: inline-block;
     position: absolute;
-    top: 0.3em;
+    top: 3em;
     left: 1em;
     z-index: 50;
-    font-size: 3em;
+    font-size: 1.5em;
     transition: 0.1s;
 }
 #menu-text:hover {
@@ -461,7 +697,9 @@ footer {
 }
 #arrow {
     position: absolute;
+    font-size: 2em;
     left: 0.1em;
+    top: 0.3em;
     -webkit-text-stroke: 8px $white;
     transform: scale(1.2, 1);
 }
@@ -478,7 +716,7 @@ footer {
 
 
     body {
-        background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // circle gradient from bottom right
+        // background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // circle gradient from bottom right
         overflow-x: hidden; // REMOVES HORIZONTAL SCROLLBAR
     }
     main {
