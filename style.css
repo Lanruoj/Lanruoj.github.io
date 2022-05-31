@@ -118,7 +118,7 @@ main {
   top: 4.1em;
   right: 1em;
   font-family: "Monaco", monospace;
-  color: rgb(217, 235, 201);
+  color: rgb(53, 0, 213);
 }
 
 .desk-page-sub {
@@ -137,6 +137,10 @@ section h2 {
   color: rgb(67, 96, 64);
   text-align: left;
   left: 2em;
+}
+
+#about-me {
+  min-height: 50vw;
 }
 
 p {
@@ -284,7 +288,7 @@ footer #contact-button {
     width: 5em;
     margin: -2em 1em 0 0;
     border-radius: 50%;
-    border: 0.2em black dashed;
+    border: 2px rgb(137, 126, 109) solid;
   }
 
   #menu-text {
@@ -340,7 +344,7 @@ footer #contact-button {
     top: 12em;
     font-family: "Monaco", monospace;
     font-size: 1.2em;
-    color: rgb(217, 235, 201);
+    color: rgb(53, 0, 213);
   }
 
   section {

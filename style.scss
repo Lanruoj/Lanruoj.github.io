@@ -166,7 +166,7 @@ main {
     top: 4.1em;
     right: 1em;
     font-family: $monaco;
-    color: $mint;
+    color: $dark-purple;
 }
     .desk-page-sub {
         display: none;
@@ -175,6 +175,10 @@ main {
 section {
     @include card;
     background-color: rgb(242, 253, 241, 0.1);
+}
+
+#about-me {
+    min-height: 50vw;
 }
 
 p {
@@ -337,7 +341,7 @@ footer {
     width: 5em;
     margin: -2em 1em 0 0;
     border-radius: 50%;
-    border: 0.2em black dashed;
+    border: 2px $brown solid;
 }
 #menu-text {
     display: inline-block;
@@ -394,7 +398,7 @@ footer {
         top: 12em;
         font-family: $monaco;
         font-size: 1.2em;
-        color: $mint;
+        color: $dark-purple;
     }
     section {
         @include card; // includes the card @mixin
