@@ -141,7 +141,6 @@ header {
     #show:checked ~ #nav-links-mob {
         display: block;
         transform: translateX(20em);
-        // backdrop-filter: blur(.2em);
     }
 }
 
@@ -211,12 +210,31 @@ footer {
 }
 
 
-#expand,
-#expand-icon,
-#expand-text {
+#expand-1,
+#expand-icon-1,
+#expand-text-1 {
     display: none;   ////////// card expand text/icon not on mobile
 }
-
+#expand-2,
+#expand-icon-2,
+#expand-text-2 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+#expand-3,
+#expand-icon-3,
+#expand-text-3 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+#expand-4,
+#expand-icon-4,
+#expand-text-4 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+#expand-5,
+#expand-icon-5,
+#expand-text-5 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
 
 
 
@@ -388,7 +406,11 @@ footer {
         }
     }
 
-    #sec-intro {
+    #sec-1 {
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+    #sec-2 {
         -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
     }
@@ -396,8 +418,17 @@ footer {
         -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
     }
+    #sec-4 {
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+    #sec-5 {
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
     /////////////// EXPAND SYMBOL ON TOP RIGHT
-        .expand {
+    ////SECTION 1
+        .expand-1 {
             z-index: 50;
             display: inline-block;
             opacity: 1;
@@ -405,13 +436,13 @@ footer {
             font-size: 1.5em;
             position: absolute;
             right: 1.3em;
-            top: 2.5em;
+            top: 2.5em;   ///// POSITION OF EXPAND ICON
         }
-        #expand {
+        #expand-1 {
             display: none;
             transition: 2s;
         }
-        #expand:checked ~ #sec-intro { //EXPANDS SECTION WHEN CLICK ICON
+        #expand-1:checked ~ #sec-1 { //EXPANDS SECTION WHEN CLICK ICON
             background-color: $white;
             width: 100vw;
             max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
@@ -419,11 +450,11 @@ footer {
             -webkit-mask-image: none; // turn off transparent gradient
             mask-image: none;
         }
-        #expand-icon {
+        #expand-icon-1 {
             display: inline-block;
             transition: 0.1s;
         }
-        #expand-text {
+        #expand-text-1 {
             display: inline-block;
             font-family: 'Monaco', monospace;
             font-size: 1em;
@@ -431,20 +462,177 @@ footer {
             top: 3.7em;
             line-height: 0.8em;     ///// reduces vertical space - text
         }
-        #expand-icon:hover {
+        #expand-icon-1:hover {
             transform: scale(1.2); // grows icon
         }
-
-/////////////// section-1
-
-#sec-1:hover {
-    background-color: $white;
+        ////////
+        ////////SECTION 2
+        .expand-2 {
+            z-index: 50;
+            display: inline-block;
+            opacity: 1;
+            color: $purple;
+            font-size: 1.5em;
+            // position: absolute;
+            // right: 1.3em;
+            // top: 19.5em;    ///// POSITION OF EXPAND ICON
+            position: relative;   //// allowed icons
+            left: 28.5em;         //// to move when
+            top: 3.5em;           //// expanded!
+        }
+        #expand-2 {
+            display: none;
+            transition: 2s;
+        }
+        #expand-2:checked ~ #sec-2 { //EXPANDS SECTION WHEN CLICK ICON
+            background-color: $white;
             width: 100vw;
-            max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
             flex-wrap: nowrap;
             -webkit-mask-image: none; // turn off transparent gradient
             mask-image: none;
-}
+        }
+        #expand-icon-2 {
+            display: inline-block;
+            transition: 0.1s;
+        }
+        #expand-text-2 {
+            display: inline-block;
+            font-family: 'Monaco', monospace;
+            font-size: 1em;
+            // right: 0.8em;
+            // top: 3.7em;
+            top: 8.5em;   //// moves text with icon
+            left: 45.1em; //// moves text with icon
+            line-height: 0.8em;     ///// reduces vertical space - text
+        }
+        #expand-icon-2:hover {
+            transform: scale(1.2); // grows icon
+        }
+        /////////SECTION 3
+        .expand-3 {
+            z-index: 50;
+            display: inline-block;
+            opacity: 1;
+            color: $purple;
+            font-size: 1.5em;
+            position: relative;   //// allowed icons
+            left: 28.5em;         //// to move when
+            top: 3.5em;           //// expanded!
+        }
+        #expand-3 {
+            display: none;
+            transition: 2s;
+        }
+        #expand-3:checked ~ #sec-3 { //EXPANDS SECTION WHEN CLICK ICON
+            background-color: $white;
+            width: 100vw;
+            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            flex-wrap: nowrap;
+            -webkit-mask-image: none; // turn off transparent gradient
+            mask-image: none;
+        }
+        #expand-icon-3 {
+            display: inline-block;
+            transition: 0.1s;
+        }
+        #expand-text-3 {
+            display: inline-block;
+            font-family: 'Monaco', monospace;
+            font-size: 1em;
+            top: 8.5em;   //// moves text with icon
+            left: 45.1em; //// moves text with icon
+            line-height: 0.8em;     ///// reduces vertical space - text
+        }
+        #expand-icon-3:hover {
+            transform: scale(1.2); // grows icon
+        }
+        ////////SECTION 4
+        .expand-4 {
+            z-index: 50;
+            display: inline-block;
+            opacity: 1;
+            color: $purple;
+            font-size: 1.5em;
+            position: relative;   //// allowed icons
+            left: 28.5em;         //// to move when
+            top: 3.5em;           //// expanded!
+        }
+        #expand-4 {
+            display: none;
+            transition: 2s;
+        }
+        #expand-4:checked ~ #sec-4 { //EXPANDS SECTION WHEN CLICK ICON
+            background-color: $white;
+            width: 100vw;
+            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            flex-wrap: nowrap;
+            -webkit-mask-image: none; // turn off transparent gradient
+            mask-image: none;
+        }
+        #expand-icon-4 {
+            display: inline-block;
+            transition: 0.1s;
+        }
+        #expand-text-4 {
+            display: inline-block;
+            font-family: 'Monaco', monospace;
+            font-size: 1em;
+            top: 8.5em;   //// moves text with icon
+            left: 45.1em; //// moves text with icon
+            line-height: 0.8em;     ///// reduces vertical space - text
+        }
+        #expand-icon-4:hover {
+            transform: scale(1.2); // grows icon
+        }
+        /////////SECTION 5
+        .expand-5 {
+            z-index: 50;
+            display: inline-block;
+            opacity: 1;
+            color: $purple;
+            font-size: 1.5em;
+            position: relative;   //// allowed icons
+            left: 28.5em;         //// to move when
+            top: 3.5em;           //// expanded!
+        }
+        #expand-5 {
+            display: none;
+            transition: 2s;
+        }
+        #expand-5:checked ~ #sec-5 { //EXPANDS SECTION WHEN CLICK ICON
+            background-color: $white;
+            width: 100vw;
+            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            flex-wrap: nowrap;
+            -webkit-mask-image: none; // turn off transparent gradient
+            mask-image: none;
+        }
+        #expand-icon-5 {
+            display: inline-block;
+            transition: 0.1s;
+        }
+        #expand-text-5 {
+            display: inline-block;
+            font-family: 'Monaco', monospace;
+            font-size: 1em;
+            top: 8.5em;   //// moves text with icon
+            left: 45.1em; //// moves text with icon
+            line-height: 0.8em;     ///// reduces vertical space - text
+        }
+        #expand-icon-5:hover {
+            transform: scale(1.2); // grows icon
+        }
+/////////////// section-1
+
+// #sec-1:hover {
+//     background-color: $white;
+//             width: 100vw;
+//             max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+//             flex-wrap: nowrap;
+//             -webkit-mask-image: none; // turn off transparent gradient
+//             mask-image: none;
+// }
 
 
 
@@ -456,7 +644,31 @@ footer {
             box-shadow: gray 0em 0em 2em;
             width: 100vw;
         }
-    #expand:hover ~ #sec-intro { // keeps the opacity when hover over icon too
+    #expand-1:hover ~ #sec-1 { // keeps the opacity when hover over icon too
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
+        flex-wrap: nowrap;
+    }
+    #expand-2:hover ~ #sec-2 { // keeps the opacity when hover over icon too
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
+        flex-wrap: nowrap;
+    }
+    #expand-3:hover ~ #sec-3 { // keeps the opacity when hover over icon too
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
+        flex-wrap: nowrap;
+    }
+    #expand-4:hover ~ #sec-4 { // keeps the opacity when hover over icon too
+        background-color: $white;
+        box-shadow: gray 0em 0em 2em;
+        width: 100vw;
+        flex-wrap: nowrap;
+    }
+    #expand-5:hover ~ #sec-5 { // keeps the opacity when hover over icon too
         background-color: $white;
         box-shadow: gray 0em 0em 2em;
         width: 100vw;

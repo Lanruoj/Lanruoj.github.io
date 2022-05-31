@@ -169,9 +169,33 @@ footer #contact-button {
   border: none;
 }
 
-#expand,
-#expand-icon,
-#expand-text {
+#expand-1,
+#expand-icon-1,
+#expand-text-1 {
+  display: none;
+}
+
+#expand-2,
+#expand-icon-2,
+#expand-text-2 {
+  display: none;
+}
+
+#expand-3,
+#expand-icon-3,
+#expand-text-3 {
+  display: none;
+}
+
+#expand-4,
+#expand-icon-4,
+#expand-text-4 {
+  display: none;
+}
+
+#expand-5,
+#expand-icon-5,
+#expand-text-5 {
   display: none;
 }
 
@@ -338,7 +362,12 @@ footer #contact-button {
     color: rgb(67, 96, 64);
   }
 
-  #sec-intro {
+  #sec-1 {
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  #sec-2 {
     -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
@@ -348,7 +377,17 @@ footer #contact-button {
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
 
-  .expand {
+  #sec-4 {
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  #sec-5 {
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  .expand-1 {
     z-index: 50;
     display: inline-block;
     opacity: 1;
@@ -359,12 +398,12 @@ footer #contact-button {
     top: 2.5em;
   }
 
-  #expand {
+  #expand-1 {
     display: none;
     transition: 2s;
   }
 
-  #expand:checked ~ #sec-intro {
+  #expand-1:checked ~ #sec-1 {
     background-color: rgb(242, 253, 241);
     width: 100vw;
     max-height: 100em;
@@ -373,12 +412,12 @@ footer #contact-button {
     mask-image: none;
   }
 
-  #expand-icon {
+  #expand-icon-1 {
     display: inline-block;
     transition: 0.1s;
   }
 
-  #expand-text {
+  #expand-text-1 {
     display: inline-block;
     font-family: "Monaco", monospace;
     font-size: 1em;
@@ -387,17 +426,180 @@ footer #contact-button {
     line-height: 0.8em;
   }
 
-  #expand-icon:hover {
+  #expand-icon-1:hover {
     transform: scale(1.2);
   }
 
-  #sec-1:hover {
+  .expand-2 {
+    z-index: 50;
+    display: inline-block;
+    opacity: 1;
+    color: rgb(64, 0, 255);
+    font-size: 1.5em;
+    position: relative;
+    left: 28.5em;
+    top: 3.5em;
+  }
+
+  #expand-2 {
+    display: none;
+    transition: 2s;
+  }
+
+  #expand-2:checked ~ #sec-2 {
     background-color: rgb(242, 253, 241);
     width: 100vw;
-    max-height: 100vw;
+    max-height: 100em;
     flex-wrap: nowrap;
     -webkit-mask-image: none;
     mask-image: none;
+  }
+
+  #expand-icon-2 {
+    display: inline-block;
+    transition: 0.1s;
+  }
+
+  #expand-text-2 {
+    display: inline-block;
+    font-family: "Monaco", monospace;
+    font-size: 1em;
+    top: 8.5em;
+    left: 45.1em;
+    line-height: 0.8em;
+  }
+
+  #expand-icon-2:hover {
+    transform: scale(1.2);
+  }
+
+  .expand-3 {
+    z-index: 50;
+    display: inline-block;
+    opacity: 1;
+    color: rgb(64, 0, 255);
+    font-size: 1.5em;
+    position: relative;
+    left: 28.5em;
+    top: 3.5em;
+  }
+
+  #expand-3 {
+    display: none;
+    transition: 2s;
+  }
+
+  #expand-3:checked ~ #sec-3 {
+    background-color: rgb(242, 253, 241);
+    width: 100vw;
+    max-height: 100em;
+    flex-wrap: nowrap;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  #expand-icon-3 {
+    display: inline-block;
+    transition: 0.1s;
+  }
+
+  #expand-text-3 {
+    display: inline-block;
+    font-family: "Monaco", monospace;
+    font-size: 1em;
+    top: 8.5em;
+    left: 45.1em;
+    line-height: 0.8em;
+  }
+
+  #expand-icon-3:hover {
+    transform: scale(1.2);
+  }
+
+  .expand-4 {
+    z-index: 50;
+    display: inline-block;
+    opacity: 1;
+    color: rgb(64, 0, 255);
+    font-size: 1.5em;
+    position: relative;
+    left: 28.5em;
+    top: 3.5em;
+  }
+
+  #expand-4 {
+    display: none;
+    transition: 2s;
+  }
+
+  #expand-4:checked ~ #sec-4 {
+    background-color: rgb(242, 253, 241);
+    width: 100vw;
+    max-height: 100em;
+    flex-wrap: nowrap;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  #expand-icon-4 {
+    display: inline-block;
+    transition: 0.1s;
+  }
+
+  #expand-text-4 {
+    display: inline-block;
+    font-family: "Monaco", monospace;
+    font-size: 1em;
+    top: 8.5em;
+    left: 45.1em;
+    line-height: 0.8em;
+  }
+
+  #expand-icon-4:hover {
+    transform: scale(1.2);
+  }
+
+  .expand-5 {
+    z-index: 50;
+    display: inline-block;
+    opacity: 1;
+    color: rgb(64, 0, 255);
+    font-size: 1.5em;
+    position: relative;
+    left: 28.5em;
+    top: 3.5em;
+  }
+
+  #expand-5 {
+    display: none;
+    transition: 2s;
+  }
+
+  #expand-5:checked ~ #sec-5 {
+    background-color: rgb(242, 253, 241);
+    width: 100vw;
+    max-height: 100em;
+    flex-wrap: nowrap;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  #expand-icon-5 {
+    display: inline-block;
+    transition: 0.1s;
+  }
+
+  #expand-text-5 {
+    display: inline-block;
+    font-family: "Monaco", monospace;
+    font-size: 1em;
+    top: 8.5em;
+    left: 45.1em;
+    line-height: 0.8em;
+  }
+
+  #expand-icon-5:hover {
+    transform: scale(1.2);
   }
 
   section:hover {
@@ -406,7 +608,35 @@ footer #contact-button {
     width: 100vw;
   }
 
-  #expand:hover ~ #sec-intro {
+  #expand-1:hover ~ #sec-1 {
+    background-color: rgb(242, 253, 241);
+    box-shadow: gray 0em 0em 2em;
+    width: 100vw;
+    flex-wrap: nowrap;
+  }
+
+  #expand-2:hover ~ #sec-2 {
+    background-color: rgb(242, 253, 241);
+    box-shadow: gray 0em 0em 2em;
+    width: 100vw;
+    flex-wrap: nowrap;
+  }
+
+  #expand-3:hover ~ #sec-3 {
+    background-color: rgb(242, 253, 241);
+    box-shadow: gray 0em 0em 2em;
+    width: 100vw;
+    flex-wrap: nowrap;
+  }
+
+  #expand-4:hover ~ #sec-4 {
+    background-color: rgb(242, 253, 241);
+    box-shadow: gray 0em 0em 2em;
+    width: 100vw;
+    flex-wrap: nowrap;
+  }
+
+  #expand-5:hover ~ #sec-5 {
     background-color: rgb(242, 253, 241);
     box-shadow: gray 0em 0em 2em;
     width: 100vw;
