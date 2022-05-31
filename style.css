@@ -738,6 +738,7 @@ footer #contact-button {
     transition: 0.5s;
     overflow: hidden;
     position: relative;
+    max-height: min-content;
   }
   #about-card h2 {
     color: rgb(67, 96, 64);

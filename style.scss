@@ -760,6 +760,7 @@ footer {
 }
 #about-card {
     @include card-desk();
+    max-height: min-content;
 }
 #about-buttons { 
         @include card-desk();
