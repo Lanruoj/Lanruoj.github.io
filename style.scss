@@ -53,10 +53,28 @@ $monaco: 'Monaco', monospace;
         transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
         overflow: hidden; // make cards only hold so much text...
         position: relative; // then have a hacky "fade-out" effect
+        &:hover {  // increases opacity when hover over section
+            background-color: $white;
+            box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
+            width: 100vw;
+            }
         h2 {
             color: $pine;
         }
     }
+@mixin card-desk-no-hover() {
+    @include card(); // includes the card @mixin
+        background-color: rgb(242, 253, 241, 0.1);
+        margin: 2em 0em 0em 2em;
+        width: 100vw;
+        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
+        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+        overflow: hidden; // make cards only hold so much text...
+        position: relative; // then have a hacky "fade-out" effect
+        h2 {
+            color: $pine;
+        }
+}   
 @mixin desk-button() {
     background-color: rgb(53, 0, 213);
     color: $white;
@@ -105,7 +123,7 @@ body {
     background-color: $white; // just in case gradient doesn't work
     font-family: $karla;
     font-size: 16px;
-    background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white); // red circle gradient from bottom right
+    background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // red circle gradient from bottom right
     background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
 }
 
@@ -193,9 +211,6 @@ header {
                     font-style: italic;
                 }
         }
-        // li:hover {
-        //     // opacity: 95%; //ADD TO DESK
-        // }
     }
     #show {
         display: none;
@@ -708,51 +723,52 @@ footer {
     //////////////
 
     ///// HOVER TO FOCUS SECTION v2
-    .card:hover {  // increases opacity when hover over section
-        background-color: $white;
-        box-shadow: gray 0em 0em 2em;
-        width: 100vw;
-        }
-    #expand-1:hover ~ #sec-1 { // keeps the opacity when hover over icon too
-        background-color: $white;
-        box-shadow: gray 0em 0em 2em;
-        width: 100vw;
-        flex-wrap: nowrap;
-    }
-    #expand-2:hover ~ #sec-2 { // keeps the opacity when hover over icon too
-        background-color: $white;
-        box-shadow: gray 0em 0em 2em;
-        width: 100vw;
-        flex-wrap: nowrap;
-    }
-    #expand-3:hover ~ #sec-3 { // keeps the opacity when hover over icon too
-        background-color: $white;
-        box-shadow: gray 0em 0em 2em;
-        width: 100vw;
-        flex-wrap: nowrap;
-    }
-    #expand-4:hover ~ #sec-4 { // keeps the opacity when hover over icon too
-        background-color: $white;
-        box-shadow: gray 0em 0em 2em;
-        width: 100vw;
-        flex-wrap: nowrap;
-    }
-    #expand-5:hover ~ #sec-5 { // keeps the opacity when hover over icon too
-        background-color: $white;
-        box-shadow: gray 0em 0em 2em;
-        width: 100vw;
-        flex-wrap: nowrap;
-    }
+    // .card:hover {  // increases opacity when hover over section
+    //     background-color: $white;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     }
+    // #expand-1:hover ~ #sec-1 { // keeps the opacity when hover over icon too
+    //     background-color: $white;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     flex-wrap: nowrap;
+    // }
+    // #expand-2:hover ~ #sec-2 { // keeps the opacity when hover over icon too
+    //     background-color: $white;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     flex-wrap: nowrap;
+    // }
+    // #expand-3:hover ~ #sec-3 { // keeps the opacity when hover over icon too
+    //     background-color: $white;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     flex-wrap: nowrap;
+    // }
+    // #expand-4:hover ~ #sec-4 { // keeps the opacity when hover over icon too
+    //     background-color: $white;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     flex-wrap: nowrap;
+    // }
+    // #expand-5:hover ~ #sec-5 { // keeps the opacity when hover over icon too
+    //     background-color: $white;
+    //     box-shadow: gray 0em 0em 2em;
+    //     width: 100vw;
+    //     flex-wrap: nowrap;
+    // }
     ////////////////
 
 /////////ABOUT PAGE DESKTOP
 /////ABOUT ME PAGE
 #about-img-cont {
     @include card-desk();
-        background: none;
-        display: flex; 
-        flex-direction: row;
-        justify-content: center;
+    pointer-events: none; /////////// disables hover effect from @mixin easily!
+    background: none;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
     #about-img {
         @include card-border();
         max-width: 50vw;
@@ -763,7 +779,7 @@ footer {
     max-height: min-content;
 }
 #about-buttons { 
-        @include card-desk();
+        @include card-desk-no-hover();
         background: none;
         display: flex; 
         flex-direction: row;
@@ -772,11 +788,13 @@ footer {
     #personal-button-cont {
             #personal-button {
                 @include desk-button();
+                pointer-events: auto;  ////adds hover back
             }
     }
     #projects-button-cont {
             #projects-button {
                 @include desk-button();
+                pointer-events: auto;
             }
     }
 }
