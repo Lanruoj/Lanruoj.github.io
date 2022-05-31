@@ -5,6 +5,7 @@ $brown: rgb(137, 126, 109);
 $pine: rgb(67, 96, 64);
 $black: rgb(22, 22, 22);
 $purple: rgb(64, 0, 255);
+$dark-purple: rgb(53, 0, 213);
 $lavendar: rgb(145, 152, 229);
 $pale-orange: rgb(230, 100, 101);
 $clear: rgb(255,255,255,0);
@@ -38,7 +39,7 @@ $monaco: 'Monaco', monospace;
 }
 
 html, body {
-	min-height: 100vh;
+	height: 100vh;
 }
 
 body {
@@ -109,7 +110,7 @@ header {
         top: 5.1em;
         left: -22.2em;
         transition: 0.2s;
-        ul { 
+        ul {
             height: 100vh; //makes the sidebar take up full vertical height
             padding-right: 5em;
             width: 85vw;
@@ -120,33 +121,57 @@ header {
             list-style: none;
             font-family: $karla;
             font-size: 3em;
+            // text-shadow: $lavendar 5px 5px 1px;
+            // border: 3px solid $pine;
             padding: .3em .3em .3em 3.5em;
             transition: 0.5s;
-            a, a:visited { // changing the menu link style
+            a, a:visited {
                 text-decoration: none;
                 color: $brown;
                 font-style: italic;
             }
         }
+        // li:hover {
+        //     // opacity: 95%; //ADD TO DESK
+        // }
     }
     #show {
-        display: none; // HIDES ACTUAL CHECKBOX
+        display: none;
     }
-    #show:checked ~ #nav-links-mob {  // 
-        display: block; // stop being hidden
-        transform: translateX(20em); // slide in from left
+    #show:checked ~ #nav-links-mob {
+        display: block;
+        transform: translateX(20em);
+        // backdrop-filter: blur(.2em);
     }
 }
 
-    #nav-icon-desk {
-        display: none; // hides desktop menu icon
-    }
+#menu-button,
+#menu-text,
+#nav-cont {
+    display: none;
+}
+
+
+
+
+
 
 ///////MAIN SECTION    
 main {
     margin: 2em;
     margin-top: 7em;
 }
+.mob-page-sub {
+    display: block;
+    position: absolute;
+    top: 4.1em;
+    right: 1em;
+    font-family: $monaco;
+    color: $mint;
+}
+    .desk-page-sub {
+        display: none;
+    }
 
 section {
     @include card;
@@ -185,11 +210,6 @@ footer {
     }
 }
 
-
-
-#nav-desk {
-    display: none;  // hides desktop menu
-}
 
 #expand,
 #expand-icon,
@@ -246,92 +266,82 @@ footer {
             width: 30em;
         }
     }
-    //////////NAVBAR ICON MODIFICATIONS FOR DESKTOP
-    #nav-mob {
-        #nav-links-mob {
-            z-index: 10;
-            position: fixed;
-            top: 8em;
-            left: -23em;
-            height: 25em;
-            width: 25em;
-            transition: 0.2s;
-            border-radius: 50%;
-            border: blue dotted 2em; // adds blue dots around ul
-            ul {
-                z-index: 10;
-                position: fixed;
-                margin-left: 3em;
-                margin-top: 3em;
-                height: 15em;
-                width: 15em;
-                padding-right: 5em;
-                border-radius: 50%;
-                background-color: $white;
-                box-shadow: $white 0em 0em 3em 3em;
-                transform: rotate(-40deg);
-            }
-            li {
-                z-index: 10;
-                list-style: none;
-                font-family: $karla;
-                font-size: 2.3em;
-                padding: .2em .3em .1em 2em;
-                transition: 0.5s;
-                transform: rotate(40deg);
-                a, a:visited {
-                    text-decoration: none;
-                    color: $brown;
-                    font-style: italic;
-                    text-decoration: line-through;
-                    transition: 0.2s;
-                }
-                a:hover {
-                    color: $pale-orange;
-                    font-family: Monaco, monospace;
-                    font-style: normal;
-                    text-decoration: none;
-                    text-transform: lowercase;
-                }
-                a:hover::before {  // turns links into <html> looking code :)
-                    content: '<';
-                }
-                a:hover::after {
-                    content: '>';
-                }
-            }
-        }
-    }
-    #show {
-        display: none;     // hides checkbox
-    }
-    #show:checked ~ #nav-links-mob {
-        display: block;        // shows menu + slides from left
-        transform: translateX(20em);
-    }
-    #nav-mob:hover ~ main {
-        transform: translateX(20em); // slides main to right when hover menu
-    }
-    #nav-icon-mob {
-        display: none; // hide mobile hamburger icon
-    }
-    #nav-icon-desk {
-        display: block; // show desktop menu icon
-        z-index: 11;
-        position: fixed;
-        top: 0.2em;
-        left: 0.5em;
-        font-size: 3em;
-        color: $brown;
+
+///////////////// DESKTOP MENU
+#nav-mob {
+    display: none;
+}
+#nav-cont {
+    display: block;
+        position: absolute;
+        left: -30vw;
+        background-color: $white;
+        height: 50em;   // 100vh wouldn't work! // added rounded/sloped bottom
+        width: 30vw;
+        transition: 0.5s;
+        box-shadow: -1em 2em 1em 1em gray;
+        border-radius: 0 0 40em 0;  // ^^^^^
+}
+#menu-button:checked ~ #nav-cont {
+        position: absolute;                 // slides menu right
+        transform: translateX(12.5em);
+        // width: 20vw;
+}
+#menu-button:checked ~ main {               // slides main right
+        transform: translateX(12.5em);
+};
+
+#nav-list {
+    display: block;
+    text-align: right;
+    padding: 2em;
+    padding-right: 0.5em;
+    font-size: 1.5em;
+    font-family: $monaco;
+    a, a:visited {
+        text-decoration: none;
+        color: black;
         transition: 0.1s;
     }
-    #nav-icon-desk:hover {  // hover styling menu icon
-        color: $pale-orange;
-        transform: scale(1.2);
-        cursor: pointer; // making it look like a link
+    a:hover {
+        color: $purple;
+        text-transform: lowercase;
     }
+    a:hover::before {
+        content: 'cd ./';
+    }
+}
+#portrait {
+    width: 5em;
+    margin: -2em 1em 0 0;
+    border-radius: 50%;
+    border: 0.2em black dashed;
+}
+#menu-text {
+    display: inline-block;
+    position: absolute;
+    top: 0.3em;
+    left: 1em;
+    z-index: 50;
+    font-size: 3em;
+    transition: 0.1s;
+}
+#menu-text:hover {
+    cursor: pointer;
+    transform: translatex(0.3em);
+}
+#arrow {
+    position: absolute;
+    left: 0.1em;
+    -webkit-text-stroke: 8px $white;
+    transform: scale(1.2, 1);
+}
 
-/////
+#menu-button {
+    display: none;
+}
+
+///////////////////////
 
 
 
@@ -353,7 +363,17 @@ footer {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
-
+    .mob-page-sub {
+        display: none;
+    }
+    .desk-page-sub {
+        display: block;
+        position: fixed;
+        top: 12em;
+        font-family: $monaco;
+        font-size: 1.2em;
+        color: $mint;
+    }
     section {
         @include card; // includes the card @mixin
         background-color: rgb(242, 253, 241, 0.1);
@@ -363,13 +383,19 @@ footer {
         transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
         overflow: hidden; // make cards only hold so much text...
         position: relative; // then have a hacky "fade-out" effect
-        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         h2 {
             color: $pine;
         }
     }
 
+    #sec-intro {
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+    #sec-3 {
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
     /////////////// EXPAND SYMBOL ON TOP RIGHT
         .expand {
             z-index: 50;
@@ -388,7 +414,7 @@ footer {
         #expand:checked ~ #sec-intro { //EXPANDS SECTION WHEN CLICK ICON
             background-color: $white;
             width: 100vw;
-            max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
             flex-wrap: nowrap;
             -webkit-mask-image: none; // turn off transparent gradient
             mask-image: none;
@@ -408,6 +434,20 @@ footer {
         #expand-icon:hover {
             transform: scale(1.2); // grows icon
         }
+
+/////////////// section-1
+
+#sec-1:hover {
+    background-color: $white;
+            width: 100vw;
+            max-height: 100vw;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+            flex-wrap: nowrap;
+            -webkit-mask-image: none; // turn off transparent gradient
+            mask-image: none;
+}
+
+
+
     //////////////
 
     ///// HOVER TO FOCUS SECTION v2
@@ -415,9 +455,6 @@ footer {
             background-color: $white;
             box-shadow: gray 0em 0em 2em;
             width: 100vw;
-            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-            // overflow:auto;
         }
     #expand:hover ~ #sec-intro { // keeps the opacity when hover over icon too
         background-color: $white;

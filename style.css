@@ -5,7 +5,7 @@
 }
 
 html, body {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 body {
@@ -101,13 +101,28 @@ header #head-circle {
   transform: translateX(20em);
 }
 
-#nav-icon-desk {
+#menu-button,
+#menu-text,
+#nav-cont {
   display: none;
 }
 
 main {
   margin: 2em;
   margin-top: 7em;
+}
+
+.mob-page-sub {
+  display: block;
+  position: absolute;
+  top: 4.1em;
+  right: 1em;
+  font-family: "Monaco", monospace;
+  color: rgb(217, 235, 201);
+}
+
+.desk-page-sub {
+  display: none;
 }
 
 section {
@@ -154,10 +169,6 @@ footer #contact-button {
   border: none;
 }
 
-#nav-desk {
-  display: none;
-}
-
 #expand,
 #expand-icon,
 #expand-text {
@@ -195,92 +206,83 @@ footer #contact-button {
     width: 30em;
   }
 
-  #nav-mob #nav-links-mob {
-    z-index: 10;
-    position: fixed;
-    top: 8em;
-    left: -23em;
-    height: 25em;
-    width: 25em;
-    transition: 0.2s;
-    border-radius: 50%;
-    border: blue dotted 2em;
+  #nav-mob {
+    display: none;
   }
-  #nav-mob #nav-links-mob ul {
-    z-index: 10;
-    position: fixed;
-    margin-left: 3em;
-    margin-top: 3em;
-    height: 15em;
-    width: 15em;
-    padding-right: 5em;
-    border-radius: 50%;
+
+  #nav-cont {
+    display: block;
+    position: absolute;
+    left: -30vw;
     background-color: rgb(242, 253, 241);
-    box-shadow: rgb(242, 253, 241) 0em 0em 3em 3em;
-    transform: rotate(-40deg);
-  }
-  #nav-mob #nav-links-mob li {
-    z-index: 10;
-    list-style: none;
-    font-family: "Karla", sans-serif;
-    font-size: 2.3em;
-    padding: 0.2em 0.3em 0.1em 2em;
+    height: 50em;
+    width: 30vw;
     transition: 0.5s;
-    transform: rotate(40deg);
+    box-shadow: -1em 2em 1em 1em gray;
+    border-radius: 0 0 40em 0;
   }
-  #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
-    text-decoration: none;
-    color: rgb(137, 126, 109);
-    font-style: italic;
-    text-decoration: line-through;
-    transition: 0.2s;
+
+  #menu-button:checked ~ #nav-cont {
+    position: absolute;
+    transform: translateX(12.5em);
   }
-  #nav-mob #nav-links-mob li a:hover {
-    color: rgb(230, 100, 101);
-    font-family: Monaco, monospace;
-    font-style: normal;
+
+  #menu-button:checked ~ main {
+    transform: translateX(12.5em);
+  }
+
+  #nav-list {
+    display: block;
+    text-align: right;
+    padding: 2em;
+    padding-right: 0.5em;
+    font-size: 1.5em;
+    font-family: "Monaco", monospace;
+  }
+  #nav-list a, #nav-list a:visited {
     text-decoration: none;
+    color: black;
+    transition: 0.1s;
+  }
+  #nav-list a:hover {
+    color: rgb(64, 0, 255);
     text-transform: lowercase;
   }
-  #nav-mob #nav-links-mob li a:hover::before {
-    content: "<";
-  }
-  #nav-mob #nav-links-mob li a:hover::after {
-    content: ">";
+  #nav-list a:hover::before {
+    content: "cd ./";
   }
 
-  #show {
-    display: none;
+  #portrait {
+    width: 5em;
+    margin: -2em 1em 0 0;
+    border-radius: 50%;
+    border: 0.2em black dashed;
   }
 
-  #show:checked ~ #nav-links-mob {
-    display: block;
-    transform: translateX(20em);
-  }
-
-  #nav-mob:hover ~ main {
-    transform: translateX(20em);
-  }
-
-  #nav-icon-mob {
-    display: none;
-  }
-
-  #nav-icon-desk {
-    display: block;
-    z-index: 11;
-    position: fixed;
-    top: 0.2em;
-    left: 0.5em;
+  #menu-text {
+    display: inline-block;
+    position: absolute;
+    top: 0.3em;
+    left: 1em;
+    z-index: 50;
     font-size: 3em;
-    color: rgb(137, 126, 109);
     transition: 0.1s;
   }
 
-  #nav-icon-desk:hover {
-    color: rgb(230, 100, 101);
-    transform: scale(1.2);
+  #menu-text:hover {
     cursor: pointer;
+    transform: translatex(0.3em);
+  }
+
+  #arrow {
+    position: absolute;
+    left: 0.1em;
+    -webkit-text-stroke: 8px rgb(242, 253, 241);
+    transform: scale(1.2, 1);
+  }
+
+  #menu-button {
+    display: none;
   }
 
   body {
@@ -300,6 +302,19 @@ footer #contact-button {
     justify-content: flex-start;
   }
 
+  .mob-page-sub {
+    display: none;
+  }
+
+  .desk-page-sub {
+    display: block;
+    position: fixed;
+    top: 12em;
+    font-family: "Monaco", monospace;
+    font-size: 1.2em;
+    color: rgb(217, 235, 201);
+  }
+
   section {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
@@ -313,8 +328,6 @@ footer #contact-button {
     transition: 0.5s;
     overflow: hidden;
     position: relative;
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
   section h2 {
     color: rgb(67, 96, 64);
@@ -323,6 +336,16 @@ footer #contact-button {
   }
   section h2 {
     color: rgb(67, 96, 64);
+  }
+
+  #sec-intro {
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  #sec-3 {
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
 
   .expand {
@@ -344,7 +367,7 @@ footer #contact-button {
   #expand:checked ~ #sec-intro {
     background-color: rgb(242, 253, 241);
     width: 100vw;
-    max-height: 100vw;
+    max-height: 100em;
     flex-wrap: nowrap;
     -webkit-mask-image: none;
     mask-image: none;
@@ -368,12 +391,19 @@ footer #contact-button {
     transform: scale(1.2);
   }
 
+  #sec-1:hover {
+    background-color: rgb(242, 253, 241);
+    width: 100vw;
+    max-height: 100vw;
+    flex-wrap: nowrap;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
   section:hover {
     background-color: rgb(242, 253, 241);
     box-shadow: gray 0em 0em 2em;
     width: 100vw;
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
 
   #expand:hover ~ #sec-intro {
