@@ -1,5 +1,5 @@
 //COLOURS
-$white: rgb(242, 253, 241);
+$white: white;
 $mint: rgb(217, 235, 201);
 $brown: rgb(137, 126, 109);
 $pine: rgb(67, 96, 64);
@@ -463,7 +463,7 @@ footer {
 
 
     body {
-        background-image: radial-gradient(circle at bottom right, #e66465 10%, $white, $white); // circle gradient from bottom right
+        background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // circle gradient from bottom right
         overflow-x: hidden; // REMOVES HORIZONTAL SCROLLBAR
     }
     main {
