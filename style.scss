@@ -22,7 +22,7 @@ $monaco: 'Monaco', monospace;
 @mixin card() {
         border-radius: 2em 2em 2em 2em;   
         padding: 2em;
-        margin: 0em;
+        margin: 0em -2.8em;
         margin-top: 2em;
         background-color: rgb(242, 253, 241, 0.1); // no $ cos adjust
         h2 {
