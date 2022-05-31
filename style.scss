@@ -22,7 +22,7 @@ $monaco: 'Monaco', monospace;
 @mixin card() {
         border-radius: 2em 2em 2em 2em;   
         padding: 2em;
-        margin: 0em -2.8em;
+        margin: 0em -2em;
         margin-top: 2em;
         background-color: rgb(242, 253, 241, 0.1); // no $ cos adjust
         h2 {
@@ -192,19 +192,19 @@ html, body {
                 background-color: $white;
                 box-shadow: 0em 0em 1em 5em $white;
             }
-                li {
-                    list-style: none;
-                    font-family: $karla;
-                    font-size: 3em;
-                    // text-shadow: $lavendar 5px 5px 1px;
-                    // border: 3px solid $pine;
-                    padding: .3em .3em .3em 3.5em;
-                    transition: 0.5s;
-                    a, a:visited {
-                        text-decoration: none;
-                        color: $brown;
-                        font-style: italic;
-                    }
+            li {
+                list-style: none;
+                font-family: $karla;
+                font-size: 3em;
+                // text-shadow: $lavendar 5px 5px 1px;
+                // border: 3px solid $pine;
+                padding: .3em .3em .3em 3.5em;
+                transition: 0.5s;
+                a, a:visited {
+                    text-decoration: none;
+                    color: $black;
+                    font-style: none;
+                }
             }
         }
         #show {
@@ -420,20 +420,22 @@ html, body {
                 min-width: 60vw;
                 max-width: 65vw;
                 background-color: $white;
-                box-shadow: 0em 0em 1em 5em $white;
+                box-shadow: 0em 0em 1em 0em $white;
             }
                 li {
+                    position: relative;
+                    right: 1.1em;
                     list-style: none;
                     font-family: $karla;
-                    font-size: 3em;
+                    font-size: 2.7em;
                     // text-shadow: $lavendar 5px 5px 1px;
                     // border: 3px solid $pine;
                     padding: .3em .3em .3em 3.5em;
                     transition: 0.5s;
                     a, a:visited {
                         text-decoration: none;
-                        color: $brown;
-                        font-style: italic;
+                        color: black;
+                        font-style: none;
                     }
             }
         }
@@ -644,8 +646,8 @@ html, body {
         height: 50em;   // 100vh wouldn't work! // added rounded/sloped bottom
         width: 30vw;
         transition: 0.5s;
-        box-shadow: -1em 2em 1em 1em gray;
-        border-radius: 0 0 40em 0;  // ^^^^^
+        box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
+        border-radius: 2em 2em 2em 2em;  // ^^^^^
 }
 #menu-button:checked ~ #nav-cont {
         position: absolute;                 // slides menu right

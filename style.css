@@ -84,8 +84,8 @@ header #head-circle {
 }
 #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
   text-decoration: none;
-  color: rgb(137, 126, 109);
-  font-style: italic;
+  color: rgb(22, 22, 22);
+  font-style: none;
 }
 #nav-mob #show {
   display: none;
@@ -124,7 +124,7 @@ main {
 .card {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
-  margin: 0em -2.8em;
+  margin: 0em -2em;
   margin-top: 2em;
   background-color: rgba(242, 253, 241, 0.1);
   background-color: rgba(242, 253, 241, 0.1);
@@ -146,7 +146,7 @@ main {
 #about-card {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
-  margin: 0em -2.8em;
+  margin: 0em -2em;
   margin-top: 2em;
   background-color: rgba(242, 253, 241, 0.1);
 }
@@ -317,19 +317,21 @@ footer #contact-button {
     min-width: 60vw;
     max-width: 65vw;
     background-color: white;
-    box-shadow: 0em 0em 1em 5em white;
+    box-shadow: 0em 0em 1em 0em white;
   }
   #nav-mob #nav-links-mob li {
+    position: relative;
+    right: 1.1em;
     list-style: none;
     font-family: "Karla", sans-serif;
-    font-size: 3em;
+    font-size: 2.7em;
     padding: 0.3em 0.3em 0.3em 3.5em;
     transition: 0.5s;
   }
   #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
     text-decoration: none;
-    color: rgb(137, 126, 109);
-    font-style: italic;
+    color: black;
+    font-style: none;
   }
   #nav-mob #show {
     display: none;
@@ -368,7 +370,7 @@ footer #contact-button {
   .card {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2.8em;
+    margin: 0em -2em;
     margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
     background-color: rgba(242, 253, 241, 0.1);
@@ -390,7 +392,7 @@ footer #contact-button {
   #about-card {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2.8em;
+    margin: 0em -2em;
     margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
   }
@@ -528,8 +530,8 @@ footer #contact-button {
     height: 50em;
     width: 30vw;
     transition: 0.5s;
-    box-shadow: -1em 2em 1em 1em gray;
-    border-radius: 0 0 40em 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
+    border-radius: 2em 2em 2em 2em;
   }
 
   #menu-button:checked ~ #nav-cont {
@@ -628,7 +630,7 @@ footer #contact-button {
   .card {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2.8em;
+    margin: 0em -2em;
     margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
     background-color: rgba(242, 253, 241, 0.1);
@@ -886,7 +888,7 @@ footer #contact-button {
   #about-img-cont {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2.8em;
+    margin: 0em -2em;
     margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
     background-color: rgba(242, 253, 241, 0.1);
@@ -923,7 +925,7 @@ footer #contact-button {
   #about-card {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2.8em;
+    margin: 0em -2em;
     margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
     background-color: rgba(242, 253, 241, 0.1);
@@ -952,7 +954,7 @@ footer #contact-button {
   #about-buttons {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2.8em;
+    margin: 0em -2em;
     margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
     background-color: rgba(242, 253, 241, 0.1);
