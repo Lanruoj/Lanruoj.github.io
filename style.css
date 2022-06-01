@@ -8,6 +8,10 @@ html, body {
   min-height: 100vh;
 }
 
+#personal-li {
+  text-decoration: line-through;
+}
+
 body {
   position: relative;
   background-color: white;
@@ -214,7 +218,7 @@ main {
   margin: 0em;
   right: 2em;
 }
-#logos-card .logo {
+#logos-card img {
   position: relative;
   background-color: rgb(64, 0, 255);
   color: white;
@@ -1104,7 +1108,7 @@ footer #contact-button {
 .clear-card h2 {
   color: rgb(67, 96, 64);
 }
-.clear-card .logo {
+.clear-card img {
   width: 10vw;
   min-height: 10vw;
   display: inline;
@@ -1118,9 +1122,9 @@ footer #contact-button {
   justify-content: space-around;
   margin: 0em;
   right: 2em;
-  max-height: 15em;
+  max-height: 10em;
 }
-#logos-card .logo {
+#logos-card img {
   position: relative;
   background-color: rgb(64, 0, 255);
   color: white;
@@ -1128,7 +1132,8 @@ footer #contact-button {
   font-size: 1em;
   padding: 0.5em;
   border: none;
-  display: inline;
+  align-self: flex-start;
+  max-height: 3em;
 }
 
 #resume-cont {

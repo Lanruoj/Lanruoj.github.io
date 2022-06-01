@@ -196,7 +196,9 @@ html, body {
 	min-height: 100vh;
 }
 
-
+#personal-li {
+    text-decoration: line-through;
+}
 
 //////// /////////////MOBILE///////////////////////
 body {
@@ -365,7 +367,7 @@ main {
     justify-content: space-around;
     margin: 0em;
     right: 2em;
-                .logo {
+                img {
                     @include mob-button();
                     display: inline;
                     position: absolute;
@@ -1115,7 +1117,7 @@ main {
 
 .clear-card {
     @include clear-card-desk();
-    .logo {
+    img {
         width: 10vw;
         min-height: 10vw;
         display: inline;
@@ -1129,10 +1131,12 @@ main {
     justify-content: space-around;
     margin: 0em;
     right: 2em;
-    max-height: 15em;
-                .logo {
+    max-height: 10em;
+                img {
                     @include mob-button();
-                    display: inline;
+                    // display: inline;
+                    align-self: flex-start;
+                    max-height: 3em;
                 }
 }
 
