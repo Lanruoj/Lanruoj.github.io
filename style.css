@@ -68,11 +68,11 @@ header #head-circle {
 }
 #nav-mob #nav-links-mob ul {
   position: relative;
-  z-index: 100;
+  z-index: 9;
   height: 100vh;
   padding-right: 5em;
   width: 100vw;
-  background-color: white;
+  background-color: red;
   box-shadow: 0em 0em 1em 5em white;
 }
 #nav-mob #nav-links-mob li {
@@ -110,7 +110,7 @@ main {
 .mob-page-sub {
   display: block;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   top: 4.1em;
   right: 1em;
   font-family: "Monaco", monospace;
@@ -165,6 +165,7 @@ main {
   display: inline;
 }
 #about-buttons .button-cont .button {
+  position: relative;
   background-color: rgb(64, 0, 255);
   color: white;
   border-radius: 0.4em 0.4em 0.4em 0.4em;
@@ -214,6 +215,7 @@ main {
   right: 2em;
 }
 #logos-card .logo {
+  position: relative;
   background-color: rgb(64, 0, 255);
   color: white;
   border-radius: 0.4em 0.4em 0.4em 0.4em;
@@ -221,6 +223,8 @@ main {
   padding: 0.5em;
   border: none;
   display: inline;
+  position: absolute;
+  z-index: 1;
 }
 
 .contact-card {
@@ -228,12 +232,29 @@ main {
 }
 
 #resume-cont {
-  margin-top: 5em;
+  margin-top: 10em;
   color: rgb(67, 96, 64);
 }
 #resume-cont #resume {
   height: 100vh;
   width: 80vw;
+}
+
+.download-link {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  position: absolute;
+  display: block;
+  top: 10em;
+  right: 40vw;
+  text-align: center;
+  width: 10em;
+  margin: 0 auto;
+}
+.download-link a, .download-link a:visited {
+  text-decoration: none;
+  color: white;
 }
 
 p {
@@ -259,6 +280,7 @@ footer form {
   bottom: 0em;
 }
 footer #contact-button {
+  position: relative;
   background-color: rgb(64, 0, 255);
   color: white;
   border-radius: 0.4em 0.4em 0.4em 0.4em;
@@ -475,6 +497,7 @@ footer #contact-button {
     bottom: 0em;
   }
   footer #contact-button {
+    position: relative;
     background-color: rgb(64, 0, 255);
     color: white;
     border-radius: 0.4em 0.4em 0.4em 0.4em;
@@ -1095,9 +1118,10 @@ footer #contact-button {
   justify-content: space-around;
   margin: 0em;
   right: 2em;
-  max-height: 10em;
+  max-height: 15em;
 }
 #logos-card .logo {
+  position: relative;
   background-color: rgb(64, 0, 255);
   color: white;
   border-radius: 0.4em 0.4em 0.4em 0.4em;
@@ -1105,6 +1129,38 @@ footer #contact-button {
   padding: 0.5em;
   border: none;
   display: inline;
+}
+
+#resume-cont {
+  margin-top: 10em;
+  color: rgb(67, 96, 64);
+}
+#resume-cont #resume {
+  height: 100vh;
+  width: 80vw;
+}
+
+.download-link {
+  position: absolute;
+  top: 4em;
+  text-align: center;
+  width: 10em;
+  margin: 0 auto;
+  background-color: rgb(53, 0, 213);
+  color: white;
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
+  font-size: 1em;
+  padding: 0.5em;
+  border: none;
+  transition: 0.1s;
+}
+.download-link:hover {
+  cursor: pointer;
+  background-color: rgb(64, 0, 255);
+}
+.download-link a, .download-link a:visited {
+  text-decoration: none;
+  color: white;
 }
 
 p {

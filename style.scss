@@ -66,6 +66,7 @@ $monaco: 'Monaco', monospace;
 }
 
 @mixin mob-button() {
+        position: relative;
         background-color: $purple;
         color: $white;
         border-radius: 0.4em 0.4em 0.4em 0.4em;
@@ -74,7 +75,7 @@ $monaco: 'Monaco', monospace;
         border: none; // removed default "button" border
 }
 
-@mixin clear-card-mob () {
+@mixin clear-card-mob() {
         display: flex;
         justify-content: space-between;
         padding: 2em;
@@ -261,11 +262,11 @@ header {
         transition: 0.2s;
         ul {
             position: relative;
-            z-index: 100; // remove if page name doesnt dissappear
+            z-index: 9;
             height: 100vh; //makes the sidebar take up full vertical height
             padding-right: 5em;
             width: 100vw;
-            background-color: $white;
+            background-color: red;
             box-shadow: 0em 0em 1em 5em $white;
         }
         li {
@@ -312,7 +313,7 @@ main {
 .mob-page-sub {
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     top: 4.1em;
     right: 1em;
     font-family: $monaco;
@@ -367,6 +368,8 @@ main {
                 .logo {
                     @include mob-button();
                     display: inline;
+                    position: absolute;
+                    z-index: 1;
                 }
 }
 
@@ -376,14 +379,28 @@ main {
 
 //////////RESUME PAGE MOBILE////////////////////
 #resume-cont { 
-    margin-top: 5em;
+    margin-top: 10em;
     color: $pine;
         #resume {
             height: 100vh;
             width: 80vw;
         }
 }
-
+.download-link {
+    @include clear-card-mob();
+    position: absolute;
+    display: block;
+    top: 10em;
+    right: 40vw;
+    text-align: center;
+    width: 10em;
+    margin: 0 auto;
+    // @include mob-button();
+    a, a:visited {
+        text-decoration: none;
+        color: $white;
+    }
+}
 
 //////////
 
@@ -1112,14 +1129,34 @@ main {
     justify-content: space-around;
     margin: 0em;
     right: 2em;
-    max-height: 10em;
+    max-height: 15em;
                 .logo {
                     @include mob-button();
                     display: inline;
                 }
 }
 
-
+/////////////RESUME PAGE DESKTOP
+#resume-cont { 
+    margin-top: 10em;
+    color: $pine;
+        #resume {
+            height: 100vh;
+            width: 80vw;
+        }
+}
+.download-link {
+    position: absolute;
+    top: 4em;
+    text-align: center;
+    width: 10em;
+    margin: 0 auto;
+    @include desk-button();
+    a, a:visited {
+        text-decoration: none;
+        color: $white;
+    }
+}
 
 
 
