@@ -11,47 +11,52 @@ $pale-orange: rgb(230, 100, 101);
 $clear: rgb(255,255,255,0);
 //FONTS
 $karla: 'Karla', sans-serif;
-$eczar: 'Eczar', serif;
 $rammetto: 'Rammetto One', cursive;
-$unica: 'Unica One', cursive;
-$dela: 'Dela Gothic One', cursive;
-$cousine: 'Cousine', monospace;
 $monaco: 'Monaco', monospace;
 ////////MIXINS
-//MOBILE
-@mixin card() {
-        border-radius: 2em 2em 2em 2em;   
-        padding: 2em;
-        margin: 0em -2em;
-        margin-top: 2em;
-        background-color: rgb(242, 253, 241, 0.1); // no $ cos adjust
-        h2 {
-            color: $pine;
-            text-align: left;
-            left: 2em;
-        }
+
+////////CARDS///////
+@mixin card() { //
+    @include card-border();
+    padding: 2em;
+    background-color: rgb(242, 253, 241, 0.1);
+    color: $black;
+    h2 {
+        color: $pine;
+        text-align: left;
+        left: 2em;
+    }
 }
-@mixin card-dark-mob() { 
-        padding: 2em;
-        margin: 0 auto;
-        margin-top: 2em;
+    @mixin card-border() { //
+        border-radius: 2em 2em 2em 2em;
+    }
+///////BUTTONS//////
+@mixin button() { //
+    padding: 0.5em;
+    font-size: 1em;
+    color: $white;
+    background-color: $dark-purple;
+    border-radius: 0.4em 0.4em 0.4em 0.4em;
+    border: none;
+}
+
+//MOBILE
+@mixin card-mob() {  //
+    @include card();
+    margin: 2em -2em 0em -2em;
+}
+    @mixin card-modular-mob() {  //
+        @include card-mob();
         width: 80vw;
-        background-color: $white;
-        border-radius: 2em 2em 2em 2em; 
-        color: $black; 
+        margin: 2em auto 0em auto;
         box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
-        h2 {
-            color: $pine;
-            text-align: center;
-            left: 2em;
-        }
         time {
             font-family: $monaco;
             font-size: 0.7em;
             color: gray;
             font-style: italic;
         }
-        .card-dark-img {
+        .card-modular-img {
             margin: 0 auto;
             img {
                 margin: 0 auto;
@@ -59,47 +64,39 @@ $monaco: 'Monaco', monospace;
                 border-radius: 1em 1em 1em 1em;
             }
         }
+    }
+
+@mixin button-mob() { //
+    @include button();
+    position: relative;
 }
 
-@mixin card-border() {
-    border-radius: 2em 2em 2em 2em;
-}
-
-@mixin mob-button() {
-        position: relative;
-        background-color: $purple;
-        color: $white;
-        border-radius: 0.4em 0.4em 0.4em 0.4em;
-        font-size: 1em;
-        padding: 0.5em;
-        border: none; // removed default "button" border
-}
-
-@mixin clear-card-mob() {
+@mixin clear-card-mob() { //
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 2em;
 }
 
 //DESKTOP
-@mixin card-desk() {
-        @include card(); // includes the card @mixin
-        background-color: rgb(242, 253, 241, 0.1);
-        margin: 2em 0em 0em 2em;
-        width: 100vw;
-        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
-        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
-        overflow: hidden; // make cards only hold so much text...
-        position: relative; // then have a hacky "fade-out" effect
-            &:hover {  // increases opacity when hover over section
-                background-color: $white;
-                box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
-                width: 100vw;
-                }
-            h2 {
-                color: $pine;
+@mixin card-desk() {  //
+    @include card();
+    margin: 2em 0em 0em 2em;
+    width: 100vw;
+    transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+    overflow: hidden; // make cards only hold so much text...
+    position: relative; // then have a hacky "fade-out" effect
+        &:hover {  // increases opacity when hover over section
+            background-color: $white;
+            box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
+            width: 100vw;
             }
+}
+    @mixin card-desk-expand() { //
+        @include card-desk();
+        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
     }
+
+
     
 @mixin clear-card-desk() {
         @include card-desk-no-hover();
@@ -110,9 +107,8 @@ $monaco: 'Monaco', monospace;
         justify-content: space-evenly;
 }
 
-@mixin card-desk-no-hover() {
-    @include card(); // includes the card @mixin
-        background-color: rgb(242, 253, 241, 0.1);
+@mixin card-desk-no-hover() { //
+    @include card-mob(); // includes the card @mixin
         margin: 2em 0em 0em 2em;
         width: 100vw;
         max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
@@ -122,8 +118,8 @@ $monaco: 'Monaco', monospace;
         h2 {
             color: $pine;
         }
-}   
-@mixin card-dark-desk() { 
+}  
+@mixin card-modular-desk() { 
     padding: 2em;
     margin: 0 auto;
     margin-top: 2em;
@@ -144,7 +140,7 @@ $monaco: 'Monaco', monospace;
         color: gray;
         font-style: italic;
     }
-    .card-dark-img {
+    .card-modular-img {
         margin: 0 auto;
         img {
             margin: 0 auto;
@@ -153,13 +149,9 @@ $monaco: 'Monaco', monospace;
         }
     }
 }
-@mixin desk-button() {
-    background-color: rgb(53, 0, 213);
-    color: $white;
-    border-radius: 0.4em 0.4em 0.4em 0.4em;
-    font-size: 1em;
-    padding: 0.5em;
-    border: none;
+
+@mixin desk-button() { //
+    @include button();
     transition: 0.1s;
     &:hover { // & selects pseudo-selector in a mixin!
         cursor: pointer;
@@ -326,7 +318,7 @@ main {
 }
 
 .card {
-    @include card();
+    @include card-mob();
     background-color: rgb(242, 253, 241, 0.1);
 }
 
@@ -339,15 +331,12 @@ main {
     width: 80%;
     @include card-border();
 }
-#about-card {
-    @include card();
-}
 #about-buttons { 
         @include clear-card-mob();
             .button-cont {
                 display: inline;
                     .button {
-                        @include mob-button();
+                        @include button-mob();
                         display: inline;
                     }
         }
@@ -356,19 +345,17 @@ main {
 
 
 ////////// CODE PAGE MOBILE
-.card-dark {
-    @include card-dark-mob();
+.card-modular {
+    @include card-modular-mob();
 }
 
 /////// CONTACT PAGE MOBILE
-#logos-card { 
+#logos-card { //
     @include clear-card-mob();
-    display: flex;
-    justify-content: space-around;
     margin: 0em;
-    right: 2em;
+    left: -2em;
                 img {
-                    @include mob-button();
+                    @include button-mob();
                     display: inline;
                     position: absolute;
                     z-index: 1;
@@ -391,13 +378,12 @@ main {
 .download-link {
     @include clear-card-mob();
     position: absolute;
-    display: block;
-    top: 10em;
+    top: 10em; //??????????????
     right: 40vw;
     text-align: center;
     width: 10em;
     margin: 0 auto;
-    // @include mob-button();
+    // @include button-mob();
     a, a:visited {
         text-decoration: none;
         color: $white;
@@ -430,7 +416,7 @@ main {
             bottom: 0em;
         }
         #contact-button {
-            @include mob-button();
+            @include button-mob();
             position: fixed;
             bottom: 0.5em;
             right: 0.5em;
@@ -484,7 +470,7 @@ main {
         background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
     }
 
-    //////// HEADER MODULE
+    //////// HEADER MODULE TABLET
     header {
         position: fixed; // keeps header/navbar at top when scrolling
         z-index: 3; // layers elements depending on index value
@@ -519,7 +505,7 @@ main {
         }
     }
 
-    ////////////MOBILE NAV MENU
+    ////////////TABLET NAV MENU
     #nav-mob {
         z-index: 100;
         #nav-icon-mob {
@@ -583,7 +569,7 @@ main {
 
 
 
-    ///////MAIN SECTION    
+    ///////MAIN SECTION  TABLET
     main {
         margin: 2em;
         margin-top: 7em;
@@ -603,21 +589,18 @@ main {
     }
 
     .card {
-        @include card();
+        @include card-mob();
         background-color: rgb(242, 253, 241, 0.1);
     }
 
 
-    /////ABOUT ME PAGE MOBILE
+    /////ABOUT ME PAGE TABLET
     #about-img {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 80%;
         @include card-border();
-    }
-    #about-card {
-        @include card();
     }
 
 
@@ -631,7 +614,7 @@ main {
     }
 
 
-    //////FOOTER/CONTACT BAR
+    //////FOOTER/CONTACT BAR TABLET
     footer {
         position: fixed;
         bottom: 0em;
@@ -646,7 +629,7 @@ main {
             bottom: 0em;
         }
         #contact-button {
-            @include mob-button();
+            @include button-mob();
             position: fixed;
             bottom: 0.5em;
             right: 0.5em;
@@ -846,18 +829,8 @@ main {
         font-size: 1.2em;
         color: $dark-purple;
     }
-    .card {
-        @include card-desk(); // includes the card @mixin
-        background-color: rgb(242, 253, 241, 0.1);
-        margin: 2em 0em 0em 2em;
-        width: 100vw;
-        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
-        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
-        overflow: hidden; // make cards only hold so much text...
-        position: relative; // then have a hacky "fade-out" effect
-        h2 {
-            color: $pine;
-        }
+    .card-expand { //
+        @include card-desk-expand();
     }
 
 
@@ -1074,9 +1047,9 @@ main {
         max-width: 50vw;
     }
 }
-#about-card {
+.card {
     @include card-desk();
-    max-height: min-content;
+    max-height: none;
 }
 
 #about-buttons { 
@@ -1094,8 +1067,8 @@ main {
 }
 
 ///////////////CODE PAGE DESKTOP////////////
-.card-dark {
-    @include card-dark-desk(); // includes the card @mixin
+.card-modular {
+    @include card-modular-desk(); // includes the card @mixin
     background-color: rgb(242, 253, 241, 0.1);
     margin: 2em 0em 0em 2em;
     width: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
@@ -1115,25 +1088,13 @@ main {
 
 ////////////CONTACT PAGE DESKTOP///////////
 
-.clear-card {
-    @include clear-card-desk();
-    img {
-        width: 10vw;
-        min-height: 10vw;
-        display: inline;
-    }
-    
-}
 
-#logos-card { 
-    @include clear-card-mob();
-    display: flex;
-    justify-content: space-around;
+#logos-card { //
+    @include clear-card-desk(); 
     margin: 0em;
-    right: 2em;
     max-height: 10em;
                 img {
-                    @include mob-button();
+                    @include button-mob();
                     // display: inline;
                     align-self: flex-start;
                     max-height: 3em;

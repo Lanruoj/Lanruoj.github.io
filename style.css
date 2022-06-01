@@ -128,9 +128,9 @@ main {
 .card {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
-  margin: 0em -2em;
-  margin-top: 2em;
   background-color: rgba(242, 253, 241, 0.1);
+  color: rgba(49, 49, 49, 0.867);
+  margin: 2em -2em 0em -2em;
   background-color: rgba(242, 253, 241, 0.1);
 }
 .card h2 {
@@ -147,63 +147,50 @@ main {
   border-radius: 2em 2em 2em 2em;
 }
 
-#about-card {
-  border-radius: 2em 2em 2em 2em;
-  padding: 2em;
-  margin: 0em -2em;
-  margin-top: 2em;
-  background-color: rgba(242, 253, 241, 0.1);
-}
-#about-card h2 {
-  color: rgb(67, 96, 64);
-  text-align: left;
-  left: 2em;
-}
-
 #about-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2em;
 }
 #about-buttons .button-cont {
   display: inline;
 }
 #about-buttons .button-cont .button {
-  position: relative;
-  background-color: rgb(64, 0, 255);
-  color: white;
-  border-radius: 0.4em 0.4em 0.4em 0.4em;
-  font-size: 1em;
   padding: 0.5em;
+  font-size: 1em;
+  color: white;
+  background-color: rgb(53, 0, 213);
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
+  position: relative;
   display: inline;
 }
 
-.card-dark {
-  padding: 2em;
-  margin: 0 auto;
-  margin-top: 2em;
-  width: 80vw;
-  background-color: white;
+.card-modular {
   border-radius: 2em 2em 2em 2em;
+  padding: 2em;
+  background-color: rgba(242, 253, 241, 0.1);
   color: rgba(49, 49, 49, 0.867);
+  margin: 2em -2em 0em -2em;
+  width: 80vw;
+  margin: 2em auto 0em auto;
   box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
 }
-.card-dark h2 {
+.card-modular h2 {
   color: rgb(67, 96, 64);
-  text-align: center;
+  text-align: left;
   left: 2em;
 }
-.card-dark time {
+.card-modular time {
   font-family: "Monaco", monospace;
   font-size: 0.7em;
   color: gray;
   font-style: italic;
 }
-.card-dark .card-dark-img {
+.card-modular .card-modular-img {
   margin: 0 auto;
 }
-.card-dark .card-dark-img img {
+.card-modular .card-modular-img img {
   margin: 0 auto;
   width: 100%;
   border-radius: 1em 1em 1em 1em;
@@ -211,21 +198,19 @@ main {
 
 #logos-card {
   display: flex;
-  justify-content: space-between;
-  padding: 2em;
-  display: flex;
   justify-content: space-around;
+  padding: 2em;
   margin: 0em;
-  right: 2em;
+  left: -2em;
 }
 #logos-card img {
-  position: relative;
-  background-color: rgb(64, 0, 255);
-  color: white;
-  border-radius: 0.4em 0.4em 0.4em 0.4em;
-  font-size: 1em;
   padding: 0.5em;
+  font-size: 1em;
+  color: white;
+  background-color: rgb(53, 0, 213);
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
+  position: relative;
   display: inline;
   position: absolute;
   z-index: 1;
@@ -246,10 +231,9 @@ main {
 
 .download-link {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2em;
   position: absolute;
-  display: block;
   top: 10em;
   right: 40vw;
   text-align: center;
@@ -284,13 +268,13 @@ footer form {
   bottom: 0em;
 }
 footer #contact-button {
-  position: relative;
-  background-color: rgb(64, 0, 255);
-  color: white;
-  border-radius: 0.4em 0.4em 0.4em 0.4em;
-  font-size: 1em;
   padding: 0.5em;
+  font-size: 1em;
+  color: white;
+  background-color: rgb(53, 0, 213);
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
+  position: relative;
   position: fixed;
   bottom: 0.5em;
   right: 0.5em;
@@ -446,9 +430,9 @@ footer #contact-button {
   .card {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2em;
-    margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
+    color: rgba(49, 49, 49, 0.867);
+    margin: 2em -2em 0em -2em;
     background-color: rgba(242, 253, 241, 0.1);
   }
   .card h2 {
@@ -463,19 +447,6 @@ footer #contact-button {
     margin-right: auto;
     width: 80%;
     border-radius: 2em 2em 2em 2em;
-  }
-
-  #about-card {
-    border-radius: 2em 2em 2em 2em;
-    padding: 2em;
-    margin: 0em -2em;
-    margin-top: 2em;
-    background-color: rgba(242, 253, 241, 0.1);
-  }
-  #about-card h2 {
-    color: rgb(67, 96, 64);
-    text-align: left;
-    left: 2em;
   }
 
   p {
@@ -501,13 +472,13 @@ footer #contact-button {
     bottom: 0em;
   }
   footer #contact-button {
-    position: relative;
-    background-color: rgb(64, 0, 255);
-    color: white;
-    border-radius: 0.4em 0.4em 0.4em 0.4em;
-    font-size: 1em;
     padding: 0.5em;
+    font-size: 1em;
+    color: white;
+    background-color: rgb(53, 0, 213);
+    border-radius: 0.4em 0.4em 0.4em 0.4em;
     border: none;
+    position: relative;
     position: fixed;
     bottom: 0.5em;
     right: 0.5em;
@@ -675,42 +646,27 @@ footer #contact-button {
     color: rgb(53, 0, 213);
   }
 
-  .card {
+  .card-expand {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2em;
-    margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    background-color: rgba(242, 253, 241, 0.1);
+    color: rgba(49, 49, 49, 0.867);
     margin: 2em 0em 0em 2em;
     width: 100vw;
-    max-height: 40vw;
     transition: 0.5s;
     overflow: hidden;
     position: relative;
-    background-color: rgba(242, 253, 241, 0.1);
-    margin: 2em 0em 0em 2em;
-    width: 100vw;
     max-height: 40vw;
-    transition: 0.5s;
-    overflow: hidden;
-    position: relative;
   }
-  .card h2 {
+  .card-expand h2 {
     color: rgb(67, 96, 64);
     text-align: left;
     left: 2em;
   }
-  .card:hover {
+  .card-expand:hover {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
     width: 100vw;
-  }
-  .card h2 {
-    color: rgb(67, 96, 64);
-  }
-  .card h2 {
-    color: rgb(67, 96, 64);
   }
 
   #sec-1 {
@@ -931,13 +887,10 @@ footer #contact-button {
   #about-img-cont {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2em;
-    margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    background-color: rgba(242, 253, 241, 0.1);
+    color: rgba(49, 49, 49, 0.867);
     margin: 2em 0em 0em 2em;
     width: 100vw;
-    max-height: 40vw;
     transition: 0.5s;
     overflow: hidden;
     position: relative;
@@ -957,50 +910,40 @@ footer #contact-button {
     box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
     width: 100vw;
   }
-  #about-img-cont h2 {
-    color: rgb(67, 96, 64);
-  }
   #about-img-cont #about-img {
     border-radius: 2em 2em 2em 2em;
     max-width: 50vw;
   }
 
-  #about-card {
+  .card {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2em;
-    margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    background-color: rgba(242, 253, 241, 0.1);
+    color: rgba(49, 49, 49, 0.867);
     margin: 2em 0em 0em 2em;
     width: 100vw;
-    max-height: 40vw;
     transition: 0.5s;
     overflow: hidden;
     position: relative;
-    max-height: min-content;
+    max-height: none;
   }
-  #about-card h2 {
+  .card h2 {
     color: rgb(67, 96, 64);
     text-align: left;
     left: 2em;
   }
-  #about-card:hover {
+  .card:hover {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
     width: 100vw;
-  }
-  #about-card h2 {
-    color: rgb(67, 96, 64);
   }
 
   #about-buttons {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
-    margin: 0em -2em;
-    margin-top: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    background-color: rgba(242, 253, 241, 0.1);
+    color: rgba(49, 49, 49, 0.867);
+    margin: 2em -2em 0em -2em;
     margin: 2em 0em 0em 2em;
     width: 100vw;
     max-height: 40vw;
@@ -1022,11 +965,11 @@ footer #contact-button {
     color: rgb(67, 96, 64);
   }
   #about-buttons .button-cont .button {
-    background-color: rgb(53, 0, 213);
-    color: white;
-    border-radius: 0.4em 0.4em 0.4em 0.4em;
-    font-size: 1em;
     padding: 0.5em;
+    font-size: 1em;
+    color: white;
+    background-color: rgb(53, 0, 213);
+    border-radius: 0.4em 0.4em 0.4em 0.4em;
     border: none;
     transition: 0.1s;
   }
@@ -1035,7 +978,7 @@ footer #contact-button {
     background-color: rgb(64, 0, 255);
   }
 
-  .card-dark {
+  .card-modular {
     padding: 2em;
     margin: 0 auto;
     margin-top: 2em;
@@ -1053,26 +996,26 @@ footer #contact-button {
     position: relative;
     box-shadow: none;
   }
-  .card-dark h2 {
+  .card-modular h2 {
     color: rgb(67, 96, 64);
     text-align: center;
     left: 2em;
   }
-  .card-dark time {
+  .card-modular time {
     font-family: "Monaco", monospace;
     font-size: 0.7em;
     color: gray;
     font-style: italic;
   }
-  .card-dark .card-dark-img {
+  .card-modular .card-modular-img {
     margin: 0 auto;
   }
-  .card-dark .card-dark-img img {
+  .card-modular .card-modular-img img {
     margin: 0 auto;
     width: 100%;
     border-radius: 1em 1em 1em 1em;
   }
-  .card-dark:hover {
+  .card-modular:hover {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
   }
@@ -1081,13 +1024,12 @@ footer #contact-button {
     color: rgb(67, 96, 64);
   }
 }
-.clear-card {
+#logos-card {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
-  margin: 0em -2em;
-  margin-top: 2em;
   background-color: rgba(242, 253, 241, 0.1);
-  background-color: rgba(242, 253, 241, 0.1);
+  color: rgba(49, 49, 49, 0.867);
+  margin: 2em -2em 0em -2em;
   margin: 2em 0em 0em 2em;
   width: 100vw;
   max-height: 40vw;
@@ -1099,39 +1041,25 @@ footer #contact-button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 0em;
+  max-height: 10em;
 }
-.clear-card h2 {
+#logos-card h2 {
   color: rgb(67, 96, 64);
   text-align: left;
   left: 2em;
 }
-.clear-card h2 {
+#logos-card h2 {
   color: rgb(67, 96, 64);
 }
-.clear-card img {
-  width: 10vw;
-  min-height: 10vw;
-  display: inline;
-}
-
-#logos-card {
-  display: flex;
-  justify-content: space-between;
-  padding: 2em;
-  display: flex;
-  justify-content: space-around;
-  margin: 0em;
-  right: 2em;
-  max-height: 10em;
-}
 #logos-card img {
-  position: relative;
-  background-color: rgb(64, 0, 255);
-  color: white;
-  border-radius: 0.4em 0.4em 0.4em 0.4em;
-  font-size: 1em;
   padding: 0.5em;
+  font-size: 1em;
+  color: white;
+  background-color: rgb(53, 0, 213);
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
+  position: relative;
   align-self: flex-start;
   max-height: 3em;
 }
@@ -1151,11 +1079,11 @@ footer #contact-button {
   text-align: center;
   width: 10em;
   margin: 0 auto;
-  background-color: rgb(53, 0, 213);
-  color: white;
-  border-radius: 0.4em 0.4em 0.4em 0.4em;
-  font-size: 1em;
   padding: 0.5em;
+  font-size: 1em;
+  color: white;
+  background-color: rgb(53, 0, 213);
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
   transition: 0.1s;
 }
@@ -1195,11 +1123,11 @@ footer form {
   bottom: 0em;
 }
 footer #contact-button {
-  background-color: rgb(53, 0, 213);
-  color: white;
-  border-radius: 0.4em 0.4em 0.4em 0.4em;
-  font-size: 1em;
   padding: 0.5em;
+  font-size: 1em;
+  color: white;
+  background-color: rgb(53, 0, 213);
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
   transition: 0.1s;
   position: fixed;

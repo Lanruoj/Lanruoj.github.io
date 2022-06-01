@@ -1,0 +1,20 @@
+// @mixin clear-card-desk() {
+//     @include card-desk-no-hover();
+//     background: none;
+//     display: flex; 
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     justify-content: space-evenly;
+// }
+
+@mixin card-desk-no-hover() {
+    @include card-mob(); // includes the card @mixin
+        margin: 2em 0em 0em 2em;
+        width: 100vw;
+        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
+        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+        overflow: hidden; // make cards only hold so much text...
+        position: relative; // then have a hacky "fade-out" effect
+
+}   
+
