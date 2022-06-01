@@ -368,6 +368,15 @@ main {
     
 }
 
+//////////RESUME PAGE MOBILE////////////////////
+#resume-cont { 
+    margin-top: 5em;
+    color: $pine;
+        #resume {
+            height: 100vh;
+            width: 80vw;
+        }
+}
 
 
 //////////
@@ -853,7 +862,7 @@ main {
             z-index: 50;
             display: inline-block;
             opacity: 1;
-            color: $purple;
+            color: $dark-purple;
             font-size: 1.5em;
             position: relative;   //// allowed icons
             left: 28.5em;         //// to move when
@@ -877,12 +886,11 @@ main {
             font-size: 1em;
             top: 5.5em;   //// moves text with icon
             left: 40vw; //// moves text with icon
-            opacity: 0.2;
             transition: 0.1s;
         }
         #expand-icon-1:hover {
             transform: scale(1.02); // grows icon
-            opacity: 0.5;
+            color: $purple;
         }
         ////////
         ////////SECTION 2
@@ -890,7 +898,7 @@ main {
             z-index: 50;
             display: inline-block;
             opacity: 1;
-            color: $purple;
+            color: $dark-purple;
             font-size: 1.5em;
             position: relative;   //// allowed icons
             left: 28.5em;         //// to move when
@@ -914,19 +922,18 @@ main {
             font-size: 1em;
             top: 5.5em;   //// moves text with icon
             left: 40vw; //// moves text with icon
-            opacity: 0.2;
             transition: 0.1s;
         }
         #expand-icon-2:hover {
             transform: scale(1.02); // grows icon
-            opacity: 0.5;
+            color: $purple;
         }
         /////////SECTION 3
         .expand-3 {
             z-index: 50;
             display: inline-block;
             opacity: 1;
-            color: $purple;
+            color: $dark-purple;
             font-size: 1.5em;
             position: relative;   //// allowed icons
             left: 28.5em;         //// to move when
@@ -950,19 +957,18 @@ main {
             font-size: 1em;
             top: 5.5em;   //// moves text with icon
             left: 40vw; //// moves text with icon
-            opacity: 0.2;
             transition: 0.1s;
         }
         #expand-icon-3:hover {
             transform: scale(1.02); // grows icon
-            opacity: 0.5;
+            color: $purple;
         }
         ////////SECTION 4
         .expand-4 {
             z-index: 50;
             display: inline-block;
             opacity: 1;
-            color: $purple;
+            color: $dark-purple;
             font-size: 1.5em;
             position: relative;   //// allowed icons
             left: 28.5em;         //// to move when
@@ -986,19 +992,18 @@ main {
             font-size: 1em;
             top: 5.5em;   //// moves text with icon
             left: 40vw; //// moves text with icon
-            opacity: 0.2;
             transition: 0.1s;
         }
         #expand-icon-4:hover {
             transform: scale(1.02); // grows icon
-            opacity: 0.5;
+            color: $purple;
         }
         /////////SECTION 5
         .expand-5 {
             z-index: 50;
             display: inline-block;
             opacity: 1;
-            color: $purple;
+            color: $dark-purple;
             font-size: 1.5em;
             position: relative;   //// allowed icons
             left: 28.5em;         //// to move when
@@ -1022,12 +1027,11 @@ main {
             font-size: 1em;
             top: 5.5em;   //// moves text with icon
             left: 40vw; //// moves text with icon
-            opacity: 0.2;
             transition: 0.1s;
         }
         #expand-icon-5:hover {
             transform: scale(1.02); // grows icon
-            opacity: 0.5;
+            color: $purple;
         }
 
     //////////////

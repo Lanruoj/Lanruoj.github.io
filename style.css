@@ -214,6 +214,15 @@ main {
   min-height: 15vw;
 }
 
+#resume-cont {
+  margin-top: 5em;
+  color: rgb(67, 96, 64);
+}
+#resume-cont #resume {
+  height: 100vh;
+  width: 80vw;
+}
+
 p {
   font-size: 1.2em;
 }
@@ -693,7 +702,7 @@ footer #contact-button {
     z-index: 50;
     display: inline-block;
     opacity: 1;
-    color: rgb(64, 0, 255);
+    color: rgb(53, 0, 213);
     font-size: 1.5em;
     position: relative;
     left: 28.5em;
@@ -719,20 +728,19 @@ footer #contact-button {
     font-size: 1em;
     top: 5.5em;
     left: 40vw;
-    opacity: 0.2;
     transition: 0.1s;
   }
 
   #expand-icon-1:hover {
     transform: scale(1.02);
-    opacity: 0.5;
+    color: rgb(64, 0, 255);
   }
 
   .expand-2 {
     z-index: 50;
     display: inline-block;
     opacity: 1;
-    color: rgb(64, 0, 255);
+    color: rgb(53, 0, 213);
     font-size: 1.5em;
     position: relative;
     left: 28.5em;
@@ -758,20 +766,19 @@ footer #contact-button {
     font-size: 1em;
     top: 5.5em;
     left: 40vw;
-    opacity: 0.2;
     transition: 0.1s;
   }
 
   #expand-icon-2:hover {
     transform: scale(1.02);
-    opacity: 0.5;
+    color: rgb(64, 0, 255);
   }
 
   .expand-3 {
     z-index: 50;
     display: inline-block;
     opacity: 1;
-    color: rgb(64, 0, 255);
+    color: rgb(53, 0, 213);
     font-size: 1.5em;
     position: relative;
     left: 28.5em;
@@ -797,20 +804,19 @@ footer #contact-button {
     font-size: 1em;
     top: 5.5em;
     left: 40vw;
-    opacity: 0.2;
     transition: 0.1s;
   }
 
   #expand-icon-3:hover {
     transform: scale(1.02);
-    opacity: 0.5;
+    color: rgb(64, 0, 255);
   }
 
   .expand-4 {
     z-index: 50;
     display: inline-block;
     opacity: 1;
-    color: rgb(64, 0, 255);
+    color: rgb(53, 0, 213);
     font-size: 1.5em;
     position: relative;
     left: 28.5em;
@@ -836,20 +842,19 @@ footer #contact-button {
     font-size: 1em;
     top: 5.5em;
     left: 40vw;
-    opacity: 0.2;
     transition: 0.1s;
   }
 
   #expand-icon-4:hover {
     transform: scale(1.02);
-    opacity: 0.5;
+    color: rgb(64, 0, 255);
   }
 
   .expand-5 {
     z-index: 50;
     display: inline-block;
     opacity: 1;
-    color: rgb(64, 0, 255);
+    color: rgb(53, 0, 213);
     font-size: 1.5em;
     position: relative;
     left: 28.5em;
@@ -875,13 +880,12 @@ footer #contact-button {
     font-size: 1em;
     top: 5.5em;
     left: 40vw;
-    opacity: 0.2;
     transition: 0.1s;
   }
 
   #expand-icon-5:hover {
     transform: scale(1.02);
-    opacity: 0.5;
+    color: rgb(64, 0, 255);
   }
 
   #about-img-cont {
