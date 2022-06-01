@@ -27,12 +27,12 @@
     <!-- FONT-AWESOME ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>About</title>
+    <title>Code</title>
 </head>
 <body>
     <header>
         <h1>portfolio</h1>
-        <!-- <div id="head-square"></div> -->
+        <div id="head-square"></div>
         <div id="head-circle"></div>
     </header>
     <!-- MOBILE MENU -->
@@ -69,33 +69,54 @@
             </figure>
         </ul>
     </nav>
-
-    <main id="main-about">
-        <!-- PAGE SUBHEADING -->
-        <h2 class="mob-page-sub">about</h2>
-        <h2 class="desk-page-sub"><br>a<br>b<br>o<br>u<br>t<br>.<br>a<br>b<br>o<br>u<br>t<br>.<br>a<br>b<br>o<br>u<br>t<br>.<br>a<br>b<br>o<br>u<br>t<br>.<br>a<br>b<br>o<br>u<br>t<br>.<br>a<br>b<br>o<br>u<br>t<br>.</h2>
-
-        <figure id="about-img-cont">
-            <img id="about-img" class="img" src="./img/portrait.jpeg" alt="An image of me">
-        </figure>
-        <section class="card" id="about-card">
-                <h2>About me</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex tellus. Nulla et orci interdum, congue nisl in, ultricies massa. Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim condimentum tempus. Nunc erat velit, molestie vehicula ligula id, pellentesque ornare neque. Quisque placerat enim nec metus efficitur, id lobortis enim euismod.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut velit id diam finibus dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac, tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat sem. Donec sit amet sem et odio eleifend sollicitudin. Quisque convallis egestas nulla vel vehicula. Donec sodales diam turpis, facilisis congue est consequat nec. Quisque mauris dui, condimentum eleifend finibus eu, pretium at nisl. Nulla vel fringilla elit. Aenean in eros hendrerit orci vulputate viverra eu eget sapien. Curabitur placerat aliquet nisi sed ullamcorper.
+    <main>
+        <h2 class="mob-page-sub">code</h2>
+        <h2 class="desk-page-sub"><br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.</h2>
+        <!-- FOR CLICK EXPAND -->
+        <label for="expand-1"><span class="expand-1" id="expand-icon-1">expand/collapse</span></label>
+        <input type="checkbox" id="expand-1"/>
+        
+        <section class="card-dark" id="code-card-1">
+            <article>
+                <h2>Portfolio</h2>
+                <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                <figure class="card-dark-img">
+                    <a href="https://github.com/Lanruoj/Lanruoj.github.io" target="_blank"><img src="./img/portfolio.png" alt="Screenshot of Portfolio about page"></a>
+                    <figcaption>My portfolio site for Coder Academy's T1A2 assignment</figcaption>
+                </figure>
+                
             </p>
+            </article>
         </section>
-
-        <section id="about-buttons">
-            <form id="personal-button-cont" action="./personal.html">
-                <input type="submit" value="More about me" id="personal-button"/>
-            </form>
-            <form id="projects-button-cont" action="./projects.html">
-                <input type="submit" value="See my code" id="projects-button"/>
-            </form>
+        <section class="card-dark" id="code-card-2">
+            <article>
+                <h2>Responsive design challenge</h2>
+                <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                <figure class="card-dark-img">
+                    <a href="https://github.com/Lanruoj/CA-W3-Ibis-Responsive-Challenge" target="_blank"><img src="./img/ibis.png" alt="Ibis responsive screenshot"></a>
+                    <figcaption>Adding a hamburger nav-menu + practising responsive design using the mobile-first principle.</figcaption>
+                </figure>
+            </p>
+            </article>
+        </section>
+        <section class="card-dark" id="code-card-3">
+            <article>
+                <h2>Project Three</h2>
+                <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                
+            </p>
+            </article>
+        </section>
+        <section class="card-dark" id="code-card-3">
+            <article>
+                <h2>Project Four</h2>
+                <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                
+            </p>
+            </article>
         </section>
 
     </main>
-
     <footer>
         <form action="./contact.html">
             <input type="submit" value="Contact me" id="contact-button"/>

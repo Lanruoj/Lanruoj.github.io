@@ -3,7 +3,7 @@ $white: white;
 $mint: rgb(217, 235, 201);
 $brown: rgb(137, 126, 109);
 $pine: rgb(67, 96, 64);
-$black: rgb(22, 22, 22);
+$black: rgba(49, 49, 49, 0.867);
 $purple: rgb(64, 0, 255);
 $dark-purple: rgb(53, 0, 213);
 $lavendar: rgb(145, 152, 229);
@@ -31,6 +31,32 @@ $monaco: 'Monaco', monospace;
             left: 2em;
         }
 }
+@mixin card-dark-mob { 
+        padding: 2em;
+        margin: 0 auto;
+        margin-top: 2em;
+        width: 80vw;
+        background-color: $white;
+        border-radius: 2em 2em 2em 2em; 
+        color: $black; 
+        box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
+        h2 {
+            color: $pine;
+            text-align: center;
+            left: 2em;
+        }
+        .card-dark-img {
+            margin: 0 auto;
+            img {
+                margin: 0 auto;
+                width: 100%;
+                border-radius: 1em 1em 1em 1em;
+            }
+        }
+}
+
+
+
 @mixin card-border() {
     border-radius: 2em 2em 2em 2em;
 }
@@ -175,7 +201,7 @@ html, body {
             top: 0.5em;
             left: 0.7em;
             font-size: 2.5em;
-            color: black;
+            color: $black;
         }
         #nav-links-mob {
             position: fixed;
@@ -283,6 +309,17 @@ html, body {
         }
     }
 
+
+
+////////// CODE PAGE MOBILE
+.card-dark {
+    @include card-dark-mob();
+}
+
+
+
+
+//////////
 
     p {
         font-size: 1.2em; // make a bit easier to read on mobile
@@ -404,7 +441,7 @@ html, body {
             top: 0.5em;
             left: 0.7em;
             font-size: 2.5em;
-            color: black;
+            color: $black;
         }
         #nav-links-mob {
             position: fixed;
@@ -434,7 +471,7 @@ html, body {
                     transition: 0.5s;
                     a, a:visited {
                         text-decoration: none;
-                        color: black;
+                        color: $black;
                         font-style: none;
                     }
             }
@@ -622,9 +659,6 @@ html, body {
             top: 0em;
             right: 1.1em;
         }
-        h1:hover {
-        
-        }
         #head-circle {
             position: fixed;
             top: -11em;
@@ -667,7 +701,7 @@ html, body {
     font-family: $monaco;
     a, a:visited {
         text-decoration: none;
-        color: black;
+        color: $black;
         transition: 0.1s;
     }
     a:hover {

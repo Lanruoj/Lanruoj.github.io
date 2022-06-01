@@ -42,37 +42,41 @@
         <label for="show"><span id="nav-icon-desk">Me<br>nu</span></label>
         <span id="nav-links-mob">
             <ul id="nav-list">
-                <li id="home-li"><a href="#">Home</a></li>
-                <li id="about-li"><a href="#">About</a></li>
-                <li id="contact-li"><a href="#">Contact</a></li>
-                <li id="links-li"><a href="#">Links</a></li>
+                <br/>
+                <li id="home-li"><a href="">home</a></li>
+            <li id="about-li"><a href="./about.html">about</a></li>
+            <li id="personal-li"><a href="./personal.html">personal</a></li>
+            <li id="code-li"><a href="./code.html">code</a></li>
+            <li id="journal-li"><a href="./journal.html">journal</a></li>
+            <li id="contact-li"><a href="./contact.html">contact</a></li>
             </ul>
         </span>
     </nav>
     <!-- DESKTOP MENU -->
     <input type="checkbox" id="menu-button">
-    <label for="menu-button" id="menu-text">Me<br>nu<br><span class="fa-solid fa-arrows-alt-h" id="arrow"></span></label>
+    <label for="menu-button" id="menu-text">menu<br><span class="fa-solid fa-arrows-alt-h" id="arrow"></span></label>
     <nav id="nav-cont">
         <ul id="nav-list">
+            <br/>
+            <li id="home-li"><a href="">home</a></li>
+            <li id="about-li"><a href="./about.html">about</a></li>
+            <li id="personal-li"><a href="./personal.html">personal</a></li>
+            <li id="code-li"><a href="./code.html">code</a></li>
+            <li id="journal-li"><a href="./journal.html">journal</a></li>
+            <li id="contact-li"><a href="./contact.html">contact</a></li>
             <figure>
                 <img id="portrait" src="./img/archie.png" alt="Portrait">
             </figure>
-            <br/>
-            <li id="home-li"><a href="#">Home</a></li>
-            <li id="about-li"><a href="#">About</a></li>
-            <li id="contact-li"><a href="#">Contact</a></li>
-            <li id="links-li"><a href="#">Links</a></li>
         </ul>
     </nav>
-
     <main>
         <h2 class="mob-page-sub">journal</h2>
-        <h2 class="desk-page-sub"><br>j<br>o<br>u<br>r<br>n<br>a<br>l</h2>
-
+        <h2 class="desk-page-sub"><br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.<br>j<br>o<br>u<br>r<br>n<br>a<br>l<br>.</h2>
         <!-- FOR CLICK EXPAND -->
-        <label for="expand-1"><p class="expand-1" id="expand-text-1">e<br>x<br>p<br>a<br>n<br>d</p><span class="expand-1 fa-solid fa-expand" id="expand-icon-1"></span></label>
+        <label for="expand-1"><span class="expand-1" id="expand-icon-1">expand/collapse</span></label>
         <input type="checkbox" id="expand-1"/>
-        <section id="sec-1">
+        
+        <section class="card" id="sec-1">
             <article>
                 <h2>Blog Post One</h2>
                 <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
@@ -89,6 +93,7 @@
             </p>
             </article>
         </section>
+
     </main>
     <footer>
         <form action="./contact.html">

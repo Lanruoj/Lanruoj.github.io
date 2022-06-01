@@ -58,7 +58,7 @@ header #head-circle {
   top: 0.5em;
   left: 0.7em;
   font-size: 2.5em;
-  color: black;
+  color: rgba(49, 49, 49, 0.867);
 }
 #nav-mob #nav-links-mob {
   position: fixed;
@@ -84,7 +84,7 @@ header #head-circle {
 }
 #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
   text-decoration: none;
-  color: rgb(22, 22, 22);
+  color: rgba(49, 49, 49, 0.867);
   font-style: none;
 }
 #nav-mob #show {
@@ -184,6 +184,30 @@ main {
   padding: 0.5em;
   border: none;
   display: inline;
+}
+
+.card-dark {
+  padding: 2em;
+  margin: 0 auto;
+  margin-top: 2em;
+  width: 80vw;
+  background-color: white;
+  border-radius: 2em 2em 2em 2em;
+  color: rgba(49, 49, 49, 0.867);
+  box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
+}
+.card-dark h2 {
+  color: rgb(67, 96, 64);
+  text-align: center;
+  left: 2em;
+}
+.card-dark .card-dark-img {
+  margin: 0 auto;
+}
+.card-dark .card-dark-img img {
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 1em 1em 1em 1em;
 }
 
 p {
@@ -301,7 +325,7 @@ footer #contact-button {
     top: 0.5em;
     left: 0.7em;
     font-size: 2.5em;
-    color: black;
+    color: rgba(49, 49, 49, 0.867);
   }
   #nav-mob #nav-links-mob {
     position: fixed;
@@ -330,7 +354,7 @@ footer #contact-button {
   }
   #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
     text-decoration: none;
-    color: black;
+    color: rgba(49, 49, 49, 0.867);
     font-style: none;
   }
   #nav-mob #show {
@@ -553,7 +577,7 @@ footer #contact-button {
   }
   #nav-list a, #nav-list a:visited {
     text-decoration: none;
-    color: black;
+    color: rgba(49, 49, 49, 0.867);
     transition: 0.1s;
   }
   #nav-list a:hover {
