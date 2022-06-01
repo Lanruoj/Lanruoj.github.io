@@ -204,14 +204,27 @@ main {
   border-radius: 1em 1em 1em 1em;
 }
 
-.clear-card {
+#logos-card {
   display: flex;
   justify-content: space-between;
   padding: 2em;
+  display: flex;
+  justify-content: space-around;
+  margin: 0em;
+  right: 2em;
 }
-.clear-card .logo {
-  width: 5vw;
-  min-height: 15vw;
+#logos-card .logo {
+  background-color: rgb(64, 0, 255);
+  color: white;
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
+  font-size: 1em;
+  padding: 0.5em;
+  border: none;
+  display: inline;
+}
+
+.contact-card {
+  text-align: center;
 }
 
 #resume-cont {
@@ -1071,6 +1084,26 @@ footer #contact-button {
 .clear-card .logo {
   width: 10vw;
   min-height: 10vw;
+  display: inline;
+}
+
+#logos-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  display: flex;
+  justify-content: space-around;
+  margin: 0em;
+  right: 2em;
+  max-height: 10em;
+}
+#logos-card .logo {
+  background-color: rgb(64, 0, 255);
+  color: white;
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
+  font-size: 1em;
+  padding: 0.5em;
+  border: none;
   display: inline;
 }
 

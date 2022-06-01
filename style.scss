@@ -357,15 +357,21 @@ main {
     @include card-dark-mob();
 }
 
-////////////CONTACT PAGE MOBILE///////////
-.clear-card {
+/////// CONTACT PAGE MOBILE
+#logos-card { 
     @include clear-card-mob();
-    .logo {
-        width: 5vw;
-        min-height: 15vw;
-        // display: inline;
-    }
-    
+    display: flex;
+    justify-content: space-around;
+    margin: 0em;
+    right: 2em;
+                .logo {
+                    @include mob-button();
+                    display: inline;
+                }
+}
+
+.contact-card {
+    text-align: center;
 }
 
 //////////RESUME PAGE MOBILE////////////////////
@@ -1098,6 +1104,19 @@ main {
         display: inline;
     }
     
+}
+
+#logos-card { 
+    @include clear-card-mob();
+    display: flex;
+    justify-content: space-around;
+    margin: 0em;
+    right: 2em;
+    max-height: 10em;
+                .logo {
+                    @include mob-button();
+                    display: inline;
+                }
 }
 
 
