@@ -13,9 +13,9 @@ $clear: rgb(255,255,255,0);
 $karla: 'Karla', sans-serif;
 $rammetto: 'Rammetto One', cursive;
 $monaco: 'Monaco', monospace;
-////////MIXINS
+////////MIXINS////////
 
-////////CARDS///////
+////CARDS UNIVERSAL////
 @mixin card() { //
     @include card-border();
     padding: 2em;
@@ -26,11 +26,11 @@ $monaco: 'Monaco', monospace;
         text-align: left;
         left: 2em;
     }
-}
+    }
     @mixin card-border() { //
         border-radius: 2em 2em 2em 2em;
     }
-///////BUTTONS//////
+////BUTTON UNIVERSAL////
 @mixin button() { //
     padding: 0.5em;
     font-size: 1em;
@@ -40,11 +40,11 @@ $monaco: 'Monaco', monospace;
     border: none;
 }
 
-//MOBILE
+////CARD MOBILE////
 @mixin card-mob() {  //
     @include card();
     margin: 2em -2em 0em -2em;
-}
+    }
     @mixin card-modular-mob() {  //
         @include card-mob();
         width: 80vw;
@@ -65,19 +65,18 @@ $monaco: 'Monaco', monospace;
             }
         }
     }
-
+    @mixin clear-card-mob() { //
+        display: flex;
+        justify-content: space-around;
+        padding: 2em;
+    }
+////BUTTON MOBILE////
 @mixin button-mob() { //
     @include button();
     position: relative;
 }
 
-@mixin clear-card-mob() { //
-        display: flex;
-        justify-content: space-around;
-        padding: 2em;
-}
-
-//DESKTOP
+////CARD DESKTOP////
 @mixin card-desk() {  //
     @include card();
     margin: 2em 0em 0em 2em;
@@ -90,66 +89,57 @@ $monaco: 'Monaco', monospace;
             box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
             width: 100vw;
             }
-}
+    }
     @mixin card-desk-expand() { //
         @include card-desk();
         max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
     }
 
-
+    @mixin card-desk-no-hover() { //
+        @include card-mob(); // includes the card @mixin
+            margin: 2em 0em 0em 2em;
+            width: 100vw;
+            max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
+            transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+            overflow: hidden; // make cards only hold so much text...
+            position: relative; // then have a hacky "fade-out" effect
+            h2 {
+                color: $pine;
+            }
+    }  
     
-@mixin clear-card-desk() {
-        @include card-desk-no-hover();
-        background: none;
-        display: flex; 
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-}
+    @mixin clear-card-desk() { //
+            @include card-desk-no-hover();
+            background: none;
+            display: flex; 
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+    }
 
-@mixin card-desk-no-hover() { //
-    @include card-mob(); // includes the card @mixin
-        margin: 2em 0em 0em 2em;
-        width: 100vw;
-        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
-        transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
-        overflow: hidden; // make cards only hold so much text...
-        position: relative; // then have a hacky "fade-out" effect
-        h2 {
-            color: $pine;
-        }
-}  
-@mixin card-modular-desk() { 
-    padding: 2em;
-    margin: 0 auto;
-    margin-top: 2em;
-    width: 40vw;
-    height: min-content;
-    align-self: space-between;
-    background-color: rgb(242, 253, 241, 0.1);
-    border-radius: 2em 2em 2em 2em; 
-    color: $black; 
-    h2 {
-        color: $pine;
-        text-align: center;
-        left: 2em;
-    }
-    time {
-        font-family: $monaco;
-        font-size: 0.7em;
-        color: gray;
-        font-style: italic;
-    }
-    .card-modular-img {
-        margin: 0 auto;
-        img {
+        @mixin card-modular-desk() { //
+            @include card();
             margin: 0 auto;
-            width: 100%;
-            border-radius: 1em 1em 1em 1em;
+            margin-top: 2em;
+            width: 40vw;
+            height: min-content;
+            align-self: space-between;
+            time {
+                font-family: $monaco;
+                font-size: 0.7em;
+                color: gray;
+                font-style: italic;
+            }
+            .card-modular-img {
+                margin: 0 auto;
+                img {
+                    margin: 0 auto;
+                    width: 100%;
+                    border-radius: 1em 1em 1em 1em;
+                }
+            }
         }
-    }
-}
-
+////BUTTON DESKTOP////
 @mixin desk-button() { //
     @include button();
     transition: 0.1s;
@@ -1095,7 +1085,6 @@ main {
     max-height: 10em;
                 img {
                     @include button-mob();
-                    // display: inline;
                     align-self: flex-start;
                     max-height: 3em;
                 }

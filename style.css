@@ -979,15 +979,15 @@ footer #contact-button {
   }
 
   .card-modular {
+    border-radius: 2em 2em 2em 2em;
     padding: 2em;
+    background-color: rgba(242, 253, 241, 0.1);
+    color: rgba(49, 49, 49, 0.867);
     margin: 0 auto;
     margin-top: 2em;
     width: 40vw;
     height: min-content;
     align-self: space-between;
-    background-color: rgba(242, 253, 241, 0.1);
-    border-radius: 2em 2em 2em 2em;
-    color: rgba(49, 49, 49, 0.867);
     background-color: rgba(242, 253, 241, 0.1);
     margin: 2em 0em 0em 2em;
     width: 40vw;
@@ -998,7 +998,7 @@ footer #contact-button {
   }
   .card-modular h2 {
     color: rgb(67, 96, 64);
-    text-align: center;
+    text-align: left;
     left: 2em;
   }
   .card-modular time {
