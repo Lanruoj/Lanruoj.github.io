@@ -201,6 +201,12 @@ main {
   text-align: center;
   left: 2em;
 }
+.card-dark time {
+  font-family: "Monaco", monospace;
+  font-size: 0.7em;
+  color: gray;
+  font-style: italic;
+}
 .card-dark .card-dark-img {
   margin: 0 auto;
 }
@@ -1029,6 +1035,38 @@ footer #contact-button {
   #about-buttons #projects-button-cont #projects-button:hover {
     cursor: pointer;
     background-color: rgb(64, 0, 255);
+  }
+
+  .card-dark {
+    padding: 2em;
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 40vw;
+    height: min-content;
+    align-self: space-between;
+    background-color: white;
+    border-radius: 2em 2em 2em 2em;
+    color: rgba(49, 49, 49, 0.867);
+    box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
+  }
+  .card-dark h2 {
+    color: rgb(67, 96, 64);
+    text-align: center;
+    left: 2em;
+  }
+  .card-dark time {
+    font-family: "Monaco", monospace;
+    font-size: 0.7em;
+    color: gray;
+    font-style: italic;
+  }
+  .card-dark .card-dark-img {
+    margin: 0 auto;
+  }
+  .card-dark .card-dark-img img {
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 1em 1em 1em 1em;
   }
 
   p {

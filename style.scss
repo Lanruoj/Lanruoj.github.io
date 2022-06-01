@@ -31,7 +31,7 @@ $monaco: 'Monaco', monospace;
             left: 2em;
         }
 }
-@mixin card-dark-mob { 
+@mixin card-dark-mob() { 
         padding: 2em;
         margin: 0 auto;
         margin-top: 2em;
@@ -44,6 +44,12 @@ $monaco: 'Monaco', monospace;
             color: $pine;
             text-align: center;
             left: 2em;
+        }
+        time {
+            font-family: $monaco;
+            font-size: 0.7em;
+            color: gray;
+            font-style: italic;
         }
         .card-dark-img {
             margin: 0 auto;
@@ -88,6 +94,7 @@ $monaco: 'Monaco', monospace;
             color: $pine;
         }
     }
+    
 @mixin card-desk-no-hover() {
     @include card(); // includes the card @mixin
         background-color: rgb(242, 253, 241, 0.1);
@@ -101,6 +108,37 @@ $monaco: 'Monaco', monospace;
             color: $pine;
         }
 }   
+@mixin card-dark-desk() { 
+    padding: 2em;
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 40vw;
+    height: min-content;
+    align-self: space-between;
+    background-color: $white;
+    border-radius: 2em 2em 2em 2em; 
+    color: $black; 
+    box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
+    h2 {
+        color: $pine;
+        text-align: center;
+        left: 2em;
+    }
+    time {
+        font-family: $monaco;
+        font-size: 0.7em;
+        color: gray;
+        font-style: italic;
+    }
+    .card-dark-img {
+        margin: 0 auto;
+        img {
+            margin: 0 auto;
+            width: 100%;
+            border-radius: 1em 1em 1em 1em;
+        }
+    }
+}
 @mixin desk-button() {
     background-color: rgb(53, 0, 213);
     color: $white;
@@ -1074,7 +1112,10 @@ html, body {
 }
 
 
-
+///////////////CODE PAGE////////////
+.card-dark {
+    @include card-dark-desk;
+}
 
 
 
