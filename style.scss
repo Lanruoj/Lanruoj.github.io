@@ -29,7 +29,8 @@ $monaco: 'Monaco', monospace;
     }
     @mixin card-border() { //
         border-radius: 2em 2em 2em 2em;
-    }
+}
+
 ////BUTTON UNIVERSAL////
 @mixin button() { //
     padding: 0.5em;
@@ -69,7 +70,8 @@ $monaco: 'Monaco', monospace;
         display: flex;
         justify-content: space-around;
         padding: 2em;
-    }
+}
+
 ////BUTTON MOBILE////
 @mixin button-mob() { //
     @include button();
@@ -138,7 +140,8 @@ $monaco: 'Monaco', monospace;
                     border-radius: 1em 1em 1em 1em;
                 }
             }
-        }
+}
+
 ////BUTTON DESKTOP////
 @mixin desk-button() { //
     @include button();
@@ -148,24 +151,6 @@ $monaco: 'Monaco', monospace;
         background-color: $purple;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 * {
@@ -182,8 +167,12 @@ html, body {
     text-decoration: line-through;
 }
 
-//////// /////////////MOBILE///////////////////////
-body {
+.blog-time {
+    color: $brown;
+}
+
+/////////////////////MOBILE///////////////////////
+body { //
     position: relative; // allows me to {fix} other items
     background-color: $white; // just in case gradient doesn't work
     font-family: $karla;
@@ -193,7 +182,7 @@ body {
 }
 
 //////// HEADER MODULE
-header {
+header { //
     position: fixed; // keeps header/navbar at top when scrolling
     z-index: 3; // layers elements depending on index value
     top: 0; // prevents header from dropping when I adjust <main>!
@@ -227,8 +216,8 @@ header {
     }
 }
 
-////////////MOBILE NAV MENU
-#nav-mob {
+////MOBILE NAV MENU////
+#nav-mob { //
     z-index: 100;
     #nav-icon-mob {
         z-index: 100;
@@ -284,291 +273,16 @@ header {
 }
 
 
-
-
-
-
-///////MAIN SECTION    
-main {
+////MAIN SECTION MOBILE////   
+main { //
     margin: 2em;
     margin-top: 7em;
     margin-bottom: 5em;
 }
-.mob-page-sub {
-    display: block;
-    position: absolute;
-    z-index: 0;
-    top: 4.1em;
-    right: 1em;
-    font-family: $monaco;
-    color: $dark-purple;
-}
-.desk-page-sub {
-    display: none;
-}
-
-.card {
-    @include card-mob();
-    background-color: rgb(242, 253, 241, 0.1);
-}
-
-
-/////ABOUT ME PAGE MOBILE
-#about-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    @include card-border();
-}
-#about-buttons { 
-        @include clear-card-mob();
-            .button-cont {
-                display: inline;
-                    .button {
-                        @include button-mob();
-                        display: inline;
-                    }
-        }
-}
-
-
-
-////////// CODE PAGE MOBILE
-.card-modular {
-    @include card-modular-mob();
-}
-
-/////// CONTACT PAGE MOBILE
-#logos-card { //
-    @include clear-card-mob();
-    margin: 0em;
-    left: -2em;
-                img {
-                    @include button-mob();
-                    display: inline;
-                    position: absolute;
-                    z-index: 1;
-                }
-}
-
-.contact-card {
-    text-align: center;
-}
-
-//////////RESUME PAGE MOBILE////////////////////
-#resume-cont { 
-    margin-top: 10em;
-    color: $pine;
-        #resume {
-            height: 100vh;
-            width: 80vw;
-        }
-}
-.download-link {
-    @include clear-card-mob();
-    position: absolute;
-    top: 10em; //??????????????
-    right: 40vw;
-    text-align: center;
-    width: 10em;
-    margin: 0 auto;
-    // @include button-mob();
-    a, a:visited {
-        text-decoration: none;
-        color: $white;
-    }
-}
-
-//////////
-
-    p {
-        font-size: 1.2em; // make a bit easier to read on mobile
-    }
-
-    .blog-time {
-        color: $brown;
-    }
-
-
-    //////FOOTER/CONTACT BAR
-    footer {
-        position: fixed;
-        bottom: 0em;
-        text-align: center;
-        background-color: $white;
-        width: 100vw;
-        box-shadow: 0 0 0.2em gray;
-        form {
-            background-color: $white;
-            width: 3em;
-            height: 3em;
-            bottom: 0em;
-        }
-        #contact-button {
-            @include button-mob();
-            position: fixed;
-            bottom: 0.5em;
-            right: 0.5em;
-        }
-    }
-
-
-    #expand-1,
-    #expand-icon-1,
-    #expand-text-1 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
-    #expand-2,
-    #expand-icon-2,
-    #expand-text-2 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
-    #expand-3,
-    #expand-icon-3,
-    #expand-text-3 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
-    #expand-4,
-    #expand-icon-4,
-    #expand-text-4 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
-    #expand-5,
-    #expand-icon-5,
-    #expand-text-5 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
-// }
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////
-
-
-////////////////////////////TABLET VERSION///////////////////////
-@media only screen and (min-width: 450px) and (max-width:799px) {
-    body {
-        position: relative; // allows me to {fix} other items
-        background-color: $white; // just in case gradient doesn't work
-        font-family: $karla;
-        font-size: 16px;
-        // background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // red circle gradient from bottom right
-        background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
-    }
-
-    //////// HEADER MODULE TABLET
-    header {
-        position: fixed; // keeps header/navbar at top when scrolling
-        z-index: 3; // layers elements depending on index value
-        top: 0; // prevents header from dropping when I adjust <main>!
-        width: 100vw;
-        height: 5em;
-        background-color: $white;
-        backdrop-filter: blur(.2em); // !h1 un-fixes when I remove???!
-        box-shadow: 0 0 0.2em gray; // slight box shadow
-        h1 {
-            z-index: 2; // title on top of shape
-            position: fixed;
-            top: 0.4em; 
-            right: 1em;
-            font-family: $rammetto;
-            font-size: 1.7em;
-            color: $purple;
-            padding: 0.3em;
-            padding-right: 0.6em;
-            transition: 0.2s;
-            mix-blend-mode: multiply; // darkens title when meets brown square
-            // transform: scale(2, 1) skewX(10deg); // skews title
-        }
-        #head-circle {
-            position: fixed;
-            top: -2.5em;
-            right: -1.6em;
-            height: 7em;
-            width: 7em;
-            background-color: $mint;
-            border-radius: 50%;
-        }
-    }
-
-    ////////////TABLET NAV MENU
-    #nav-mob {
-        z-index: 100;
-        #nav-icon-mob {
-            z-index: 100;
-            position: fixed;
-            top: 0.5em;
-            left: 0.7em;
-            font-size: 2.5em;
-            color: $black;
-        }
-        #nav-links-mob {
-            position: fixed;
-            top: 5.1em;
-            // left: -22.2em;
-            left: -30em;
-            transition: 0.2s;
-            ul {
-                position: relative;
-                z-index: 100; // remove if page name doesnt dissappear
-                height: 100vh; //makes the sidebar take up full vertical height
-                padding-right: 5em;
-                min-width: 60vw;
-                max-width: 65vw;
-                background-color: $white;
-                box-shadow: 0em 0em 1em 0em $white;
-            }
-                li {
-                    position: relative;
-                    right: 1.1em;
-                    list-style: none;
-                    font-family: $karla;
-                    font-size: 2.7em;
-                    // text-shadow: $lavendar 5px 5px 1px;
-                    // border: 3px solid $pine;
-                    padding: .3em .3em .3em 3.5em;
-                    transition: 0.5s;
-                    a, a:visited {
-                        text-decoration: none;
-                        color: $black;
-                        font-style: none;
-                    }
-            }
-        }
-        #show {
-            display: none;
-        }
-        #show:checked ~ #nav-links-mob {
-            display: block;
-            transform: translateX(25em);
-        }
-    }
-
-    #menu-button,
-    #menu-text,
-    #nav-cont {
-        display: none;
-    }
-
-
-
-
-
-
-    ///////MAIN SECTION  TABLET
-    main {
-        margin: 2em;
-        margin-top: 7em;
-        margin-bottom: 5em;
-    }
     .mob-page-sub {
         display: block;
         position: absolute;
-        z-index: 1;
+        z-index: 0;
         top: 4.1em;
         right: 1em;
         font-family: $monaco;
@@ -582,86 +296,128 @@ main {
         @include card-mob();
         background-color: rgb(242, 253, 241, 0.1);
     }
+p {
+    font-size: 1.2em; // make a bit easier to read on mobile
+}
 
+////ABOUT ME PAGE MOBILE////
+#about-img { //
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    @include card-border();
+}
+    #about-buttons { 
+            @include clear-card-mob();
+                .button-cont {
+                    display: inline;
+                        .button {
+                            @include button-mob();
+                            display: inline;
+                        }
+            }
+}
 
-    /////ABOUT ME PAGE TABLET
-    #about-img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        @include card-border();
-    }
+////CODE PAGE MOBILE////
+.card-modular { //
+    @include card-modular-mob();
+}
 
-
-
-    p {
-        font-size: 1.2em; // make a bit easier to read on mobile
-    }
-
+////JOURNAL PAGE MOBILE////
+.card-expand { //
+    @include card();
     .blog-time {
         color: $brown;
     }
+}
 
-
-    //////FOOTER/CONTACT BAR TABLET
-    footer {
-        position: fixed;
-        bottom: 0em;
-        text-align: center;
-        background-color: $white;
-        width: 100vw;
-        box-shadow: 0 0 0.2em gray;
-        form {
-            background-color: $white;
-            width: 3em;
-            height: 3em;
-            bottom: 0em;
-        }
-        #contact-button {
+////CONTACT PAGE MOBILE////
+.contact-card { //
+    text-align: center;
+    }
+    #logos-card { //
+        @include clear-card-mob();
+        margin: 0em;
+        left: -2em;
+        img {
             @include button-mob();
-            position: fixed;
-            bottom: 0.5em;
-            right: 0.5em;
+            display: inline;
+            position: absolute;
+            z-index: 1;
+        }
+}
+
+////RESUME PAGE MOBILE////
+#resume-cont { //
+    margin-top: 10em;
+    color: $pine;
+        #resume {
+            height: 100vh;
+            width: 80vw;
         }
     }
+    .download-link {
+        @include clear-card-mob();
+        position: absolute;
+        top: 10em; //??????????????
+        right: 40vw;
+        text-align: center;
+        width: 10em;
+        margin: 0 auto;
+            a, a:visited {
+                text-decoration: none;
+                color: $white;
+            }
+}
 
-
-    #expand-1,
-    #expand-icon-1,
-    #expand-text-1 {
-        display: none;   ////////// card expand text/icon not on mobile
+//////FOOTER/CONTACT BAR MOBILE////
+footer { //
+    position: fixed;
+    bottom: 0em;
+    text-align: center;
+    background-color: $white;
+    width: 100vw;
+    box-shadow: 0 0 0.2em gray;
+    form {
+        background-color: $white;
+        width: 3em;
+        height: 3em;
+        bottom: 0em;
     }
-    #expand-2,
-    #expand-icon-2,
-    #expand-text-2 {
-        display: none;   ////////// card expand text/icon not on mobile
+    #contact-button {
+        @include button-mob();
+        position: fixed;
+        bottom: 0.5em;
+        right: 0.5em;
     }
-    #expand-3,
-    #expand-icon-3,
-    #expand-text-3 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
-    #expand-4,
-    #expand-icon-4,
-    #expand-text-4 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
-    #expand-5,
-    #expand-icon-5,
-    #expand-text-5 {
-        display: none;   ////////// card expand text/icon not on mobile
-    }
+}
 
-
-
-
-
-
-
-
-
-
+////HIDE EXPAND BUTTONS MOBILE////
+#expand-1,
+#expand-icon-1,
+#expand-text-1 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+#expand-2,
+#expand-icon-2,
+#expand-text-2 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+#expand-3,
+#expand-icon-3,
+#expand-text-3 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+#expand-4,
+#expand-icon-4,
+#expand-text-4 {
+    display: none;   ////////// card expand text/icon not on mobile
+}
+#expand-5,
+#expand-icon-5,
+#expand-text-5 {
+    display: none;   ////////// card expand text/icon not on mobile
 }
 
 
@@ -670,32 +426,56 @@ main {
 
 
 
+//////////////////////////////////////////////////////////////////////////////////
 
 
+////////////////////////////TABLET VERSION///////////////////////
+@media only screen and (min-width: 450px) and (max-width:799px) {
+////////////TABLET NAV MENU
+#nav-mob { //
+    #nav-links-mob {
+        ul {
+            z-index: 100; // remove if page name doesnt dissappear
+            height: 100vh; //makes the sidebar take up full vertical height
+            padding-right: 5em;
+            min-width: 60vw;
+            max-width: 65vw;
+            background-color: $white;
+            box-shadow: 0em 0em 1em 0em $white;
+        }
+            li {
+                position: relative;
+                right: 1.1em;
+                font-size: 2.7em;
+                // text-shadow: $lavendar 5px 5px 1px;
+                // border: 3px solid $pine;
+        }
+    }
+}
+
+/////ABOUT ME PAGE TABLET
+#about-img { //
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    @include card-border();
+}
+
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-//// DESKTOP VERSION
+////////////DESKTOP VERSION///////////
 
 @media only screen and (min-width: 800px) {
-    //////HEADER MODIFICATIONS FOR DESKTOP
-    header {
-        position: relative;
-        overflow: hidden !important;
-        width: 100vw;
-        height: 10em;
-        box-shadow: none; // removes shadow under mobile header 
-        background-color: $clear; // transparent background so gradient shows
+//////HEADER MODIFICATIONS FOR DESKTOP
+header {
+    position: relative;
+    overflow: hidden !important;
+    width: 100vw;
+    height: 10em;
+    box-shadow: none; // removes shadow under mobile header 
+    background-color: $clear; // transparent background so gradient shows
         h1 {
             font-size: 4em;
             top: 0em;
@@ -1091,25 +871,9 @@ main {
 }
 
 /////////////RESUME PAGE DESKTOP
-#resume-cont { 
-    margin-top: 10em;
-    color: $pine;
-        #resume {
-            height: 100vh;
-            width: 80vw;
-        }
-}
-.download-link {
-    position: absolute;
-    top: 4em;
-    text-align: center;
-    width: 10em;
-    margin: 0 auto;
+.download-link { //
     @include desk-button();
-    a, a:visited {
-        text-decoration: none;
-        color: $white;
-    }
+    top: 4em;
 }
 
 

@@ -12,6 +12,10 @@ html, body {
   text-decoration: line-through;
 }
 
+.blog-time {
+  color: rgb(137, 126, 109);
+}
+
 body {
   position: relative;
   background-color: white;
@@ -139,6 +143,10 @@ main {
   left: 2em;
 }
 
+p {
+  font-size: 1.2em;
+}
+
 #about-img {
   display: block;
   margin-left: auto;
@@ -196,6 +204,25 @@ main {
   border-radius: 1em 1em 1em 1em;
 }
 
+.card-expand {
+  border-radius: 2em 2em 2em 2em;
+  padding: 2em;
+  background-color: rgba(242, 253, 241, 0.1);
+  color: rgba(49, 49, 49, 0.867);
+}
+.card-expand h2 {
+  color: rgb(67, 96, 64);
+  text-align: left;
+  left: 2em;
+}
+.card-expand .blog-time {
+  color: rgb(137, 126, 109);
+}
+
+.contact-card {
+  text-align: center;
+}
+
 #logos-card {
   display: flex;
   justify-content: space-around;
@@ -214,10 +241,6 @@ main {
   display: inline;
   position: absolute;
   z-index: 1;
-}
-
-.contact-card {
-  text-align: center;
 }
 
 #resume-cont {
@@ -243,14 +266,6 @@ main {
 .download-link a, .download-link a:visited {
   text-decoration: none;
   color: white;
-}
-
-p {
-  font-size: 1.2em;
-}
-
-.blog-time {
-  color: rgb(137, 126, 109);
 }
 
 footer {
@@ -311,66 +326,7 @@ footer #contact-button {
 }
 
 @media only screen and (min-width: 450px) and (max-width: 799px) {
-  body {
-    position: relative;
-    background-color: white;
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    background-attachment: fixed;
-  }
-
-  header {
-    position: fixed;
-    z-index: 3;
-    top: 0;
-    width: 100vw;
-    height: 5em;
-    background-color: white;
-    backdrop-filter: blur(0.2em);
-    box-shadow: 0 0 0.2em gray;
-  }
-  header h1 {
-    z-index: 2;
-    position: fixed;
-    top: 0.4em;
-    right: 1em;
-    font-family: "Rammetto One", cursive;
-    font-size: 1.7em;
-    color: rgb(64, 0, 255);
-    padding: 0.3em;
-    padding-right: 0.6em;
-    transition: 0.2s;
-    mix-blend-mode: multiply;
-  }
-  header #head-circle {
-    position: fixed;
-    top: -2.5em;
-    right: -1.6em;
-    height: 7em;
-    width: 7em;
-    background-color: rgb(217, 235, 201);
-    border-radius: 50%;
-  }
-
-  #nav-mob {
-    z-index: 100;
-  }
-  #nav-mob #nav-icon-mob {
-    z-index: 100;
-    position: fixed;
-    top: 0.5em;
-    left: 0.7em;
-    font-size: 2.5em;
-    color: rgba(49, 49, 49, 0.867);
-  }
-  #nav-mob #nav-links-mob {
-    position: fixed;
-    top: 5.1em;
-    left: -30em;
-    transition: 0.2s;
-  }
   #nav-mob #nav-links-mob ul {
-    position: relative;
     z-index: 100;
     height: 100vh;
     padding-right: 5em;
@@ -382,63 +338,7 @@ footer #contact-button {
   #nav-mob #nav-links-mob li {
     position: relative;
     right: 1.1em;
-    list-style: none;
-    font-family: "Karla", sans-serif;
     font-size: 2.7em;
-    padding: 0.3em 0.3em 0.3em 3.5em;
-    transition: 0.5s;
-  }
-  #nav-mob #nav-links-mob li a, #nav-mob #nav-links-mob li a:visited {
-    text-decoration: none;
-    color: rgba(49, 49, 49, 0.867);
-    font-style: none;
-  }
-  #nav-mob #show {
-    display: none;
-  }
-  #nav-mob #show:checked ~ #nav-links-mob {
-    display: block;
-    transform: translateX(25em);
-  }
-
-  #menu-button,
-#menu-text,
-#nav-cont {
-    display: none;
-  }
-
-  main {
-    margin: 2em;
-    margin-top: 7em;
-    margin-bottom: 5em;
-  }
-
-  .mob-page-sub {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 4.1em;
-    right: 1em;
-    font-family: "Monaco", monospace;
-    color: rgb(53, 0, 213);
-  }
-
-  .desk-page-sub {
-    display: none;
-  }
-
-  .card {
-    border-radius: 2em 2em 2em 2em;
-    padding: 2em;
-    background-color: rgba(242, 253, 241, 0.1);
-    color: rgba(49, 49, 49, 0.867);
-    margin: 2em -2em 0em -2em;
-    background-color: rgba(242, 253, 241, 0.1);
-  }
-  .card h2 {
-    color: rgb(67, 96, 64);
-    text-align: left;
-    left: 2em;
   }
 
   #about-img {
@@ -447,71 +347,6 @@ footer #contact-button {
     margin-right: auto;
     width: 80%;
     border-radius: 2em 2em 2em 2em;
-  }
-
-  p {
-    font-size: 1.2em;
-  }
-
-  .blog-time {
-    color: rgb(137, 126, 109);
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0em;
-    text-align: center;
-    background-color: white;
-    width: 100vw;
-    box-shadow: 0 0 0.2em gray;
-  }
-  footer form {
-    background-color: white;
-    width: 3em;
-    height: 3em;
-    bottom: 0em;
-  }
-  footer #contact-button {
-    padding: 0.5em;
-    font-size: 1em;
-    color: white;
-    background-color: rgb(53, 0, 213);
-    border-radius: 0.4em 0.4em 0.4em 0.4em;
-    border: none;
-    position: relative;
-    position: fixed;
-    bottom: 0.5em;
-    right: 0.5em;
-  }
-
-  #expand-1,
-#expand-icon-1,
-#expand-text-1 {
-    display: none;
-  }
-
-  #expand-2,
-#expand-icon-2,
-#expand-text-2 {
-    display: none;
-  }
-
-  #expand-3,
-#expand-icon-3,
-#expand-text-3 {
-    display: none;
-  }
-
-  #expand-4,
-#expand-icon-4,
-#expand-text-4 {
-    display: none;
-  }
-
-  #expand-5,
-#expand-icon-5,
-#expand-text-5 {
-    display: none;
   }
 }
 @media only screen and (min-width: 800px) {
@@ -1064,21 +899,7 @@ footer #contact-button {
   max-height: 3em;
 }
 
-#resume-cont {
-  margin-top: 10em;
-  color: rgb(67, 96, 64);
-}
-#resume-cont #resume {
-  height: 100vh;
-  width: 80vw;
-}
-
 .download-link {
-  position: absolute;
-  top: 4em;
-  text-align: center;
-  width: 10em;
-  margin: 0 auto;
   padding: 0.5em;
   font-size: 1em;
   color: white;
@@ -1086,14 +907,11 @@ footer #contact-button {
   border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
   transition: 0.1s;
+  top: 4em;
 }
 .download-link:hover {
   cursor: pointer;
   background-color: rgb(64, 0, 255);
-}
-.download-link a, .download-link a:visited {
-  text-decoration: none;
-  color: white;
 }
 
 p {
