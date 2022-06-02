@@ -13,8 +13,7 @@ $clear: rgb(255,255,255,0);
 $karla: 'Karla', sans-serif;
 $rammetto: 'Rammetto One', cursive;
 $monaco: 'Monaco', monospace;
-////////MIXINS////////
-
+////////UNIVERSAL MIXINS////////
 ////CARDS UNIVERSAL////
 @mixin card() { //
     @include card-border();
@@ -26,11 +25,10 @@ $monaco: 'Monaco', monospace;
         text-align: left;
         left: 2em;
     }
-    }
+}
     @mixin card-border() { //
         border-radius: 2em 2em 2em 2em;
 }
-
 ////BUTTON UNIVERSAL////
 @mixin button() { //
     padding: 0.5em;
@@ -40,12 +38,26 @@ $monaco: 'Monaco', monospace;
     border-radius: 0.4em 0.4em 0.4em 0.4em;
     border: none;
 }
-
+////BUTTON MOBILE////
+@mixin button-mob() { //
+    @include button();
+    position: relative;
+}
+////BUTTON DESKTOP////
+@mixin desk-button() { //
+    @include button();
+    transition: 0.1s;
+    &:hover { // & selects pseudo-selector in a mixin!
+        cursor: pointer;
+        background-color: $purple;
+    }
+}
+////////////////MOBILE MIXINS/////////////
 ////CARD MOBILE////
 @mixin card-mob() {  //
     @include card();
     margin: 2em -2em 0em -2em;
-    }
+}
     @mixin card-modular-mob() {  //
         @include card-mob();
         width: 80vw;
@@ -65,123 +77,95 @@ $monaco: 'Monaco', monospace;
                 border-radius: 1em 1em 1em 1em;
             }
         }
-    }
+}
     @mixin clear-card-mob() { //
         display: flex;
         justify-content: space-around;
         padding: 2em;
 }
-
-////BUTTON MOBILE////
-@mixin button-mob() { //
-    @include button();
-    position: relative;
-}
-
 ////CARD DESKTOP////
 @mixin card-desk() {  //
     @include card();
     margin: 2em 0em 0em 2em;
     width: 100vw;
-    transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+    transition: 0.3s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
     overflow: hidden; // make cards only hold so much text...
     position: relative; // then have a hacky "fade-out" effect
-        &:hover {  // increases opacity when hover over section
+    &:hover {  // increases opacity when hover over section
             background-color: $white;
             box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
             width: 100vw;
             }
-    }
-    @mixin card-desk-expand() { //
-        @include card-desk();
-        max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
-    }
-
-    @mixin card-desk-no-hover() { //
-        @include card-mob(); // includes the card @mixin
+}
+        @mixin clear-card-desk() { //
+            @include card();
             margin: 2em 0em 0em 2em;
             width: 100vw;
-            max-height: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
-            transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
-            overflow: hidden; // make cards only hold so much text...
-            position: relative; // then have a hacky "fade-out" effect
-            h2 {
-                color: $pine;
-            }
-    }  
-    
-    @mixin clear-card-desk() { //
-            @include card-desk-no-hover();
+            transition: 0.3s; 
+            overflow: hidden; 
+            position: relative;
             background: none;
             display: flex; 
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-evenly;
-    }
-
-        @mixin card-modular-desk() { //
-            @include card();
+}
+    @mixin card-modular-desk() {
+        @include card-border();
+        position: relative; // then have a hacky "fade-out" effect
+        box-shadow: none;
+        height: min-content; //
+        align-self: space-between; //
+        margin: 4em 0em 0em 2em;
+        width: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
+        transition: 0.3s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
+        overflow: hidden; // make cards only hold so much text...
+        &:hover {  // increases opacity when hover over section
+            background-color: $white;
+            box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
+            }
+        }
+        time {
+            font-family: $monaco;
+            font-size: 0.7em;
+            color: gray;
+            font-style: italic;
+        }
+        .card-modular-img {
             margin: 0 auto;
-            margin-top: 2em;
-            width: 40vw;
-            height: min-content;
-            align-self: space-between;
-            time {
-                font-family: $monaco;
-                font-size: 0.7em;
-                color: gray;
-                font-style: italic;
-            }
-            .card-modular-img {
+            img {
                 margin: 0 auto;
-                img {
-                    margin: 0 auto;
-                    width: 100%;
-                    border-radius: 1em 1em 1em 1em;
-                }
+                width: 100%;
+                border-radius: 1em 1em 1em 1em;
             }
 }
 
-////BUTTON DESKTOP////
-@mixin desk-button() { //
-    @include button();
-    transition: 0.1s;
-    &:hover { // & selects pseudo-selector in a mixin!
-        cursor: pointer;
-        background-color: $purple;
-    }
-}
-
-
+////UNIVERSAL///
 * {
 	margin: 0px;
 	padding: 0px;
     box-sizing: border-box; // makes it easier to size/pad/margin items
 }
-
 html, body {
 	min-height: 100vh;
 }
-
+.blog-time {
+    color: $brown;
+}
 #personal-li {
     text-decoration: line-through;
 }
 
-.blog-time {
-    color: $brown;
-}
-
-/////////////////////MOBILE///////////////////////
+////MOBILE////
 body { //
     position: relative; // allows me to {fix} other items
     background-color: $white; // just in case gradient doesn't work
     font-family: $karla;
     font-size: 16px;
-    // background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // red circle gradient from bottom right
     background-attachment: fixed; /// !FIXES BACKGROUND GRADIENT WHEN SCROLL!
 }
 
-//////// HEADER MODULE
+////HEADER MODULE////
 header { //
     position: fixed; // keeps header/navbar at top when scrolling
     z-index: 3; // layers elements depending on index value
@@ -192,7 +176,7 @@ header { //
     backdrop-filter: blur(.2em); // !h1 un-fixes when I remove???!
     box-shadow: 0 0 0.2em gray; // slight box shadow
     h1 {
-        z-index: 2; // title on top of shape
+        z-index: 3; // title on top of shape
         position: fixed;
         top: 0.4em; 
         right: 1em;
@@ -201,7 +185,7 @@ header { //
         color: $purple;
         padding: 0.3em;
         padding-right: 0.6em;
-        transition: 0.2s;
+        transition: 0.3s;
         mix-blend-mode: multiply; // darkens title when meets brown square
         // transform: scale(2, 1) skewX(10deg); // skews title
     }
@@ -217,10 +201,10 @@ header { //
 }
 
 ////MOBILE NAV MENU////
-#nav-mob { //
-    z-index: 100;
+#nav-cont-mob { //
+    z-index: 3; ///////CHANGE
     #nav-icon-mob {
-        z-index: 100;
+        z-index: 999; ////// CHANGE
         position: fixed;
         top: 0.5em;
         left: 0.7em;
@@ -228,28 +212,26 @@ header { //
         color: $black;
     }
     #nav-links-mob {
+        z-index: 2; ////// CHANGE
         position: fixed;
         top: 5.1em;
-        // left: -22.2em;
         left: -30em;
-        transition: 0.2s;
-        ul {
+        transition: 0.3s;
+        .nav-list,
+        #nav-list-mob {
             position: relative;
-            z-index: 9;
             height: 100vh; //makes the sidebar take up full vertical height
             padding-right: 5em;
-            width: 100vw;
-            background-color: red;
+            max-width: 400px;
+            background-color: $white;
             box-shadow: 0em 0em 1em 5em $white;
         }
         li {
             list-style: none;
             font-family: $karla;
             font-size: 3em;
-            // text-shadow: $lavendar 5px 5px 1px;
-            // border: 3px solid $pine;
             padding: .3em .3em .3em 3.5em;
-            transition: 0.5s;
+            transition: 0.3s;
             a, a:visited {
                 text-decoration: none;
                 color: $black;
@@ -257,18 +239,18 @@ header { //
             }
         }
     }
-    #show {
+    #nav-button-mob {
         display: none;
     }
-    #show:checked ~ #nav-links-mob {
+    #nav-button-mob:checked ~ #nav-links-mob {
         display: block;
         transform: translateX(25em);
     }
 }
 
-#menu-button,
-#menu-text,
-#nav-cont {
+#nav-button-desk,
+#menu-text-desk,
+#nav-cont-desk {
     display: none;
 }
 
@@ -279,26 +261,32 @@ main { //
     margin-top: 7em;
     margin-bottom: 5em;
 }
-    .mob-page-sub {
+    p {
+        font-size: 1.2em; // make a bit easier to read on mobile
+    }
+    .card {
+        @include card-mob();
+        background-color: rgb(242, 253, 241, 0.1);
+    } 
+    .card-modular { //
+        @include card-modular-mob();
+    }
+    .card-expand { //
+        @include card();
+        margin: 2em -2em;
+    }
+    .mob-page-sub { //
         display: block;
         position: absolute;
-        z-index: 0;
         top: 4.1em;
         right: 1em;
         font-family: $monaco;
         color: $dark-purple;
     }
-    .desk-page-sub {
+    .desk-page-sub { //
         display: none;
     }
 
-    .card {
-        @include card-mob();
-        background-color: rgb(242, 253, 241, 0.1);
-    }
-p {
-    font-size: 1.2em; // make a bit easier to read on mobile
-}
 
 ////ABOUT ME PAGE MOBILE////
 #about-img { //
@@ -307,29 +295,16 @@ p {
     margin-right: auto;
     width: 80%;
     @include card-border();
-}
-    #about-buttons { 
-            @include clear-card-mob();
-                .button-cont {
-                    display: inline;
-                        .button {
-                            @include button-mob();
-                            display: inline;
-                        }
-            }
-}
-
-////CODE PAGE MOBILE////
-.card-modular { //
-    @include card-modular-mob();
-}
-
-////JOURNAL PAGE MOBILE////
-.card-expand { //
-    @include card();
-    .blog-time {
-        color: $brown;
     }
+    #about-buttons { 
+        @include clear-card-mob();
+        .button-cont {
+            display: inline;
+            .button {
+                @include button-mob();
+                display: inline;
+            }
+        }
 }
 
 ////CONTACT PAGE MOBILE////
@@ -341,34 +316,25 @@ p {
         margin: 0em;
         left: -2em;
         img {
-            @include button-mob();
             display: inline;
-            position: absolute;
-            z-index: 1;
+            max-height: 50px;
         }
 }
 
 ////RESUME PAGE MOBILE////
-#resume-cont { //
-    margin-top: 10em;
-    color: $pine;
-        #resume {
-            height: 100vh;
-            width: 80vw;
+.download-button { //
+    @include clear-card-mob();
+        a, a:visited {
+            @include button-mob();
+            text-decoration: none;
+            color: $white;
         }
-    }
-    .download-link {
-        @include clear-card-mob();
-        position: absolute;
-        top: 10em; //??????????????
-        right: 40vw;
-        text-align: center;
-        width: 10em;
-        margin: 0 auto;
-            a, a:visited {
-                text-decoration: none;
-                color: $white;
-            }
+}
+#resume-iframe {
+    margin: auto;
+    display: inline-block;
+    height: 100vh;
+    width: 100%;
 }
 
 //////FOOTER/CONTACT BAR MOBILE////
@@ -393,63 +359,54 @@ footer { //
     }
 }
 
-////HIDE EXPAND BUTTONS MOBILE////
-#expand-1,
-#expand-icon-1,
-#expand-text-1 {
-    display: none;   ////////// card expand text/icon not on mobile
+.expand-icon,
+#expand-check-1,
+#expand-check-2,
+#expand-check-3,
+#expand-check-4,
+#expand-check-5 {
+    display: none;  // hides the expand features on mobile/tablet
 }
-#expand-2,
-#expand-icon-2,
-#expand-text-2 {
-    display: none;   ////////// card expand text/icon not on mobile
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////NARROW DEVICE VERSION////////////////////
+@media only screen and (max-width:280px) {
+.card-expand {
+    // margin: 2em -2em;
+    padding: 1em;
 }
-#expand-3,
-#expand-icon-3,
-#expand-text-3 {
-    display: none;   ////////// card expand text/icon not on mobile
+.card {
+    margin: 0em -3em;
 }
-#expand-4,
-#expand-icon-4,
-#expand-text-4 {
-    display: none;   ////////// card expand text/icon not on mobile
+.contact-card { //
+    text-align: center;
+    word-wrap: break-word; // prevents email from going off page
 }
-#expand-5,
-#expand-icon-5,
-#expand-text-5 {
-    display: none;   ////////// card expand text/icon not on mobile
+
 }
 
 
 
 
 
-
-
-//////////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////TABLET VERSION///////////////////////
-@media only screen and (min-width: 450px) and (max-width:799px) {
-////////////TABLET NAV MENU
-#nav-mob { //
+@media only screen and (min-width: 540px) and (max-width:912px) {
+////NAV MENU TABLET////
+#nav-cont-mob { //
     #nav-links-mob {
-        ul {
-            z-index: 100; // remove if page name doesnt dissappear
-            height: 100vh; //makes the sidebar take up full vertical height
-            padding-right: 5em;
-            min-width: 60vw;
-            max-width: 65vw;
-            background-color: $white;
-            box-shadow: 0em 0em 1em 0em $white;
+        .nav-list,
+        #nav-list-mob {
+            z-index: 3; // remove if page name doesnt dissappear
+            // min-width: 60vw;
+            max-width: 400px;
+            left: -5em;
         }
             li {
                 position: relative;
-                right: 1.1em;
+                right: -2em;
                 font-size: 2.7em;
-                // text-shadow: $lavendar 5px 5px 1px;
-                // border: 3px solid $pine;
-        }
+            }
     }
 }
 
@@ -463,13 +420,114 @@ footer { //
 }
 
 }
+///////////////////////////////////////////////////////////////// 
 
 
-////////////DESKTOP VERSION///////////
+////////////////////////DESKTOP VERSION/////////////////////
+@media only screen and (min-width: 913px) {
+////GENERAL DESKTOP////
+body { //
+    overflow-x: hidden; // REMOVES HORIZONTAL SCROLLBAR
+    }
+    main {
+        position: relative;
+        margin-bottom: 10em;  // adds space to bottom of main so clears footer
+        margin-top: -2em;
+        transition: 0.3s;
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+        .mob-page-sub {
+            display: none;
+        }
+        .desk-page-sub {
+            display: block;
+            position: absolute;
+            top: 8em;
+            left: 0em;
+            font-family: $monaco;
+            font-size: 1.2em;
+            color: $dark-purple;
+        }
+        .card {
+            @include card-desk();
+            max-height: none;
+        }
+        .card-modular { //
+            @include card-modular-desk();
+        }
+        .card:hover, .card-modular:hover, .card-expand:hover {
+            transform: scale(1.015);
+        }
+        .card-expand { //
+            @include card-desk();
+            max-height: 30vh;
+            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            } 
+            .expand-icon { //
+                z-index: 1; //puts expand buttons atop cards
+                position: relative;
+                display: inline-block;
+                font-family: 'Monaco', monospace;
+                font-size: 1em;
+                top: 5.5em;   //// moves text with icon
+                left: 40vw; //// moves text with icon
+                transition: 0.3s;
+                // opacity: 1;
+                color: $dark-purple;
+                }
+                .expand-icon:hover { //
+                    transform: scale(1.0); // grows icon
+                    color: $purple;
+                }
+                #expand-check-1:hover ~ #journal-card-1,
+                #expand-check-2:hover ~ #journal-card-2,
+                #expand-check-3:hover ~ #journal-card-3,
+                #expand-check-4:hover ~ #journal-card-4,
+                #expand-check-5:hover ~ #journal-card-5 {
+                    transform: scale(1.015);
+                }
+                #expand-check-1,
+                #expand-check-2,
+                #expand-check-3,
+                #expand-check-4,
+                #expand-check-5 {
+                    display: none;
+                }
+                #expand-check-1:checked ~ #journal-card-1,
+                #expand-check-2:checked ~ #journal-card-2,
+                #expand-check-3:checked ~ #journal-card-3,
+                #expand-check-4:checked ~ #journal-card-4,
+                #expand-check-5:checked ~ #journal-card-5 { //EXPANDS SECTION WHEN CLICK ICON
+                    max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
+                    -webkit-mask-image: none; // turn off transparent gradient
+                    mask-image: none;
+                    transform: scale(1.015) translateY(15px);
+        }
+                #expand-check-1:checked ~ .expand-icon,
+                #expand-check-2:checked ~ .expand-icon,
+                #expand-check-3:checked ~ .expand-icon,
+                #expand-check-4:checked ~ .expand-icon,
+                #expand-check-5:checked ~ .expand-icon {
+                transform: scale(1.015) translateY(10px);
+                }
+                    
 
-@media only screen and (min-width: 800px) {
-//////HEADER MODIFICATIONS FOR DESKTOP
-header {
+        p {
+            font-size: 1.2em;
+            }
+            p::selection { // changes text highlight colour
+                background-color: $mint; 
+        }
+        ::selection { // turns off text highlight for pseudo "buttons"
+            background: none;
+        }
+
+////HEADER MODULE////
+header { //
     position: relative;
     overflow: hidden !important;
     width: 100vw;
@@ -490,324 +548,81 @@ header {
         }
     }
 
-///////////////// DESKTOP MENU
-#nav-mob {
-    display: none;
+////NAV MENU DESKTOP////
+#nav-cont-mob { //
+    display: none; // hides entire mobile/tablet nav menu
 }
-#nav-cont {
-    display: block;
-        position: absolute;
-        left: -30vw;
-        background-color: $white;
-        height: 50em;   // 100vh wouldn't work! // added rounded/sloped bottom
-        width: 30vw;
-        transition: 0.5s;
-        box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
-        border-radius: 2em 2em 2em 2em;  // ^^^^^
-}
-#menu-button:checked ~ #nav-cont {
-        position: absolute;                 // slides menu right
-        transform: translateX(12.5em);
-        // width: 20vw;
-}
-#menu-button:checked ~ main {               // slides main right
-        transform: translateX(12.5em);
-};
-
-#nav-list {
-    display: block;
-    text-align: right;
-    padding: 2em;
-    padding-right: 0.5em;
-    font-size: 1.5em;
-    font-family: $monaco;
-    a, a:visited {
-        text-decoration: none;
-        color: $black;
-        transition: 0.1s;
-    }
-    a:hover {
-        color: $purple;
-        text-transform: lowercase;
-    }
-    a:hover::before {
-        content: 'cd ./';
-    }
-}
-#portrait {
-    width: 5em;
-    margin: 2em 1em 0 0;
-    border-radius: 50%;
-    border: 2px $brown solid;
-}
-#menu-text {
+#menu-text-desk { //
     display: inline-block;
     position: absolute;
     top: 3em;
     left: 1em;
-    z-index: 50;
+    z-index: 3;
     font-size: 1.5em;
     transition: 0.1s;
-}
-#menu-text:hover {
-    cursor: pointer;
-    transform: translatex(0.3em);
-}
-#arrow {
-    position: absolute;
-    font-size: 2em;
-    left: 0.1em;
-    top: 0.3em;
-    -webkit-text-stroke: 8px $white;
-    transform: scale(1.2, 1);
-}
-
-#menu-button {
-    display: none;
-}
-
-///////////////////////
-
-
-
-
-
-
-    body {
-        // background-image: radial-gradient(circle at bottom right, #e66465 -30%, $white, $white); // circle gradient from bottom right
-        overflow-x: hidden; // REMOVES HORIZONTAL SCROLLBAR
     }
-    main {
-        position: relative;
-        margin-bottom: 10em;  // adds space to bottom of main so clears footer
-        margin-top: -2em;
-        transition: 0.5s;
-        display: flex; 
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    #menu-text-desk:hover {
+        cursor: pointer;
+        transform: translatex(0.3em);
     }
-    .mob-page-sub {
-        display: none;
-    }
-    .desk-page-sub {
-        display: block;
+    #arrow {
         position: absolute;
-        top: 8em;
-        left: 0em;
+        font-size: 2em;
+        left: 0.1em;
+        top: 0.3em;
+        -webkit-text-stroke: 8px $white;
+        transform: scale(1.2, 1);
+    }
+    #nav-button-desk:checked ~ #nav-cont-desk,
+    #nav-button-desk:checked ~ main{                 // slides menu right
+        transform: translateX(12.5em);
+    }
+    #nav-button-desk:checked ~ main {               // slides main right
+        position: absolute;
+}
+
+#nav-cont-desk { //
+    @include card-border();
+    display: block;
+    position: absolute;
+    left: -30vw;
+    background-color: $white;
+    height: 50em;   // 100vh wouldn't work! // added rounded/sloped bottom
+    width: 30vw;
+    transition: 0.3s;
+    box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
+    }
+    .nav-list,
+    #nav-list-desk {
+        display: block;
+        text-align: right;
+        padding: 2em;
+        padding-right: 0.5em;
+        font-size: 1.5em;
         font-family: $monaco;
-        font-size: 1.2em;
-        color: $dark-purple;
-    }
-    .card-expand { //
-        @include card-desk-expand();
-    }
+        a, a:visited {
+            text-decoration: none;
+            color: $black;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: $purple;
+            text-transform: lowercase;
+        }
+        a:hover::before {
+            content: 'cd ./';
+        }
+        #portrait {
+            width: 5em;
+            margin: 2em 1em 0 0;
+            border-radius: 50%;
+            border: 2px $brown solid;
+        }
+}
 
-
-////////// JOURNAL PAGE
-    #sec-1 {
-        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    }
-    #sec-2 {
-        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    }
-    #sec-3 {
-        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    }
-    #sec-4 {
-        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    }
-    #sec-5 {
-        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    }
-////////EXPAND FEATURE   
-        .expand-1 {
-            z-index: 50;
-            display: inline-block;
-            opacity: 1;
-            color: $dark-purple;
-            font-size: 1.5em;
-            position: relative;   //// allowed icons
-            left: 28.5em;         //// to move when
-            top: 3.5em;           //// expanded!
-        }
-        #expand-1 {
-            display: none;
-            // transition: 2s;
-        }
-        #expand-1:checked ~ #sec-1 { //EXPANDS SECTION WHEN CLICK ICON
-            background-color: $white;
-            width: 100vw;
-            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-            flex-wrap: nowrap;
-            -webkit-mask-image: none; // turn off transparent gradient
-            mask-image: none;
-        }
-        #expand-icon-1 {
-            display: inline-block;
-            font-family: 'Monaco', monospace;
-            font-size: 1em;
-            top: 5.5em;   //// moves text with icon
-            left: 40vw; //// moves text with icon
-            transition: 0.1s;
-        }
-        #expand-icon-1:hover {
-            transform: scale(1.02); // grows icon
-            color: $purple;
-        }
-        ////////
-        ////////SECTION 2
-        .expand-2 {
-            z-index: 50;
-            display: inline-block;
-            opacity: 1;
-            color: $dark-purple;
-            font-size: 1.5em;
-            position: relative;   //// allowed icons
-            left: 28.5em;         //// to move when
-            top: 3.5em;           //// expanded!
-        }
-        #expand-2 {
-            display: none;
-            // transition: 2s;
-        }
-        #expand-2:checked ~ #sec-2 { //EXPANDS SECTION WHEN CLICK ICON
-            background-color: $white;
-            width: 100vw;
-            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-            flex-wrap: nowrap;
-            -webkit-mask-image: none; // turn off transparent gradient
-            mask-image: none;
-        }
-        #expand-icon-2 {
-            display: inline-block;
-            font-family: 'Monaco', monospace;
-            font-size: 1em;
-            top: 5.5em;   //// moves text with icon
-            left: 40vw; //// moves text with icon
-            transition: 0.1s;
-        }
-        #expand-icon-2:hover {
-            transform: scale(1.02); // grows icon
-            color: $purple;
-        }
-        /////////SECTION 3
-        .expand-3 {
-            z-index: 50;
-            display: inline-block;
-            opacity: 1;
-            color: $dark-purple;
-            font-size: 1.5em;
-            position: relative;   //// allowed icons
-            left: 28.5em;         //// to move when
-            top: 3.5em;           //// expanded!
-        }
-        #expand-3 {
-            display: none;
-            // transition: 2s;
-        }
-        #expand-3:checked ~ #sec-3 { //EXPANDS SECTION WHEN CLICK ICON
-            background-color: $white;
-            width: 100vw;
-            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-            flex-wrap: nowrap;
-            -webkit-mask-image: none; // turn off transparent gradient
-            mask-image: none;
-        }
-        #expand-icon-3 {
-            display: inline-block;
-            font-family: 'Monaco', monospace;
-            font-size: 1em;
-            top: 5.5em;   //// moves text with icon
-            left: 40vw; //// moves text with icon
-            transition: 0.1s;
-        }
-        #expand-icon-3:hover {
-            transform: scale(1.02); // grows icon
-            color: $purple;
-        }
-        ////////SECTION 4
-        .expand-4 {
-            z-index: 50;
-            display: inline-block;
-            opacity: 1;
-            color: $dark-purple;
-            font-size: 1.5em;
-            position: relative;   //// allowed icons
-            left: 28.5em;         //// to move when
-            top: 3.5em;           //// expanded!
-        }
-        #expand-4 {
-            display: none;
-            // transition: 2s;
-        }
-        #expand-4:checked ~ #sec-4 { //EXPANDS SECTION WHEN CLICK ICON
-            background-color: $white;
-            width: 100vw;
-            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-            flex-wrap: nowrap;
-            -webkit-mask-image: none; // turn off transparent gradient
-            mask-image: none;
-        }
-        #expand-icon-4 {
-            display: inline-block;
-            font-family: 'Monaco', monospace;
-            font-size: 1em;
-            top: 5.5em;   //// moves text with icon
-            left: 40vw; //// moves text with icon
-            transition: 0.1s;
-        }
-        #expand-icon-4:hover {
-            transform: scale(1.02); // grows icon
-            color: $purple;
-        }
-        /////////SECTION 5
-        .expand-5 {
-            z-index: 50;
-            display: inline-block;
-            opacity: 1;
-            color: $dark-purple;
-            font-size: 1.5em;
-            position: relative;   //// allowed icons
-            left: 28.5em;         //// to move when
-            top: 3.5em;           //// expanded!
-        }
-        #expand-5 {
-            display: none;
-            // transition: 2s;
-        }
-        #expand-5:checked ~ #sec-5 { //EXPANDS SECTION WHEN CLICK ICON
-            background-color: $white;
-            width: 100vw;
-            max-height: 100em;   /////////// THIS ANIMATED THE TRANSITION IN HEIGHT!
-            flex-wrap: nowrap;
-            -webkit-mask-image: none; // turn off transparent gradient
-            mask-image: none;
-        }
-        #expand-icon-5 {
-            display: inline-block;
-            font-family: 'Monaco', monospace;
-            font-size: 1em;
-            top: 5.5em;   //// moves text with icon
-            left: 40vw; //// moves text with icon
-            transition: 0.1s;
-        }
-        #expand-icon-5:hover {
-            transform: scale(1.02); // grows icon
-            color: $purple;
-        }
-
-    //////////////
-
-/////////ABOUT PAGE DESKTOP
-#about-img-cont {
+////ABOUT PAGE DESKTOP////
+#about-img-cont { //
     @include card-desk();
-    pointer-events: none; /////////// disables hover effect from @mixin easily!
     background: none;
     display: flex; 
     flex-direction: row;
@@ -815,105 +630,57 @@ header {
     #about-img {
         @include card-border();
         max-width: 50vw;
+        transition: 0.3s;
+        filter: saturate(0.8);
+    }
+    #about-img:hover {
+        transform: scale(1.1);
+        filter: saturate(1);
     }
 }
-.card {
-    @include card-desk();
-    max-height: none;
-}
-
-#about-buttons { 
-        @include card-desk-no-hover();
-        background: none;
-        display: flex; 
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    .button-cont {
-        .button {
-            @include desk-button();
+    #about-img-cont:hover {
+        box-shadow: none;
+    }
+    #about-buttons { //
+        @include clear-card-desk();
+        .button-cont {
+            .button {
+                @include desk-button();
+            }
         }
-    }
 }
 
-///////////////CODE PAGE DESKTOP////////////
-.card-modular {
-    @include card-modular-desk(); // includes the card @mixin
-    background-color: rgb(242, 253, 241, 0.1);
-    margin: 2em 0em 0em 2em;
-    width: 40vw; //USING MAX-HEIGHT INSTEAD OF HEIGHT ALLOWS TRANSITION
-    transition: 0.5s; // > AND FIXED FLICKERING IN BETWEEEN SECTIONS!
-    overflow: hidden; // make cards only hold so much text...
-    position: relative; // then have a hacky "fade-out" effect
-    box-shadow: none;
-    &:hover {  // increases opacity when hover over section
-        background-color: $white;
-        box-shadow: rgb(0,0,0,0.1) 0em 0em 1em;
-        }
-    }
-    h2 {
-        color: $pine;
-    }
-}
-
-////////////CONTACT PAGE DESKTOP///////////
-
-
+////CONTACT PAGE DESKTOP////
 #logos-card { //
-    @include clear-card-desk(); 
+    @include card-modular-desk(); 
     margin: 0em;
     max-height: 10em;
-                img {
-                    @include button-mob();
-                    align-self: flex-start;
-                    max-height: 3em;
-                }
+    img {
+        align-self: flex-start;
+        max-height: 3em;
+        transition: 0.1s;
+    }
+    img:hover {
+        transform: scale(1.1);
+    }
 }
 
-/////////////RESUME PAGE DESKTOP
-.download-link { //
-    @include desk-button();
-    top: 4em;
+////RESUME PAGE DESKTOP////
+.download-button { //
+    @include clear-card-desk();
+    a, a:visited {
+        @include desk-button();
+        text-decoration: none;
+        color: $white;
+    }
+}
+#resume-iframe { //
+    margin: auto;
+    display: inline-block;
+}
+#contact-button {
+    @include desk-button();    
 }
 
-
-
-    p{
-        font-size: 1.2em;
-    }
-
-    p::selection { // changes text highlight colour
-        background-color: white; 
-    }
-
-    ::selection { // turns off text highlight for pseudo "buttons"
-        background: none;
-    }
-    
-    footer {
-        position: fixed;
-        bottom: 0em;
-        text-align: center;
-        background-color: $white;
-        width: 150vw;
-        border: rgb(183, 183, 183) 1px solid;
-        form {
-            background-color: $white;
-            width: 3em;
-            height: 3em;
-            bottom: 0em;
-        }
-        #contact-button {
-            @include desk-button();
-            position: fixed;
-            bottom: 0.5em;
-            right: 0.5em;
-        }
-    }
-
-
-
-
-
-
+}
 ///////////////////////////////////////

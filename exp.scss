@@ -1,8 +1,12 @@
-/////@at-root
-
-//////@at-root
 
 
 
 
->>>>>TIDY UP DESKTOP CSS>>>>>>>
+
+//////
+@mixin clear-card-mob() { //
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 2em;
+}

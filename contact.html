@@ -36,12 +36,12 @@
         <div id="head-circle"></div>
     </header>
     <!-- MOBILE MENU -->
-    <nav id="nav-mob">
-        <input type="checkbox" id="show">
-        <label for="show"><span class="fa-solid fa-bars" id="nav-icon-mob"></span></label>
-        <label for="show"><span id="nav-icon-desk">Me<br>nu</span></label>
+    <nav id="nav-cont-mob">
+        <input type="checkbox" id="nav-button-mob">
+        <label for="nav-button-mob"><span class="fa-solid fa-bars" id="nav-icon-mob"></span></label>
+        <label for="nav-button-mob"><span id="blank-span">Me<br>nu</span></label>
         <span id="nav-links-mob">
-            <ul id="nav-list">
+            <ul class="nav-list" id="nav-list-mob">
                 <br/>
                 <li id="about-li"><a href="./about.html">about</a></li>
                 <li id="code-li"><a href="./code.html">code</a></li>
@@ -53,10 +53,10 @@
         </span>
     </nav>
     <!-- DESKTOP MENU -->
-    <input type="checkbox" id="menu-button">
-    <label for="menu-button" id="menu-text">menu<br><span class="fa-solid fa-arrows-alt-h" id="arrow"></span></label>
-    <nav id="nav-cont">
-        <ul id="nav-list">
+    <input type="checkbox" id="nav-button-desk">
+    <label for="nav-button-desk" id="menu-text-desk">menu<br><span class="fa-solid fa-arrows-alt-h" id="arrow"></span></label>
+    <nav id="nav-cont-desk">
+        <ul class="nav-list" id="nav-list-desk">
             <br/>
             <li id="about-li"><a href="./about.html">about</a></li>
             <li id="code-li"><a href="./code.html">code</a></li>
@@ -82,7 +82,7 @@
             <p>04-666-518-20</p>
         </section>
 
-        <section id="logos-card">
+        <section class="card" id="logos-card">
             <figure>
                 <a href="https://github.com/Lanruoj" target="_blank">
                     <img src="./img/github.png"/>
