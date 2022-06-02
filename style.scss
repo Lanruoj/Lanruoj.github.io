@@ -339,6 +339,7 @@ main { //
 
 //////FOOTER/CONTACT BAR MOBILE////
 footer { //
+    z-index: 5;
     position: fixed;
     bottom: 0em;
     text-align: center;
@@ -678,7 +679,7 @@ header { //
     margin: auto;
     display: inline-block;
 }
-#contact-button {
+#contact-button { //
     @include desk-button();    
 }
 

@@ -274,6 +274,7 @@ p {
 }
 
 footer {
+  z-index: 5;
   position: fixed;
   bottom: 0em;
   text-align: center;
