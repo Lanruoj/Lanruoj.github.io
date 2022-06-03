@@ -335,9 +335,9 @@ p {
   width: 80%;
   @include card-border();
 }
-#about-buttons {
+.button-cont {
   @include clear-card-mob();
-  .button-cont {
+  form {
     display: inline;
     .button {
       @include button-mob();
@@ -744,14 +744,11 @@ footer {
     background-color: $white;
     box-shadow: none;
   }
-  #about-buttons {
-    //
+  .button-cont {
     @include clear-card-desk();
-    .button-cont {
       .button {
         @include desk-button();
       }
-    }
   }
 
   ////CONTACT PAGE DESKTOP////

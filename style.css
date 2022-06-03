@@ -235,15 +235,15 @@ p {
   border-radius: 2em 2em 2em 2em;
 }
 
-#about-buttons {
+.button-cont {
   display: flex;
   justify-content: space-around;
   padding: 2em;
 }
-#about-buttons .button-cont {
+.button-cont form {
   display: inline;
 }
-#about-buttons .button-cont .button {
+.button-cont form .button {
   padding: 0.5em;
   font-size: 1em;
   color: rgb(249, 247, 242);
@@ -716,7 +716,7 @@ footer #contact-button {
     box-shadow: none;
   }
 
-  #about-buttons {
+  .button-cont {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
     background-color: rgba(242, 253, 241, 0.1);
@@ -732,13 +732,13 @@ footer #contact-button {
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  #about-buttons h2 {
+  .button-cont h2 {
     font-size: 2em;
     color: rgb(47, 0, 186);
     text-align: left;
     left: 2em;
   }
-  #about-buttons .button-cont .button {
+  .button-cont .button {
     padding: 0.5em;
     font-size: 1em;
     color: rgb(249, 247, 242);
@@ -747,7 +747,7 @@ footer #contact-button {
     border: none;
     transition: 0.1s;
   }
-  #about-buttons .button-cont .button:hover {
+  .button-cont .button:hover {
     cursor: pointer;
     background-color: rgb(47, 0, 186);
   }
