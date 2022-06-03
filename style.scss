@@ -1,7 +1,7 @@
 //COLOURS
-$white: white;
+$white: rgb(249, 247, 242);
 $mint: rgb(217, 235, 201);
-$brown: rgb(137, 126, 109);
+$brown: rgb(171, 162, 149);
 $dark-brown: rgb(97, 91, 80);
 $pine: rgb(67, 96, 64);
 $black: rgba(49, 49, 49, 0.867);
@@ -106,7 +106,7 @@ $monaco: "Monaco", monospace;
   position: relative; // then have a hacky "fade-out" effect
   &:hover {
     // increases opacity when hover over section
-    background-color: $white;
+    background-color: white;
     box-shadow: rgb(0, 0, 0, 0.1) 0em 0em 1em;
     width: 100vw;
   }
@@ -136,7 +136,7 @@ $monaco: "Monaco", monospace;
   overflow: hidden; // make cards only hold so much text...
   &:hover {
     // increases opacity when hover over section
-    background-color: $white;
+    background-color: white;
     box-shadow: rgb(0, 0, 0, 0.1) 0em 0em 1em;
   }
 }
@@ -203,7 +203,7 @@ header {
     padding-right: 0.6em;
     font-family: $rammetto;
     font-size: 2.3em;
-    color: $black;
+    color: $purple;
     transition: 0.3s;
     mix-blend-mode: multiply; // darkens title when meets brown square
     line-height: 95%;
@@ -216,7 +216,7 @@ header {
     left: 1rem;
     height: 7em;
     width: 7em;
-    background-color: $purple;
+    background-color: $brown;
     border-radius: 50%;
   }
 }
@@ -299,15 +299,6 @@ p {
   @include card();
   margin: 2em -2em;
 }
-.mob-page-sub {
-  //
-  display: block;
-  position: absolute;
-  top: 4.1em;
-  right: 1em;
-  font-family: $monaco;
-  color: $brown;
-}
 .desk-page-sub {
   //
   display: none;
@@ -370,13 +361,20 @@ p {
 //////FOOTER/CONTACT BAR MOBILE////
 footer {
   //
-  z-index: 5;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  bottom: 0em;
-  text-align: center;
-  background-color: $white;
   width: 100vw;
+  bottom: 0em;
+  background-color: $white;
   box-shadow: 0 0 0.2em gray;
+  p {
+    margin-left: 3em;
+    font-size: 1rem;
+    color: $black;
+  }
   form {
     background-color: $white;
     width: 3em;
@@ -399,6 +397,11 @@ footer {
 #expand-check-5 {
   display: none; // hides the expand features on mobile/tablet
 }
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////NARROW DEVICE VERSION////////////////////
 @media only screen and (max-width: 280px) {
@@ -415,6 +418,10 @@ footer {
     word-wrap: break-word; // prevents email from going off page
   }
 }
+
+
+
+
 
 ////////////////////////////TABLET VERSION///////////////////////
 @media only screen and (min-width: 540px) and (max-width: 912px) {
@@ -447,8 +454,11 @@ footer {
     @include card-border();
   }
 }
-/////////////////////////////////////////////////////////////////
 
+
+
+
+/////////////////////////////////////////////////////////////////
 ////////////////////////DESKTOP VERSION/////////////////////
 @media only screen and (min-width: 913px) {
   ////GENERAL DESKTOP////
@@ -466,9 +476,6 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .mob-page-sub {
-    display: none;
-  }
   .desk-page-sub {
     display: block;
     position: absolute;
@@ -476,7 +483,7 @@ footer {
     left: 0em;
     font-family: $monaco;
     font-size: 1.2em;
-    color: rgb(107, 92, 73);
+    color: $brown;
     writing-mode: vertical-lr; // text goes downward instead of right!
   }
   #contact-sub-page-desk {
@@ -529,6 +536,7 @@ footer {
   #expand-check-3:hover ~ #journal-card-3,
   #expand-check-4:hover ~ #journal-card-4,
   #expand-check-5:hover ~ #journal-card-5 {
+    background-color: white;
     transform: scale(1.015);
   }
   #expand-check-1,
@@ -581,11 +589,8 @@ footer {
     box-shadow: none; // removes shadow under mobile header
     background-color: $clear; // transparent background so gradient shows
     h1 {
-      font-size: 4em;
-    //   top: 0em;
-    //   right: 1.1em;
-    // justify-self: flex-end;
-    align-self: center;
+        font-size: 4em;
+        align-self: center;
     }
     #head-circle {
     top: -5em;
@@ -670,7 +675,7 @@ footer {
     }
     a:hover::before {
       content: "cd ./";
-      color: gray;
+      color: rgb(168, 168, 168);
     }
     #portrait {
       width: 5em;
@@ -700,6 +705,7 @@ footer {
     }
   }
   #about-img-cont:hover {
+    background-color: $white;
     box-shadow: none;
   }
   #about-buttons {
