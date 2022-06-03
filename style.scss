@@ -2,13 +2,15 @@
 $white: white;
 $mint: rgb(217, 235, 201);
 $brown: rgb(137, 126, 109);
+$dark-brown: rgb(97, 91, 80);
 $pine: rgb(67, 96, 64);
 $black: rgba(49, 49, 49, 0.867);
-$purple: rgb(64, 0, 255);
-$dark-purple: rgb(53, 0, 213);
+$purple: rgb(54, 0, 217);
+$dark-purple: rgb(41, 0, 163);
 $lavendar: rgb(145, 152, 229);
 $pale-orange: rgb(230, 100, 101);
 $clear: rgb(255, 255, 255, 0);
+
 //FONTS
 $karla: "Karla", sans-serif;
 $rammetto: "Rammetto One", cursive;
@@ -22,7 +24,8 @@ $monaco: "Monaco", monospace;
   background-color: rgb(242, 253, 241, 0.1);
   color: $black;
   h2 {
-    color: $pine;
+      font-size: 2em;
+    color: $dark-purple;
     text-align: left;
     left: 2em;
   }
@@ -199,20 +202,22 @@ header {
     padding: 0.3em;
     padding-right: 0.6em;
     font-family: $rammetto;
-    font-size: 1.7em;
+    font-size: 2.3em;
     color: $black;
     transition: 0.3s;
     mix-blend-mode: multiply; // darkens title when meets brown square
-  }
+    line-height: 95%;
+}
   #head-circle {
-      display: none;
-    // position: fixed;
-    // top: -2.5em;
-    // right: -1.6em;
-    // height: 7em;
-    // width: 7em;
-    // background-color: $mint;
-    // border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    align-self: flex-end;
+    top: -3rem;
+    left: 1rem;
+    height: 7em;
+    width: 7em;
+    background-color: $purple;
+    border-radius: 50%;
   }
 }
 
@@ -301,7 +306,7 @@ p {
   top: 4.1em;
   right: 1em;
   font-family: $monaco;
-  color: $dark-purple;
+  color: $brown;
 }
 .desk-page-sub {
   //
@@ -471,7 +476,7 @@ footer {
     left: 0em;
     font-family: $monaco;
     font-size: 1.2em;
-    color: $brown;
+    color: rgb(107, 92, 73);
     writing-mode: vertical-lr; // text goes downward instead of right!
   }
   #contact-sub-page-desk {
@@ -485,6 +490,9 @@ footer {
   .card-modular {
     //
     @include card-modular-desk();
+    h2 {
+        text-align: center;
+    }
   }
   .card:hover,
   .card-modular:hover,
@@ -507,14 +515,14 @@ footer {
     font-size: 1em;
     top: 5.5em; //// moves text with icon
     left: 40vw; //// moves text with icon
-    transition: 0.3s;
+    transition: 0.1s;
     // opacity: 1;
-    color: $dark-purple;
+    color: $black;
   }
   .expand-icon:hover {
     //
     transform: scale(1); // grows icon
-    color: $purple;
+    color: gray;
   }
   #expand-check-1:hover ~ #journal-card-1,
   #expand-check-2:hover ~ #journal-card-2,
@@ -565,6 +573,7 @@ footer {
   header {
     //
     position: relative;
+    display: flex;
     flex-direction: row-reverse;
     overflow: hidden !important;
     width: 100vw;
@@ -575,14 +584,19 @@ footer {
       font-size: 4em;
     //   top: 0em;
     //   right: 1.1em;
-    justify-self: flex-end;
+    // justify-self: flex-end;
+    align-self: center;
     }
     #head-circle {
-      position: fixed;
-      top: -11em;
-      right: -6em;
-      width: 20em;
-      height: 20em;
+    top: -5em;
+    left: auto;
+    right: 10em;
+    z-index: 1;
+    position: absolute;
+    justify-self: flex-start;
+    align-self: flex-start;
+    height: 14em;
+    width: 14em;
     }
   }
 
@@ -599,6 +613,7 @@ footer {
     left: 1em;
     z-index: 3;
     font-size: 1.5em;
+    color: $black;
     transition: 0.1s;
   }
   #menu-text-desk:hover {
@@ -642,25 +657,26 @@ footer {
     padding: 2em;
     padding-right: 0.5em;
     font-size: 1.5em;
-    font-family: $monaco;
+    font-family: $karla;
     a,
     a:visited {
       text-decoration: none;
       color: $black;
-      transition: 0.3s;
+      transition: 0.1s;
     }
     a:hover {
-      color: $purple;
+      color: $black;
       text-transform: lowercase;
     }
     a:hover::before {
       content: "cd ./";
+      color: gray;
     }
     #portrait {
       width: 5em;
       margin: 2em 1em 0 0;
       border-radius: 50%;
-      border: 2px $brown solid;
+      box-shadow: rgb(0, 0, 0, 0.1) 0em 0em 1em;
     }
   }
 
