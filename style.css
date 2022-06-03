@@ -20,7 +20,8 @@ time {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
 }
 
@@ -36,11 +37,13 @@ body {
   position: relative;
   background-color: white;
   font-family: "Karla", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   background-attachment: fixed;
 }
 
 header {
+  display: flex;
+  flex-direction: row;
   position: fixed;
   z-index: 3;
   top: 0;
@@ -52,25 +55,18 @@ header {
 }
 header h1 {
   z-index: 3;
-  position: fixed;
-  top: 0.4em;
-  right: 1em;
-  font-family: "Rammetto One", cursive;
-  font-size: 1.7em;
-  color: rgb(64, 0, 255);
+  align-self: center;
+  margin-left: 0.5em;
   padding: 0.3em;
   padding-right: 0.6em;
+  font-family: "Rammetto One", cursive;
+  font-size: 1.7em;
+  color: rgba(49, 49, 49, 0.867);
   transition: 0.3s;
   mix-blend-mode: multiply;
 }
 header #head-circle {
-  position: fixed;
-  top: -2.5em;
-  right: -1.6em;
-  height: 7em;
-  width: 7em;
-  background-color: rgb(217, 235, 201);
-  border-radius: 50%;
+  display: none;
 }
 
 #nav-cont-mob {
@@ -80,7 +76,7 @@ header #head-circle {
   z-index: 999;
   position: fixed;
   top: 0.5em;
-  left: 0.7em;
+  right: 0.7em;
   font-size: 2.5em;
   color: rgba(49, 49, 49, 0.867);
 }
@@ -107,10 +103,10 @@ header #head-circle {
   padding: 0.3em 0.3em 0.3em 3.5em;
   transition: 0.3s;
 }
-#nav-cont-mob #nav-links-mob li a, #nav-cont-mob #nav-links-mob li a:visited {
+#nav-cont-mob #nav-links-mob li a,
+#nav-cont-mob #nav-links-mob li a:visited {
   text-decoration: none;
   color: rgba(49, 49, 49, 0.867);
-  font-style: none;
 }
 #nav-cont-mob #nav-button-mob {
   display: none;
@@ -254,7 +250,8 @@ p {
   justify-content: space-around;
   padding: 2em;
 }
-.download-button a, .download-button a:visited {
+.download-button a,
+.download-button a:visited {
   padding: 0.5em;
   font-size: 1em;
   color: white;
@@ -372,7 +369,13 @@ footer #contact-button {
     left: 0em;
     font-family: "Monaco", monospace;
     font-size: 1.2em;
-    color: rgb(53, 0, 213);
+    color: rgb(137, 126, 109);
+    writing-mode: vertical-lr;
+  }
+
+  #contact-sub-page-desk {
+    word-wrap: break-word;
+    overflow-y: visible;
   }
 
   .card {
@@ -403,7 +406,6 @@ footer #contact-button {
     position: relative;
     box-shadow: none;
     height: min-content;
-    align-self: space-between;
     margin: 4em 0em 0em 2em;
     width: 40vw;
     transition: 0.3s;
@@ -414,7 +416,9 @@ footer #contact-button {
     box-shadow: rgba(0, 0, 0, 0.1) 0em 0em 1em;
   }
 
-  .card:hover, .card-modular:hover, .card-expand:hover {
+  .card:hover,
+.card-modular:hover,
+.card-expand:hover {
     transform: scale(1.015);
   }
 
@@ -509,6 +513,7 @@ footer #contact-button {
 
   header {
     position: relative;
+    flex-direction: row-reverse;
     overflow: hidden !important;
     width: 100vw;
     height: 10em;
@@ -517,8 +522,7 @@ footer #contact-button {
   }
   header h1 {
     font-size: 4em;
-    top: 0em;
-    right: 1.1em;
+    justify-self: flex-end;
   }
   header #head-circle {
     position: fixed;
@@ -586,7 +590,8 @@ footer #contact-button {
     font-size: 1.5em;
     font-family: "Monaco", monospace;
   }
-  .nav-list a, .nav-list a:visited,
+  .nav-list a,
+.nav-list a:visited,
 #nav-list-desk a,
 #nav-list-desk a:visited {
     text-decoration: none;
@@ -690,7 +695,6 @@ footer #contact-button {
     position: relative;
     box-shadow: none;
     height: min-content;
-    align-self: space-between;
     margin: 4em 0em 0em 2em;
     width: 40vw;
     transition: 0.3s;
@@ -732,7 +736,8 @@ footer #contact-button {
     text-align: left;
     left: 2em;
   }
-  .download-button a, .download-button a:visited {
+  .download-button a,
+.download-button a:visited {
     padding: 0.5em;
     font-size: 1em;
     color: white;
@@ -743,7 +748,8 @@ footer #contact-button {
     text-decoration: none;
     color: white;
   }
-  .download-button a:hover, .download-button a:visited:hover {
+  .download-button a:hover,
+.download-button a:visited:hover {
     cursor: pointer;
     background-color: rgb(64, 0, 255);
   }
