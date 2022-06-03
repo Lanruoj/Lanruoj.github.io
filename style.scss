@@ -165,11 +165,33 @@ html,
 body {
   min-height: 100vh;
 }
+#welcome-text {
+  text-align: center;
+  font-size: 6em;
+  background: linear-gradient(to right, $purple, $dark-brown, $dark-purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: welcome-animation 2s infinite;
+  &::first-letter {
+    font-size: 300%;
+    color: $dark-purple;
+  }
+}
+@keyframes welcome-animation {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
 .blog-time {
   color: $dark-brown;
-}
-#personal-li {
-  text-decoration: line-through;
 }
 
 ////MOBILE////
@@ -231,7 +253,7 @@ header {
     top: 0.5em;
     right: 0.7em;
     font-size: 2.5em;
-    color: $black;
+    color: $dark-brown;
   }
   #nav-links-mob {
     z-index: 3; ////// CHANGE
@@ -397,7 +419,16 @@ footer {
 #expand-check-5 {
   display: none; // hides the expand features on mobile/tablet
 }
-
+.page {
+  margin-top: -8em;
+  width: 100vw;
+  height: min-content;
+  word-wrap: break-word;
+  #welcome-text {
+    font-size: 4em;
+    word-wrap: break-word;
+  }
+}
 
 
 

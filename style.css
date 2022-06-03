@@ -25,12 +25,34 @@ body {
   min-height: 100vh;
 }
 
-.blog-time {
-  color: rgb(69, 62, 47);
+#welcome-text {
+  text-align: center;
+  font-size: 6em;
+  background: linear-gradient(to right, rgb(76, 0, 255), rgb(69, 62, 47), rgb(47, 0, 186));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: welcome-animation 2s infinite;
+}
+#welcome-text::first-letter {
+  font-size: 300%;
+  color: rgb(47, 0, 186);
 }
 
-#personal-li {
-  text-decoration: line-through;
+@keyframes welcome-animation {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.blog-time {
+  color: rgb(69, 62, 47);
 }
 
 body {
@@ -87,7 +109,7 @@ header #head-circle {
   top: 0.5em;
   right: 0.7em;
   font-size: 2.5em;
-  color: rgb(57, 57, 57);
+  color: rgb(69, 62, 47);
 }
 #nav-cont-mob #nav-links-mob {
   z-index: 3;
@@ -315,6 +337,17 @@ footer #contact-button {
 #expand-check-4,
 #expand-check-5 {
   display: none;
+}
+
+.page {
+  margin-top: -8em;
+  width: 100vw;
+  height: min-content;
+  word-wrap: break-word;
+}
+.page #welcome-text {
+  font-size: 4em;
+  word-wrap: break-word;
 }
 
 @media only screen and (max-width: 280px) {
