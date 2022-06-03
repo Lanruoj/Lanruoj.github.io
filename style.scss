@@ -231,7 +231,7 @@ header {
     line-height: 95%;
 }
   #head-circle {
-    display: none;
+    // display: none;
     z-index: 2;
     position: absolute;
     align-self: flex-end;
@@ -658,7 +658,7 @@ footer {
     left: 1em;
     z-index: 3;
     font-size: 1.5em;
-    color: $dark-purple;
+    color: $dark-brown;
     transition: 0.1s;
   }
   #menu-text-desk:hover {

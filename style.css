@@ -88,7 +88,6 @@ header h1 {
   line-height: 95%;
 }
 header #head-circle {
-  display: none;
   z-index: 2;
   position: absolute;
   align-self: flex-end;
@@ -603,7 +602,7 @@ footer #contact-button {
     left: 1em;
     z-index: 3;
     font-size: 1.5em;
-    color: rgb(47, 0, 186);
+    color: rgb(69, 62, 47);
     transition: 0.1s;
   }
 
