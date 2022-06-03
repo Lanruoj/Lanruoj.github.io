@@ -227,10 +227,11 @@ header {
     font-size: 2.3em;
     color: $dark-brown;
     transition: 0.3s;
-    mix-blend-mode: multiply; // darkens title when meets brown square
+    // mix-blend-mode: multiply; // darkens title when meets brown square
     line-height: 95%;
 }
   #head-circle {
+    display: none;
     z-index: 2;
     position: absolute;
     align-self: flex-end;
@@ -519,7 +520,7 @@ footer {
     left: 0em;
     font-family: $monaco;
     font-size: 1.2em;
-    color: $purple;
+    color: $dark-brown;
     writing-mode: vertical-lr; // text goes downward instead of right!
   }
   #contact-sub-page-desk {
@@ -655,7 +656,7 @@ footer {
     left: 1em;
     z-index: 3;
     font-size: 1.5em;
-    color: $brown;
+    color: $dark-purple;
     transition: 0.1s;
   }
   #menu-text-desk:hover {
@@ -733,11 +734,9 @@ footer {
       @include card-border();
       max-width: 50vw;
       transition: 0.3s;
-      filter: saturate(0.8);
     }
     #about-img:hover {
       transform: scale(1.1);
-      filter: saturate(1);
     }
   }
   #about-img-cont:hover {

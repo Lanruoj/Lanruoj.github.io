@@ -85,10 +85,10 @@ header h1 {
   font-size: 2.3em;
   color: rgb(69, 62, 47);
   transition: 0.3s;
-  mix-blend-mode: multiply;
   line-height: 95%;
 }
 header #head-circle {
+  display: none;
   z-index: 2;
   position: absolute;
   align-self: flex-end;
@@ -415,7 +415,7 @@ footer #contact-button {
     left: 0em;
     font-family: "Monaco", monospace;
     font-size: 1.2em;
-    color: rgb(76, 0, 255);
+    color: rgb(69, 62, 47);
     writing-mode: vertical-lr;
   }
 
@@ -601,7 +601,7 @@ footer #contact-button {
     left: 1em;
     z-index: 3;
     font-size: 1.5em;
-    color: rgb(83, 75, 58);
+    color: rgb(47, 0, 186);
     transition: 0.1s;
   }
 
@@ -704,11 +704,9 @@ footer #contact-button {
     border-radius: 2em 2em 2em 2em;
     max-width: 50vw;
     transition: 0.3s;
-    filter: saturate(0.8);
   }
   #about-img-cont #about-img:hover {
     transform: scale(1.1);
-    filter: saturate(1);
   }
 
   #about-img-cont:hover {
