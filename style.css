@@ -417,6 +417,8 @@ footer #contact-button {
     font-size: 1.2em;
     color: rgb(69, 62, 47);
     writing-mode: vertical-lr;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   #contact-sub-page-desk {

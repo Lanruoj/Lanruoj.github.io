@@ -522,6 +522,8 @@ footer {
     font-size: 1.2em;
     color: $dark-brown;
     writing-mode: vertical-lr; // text goes downward instead of right!
+    white-space: nowrap;
+    overflow: hidden;
   }
   #contact-sub-page-desk {
     word-wrap:break-word;
