@@ -26,7 +26,7 @@ body {
 }
 
 .blog-time {
-  color: rgb(171, 162, 149);
+  color: rgb(69, 62, 47);
 }
 
 #personal-li {
@@ -45,7 +45,7 @@ header {
   display: flex;
   flex-direction: row;
   position: fixed;
-  z-index: 3;
+  z-index: 5;
   top: 0;
   width: 100vw;
   height: 5em;
@@ -54,27 +54,27 @@ header {
   box-shadow: 0 0 0.2em gray;
 }
 header h1 {
-  z-index: 3;
+  z-index: 6;
   align-self: center;
   margin-left: 0.5em;
   padding: 0.3em;
   padding-right: 0.6em;
   font-family: "Rammetto One", cursive;
   font-size: 2.3em;
-  color: rgb(54, 0, 217);
+  color: rgb(69, 62, 47);
   transition: 0.3s;
   mix-blend-mode: multiply;
   line-height: 95%;
 }
 header #head-circle {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   align-self: flex-end;
   top: -3rem;
   left: 1rem;
   height: 7em;
   width: 7em;
-  background-color: rgb(171, 162, 149);
+  background-color: rgb(76, 0, 255);
   border-radius: 50%;
 }
 
@@ -87,10 +87,10 @@ header #head-circle {
   top: 0.5em;
   right: 0.7em;
   font-size: 2.5em;
-  color: rgba(49, 49, 49, 0.867);
+  color: rgb(57, 57, 57);
 }
 #nav-cont-mob #nav-links-mob {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   top: 5.1em;
   left: -30em;
@@ -115,7 +115,7 @@ header #head-circle {
 #nav-cont-mob #nav-links-mob li a,
 #nav-cont-mob #nav-links-mob li a:visited {
   text-decoration: none;
-  color: rgba(49, 49, 49, 0.867);
+  color: rgb(57, 57, 57);
 }
 #nav-cont-mob #nav-button-mob {
   display: none;
@@ -145,13 +145,13 @@ p {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
   background-color: rgba(242, 253, 241, 0.1);
-  color: rgba(49, 49, 49, 0.867);
+  color: rgb(57, 57, 57);
   margin: 2em -2em 0em -2em;
   background-color: rgba(242, 253, 241, 0.1);
 }
 .card h2 {
   font-size: 2em;
-  color: rgb(41, 0, 163);
+  color: rgb(47, 0, 186);
   text-align: left;
   left: 2em;
 }
@@ -160,7 +160,7 @@ p {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
   background-color: rgba(242, 253, 241, 0.1);
-  color: rgba(49, 49, 49, 0.867);
+  color: rgb(57, 57, 57);
   margin: 2em -2em 0em -2em;
   width: 80vw;
   margin: 2em auto 0em auto;
@@ -168,7 +168,7 @@ p {
 }
 .card-modular h2 {
   font-size: 2em;
-  color: rgb(41, 0, 163);
+  color: rgb(47, 0, 186);
   text-align: left;
   left: 2em;
 }
@@ -191,12 +191,12 @@ p {
   border-radius: 2em 2em 2em 2em;
   padding: 2em;
   background-color: rgba(242, 253, 241, 0.1);
-  color: rgba(49, 49, 49, 0.867);
+  color: rgb(57, 57, 57);
   margin: 2em -2em;
 }
 .card-expand h2 {
   font-size: 2em;
-  color: rgb(41, 0, 163);
+  color: rgb(47, 0, 186);
   text-align: left;
   left: 2em;
 }
@@ -225,7 +225,7 @@ p {
   padding: 0.5em;
   font-size: 1em;
   color: rgb(249, 247, 242);
-  background-color: rgb(41, 0, 163);
+  background-color: rgb(76, 0, 255);
   border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
   position: relative;
@@ -258,7 +258,7 @@ p {
   padding: 0.5em;
   font-size: 1em;
   color: rgb(249, 247, 242);
-  background-color: rgb(41, 0, 163);
+  background-color: rgb(76, 0, 255);
   border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
   position: relative;
@@ -287,7 +287,7 @@ footer {
 footer p {
   margin-left: 3em;
   font-size: 1rem;
-  color: rgba(49, 49, 49, 0.867);
+  color: rgb(57, 57, 57);
 }
 footer form {
   background-color: rgb(249, 247, 242);
@@ -299,7 +299,7 @@ footer #contact-button {
   padding: 0.5em;
   font-size: 1em;
   color: rgb(249, 247, 242);
-  background-color: rgb(41, 0, 163);
+  background-color: rgb(76, 0, 255);
   border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
   position: relative;
@@ -318,17 +318,24 @@ footer #contact-button {
 }
 
 @media only screen and (max-width: 280px) {
-  .card-expand {
-    padding: 1em;
+  body {
+    font-size: 0.8rem;
+  }
+
+  footer {
+    justify-content: flex-start;
   }
 
   .card {
-    margin: 0em -3em;
+    margin: 0em -2em;
   }
 
   .contact-card {
     text-align: center;
     word-wrap: break-word;
+  }
+  .contact-card h2 {
+    text-align: center;
   }
 }
 @media only screen and (min-width: 540px) and (max-width: 912px) {
@@ -375,7 +382,7 @@ footer #contact-button {
     left: 0em;
     font-family: "Monaco", monospace;
     font-size: 1.2em;
-    color: rgb(171, 162, 149);
+    color: rgb(76, 0, 255);
     writing-mode: vertical-lr;
   }
 
@@ -388,7 +395,7 @@ footer #contact-button {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(57, 57, 57);
     margin: 2em 0em 0em 2em;
     width: 100vw;
     transition: 0.3s;
@@ -398,7 +405,7 @@ footer #contact-button {
   }
   .card h2 {
     font-size: 2em;
-    color: rgb(41, 0, 163);
+    color: rgb(47, 0, 186);
     text-align: left;
     left: 2em;
   }
@@ -436,7 +443,7 @@ footer #contact-button {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(57, 57, 57);
     margin: 2em 0em 0em 2em;
     width: 100vw;
     transition: 0.3s;
@@ -448,7 +455,7 @@ footer #contact-button {
   }
   .card-expand h2 {
     font-size: 2em;
-    color: rgb(41, 0, 163);
+    color: rgb(47, 0, 186);
     text-align: left;
     left: 2em;
   }
@@ -467,12 +474,12 @@ footer #contact-button {
     top: 5.5em;
     left: 40vw;
     transition: 0.1s;
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(47, 0, 186);
   }
 
   .expand-icon:hover {
     transform: scale(1);
-    color: gray;
+    color: rgb(76, 0, 255);
   }
 
   #expand-check-1:hover ~ #journal-card-1,
@@ -524,6 +531,7 @@ footer #contact-button {
   }
 
   header {
+    z-index: 0;
     position: relative;
     display: flex;
     flex-direction: row-reverse;
@@ -560,7 +568,7 @@ footer #contact-button {
     left: 1em;
     z-index: 3;
     font-size: 1.5em;
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(83, 75, 58);
     transition: 0.1s;
   }
 
@@ -613,18 +621,17 @@ footer #contact-button {
 #nav-list-desk a,
 #nav-list-desk a:visited {
     text-decoration: none;
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(69, 62, 47);
     transition: 0.1s;
   }
   .nav-list a:hover,
 #nav-list-desk a:hover {
-    color: rgba(49, 49, 49, 0.867);
     text-transform: lowercase;
   }
   .nav-list a:hover::before,
 #nav-list-desk a:hover::before {
     content: "cd ./";
-    color: rgb(168, 168, 168);
+    color: rgb(47, 0, 186);
   }
   .nav-list #portrait,
 #nav-list-desk #portrait {
@@ -638,7 +645,7 @@ footer #contact-button {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(57, 57, 57);
     margin: 2em 0em 0em 2em;
     width: 100vw;
     transition: 0.3s;
@@ -651,7 +658,7 @@ footer #contact-button {
   }
   #about-img-cont h2 {
     font-size: 2em;
-    color: rgb(41, 0, 163);
+    color: rgb(47, 0, 186);
     text-align: left;
     left: 2em;
   }
@@ -680,7 +687,7 @@ footer #contact-button {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(57, 57, 57);
     margin: 2em 0em 0em 2em;
     width: 100vw;
     transition: 0.3s;
@@ -694,7 +701,7 @@ footer #contact-button {
   }
   #about-buttons h2 {
     font-size: 2em;
-    color: rgb(41, 0, 163);
+    color: rgb(47, 0, 186);
     text-align: left;
     left: 2em;
   }
@@ -702,14 +709,14 @@ footer #contact-button {
     padding: 0.5em;
     font-size: 1em;
     color: rgb(249, 247, 242);
-    background-color: rgb(41, 0, 163);
+    background-color: rgb(76, 0, 255);
     border-radius: 0.4em 0.4em 0.4em 0.4em;
     border: none;
     transition: 0.1s;
   }
   #about-buttons .button-cont .button:hover {
     cursor: pointer;
-    background-color: rgb(54, 0, 217);
+    background-color: rgb(47, 0, 186);
   }
 
   #logos-card {
@@ -741,7 +748,7 @@ footer #contact-button {
     border-radius: 2em 2em 2em 2em;
     padding: 2em;
     background-color: rgba(242, 253, 241, 0.1);
-    color: rgba(49, 49, 49, 0.867);
+    color: rgb(57, 57, 57);
     margin: 2em 0em 0em 2em;
     width: 100vw;
     transition: 0.3s;
@@ -755,7 +762,7 @@ footer #contact-button {
   }
   .download-button h2 {
     font-size: 2em;
-    color: rgb(41, 0, 163);
+    color: rgb(47, 0, 186);
     text-align: left;
     left: 2em;
   }
@@ -764,7 +771,7 @@ footer #contact-button {
     padding: 0.5em;
     font-size: 1em;
     color: rgb(249, 247, 242);
-    background-color: rgb(41, 0, 163);
+    background-color: rgb(76, 0, 255);
     border-radius: 0.4em 0.4em 0.4em 0.4em;
     border: none;
     transition: 0.1s;
@@ -774,7 +781,7 @@ footer #contact-button {
   .download-button a:hover,
 .download-button a:visited:hover {
     cursor: pointer;
-    background-color: rgb(54, 0, 217);
+    background-color: rgb(47, 0, 186);
   }
 
   #resume-iframe {
@@ -786,14 +793,14 @@ footer #contact-button {
     padding: 0.5em;
     font-size: 1em;
     color: rgb(249, 247, 242);
-    background-color: rgb(41, 0, 163);
+    background-color: rgb(76, 0, 255);
     border-radius: 0.4em 0.4em 0.4em 0.4em;
     border: none;
     transition: 0.1s;
   }
   #contact-button:hover {
     cursor: pointer;
-    background-color: rgb(54, 0, 217);
+    background-color: rgb(47, 0, 186);
   }
 }
 

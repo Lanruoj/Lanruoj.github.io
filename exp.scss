@@ -1,12 +1,26 @@
-
-
-
-
-
-//////
-@mixin clear-card-mob() { //
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding: 2em;
+#welcome-text {
+    // text-align: center;
+    font-size: 5em;
+    // color: $dark-brown;
+    background: linear-gradient(to right, $purple, $white, $dark-purple);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    animation: welcome-animation 2s infinite;
+    &::first-letter {
+      font-size: 300%;
+      color: $dark-purple;
+    }
+}
+  @keyframes welcome-animation {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
 }

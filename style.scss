@@ -1,12 +1,12 @@
 //COLOURS
 $white: rgb(249, 247, 242);
 $mint: rgb(217, 235, 201);
-$brown: rgb(171, 162, 149);
-$dark-brown: rgb(97, 91, 80);
+$brown: rgb(83, 75, 58);
+$dark-brown: rgb(69, 62, 47);
 $pine: rgb(67, 96, 64);
-$black: rgba(49, 49, 49, 0.867);
-$purple: rgb(54, 0, 217);
-$dark-purple: rgb(41, 0, 163);
+$black: rgb(57, 57, 57);
+$purple: rgb(76, 0, 255);
+$dark-purple: rgb(47, 0, 186);
 $lavendar: rgb(145, 152, 229);
 $pale-orange: rgb(230, 100, 101);
 $clear: rgb(255, 255, 255, 0);
@@ -40,7 +40,7 @@ $monaco: "Monaco", monospace;
   padding: 0.5em;
   font-size: 1em;
   color: $white;
-  background-color: $dark-purple;
+  background-color: $purple;
   border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
 }
@@ -58,7 +58,7 @@ $monaco: "Monaco", monospace;
   &:hover {
     // & selects pseudo-selector in a mixin!
     cursor: pointer;
-    background-color: $purple;
+    background-color: $dark-purple;
   }
 }
 ////////////////MOBILE MIXINS/////////////
@@ -166,7 +166,7 @@ body {
   min-height: 100vh;
 }
 .blog-time {
-  color: $brown;
+  color: $dark-brown;
 }
 #personal-li {
   text-decoration: line-through;
@@ -188,7 +188,7 @@ header {
   display: flex;
   flex-direction: row; //////////
   position: fixed; // keeps header/navbar at top when scrolling
-  z-index: 3; // layers elements depending on index value
+  z-index: 5; // layers elements depending on index value
   top: 0; // prevents header from dropping when I adjust <main>!
   width: 100vw;
   height: 5em;
@@ -196,27 +196,27 @@ header {
   backdrop-filter: blur(0.2em); // !h1 un-fixes when I remove???!
   box-shadow: 0 0 0.2em gray; // slight box shadow
   h1 {
-    z-index: 3; // title on top of shape
+    z-index: 6; // title on top of shape
     align-self: center;
     margin-left: 0.5em;
     padding: 0.3em;
     padding-right: 0.6em;
     font-family: $rammetto;
     font-size: 2.3em;
-    color: $purple;
+    color: $dark-brown;
     transition: 0.3s;
     mix-blend-mode: multiply; // darkens title when meets brown square
     line-height: 95%;
 }
   #head-circle {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     align-self: flex-end;
     top: -3rem;
     left: 1rem;
     height: 7em;
     width: 7em;
-    background-color: $brown;
+    background-color: $purple;
     border-radius: 50%;
   }
 }
@@ -234,7 +234,7 @@ header {
     color: $black;
   }
   #nav-links-mob {
-    z-index: 2; ////// CHANGE
+    z-index: 3; ////// CHANGE
     position: fixed;
     top: 5.1em;
     left: -30em;
@@ -405,15 +405,20 @@ footer {
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////NARROW DEVICE VERSION////////////////////
 @media only screen and (max-width: 280px) {
-  .card-expand {
-    // margin: 2em -2em;
-    padding: 1em;
+  body {
+    font-size: 0.8rem;
+  }
+  footer {
+    justify-content: flex-start; // puts footer text to the left so it didn't overlap the contact button
   }
   .card {
-    margin: 0em -3em;
+    margin: 0em -2em;
   }
   .contact-card {
     //
+    h2 {
+      text-align: center;
+    }
     text-align: center;
     word-wrap: break-word; // prevents email from going off page
   }
@@ -483,7 +488,7 @@ footer {
     left: 0em;
     font-family: $monaco;
     font-size: 1.2em;
-    color: $brown;
+    color: $purple;
     writing-mode: vertical-lr; // text goes downward instead of right!
   }
   #contact-sub-page-desk {
@@ -524,12 +529,12 @@ footer {
     left: 40vw; //// moves text with icon
     transition: 0.1s;
     // opacity: 1;
-    color: $black;
+    color: $dark-purple;
   }
   .expand-icon:hover {
     //
     transform: scale(1); // grows icon
-    color: gray;
+    color: $purple;
   }
   #expand-check-1:hover ~ #journal-card-1,
   #expand-check-2:hover ~ #journal-card-2,
@@ -580,6 +585,7 @@ footer {
   ////HEADER MODULE DESKTOP////
   header {
     //
+    z-index: 0; // puts menu-text icon on top of header bar which inhereted the top index from mobile header
     position: relative;
     display: flex;
     flex-direction: row-reverse;
@@ -618,7 +624,7 @@ footer {
     left: 1em;
     z-index: 3;
     font-size: 1.5em;
-    color: $black;
+    color: $brown;
     transition: 0.1s;
   }
   #menu-text-desk:hover {
@@ -666,16 +672,15 @@ footer {
     a,
     a:visited {
       text-decoration: none;
-      color: $black;
+      color: $dark-brown;
       transition: 0.1s;
     }
     a:hover {
-      color: $black;
       text-transform: lowercase;
     }
     a:hover::before {
       content: "cd ./";
-      color: rgb(168, 168, 168);
+      color: $dark-purple;
     }
     #portrait {
       width: 5em;
