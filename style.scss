@@ -194,6 +194,45 @@ body {
   color: $dark-brown;
 }
 
+ul {
+  li {
+    list-style: none;
+    line-height: 125%;
+  }
+}
+a:link { // & or ampersand selects multiple states of single selector
+  text-decoration: none;
+  color: $purple;
+}
+a:visited {
+  color: $dark-brown;
+}
+hr {
+  border: 0.5px $dark-brown solid;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////NARROW DEVICE VERSION////////////////////
+@media only screen and (max-width: 280px) {
+  body {
+    font-size: 0.8rem;
+  }
+  footer {
+    justify-content: flex-start; // puts footer text to the left so it didn't overlap the contact button
+  }
+  .card {
+    margin: 0em -2em;
+  }
+  .contact-card {
+    //
+    h2 {
+      text-align: center;
+    }
+    text-align: center;
+    word-wrap: break-word; // prevents email from going off page
+  }
+}
+
 ////MOBILE////
 body {
   //
@@ -277,9 +316,7 @@ header {
       font-size: 3em;
       padding: 0.3em 0.3em 0.3em 3.5em;
       transition: 0.3s;
-      a,
-      a:visited {
-        text-decoration: none;
+      a:link {
         color: $black;
       }
     }
@@ -367,10 +404,8 @@ p {
 .download-button {
   //
   @include clear-card-mob();
-  a,
-  a:visited {
+  a {
     @include button-mob();
-    text-decoration: none;
     color: $white;
   }
 }
@@ -430,33 +465,6 @@ footer {
     word-wrap: break-word;
   }
 }
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////NARROW DEVICE VERSION////////////////////
-@media only screen and (max-width: 280px) {
-  body {
-    font-size: 0.8rem;
-  }
-  footer {
-    justify-content: flex-start; // puts footer text to the left so it didn't overlap the contact button
-  }
-  .card {
-    margin: 0em -2em;
-  }
-  .contact-card {
-    //
-    h2 {
-      text-align: center;
-    }
-    text-align: center;
-    word-wrap: break-word; // prevents email from going off page
-  }
-}
-
-
 
 
 
@@ -542,6 +550,9 @@ footer {
     h2 {
         text-align: center;
     }
+    li {
+      text-align: center;
+    }
   }
   .card:hover,
   .card-modular:hover,
@@ -563,7 +574,7 @@ footer {
     font-family: "Monaco", monospace;
     font-size: 1em;
     top: 5.5em; //// moves text with icon
-    left: 40vw; //// moves text with icon
+    // left: 40vw; //// moves text with icon
     transition: 0.1s;
     // opacity: 1;
     color: $dark-purple;
@@ -706,14 +717,9 @@ footer {
     padding-right: 0.5em;
     font-size: 1.5em;
     font-family: $karla;
-    a,
-    a:visited {
-      text-decoration: none;
+    a:link {
       color: $dark-brown;
       transition: 0.1s;
-    }
-    a:hover {
-      text-transform: lowercase;
     }
     a:hover::before {
       content: "cd ./";
@@ -775,10 +781,9 @@ footer {
   .download-button {
     //
     @include clear-card-desk();
-    a,
-    a:visited {
+    a {
       @include desk-button();
-      text-decoration: none;
+      // text-decoration: none;
       color: $white;
     }
   }

@@ -55,6 +55,45 @@ body {
   color: rgb(69, 62, 47);
 }
 
+ul li {
+  list-style: none;
+  line-height: 125%;
+}
+
+a:link {
+  text-decoration: none;
+  color: rgb(76, 0, 255);
+}
+
+a:visited {
+  color: rgb(69, 62, 47);
+}
+
+hr {
+  border: 0.5px rgb(69, 62, 47) solid;
+}
+
+@media only screen and (max-width: 280px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  footer {
+    justify-content: flex-start;
+  }
+
+  .card {
+    margin: 0em -2em;
+  }
+
+  .contact-card {
+    text-align: center;
+    word-wrap: break-word;
+  }
+  .contact-card h2 {
+    text-align: center;
+  }
+}
 body {
   position: relative;
   background-color: rgb(249, 247, 242);
@@ -133,9 +172,7 @@ header #head-circle {
   padding: 0.3em 0.3em 0.3em 3.5em;
   transition: 0.3s;
 }
-#nav-cont-mob #nav-links-mob li a,
-#nav-cont-mob #nav-links-mob li a:visited {
-  text-decoration: none;
+#nav-cont-mob #nav-links-mob li a:link {
   color: rgb(57, 57, 57);
 }
 #nav-cont-mob #nav-button-mob {
@@ -274,8 +311,7 @@ p {
   justify-content: space-around;
   padding: 2em;
 }
-.download-button a,
-.download-button a:visited {
+.download-button a {
   padding: 0.5em;
   font-size: 1em;
   color: rgb(249, 247, 242);
@@ -283,7 +319,6 @@ p {
   border-radius: 0.4em 0.4em 0.4em 0.4em;
   border: none;
   position: relative;
-  text-decoration: none;
   color: rgb(249, 247, 242);
 }
 
@@ -349,27 +384,6 @@ footer #contact-button {
   word-wrap: break-word;
 }
 
-@media only screen and (max-width: 280px) {
-  body {
-    font-size: 0.8rem;
-  }
-
-  footer {
-    justify-content: flex-start;
-  }
-
-  .card {
-    margin: 0em -2em;
-  }
-
-  .contact-card {
-    text-align: center;
-    word-wrap: break-word;
-  }
-  .contact-card h2 {
-    text-align: center;
-  }
-}
 @media only screen and (min-width: 540px) and (max-width: 912px) {
   #nav-cont-mob #nav-links-mob .nav-list,
 #nav-cont-mob #nav-links-mob #nav-list-mob {
@@ -470,6 +484,9 @@ footer #contact-button {
   .card-modular h2 {
     text-align: center;
   }
+  .card-modular li {
+    text-align: center;
+  }
 
   .card:hover,
 .card-modular:hover,
@@ -510,7 +527,6 @@ footer #contact-button {
     font-family: "Monaco", monospace;
     font-size: 1em;
     top: 5.5em;
-    left: 40vw;
     transition: 0.1s;
     color: rgb(47, 0, 186);
   }
@@ -654,17 +670,10 @@ footer #contact-button {
     font-size: 1.5em;
     font-family: "Karla", sans-serif;
   }
-  .nav-list a,
-.nav-list a:visited,
-#nav-list-desk a,
-#nav-list-desk a:visited {
-    text-decoration: none;
+  .nav-list a:link,
+#nav-list-desk a:link {
     color: rgb(69, 62, 47);
     transition: 0.1s;
-  }
-  .nav-list a:hover,
-#nav-list-desk a:hover {
-    text-transform: lowercase;
   }
   .nav-list a:hover::before,
 #nav-list-desk a:hover::before {
@@ -802,8 +811,7 @@ footer #contact-button {
     text-align: left;
     left: 2em;
   }
-  .download-button a,
-.download-button a:visited {
+  .download-button a {
     padding: 0.5em;
     font-size: 1em;
     color: rgb(249, 247, 242);
@@ -811,11 +819,9 @@ footer #contact-button {
     border-radius: 0.4em 0.4em 0.4em 0.4em;
     border: none;
     transition: 0.1s;
-    text-decoration: none;
     color: rgb(249, 247, 242);
   }
-  .download-button a:hover,
-.download-button a:visited:hover {
+  .download-button a:hover {
     cursor: pointer;
     background-color: rgb(47, 0, 186);
   }
