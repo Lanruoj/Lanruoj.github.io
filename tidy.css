@@ -47,9 +47,20 @@ body header #header-cont {
   padding-left: 1rem;
 }
 body header #header-cont #header-text {
+  z-index: 11;
   font-family: "Rammetto One", cursive;
   font-size: 1.7rem;
   color: rgb(69, 62, 47);
+}
+body header #header-cont #header-circle {
+  position: absolute;
+  top: -4.5rem;
+  left: 1.2rem;
+  height: 7rem;
+  width: 7rem;
+  background-color: rgb(76, 0, 255);
+  border-radius: 50%;
+  mix-blend-mode: multiply;
 }
 body header nav {
   display: flex;
@@ -126,7 +137,7 @@ body main section #about-img-cont img {
 body main section .card {
   margin: 1rem 0rem;
   padding: 1rem;
-  background-color: white;
+  background-color: rgb(249, 247, 242);
   border-radius: 1rem 1rem 1rem 1rem;
 }
 body main section .card h2 {

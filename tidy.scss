@@ -66,9 +66,20 @@ body {
       display: inline-block;
       padding-left: 1rem;
       #header-text {
+          z-index: 11;
         font-family: $rammetto;
         font-size: 1.7rem;
         color: $dark-brown;
+      }
+      #header-circle {
+          position: absolute;
+          top: -4.5rem;
+          left: 1.2rem;
+          height: 7rem;
+          width: 7rem;
+          background-color: $purple;
+          border-radius: 50%;
+          mix-blend-mode:multiply;
       }
     }
     nav {
@@ -147,7 +158,7 @@ body {
       .card {
           margin: 1rem 0rem;
         padding: 1rem;
-        background-color: white;
+        background-color: $white;
         @include card-border();
         h2 {
           text-align: center;
