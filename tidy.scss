@@ -1,0 +1,180 @@
+//COLOURS
+$white: rgb(249, 247, 242);
+$mint: rgb(217, 235, 201);
+$brown: rgb(83, 75, 58);
+$dark-brown: rgb(69, 62, 47);
+$pine: rgb(67, 96, 64);
+$black: rgb(57, 57, 57);
+$purple: rgb(76, 0, 255);
+$dark-purple: rgb(47, 0, 186);
+$lavendar: rgb(145, 152, 229);
+$pale-orange: rgb(230, 100, 101);
+$clear: rgb(255, 255, 255, 0);
+//FONTS
+$karla: "Karla", sans-serif;
+$rammetto: "Rammetto One", cursive;
+$monaco: "Monaco", monospace;
+//MIXINS
+@mixin box-shadow() {
+  box-shadow: 0px 0px 5px black;
+}
+@mixin card-border() {
+  border-radius: 1rem 1rem 1rem 1rem;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; // makes it easier to size/pad/margin items
+}
+html,
+body {
+  min-height: 120vh;
+}
+
+a {
+  text-decoration: none;
+  color: $brown;
+}
+
+.button {
+  padding: 0.5rem;
+  min-width: 5rem;
+  height: 2rem;
+  border-style: none;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: $purple;
+  color: white;
+}
+
+body {
+  background-color: $white; //
+  position: relative;
+  list-style: none;
+  header {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: $white;
+    @include box-shadow();
+    #header-cont {
+      position: relative;
+      display: inline-block;
+      padding-left: 1rem;
+      #header-text {
+        font-family: $rammetto;
+        font-size: 1.7rem;
+        color: $dark-brown;
+      }
+    }
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100vw;
+      #mob-nav-button:checked ~ #nav-list {
+        transform: translateX(0%);
+      }
+      #mob-nav-icon {
+        align-self: center;
+        justify-self: center;
+        padding: 1rem;
+        font-size: 2rem;
+        color: $brown;
+      }
+      #nav-list {
+        background-color: $white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        top: 10vh;
+        width: 100vw;
+        height: 90vh;
+        padding: 5rem;
+        transform: translateX(-100%);
+        transition: 0.5s;
+        li {
+          text-align: center;
+          font-family: $karla;
+          font-size: 1.5rem;
+        }
+      }
+
+      #desk-nav-icon {
+        display: none;
+      }
+      #mob-nav-button,
+      #desk-nav-button {
+        display: none;
+      }
+    }
+  }
+
+  main {
+    background-color: $white; //
+    position: relative;
+    top: 10vh;
+    min-height: 100vh;
+    margin-bottom: 5rem;
+    font-family: $karla;
+    section {
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      padding: 1rem;
+      padding-bottom: 0;
+      .desk-page-sub {
+        display: none;
+      }
+      #about-img-cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        img {
+          @include card-border();
+          max-width: 100%;
+        }
+      }
+      .card {
+          margin: 1rem 0rem;
+        padding: 1rem;
+        background-color: white;
+        @include card-border();
+        h2 {
+          text-align: center;
+          font-family: $karla;
+        }
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    }
+  }
+  footer {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 5vh;
+    bottom: 0vh;
+    padding: 1rem;
+    background-color: $white;
+    @include box-shadow();
+    #footer-text {
+      font-family: $karla;
+    }
+  }
+}

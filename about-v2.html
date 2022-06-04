@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./tidy.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FONT-AWESOME ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>About / TK</title>
+  </head>
+
+  <body>
+    <!-- HEADER MODULE -->
+    <header>
+      <!-- HEADER TITLE+CIRCLE -->
+      <div id="header-cont">
+        <h1 id="header-text">portfolio</h1>
+        <div id="header-circle"></div>
+      </div>
+
+      <!-- MOBILE NAV MENU -->
+      <nav>
+        <!-- MOBILE HAMBURGER BUTTON/ICON -->
+        <input type="checkbox" id="mob-nav-button" />
+        <label for="mob-nav-button">
+          <span class="fa-solid fa-bars" id="mob-nav-icon"> </span>
+        </label>
+
+        <!-- DESK MENU TEXT BUTTON/ICON -->
+        <input type="checkbox" id="desk-nav-button" />
+        <label for="desk-nav-button" id="desk-nav-icon">menu</label>
+
+        <!-- NAV LIST MENU -->
+        <div id="nav-list">
+          <li><a href="./about.html">about</a></li>
+          <li><a href="./code.html">code</a></li>
+          <!-- <li><a href="./personal.html">personal</a></li> -->
+          <li><a href="./journal.html">journal</a></li>
+          <li><a href="./resume.html">resume</a></li>
+          <li><a href="./contact.html">contact</a></li>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <!-- PAGE SUBHEADING -->
+        <h2 class="desk-page-sub">
+          about . about . about . about . about . about . about . about . about
+        </h2>
+
+        <figure id="about-img-cont">
+          <img
+            id="about-img"
+            class="img"
+            src="./img/nz-port.jpg"
+            alt="An image of me"
+          />
+        </figure>
+
+        <article class="card">
+          <h2>About me</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
+            tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
+            Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
+            sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
+            vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
+            condimentum tempus.
+          </p>
+        </article>
+      </section>
+      <section>
+        <div class="container">
+          <form action="./code.html">
+            <input type="submit" value="Code" class="button" />
+          </form>
+          <form action="./resume.html">
+            <input type="submit" value="Resume" class="button" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p id="footer-text">&copy; Tané Kaio, 2022</p>
+    </footer>
+  </body>
+</html>
