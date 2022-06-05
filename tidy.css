@@ -65,10 +65,9 @@ body header #header-cont #header-circle {
 }
 body #main-container {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: flex-start;
-  position: absolute;
   width: 100vw;
   height: 10vh;
   z-index: 999;
@@ -95,7 +94,7 @@ body #main-container #mob-nav-icon {
   color: rgb(83, 75, 58);
 }
 body #main-container #nav-list {
-  z-index: 100;
+  z-index: 9;
   background-color: rgb(249, 247, 242);
   position: absolute;
   display: flex;

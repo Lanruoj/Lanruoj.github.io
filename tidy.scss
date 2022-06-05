@@ -86,10 +86,10 @@ body {
   }
   #main-container {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: flex-start;
-    position: absolute;
+    // position: absolute;
     width: 100vw;
     height: 10vh;
     // background-color: orange;
@@ -120,7 +120,7 @@ body {
       color: $brown;
     }
     #nav-list {
-      z-index: 100;
+      z-index: 9;
       background-color: $white;
       position: absolute;
       display: flex;
