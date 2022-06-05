@@ -129,6 +129,9 @@ main {
   transform: translateX(0vw);
   transition: 0.5s;
 }
+main .space {
+  height: 5vh;
+}
 main .content {
   background-color: rgb(249, 247, 242);
   display: flex;

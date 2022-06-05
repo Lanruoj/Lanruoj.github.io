@@ -149,6 +149,9 @@ main {
   font-family: $karla;
   transform: translateX(0vw);
   transition: 0.5s;
+  .space {
+    height: 5vh;
+  }
   .content {
     background-color: $white;
     display: flex;
