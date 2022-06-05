@@ -40,7 +40,7 @@ body header {
   height: 4rem;
   width: 100vw;
   background-color: rgb(249, 247, 242);
-  box-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 5px gray;
 }
 body header #header-cont {
   position: relative;
@@ -95,21 +95,24 @@ body #main-container #mob-nav-icon {
 }
 body #main-container #nav-list {
   z-index: 9;
-  background-color: rgb(249, 247, 242);
   position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  top: 10vh;
-  left: -1rem;
+  top: 6rem;
+  left: -2rem;
   width: 50vw;
   height: 90vh;
   padding: 5rem;
+  background-color: rgb(249, 247, 242);
+  box-shadow: 0px 0px 5px gray;
+  border-radius: 1rem 1rem 1rem 1rem;
   transform: translateX(-50vw);
   transition: 0.5s;
 }
 body #main-container #nav-list li {
+  padding-left: 2rem;
   text-align: center;
   font-family: "Karla", sans-serif;
   font-size: 1.5rem;
@@ -180,7 +183,7 @@ footer {
   bottom: 0vh;
   padding: 1rem;
   background-color: rgb(249, 247, 242);
-  box-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 5px gray;
 }
 footer #footer-text {
   font-family: "Karla", sans-serif;
