@@ -48,7 +48,7 @@ a {
 }
 
 body {
-  background-color: green; //
+  background-color: $white; //
   position: relative;
   list-style: none;
   header {
@@ -58,7 +58,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
+    height: 4rem;
     width: 100vw;
     background-color: $white;
     @include box-shadow();
@@ -91,7 +91,7 @@ body {
     align-items: flex-start;
     // position: absolute;
     width: 100vw;
-    height: 10vh;
+    height: 4rem;
     // background-color: orange;
     z-index: 999;
     #desk-nav-icon {
@@ -108,14 +108,10 @@ body {
       transform: translateX(50vw);
     }
     #mob-nav-icon {
-      // align-self: flex-start;
-      // justify-self: flex-end;
       position: fixed;
       padding: 1rem;
       font-size: 2rem;
       right: 0rem;
-      // border: 2px blue solid;
-      // background-color: red;
       z-index: 999;
       color: $brown;
     }
