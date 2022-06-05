@@ -10,27 +10,10 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: rgb(83, 75, 58);
-}
-
 body {
   background-color: rgb(249, 247, 242);
   position: relative;
   list-style: none;
-}
-body p {
-  color: rgb(57, 57, 57);
-}
-body .button {
-  padding: 0.5rem;
-  min-width: 5rem;
-  height: 2rem;
-  border-style: none;
-  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-  background-color: rgb(76, 0, 255);
-  color: white;
 }
 body header {
   z-index: 10;
@@ -42,7 +25,7 @@ body header {
   height: 4rem;
   width: 100vw;
   background-color: rgb(249, 247, 242);
-  box-shadow: 0px 0px 5px gray;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 body header #header-cont {
   position: relative;
@@ -65,6 +48,15 @@ body header #header-cont #header-circle {
   border-radius: 50%;
   mix-blend-mode: multiply;
 }
+body .button {
+  padding: 0.5rem;
+  min-width: 5rem;
+  height: 2rem;
+  border-style: none;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: rgb(76, 0, 255);
+  color: white;
+}
 body #main-container {
   display: flex;
   flex-direction: row;
@@ -72,7 +64,6 @@ body #main-container {
   align-items: flex-start;
   width: 100vw;
   height: 4rem;
-  z-index: 999;
 }
 body #main-container #desk-nav-icon {
   display: none;
@@ -102,13 +93,13 @@ body #main-container #nav-list {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  top: 6rem;
+  margin-top: 6rem;
   left: -2rem;
   width: 50vw;
-  height: 90vh;
+  height: 75vh;
   padding: 5rem;
   background-color: rgb(249, 247, 242);
-  box-shadow: 0px 0px 5px gray;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
   border-radius: 1rem 1rem 1rem 1rem;
   transform: translateX(-50vw);
   transition: 0.5s;
@@ -118,6 +109,13 @@ body #main-container #nav-list li {
   text-align: center;
   font-family: "Karla", sans-serif;
   font-size: 1.5rem;
+}
+body p {
+  color: rgb(57, 57, 57);
+}
+body a {
+  text-decoration: none;
+  color: rgb(83, 75, 58);
 }
 
 main {
@@ -140,7 +138,7 @@ main .content {
   padding: 1rem;
   padding-bottom: 0;
 }
-main .content .desk-page-sub {
+main .content .page-subheading {
   display: none;
 }
 main .content figure {
@@ -170,7 +168,7 @@ main .content .card {
 main .content .card h2 {
   text-align: center;
   font-family: "Karla", sans-serif;
-  color: rgb(76, 0, 255);
+  color: rgb(69, 62, 47);
 }
 main .content .card img {
   border-radius: 1rem 1rem 1rem 1rem;
@@ -182,6 +180,11 @@ main .content .card label {
 main .content .card label a {
   position: absolute;
   top: -10rem;
+}
+main .content .card form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 main .content .card .expand {
   max-height: 20rem;
@@ -210,6 +213,10 @@ main .content .card #expand-check4,
 main .content .card #expand-check5 {
   display: none;
 }
+main .content .modular {
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
+  background-color: white;
+}
 main .content .container {
   display: flex;
   flex-direction: row;
@@ -220,10 +227,16 @@ main .content figcaption {
   text-align: center;
   font-size: 0.8rem;
 }
+main .content .info {
+  text-align: center;
+}
 main .content .blog-time {
   font-family: "Monaco", monospace;
   font-size: 0.7rem;
   color: rgb(83, 75, 58);
+}
+main .content iframe {
+  min-height: 50vh;
 }
 
 footer {
@@ -237,7 +250,7 @@ footer {
   bottom: 0vh;
   padding: 1rem;
   background-color: rgb(249, 247, 242);
-  box-shadow: 0px 0px 5px gray;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 footer #footer-text {
   font-family: "Karla", sans-serif;

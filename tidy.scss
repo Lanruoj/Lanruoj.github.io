@@ -16,7 +16,7 @@ $rammetto: "Rammetto One", cursive;
 $monaco: "Monaco", monospace;
 //MIXINS
 @mixin box-shadow() {
-  box-shadow: 0px 0px 5px gray;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 @mixin card-border() {
   border-radius: 1rem 1rem 1rem 1rem;
@@ -32,27 +32,10 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: $brown;
-}
-
 body {
   background-color: $white; //
   position: relative;
   list-style: none;
-  p {
-    color: $black;
-  }
-  .button {
-    padding: 0.5rem;
-    min-width: 5rem;
-    height: 2rem;
-    border-style: none;
-    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-    background-color: $purple;
-    color: white;
-  }
   header {
     z-index: 10;
     position: fixed;
@@ -86,16 +69,22 @@ body {
       }
     }
   }
+  .button {
+    padding: 0.5rem;
+    min-width: 5rem;
+    height: 2rem;
+    border-style: none;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: $purple;
+    color: white;
+  }
   #main-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    // position: absolute;
     width: 100vw;
     height: 4rem;
-    // background-color: orange;
-    z-index: 999;
     #desk-nav-icon {
       display: none;
     }
@@ -124,10 +113,10 @@ body {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      top: 6rem;
+      margin-top: 6rem;
       left: -2rem;
       width: 50vw;
-      height: 90vh;
+      height: 75vh;
       padding: 5rem;
       background-color: $white;
       @include box-shadow();
@@ -141,6 +130,13 @@ body {
         font-size: 1.5rem;
       }
     }
+  }
+  p {
+    color: $black;
+  }
+  a {
+    text-decoration: none;
+    color: $brown;
   }
 }
 main {
@@ -161,7 +157,7 @@ main {
     align-content: center;
     padding: 1rem;
     padding-bottom: 0;
-    .desk-page-sub {
+    .page-subheading {
       display: none;
     }
     figure {
@@ -187,22 +183,28 @@ main {
       padding: 1rem;
       background-color: $white;
       @include card-border();
-      // @include box-shadow();
+      // @include box-shadow(); ////// TURN ON FOR DESK
       h2 {
         text-align: center;
         font-family: $karla;
-        color: $purple;
+        color: $dark-brown;
       }
       img {
         @include card-border();
         max-width: 100%;
       }
-      label { // solved issue of internal links directing to behind fixed header
+      label {
+        // solved issue of internal links directing to behind fixed header
         position: relative;
         a {
           position: absolute;
           top: -10rem;
         }
+      }
+      form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
       }
       .expand {
         max-height: 20rem;
@@ -236,6 +238,10 @@ main {
         display: none;
       }
     }
+    .modular {
+      @include box-shadow;
+      background-color: white;
+    }
     .container {
       display: flex;
       flex-direction: row;
@@ -246,10 +252,17 @@ main {
       text-align: center;
       font-size: 0.8rem;
     }
+    .info {
+      text-align: center;
+    }
     .blog-time {
       font-family: $monaco;
       font-size: 0.7rem;
       color: $brown;
+    }
+    iframe {
+      min-height: 50vh;
+      // display: none;    //// TURN ON FOR MOBILE/DESKTOP
     }
   }
 }
