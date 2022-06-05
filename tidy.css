@@ -86,7 +86,7 @@ body #main-container #mob-nav-button:checked ~ main {
   transform: translateX(50vw);
 }
 body #main-container #mob-nav-icon {
-  position: absolute;
+  position: fixed;
   padding: 1rem;
   font-size: 2rem;
   right: 0rem;
@@ -161,7 +161,9 @@ main .content .card h2 {
 main .content .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
 footer {

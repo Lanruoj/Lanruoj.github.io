@@ -110,7 +110,7 @@ body {
     #mob-nav-icon {
       // align-self: flex-start;
       // justify-self: flex-end;
-      position: absolute;
+      position: fixed;
       padding: 1rem;
       font-size: 2rem;
       right: 0rem;
@@ -186,7 +186,10 @@ main {
     .container {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+
     }
   }
 }
