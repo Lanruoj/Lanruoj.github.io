@@ -96,7 +96,7 @@ body #main-container #mob-nav-icon {
 body #main-container #nav-list {
   z-index: 9;
   background-color: rgb(249, 247, 242);
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -157,6 +157,10 @@ main .content .card {
 main .content .card h2 {
   text-align: center;
   font-family: "Karla", sans-serif;
+}
+main .content .card img {
+  border-radius: 1rem 1rem 1rem 1rem;
+  max-width: 100%;
 }
 main .content .container {
   display: flex;
