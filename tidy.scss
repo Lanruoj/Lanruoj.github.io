@@ -175,6 +175,16 @@ main {
       padding: 0;
       margin: 0;
     }
+    .modular {
+      @include box-shadow;
+      background-color: white;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
     .card {
       display: flex;
       flex-direction: column;
@@ -238,16 +248,6 @@ main {
         display: none;
       }
     }
-    .modular {
-      @include box-shadow;
-      background-color: white;
-    }
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-    }
     figcaption {
       text-align: center;
       font-size: 0.8rem;
@@ -264,6 +264,10 @@ main {
       min-height: 50vh;
       // display: none;    //// TURN ON FOR MOBILE/DESKTOP
     }
+  }
+  .logo {
+    width: 50px;
+    border-radius: 0%;
   }
 }
 
