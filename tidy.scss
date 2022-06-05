@@ -37,20 +37,22 @@ a {
   color: $brown;
 }
 
-.button {
-  padding: 0.5rem;
-  min-width: 5rem;
-  height: 2rem;
-  border-style: none;
-  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-  background-color: $purple;
-  color: white;
-}
-
 body {
   background-color: $white; //
   position: relative;
   list-style: none;
+  p {
+    color: $black;
+  }
+  .button {
+    padding: 0.5rem;
+    min-width: 5rem;
+    height: 2rem;
+    border-style: none;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: $purple;
+    color: white;
+  }
   header {
     z-index: 10;
     position: fixed;
@@ -128,7 +130,7 @@ body {
       height: 90vh;
       padding: 5rem;
       background-color: $white;
-      @include box-shadow(); 
+      @include box-shadow();
       @include card-border();
       transform: translateX(-50vw);
       transition: 0.5s;
@@ -162,28 +164,76 @@ main {
     .desk-page-sub {
       display: none;
     }
-    #about-img-cont {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+    figure {
+      margin: 1rem 0;
       img {
         @include card-border();
         max-width: 100%;
       }
     }
+    #about-img-cont {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
     .card {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap; //
       margin: 1rem 0rem;
       padding: 1rem;
       background-color: $white;
       @include card-border();
+      // @include box-shadow();
       h2 {
         text-align: center;
         font-family: $karla;
+        color: $purple;
       }
       img {
         @include card-border();
         max-width: 100%;
+      }
+      label { // solved issue of internal links directing to behind fixed header
+        position: relative;
+        a {
+          position: absolute;
+          top: -10rem;
+        }
+      }
+      .expand {
+        max-height: 20rem;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1) 20%
+        );
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        transition: 0.5s;
+      }
+      .expand-icon {
+        align-self: center;
+        color: $purple;
+      }
+      #expand-check1:checked ~ #blog1,
+      #expand-check2:checked ~ #blog2,
+      #expand-check3:checked ~ #blog3,
+      #expand-check4:checked ~ #blog4,
+      #expand-check5:checked ~ #blog5 {
+        max-height: 500rem;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+      #expand-check1,
+      #expand-check2,
+      #expand-check3,
+      #expand-check4,
+      #expand-check5 {
+        display: none;
       }
     }
     .container {
@@ -191,10 +241,19 @@ main {
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
-
+    }
+    figcaption {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .blog-time {
+      font-family: $monaco;
+      font-size: 0.7rem;
+      color: $brown;
     }
   }
 }
+
 footer {
   z-index: 10;
   position: fixed;
