@@ -47,9 +47,10 @@ a {
 }
 
 body {
-  background-color: $white; //
+  background-color: green; //
   position: relative;
   list-style: none;
+  overflow-x: hidden;
   header {
     z-index: 10;
     position: fixed;
@@ -91,7 +92,7 @@ body {
     position: absolute;
     width: 100vw;
     height: 10vh;
-    background-color: clear;
+    // background-color: orange;
     z-index: 999;
     #desk-nav-icon {
       display: none;
@@ -107,11 +108,14 @@ body {
       transform: translateX(50vw);
     }
     #mob-nav-icon {
-      align-self: flex-start;
-      justify-self: flex-end;
+      // align-self: flex-start;
+      // justify-self: flex-end;
+      position: absolute;
       padding: 1rem;
       font-size: 2rem;
-      background-color: red;
+      right: 0rem;
+      // border: 2px blue solid;
+      // background-color: red;
       z-index: 999;
       color: $brown;
     }
@@ -122,11 +126,13 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
       top: 10vh;
+      left: -1rem;
       width: 50vw;
       height: 90vh;
       padding: 5rem;
-      // transform: translateX(-50vw);
+      transform: translateX(-50vw);
       transition: 0.5s;
       li {
         text-align: center;
@@ -141,6 +147,7 @@ main {
   position: relative;
   top: 10vh;
   min-height: 100vh;
+  min-width: 100vw;
   margin-bottom: 5rem;
   font-family: $karla;
   transform: translateX(0vw);

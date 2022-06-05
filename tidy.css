@@ -25,9 +25,10 @@ a {
 }
 
 body {
-  background-color: rgb(249, 247, 242);
+  background-color: green;
   position: relative;
   list-style: none;
+  overflow-x: hidden;
 }
 body header {
   z-index: 10;
@@ -70,7 +71,6 @@ body #main-container {
   position: absolute;
   width: 100vw;
   height: 10vh;
-  background-color: clear;
   z-index: 999;
 }
 body #main-container #desk-nav-icon {
@@ -87,11 +87,10 @@ body #main-container #mob-nav-button:checked ~ main {
   transform: translateX(50vw);
 }
 body #main-container #mob-nav-icon {
-  align-self: flex-start;
-  justify-self: flex-end;
+  position: absolute;
   padding: 1rem;
   font-size: 2rem;
-  background-color: red;
+  right: 0rem;
   z-index: 999;
   color: rgb(83, 75, 58);
 }
@@ -102,10 +101,13 @@ body #main-container #nav-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   top: 10vh;
+  left: -1rem;
   width: 50vw;
   height: 90vh;
   padding: 5rem;
+  transform: translateX(-50vw);
   transition: 0.5s;
 }
 body #main-container #nav-list li {
@@ -119,6 +121,7 @@ main {
   position: relative;
   top: 10vh;
   min-height: 100vh;
+  min-width: 100vw;
   margin-bottom: 5rem;
   font-family: "Karla", sans-serif;
   transform: translateX(0vw);
