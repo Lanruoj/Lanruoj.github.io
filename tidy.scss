@@ -21,6 +21,7 @@ $monaco: "Monaco", monospace;
 @mixin card-border() {
   border-radius: 1rem 1rem 1rem 1rem;
 }
+//UNIVERSAL
 * {
   margin: 0px;
   padding: 0px;
@@ -31,11 +32,10 @@ body {
   min-height: 120vh;
   overflow-x: hidden;
 }
-
 body {
   background-color: $white; //
   position: relative;
-  list-style: none;
+  list-style: none; //
   header {
     z-index: 10;
     position: fixed;
