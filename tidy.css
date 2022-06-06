@@ -63,7 +63,7 @@ body #main-container #desk-nav-icon {
 body #main-container #nav-check {
   display: none;
 }
-body #main-container #nav-check:checked ~ #nav-list {
+body #main-container #nav-check:checked ~ nav {
   transform: translateX(0vw);
 }
 body #main-container #nav-check:checked ~ main {
@@ -77,12 +77,12 @@ body #main-container #mob-nav-icon {
   z-index: 999;
   color: rgb(83, 75, 58);
 }
-body #main-container #nav-list {
+body #main-container nav {
   z-index: 9;
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 6rem;
   left: -2rem;
@@ -95,10 +95,17 @@ body #main-container #nav-list {
   transform: translateX(-50vw);
   transition: 0.5s;
 }
-body #main-container #nav-list:hover {
+body #main-container nav:hover {
   box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
 }
-body #main-container #nav-list li {
+body #main-container nav #nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  list-style: none;
+}
+body #main-container nav #nav-list li {
   padding-left: 2rem;
   text-align: center;
   font-family: "Karla", sans-serif;
@@ -397,12 +404,12 @@ footer #footer-text {
   body #main-container #nav-button #menu-text:hover ~ #arrows {
     transform: translateX(5.5rem);
   }
-  body #main-container #nav-list {
+  body #main-container nav {
     margin-top: 8rem;
     width: 25vw;
     transform: translateX(-25vw);
   }
-  body #main-container #nav-check:checked ~ #nav-list {
+  body #main-container #nav-check:checked ~ nav {
     transform: translateX(0vw);
   }
   body #main-container #nav-check:checked ~ main {
