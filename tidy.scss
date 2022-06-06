@@ -5,8 +5,9 @@ $brown: rgb(83, 75, 58);
 $dark-brown: rgb(69, 62, 47);
 $pine: rgb(67, 96, 64);
 $black: rgb(57, 57, 57);
+$light-purple: rgb(116, 56, 255);
 $purple: rgb(76, 0, 255);
-$dark-purple: rgb(47, 0, 186);
+$dark-purple: rgb(35, 0, 139);
 $lavendar: rgb(145, 152, 229);
 $pale-orange: rgb(230, 100, 101);
 $clear: rgb(255, 255, 255, 0);
@@ -20,6 +21,14 @@ $monaco: "Monaco", monospace;
 }
 @mixin card-border() {
   border-radius: 1rem 1rem 1rem 1rem;
+}
+@mixin purple-gradient() {
+  background-image: linear-gradient(
+    120deg,
+    $light-purple,
+    $purple,
+    $dark-purple
+  );
 }
 //UNIVERSAL
 * {
@@ -72,10 +81,10 @@ body {
     }
   }
   #main-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: flex-start;
+    // align-items: flex-start;
     width: 100vw;
     height: 4rem;
     #desk-nav-icon {
@@ -147,20 +156,26 @@ main {
     min-width: 5rem;
     border-style: none;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-    background-color: $purple;
-    color: white;
     text-align: center;
     font-size: 0.8rem;
+    color: white;
+    @include purple-gradient();
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    filter: hue-rotate(0);
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover {
+      // transform: scale(1.05);
+      background-position: 0 0;
+    }
   }
-  // .space {
-  //   height: 5vh;
-  // }
   .content {
     background-color: $white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-content: center;
     padding: 1rem;
     // padding-bottom: 0;
     .page-subheading {
@@ -180,6 +195,9 @@ main {
       align-items: center;
       padding: 0;
       margin: 0;
+      img {
+        max-width: 500px;
+      }
     }
     .modular {
       @include box-shadow;
@@ -296,36 +314,64 @@ footer {
   }
 }
 
-//TABLET//
-
+//TABLET & LANDSCAPE PHONE//
 @media only screen and (min-width: 600px) {
-  main {
-    .content {
-      flex-direction: row;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      padding: 1rem 3rem;
-      .card {
-        justify-content: center;
-        background-color: red;
-        min-width: 40%;
-      }
-      .container {
+  body {
+    font-size: 1rem;
+    main {
+      .content {
+        display: flex;
+        flex-direction: row;
         justify-content: space-evenly;
-        width: 100%;
-      }
-      #about-img-cont {
-        img {
-          width: 75%;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem 3rem;
+        .card {
+          justify-content: center;
+          background-color: red;
+        }
+        .modular {
+          min-height: 5rem;
+          height: min-content;
+          width: 20rem;
+          margin: 2rem; //
+        }
+        .container {
+          justify-content: space-evenly;
+          width: 100%;
+        }
+        .doc {
+          width: 100%;
         }
       }
     }
   }
 }
 
-//LANDSCAPE TABLET/PHONE//
-@media only screen and (min-width: 992) {
-  .card {
-    background-color: blue;
+
+
+//DESKTOP//
+@media only screen and (min-width: 992px) {
+  body {
+    #main-container {
+      #mob-nav-icon {
+        display: none;
+      }
+      #desk-nav-icon {
+        z-index: 999;
+        display: inline-block;
+        position: fixed;
+        padding: 1rem;
+        font-size: 2rem;
+        color: $brown;
+      }
+      main {
+        .content {
+          .card {
+            background-color: blue;
+          }
+        }
+      }
+    }
   }
 }

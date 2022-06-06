@@ -50,10 +50,6 @@ body header #header-cont #header-circle {
   mix-blend-mode: multiply;
 }
 body #main-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100vw;
   height: 4rem;
 }
@@ -125,17 +121,21 @@ main .button {
   min-width: 5rem;
   border-style: none;
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-  background-color: rgb(76, 0, 255);
-  color: white;
   text-align: center;
   font-size: 0.8rem;
+  color: white;
+  background-image: linear-gradient(120deg, rgb(116, 56, 255), rgb(76, 0, 255), rgb(35, 0, 139));
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  filter: hue-rotate(0);
+  transition: 0.5s;
+  cursor: pointer;
+}
+main .button:hover {
+  background-position: 0 0;
 }
 main .content {
   background-color: rgb(249, 247, 242);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
   padding: 1rem;
 }
 main .content .page-subheading {
@@ -155,6 +155,9 @@ main .content #about-img-cont {
   align-items: center;
   padding: 0;
   margin: 0;
+}
+main .content #about-img-cont img {
+  max-width: 500px;
 }
 main .content .modular {
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
@@ -263,27 +266,48 @@ footer #footer-text {
 }
 
 @media only screen and (min-width: 600px) {
-  main .content {
+  body {
+    font-size: 1rem;
+  }
+  body main .content {
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
     padding: 1rem 3rem;
   }
-  main .content .card {
+  body main .content .card {
     justify-content: center;
     background-color: red;
-    min-width: 40%;
   }
-  main .content .container {
+  body main .content .modular {
+    min-height: 5rem;
+    height: min-content;
+    width: 20rem;
+    margin: 2rem;
+  }
+  body main .content .container {
     justify-content: space-evenly;
     width: 100%;
   }
-  main .content #about-img-cont img {
-    width: 75%;
+  body main .content .doc {
+    width: 100%;
   }
 }
-@media only screen and (min-width: 992) {
-  .card {
+@media only screen and (min-width: 992px) {
+  body #main-container #mob-nav-icon {
+    display: none;
+  }
+  body #main-container #desk-nav-icon {
+    z-index: 999;
+    display: inline-block;
+    position: fixed;
+    padding: 1rem;
+    font-size: 2rem;
+    color: rgb(83, 75, 58);
+  }
+  body #main-container main .content .card {
     background-color: blue;
   }
 }
