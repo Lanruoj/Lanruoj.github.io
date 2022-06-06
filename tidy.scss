@@ -170,7 +170,7 @@ main {
       margin: 1rem 0;
       img {
         @include card-border();
-        max-width: 100%;
+        width: 100%;
       }
     }
     #about-img-cont {
@@ -298,25 +298,34 @@ footer {
 
 //TABLET//
 
-@media only screen and (min-width: 768px) {
-  body {
-    font-size: 1.5rem;
-    header {
-      font-size: 3rem;
-    }
-    #main-container {
-      #nav-list {
-        li {
-          font-size: 2rem;
-        }
+@media only screen and (min-width: 600px) {
+  main {
+    .content {
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      padding: 1rem 3rem;
+      .card {
+        justify-content: center;
+        background-color: red;
+        min-width: 40%;
       }
-      main {
-        .button {
-          font-size: 1.2rem;
+      .container {
+        justify-content: space-evenly;
+        width: 100%;
+      }
+      #about-img-cont {
+        img {
+          width: 75%;
         }
       }
     }
   }
 }
 
-//
+//LANDSCAPE TABLET/PHONE//
+@media only screen and (min-width: 992) {
+  .card {
+    background-color: blue;
+  }
+}
