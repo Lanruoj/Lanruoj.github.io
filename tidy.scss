@@ -35,12 +35,13 @@ body {
 body {
   background-color: $white; //
   position: relative;
+  font-size: 1rem;
   list-style: none; //
   header {
     z-index: 10;
     position: fixed;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     height: 4rem;
@@ -48,9 +49,10 @@ body {
     background-color: $white;
     @include box-shadow();
     #header-cont {
-      position: relative;
-      display: inline-block;
-      padding-left: 1rem;
+      position: absolute;
+      // display: inline-block;
+      justify-self: flex-end;
+      padding-right: 1rem;
       #header-text {
         z-index: 11;
         font-family: $rammetto;
@@ -68,15 +70,6 @@ body {
         mix-blend-mode: multiply;
       }
     }
-  }
-  .button {
-    padding: 0.5rem;
-    min-width: 5rem;
-    height: 2rem;
-    border-style: none;
-    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-    background-color: $purple;
-    color: white;
   }
   #main-container {
     display: flex;
@@ -102,7 +95,7 @@ body {
       position: fixed;
       padding: 1rem;
       font-size: 2rem;
-      right: 0rem;
+      // left: 0rem;
       z-index: 999;
       color: $brown;
     }
@@ -145,13 +138,23 @@ main {
   top: 10vh;
   min-height: 100vh;
   min-width: 100vw;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
   font-family: $karla;
   transform: translateX(0vw);
   transition: 0.5s;
-  .space {
-    height: 5vh;
+  .button {
+    padding: 0.5rem 1rem;
+    min-width: 5rem;
+    border-style: none;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: $purple;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
   }
+  // .space {
+  //   height: 5vh;
+  // }
   .content {
     background-color: $white;
     display: flex;
@@ -159,7 +162,7 @@ main {
     justify-content: center;
     align-content: center;
     padding: 1rem;
-    padding-bottom: 0;
+    // padding-bottom: 0;
     .page-subheading {
       display: none;
     }
@@ -259,6 +262,8 @@ main {
       text-align: center;
     }
     .blog-time {
+      text-align: center;
+      display: block;
       font-family: $monaco;
       font-size: 0.7rem;
       color: $brown;
@@ -290,3 +295,28 @@ footer {
     font-family: $karla;
   }
 }
+
+//TABLET//
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.5rem;
+    header {
+      font-size: 3rem;
+    }
+    #main-container {
+      #nav-list {
+        li {
+          font-size: 2rem;
+        }
+      }
+      main {
+        .button {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+//

@@ -13,13 +13,14 @@ body {
 body {
   background-color: rgb(249, 247, 242);
   position: relative;
+  font-size: 1rem;
   list-style: none;
 }
 body header {
   z-index: 10;
   position: fixed;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   height: 4rem;
@@ -28,9 +29,9 @@ body header {
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 body header #header-cont {
-  position: relative;
-  display: inline-block;
-  padding-left: 1rem;
+  position: absolute;
+  justify-self: flex-end;
+  padding-right: 1rem;
 }
 body header #header-cont #header-text {
   z-index: 11;
@@ -47,15 +48,6 @@ body header #header-cont #header-circle {
   background-color: rgb(76, 0, 255);
   border-radius: 50%;
   mix-blend-mode: multiply;
-}
-body .button {
-  padding: 0.5rem;
-  min-width: 5rem;
-  height: 2rem;
-  border-style: none;
-  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-  background-color: rgb(76, 0, 255);
-  color: white;
 }
 body #main-container {
   display: flex;
@@ -82,7 +74,6 @@ body #main-container #mob-nav-icon {
   position: fixed;
   padding: 1rem;
   font-size: 2rem;
-  right: 0rem;
   z-index: 999;
   color: rgb(83, 75, 58);
 }
@@ -124,13 +115,20 @@ main {
   top: 10vh;
   min-height: 100vh;
   min-width: 100vw;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
   font-family: "Karla", sans-serif;
   transform: translateX(0vw);
   transition: 0.5s;
 }
-main .space {
-  height: 5vh;
+main .button {
+  padding: 0.5rem 1rem;
+  min-width: 5rem;
+  border-style: none;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: rgb(76, 0, 255);
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
 }
 main .content {
   background-color: rgb(249, 247, 242);
@@ -139,7 +137,6 @@ main .content {
   justify-content: center;
   align-content: center;
   padding: 1rem;
-  padding-bottom: 0;
 }
 main .content .page-subheading {
   display: none;
@@ -234,6 +231,8 @@ main .content .info {
   text-align: center;
 }
 main .content .blog-time {
+  text-align: center;
+  display: block;
   font-family: "Monaco", monospace;
   font-size: 0.7rem;
   color: rgb(83, 75, 58);
@@ -261,6 +260,21 @@ footer {
 }
 footer #footer-text {
   font-family: "Karla", sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.5rem;
+  }
+  body header {
+    font-size: 3rem;
+  }
+  body #main-container #nav-list li {
+    font-size: 2rem;
+  }
+  body #main-container main .button {
+    font-size: 1.2rem;
+  }
 }
 
 /*# sourceMappingURL=tidy.css.map */
