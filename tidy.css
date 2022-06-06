@@ -6,7 +6,7 @@
 
 html,
 body {
-  min-height: 120vh;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -32,12 +32,16 @@ body header #header-cont {
   position: absolute;
   justify-self: flex-end;
   padding-right: 1rem;
+  pointer-events: none;
 }
 body header #header-cont #header-text {
   z-index: 11;
   font-family: "Rammetto One", cursive;
   font-size: 1.7rem;
   color: rgb(69, 62, 47);
+}
+body header #header-cont #header-text::selection {
+  background-color: transparent;
 }
 body header #header-cont #header-circle {
   position: absolute;
@@ -56,19 +60,19 @@ body #main-container {
 body #main-container #desk-nav-icon {
   display: none;
 }
-body #main-container #mob-nav-button,
-body #main-container #desk-nav-button {
+body #main-container #nav-check {
   display: none;
 }
-body #main-container #mob-nav-button:checked ~ #nav-list {
+body #main-container #nav-check:checked ~ #nav-list {
   transform: translateX(0vw);
 }
-body #main-container #mob-nav-button:checked ~ main {
+body #main-container #nav-check:checked ~ main {
   transform: translateX(50vw);
 }
 body #main-container #mob-nav-icon {
   position: fixed;
   padding: 1rem;
+  padding-left: 5vw;
   font-size: 2rem;
   z-index: 999;
   color: rgb(83, 75, 58);
@@ -91,6 +95,9 @@ body #main-container #nav-list {
   transform: translateX(-50vw);
   transition: 0.5s;
 }
+body #main-container #nav-list:hover {
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
+}
 body #main-container #nav-list li {
   padding-left: 2rem;
   text-align: center;
@@ -108,10 +115,10 @@ body a {
 main {
   background-color: rgb(249, 247, 242);
   position: relative;
-  top: 10vh;
+  top: 4rem;
   min-height: 100vh;
   min-width: 100vw;
-  padding-bottom: 5rem;
+  padding: 0 0 5rem 0;
   font-family: "Karla", sans-serif;
   transform: translateX(0vw);
   transition: 0.5s;
@@ -128,7 +135,7 @@ main .button {
   background-size: 200% 100%;
   background-position: 100% 0;
   filter: hue-rotate(0);
-  transition: 0.5s;
+  transition: 0.3s;
   cursor: pointer;
 }
 main .button:hover {
@@ -145,8 +152,10 @@ main .content figure {
   margin: 1rem 0;
 }
 main .content figure img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
   border-radius: 1rem 1rem 1rem 1rem;
-  width: 100%;
 }
 main .content #about-img-cont {
   display: flex;
@@ -157,11 +166,14 @@ main .content #about-img-cont {
   margin: 0;
 }
 main .content #about-img-cont img {
-  max-width: 500px;
+  max-width: 100%;
+  border-radius: 1rem 1rem 1rem 1rem;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 main .content .modular {
-  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
-  background-color: white;
+  min-height: 5rem;
+  height: min-content;
+  margin: 1rem;
 }
 main .content .container {
   display: flex;
@@ -175,17 +187,19 @@ main .content .card {
   flex-wrap: nowrap;
   margin: 1rem 0rem;
   padding: 1rem;
-  background-color: rgb(249, 247, 242);
+  background-color: white;
   border-radius: 1rem 1rem 1rem 1rem;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
+  transition: 0.2s;
+}
+main .content .card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
 }
 main .content .card h2 {
   text-align: center;
   font-family: "Karla", sans-serif;
   color: rgb(69, 62, 47);
-}
-main .content .card img {
-  border-radius: 1rem 1rem 1rem 1rem;
-  max-width: 100%;
 }
 main .content .card label {
   position: relative;
@@ -209,6 +223,7 @@ main .content .card .expand {
 main .content .card .expand-icon {
   align-self: center;
   color: rgb(76, 0, 255);
+  cursor: pointer;
 }
 main .content .card #expand-check1:checked ~ #blog1,
 main .content .card #expand-check2:checked ~ #blog2,
@@ -231,6 +246,7 @@ main .content figcaption {
   font-size: 0.8rem;
 }
 main .content .info {
+  min-width: 15rem;
   text-align: center;
 }
 main .content .blog-time {
@@ -246,6 +262,9 @@ main .content iframe {
 main .logo {
   width: 50px;
   border-radius: 0%;
+}
+main .logo:hover {
+  transform: scale(1.01);
 }
 
 footer {
@@ -269,6 +288,9 @@ footer #footer-text {
   body {
     font-size: 1rem;
   }
+  body #main-container #mob-nav-icon {
+    padding-left: 3vw;
+  }
   body main .content {
     display: flex;
     flex-direction: row;
@@ -279,36 +301,97 @@ footer #footer-text {
   }
   body main .content .card {
     justify-content: center;
-    background-color: red;
-  }
-  body main .content .modular {
-    min-height: 5rem;
-    height: min-content;
-    width: 20rem;
-    margin: 2rem;
   }
   body main .content .container {
     justify-content: space-evenly;
     width: 100%;
+  }
+  body main .content img {
+    max-width: 500px;
+  }
+  body main .content #about-img {
+    max-width: 500px;
   }
   body main .content .doc {
     width: 100%;
   }
 }
 @media only screen and (min-width: 992px) {
-  body #main-container #mob-nav-icon {
+  body header {
+    position: relative;
+    height: 7rem;
+    box-shadow: none;
+  }
+  body header #header-cont {
+    transform: scale(2);
+    padding-right: 5rem;
+  }
+  body #main-container {
+    position: absolute;
+    top: 0;
+    height: 7rem;
+  }
+  body #main-container #nav-button {
+    position: relative;
+    text-align: center;
+    line-height: 300%;
+  }
+  body #main-container #nav-button #mob-nav-icon {
     display: none;
   }
-  body #main-container #desk-nav-icon {
+  body #main-container #nav-button #desk-nav-icon {
     z-index: 999;
     display: inline-block;
     position: fixed;
     padding: 1rem;
     font-size: 2rem;
     color: rgb(83, 75, 58);
+    transition: 1s;
   }
-  body #main-container main .content .card {
-    background-color: blue;
+  body #main-container #nav-button #desk-nav-icon #menu-text {
+    font-family: "Karla", sans-serif;
+    font-size: 2rem;
+    transition: 0.2s;
+  }
+  body #main-container #nav-button #desk-nav-icon #menu-text::selection {
+    background-color: transparent;
+  }
+  body #main-container #nav-button #desk-nav-icon #arrows {
+    position: absolute;
+    display: block;
+    left: -2rem;
+    transition: 0.2s;
+  }
+  body #main-container #nav-button #desk-nav-icon #arrows .arrow {
+    display: block;
+    font-size: 1.5rem;
+    -webkit-text-stroke: 2px rgb(249, 247, 242);
+    transform: scale(1.8, 1);
+  }
+  body #main-container #nav-button #menu-text:hover {
+    cursor: pointer;
+    transform: translateX(0.5rem);
+  }
+  body #main-container #nav-button #menu-text:hover ~ #arrows {
+    transform: translateX(5.5rem);
+  }
+  body #main-container #nav-list {
+    margin-top: 8rem;
+    width: 25vw;
+    transform: translateX(-25vw);
+  }
+  body #main-container #nav-check:checked ~ #nav-list {
+    transform: translateX(0vw);
+  }
+  body #main-container #nav-check:checked ~ main {
+    transform: translateX(25vw);
+  }
+  body #main-container main {
+    top: 7rem;
+    padding-left: 5rem;
+  }
+  body #main-container main .content .article {
+    max-width: 60rem;
   }
 }
 

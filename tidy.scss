@@ -38,7 +38,7 @@ $monaco: "Monaco", monospace;
 }
 html,
 body {
-  min-height: 120vh;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 body {
@@ -59,14 +59,17 @@ body {
     @include box-shadow();
     #header-cont {
       position: absolute;
-      // display: inline-block;
       justify-self: flex-end;
       padding-right: 1rem;
+      pointer-events: none;
       #header-text {
         z-index: 11;
         font-family: $rammetto;
         font-size: 1.7rem;
         color: $dark-brown;
+        &::selection {
+          background-color: transparent;
+        }
       }
       #header-circle {
         position: absolute;
@@ -81,30 +84,25 @@ body {
     }
   }
   #main-container {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: flex-start;
-    // align-items: flex-start;
     width: 100vw;
     height: 4rem;
     #desk-nav-icon {
       display: none;
     }
-    #mob-nav-button,
-    #desk-nav-button {
+    #nav-check {
       display: none;
     }
-    #mob-nav-button:checked ~ #nav-list {
+    #nav-check:checked ~ #nav-list {
       transform: translateX(0vw);
     }
-    #mob-nav-button:checked ~ main {
+    #nav-check:checked ~ main {
       transform: translateX(50vw);
     }
     #mob-nav-icon {
       position: fixed;
       padding: 1rem;
+      padding-left: 5vw; //
       font-size: 2rem;
-      // left: 0rem;
       z-index: 999;
       color: $brown;
     }
@@ -125,6 +123,9 @@ body {
       @include card-border();
       transform: translateX(-50vw);
       transition: 0.5s;
+      &:hover {
+        box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669); 
+      }
       li {
         padding-left: 2rem;
         text-align: center;
@@ -144,10 +145,11 @@ body {
 main {
   background-color: $white; //
   position: relative;
-  top: 10vh;
+  top: 4rem;
   min-height: 100vh;
   min-width: 100vw;
-  padding-bottom: 5rem;
+  // padding: 0;
+  padding: 0 0 5rem 0;
   font-family: $karla;
   transform: translateX(0vw);
   transition: 0.5s;
@@ -163,29 +165,25 @@ main {
     background-size: 200% 100%;
     background-position: 100% 0;
     filter: hue-rotate(0);
-    transition: 0.5s;
+    transition: 0.3s;
     cursor: pointer;
     &:hover {
-      // transform: scale(1.05);
       background-position: 0 0;
     }
   }
   .content {
     background-color: $white;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-content: center;
     padding: 1rem;
-    // padding-bottom: 0;
     .page-subheading {
       display: none;
     }
     figure {
       margin: 1rem 0;
       img {
+        display: block;
+        margin: 1rem auto; //
+        max-width: 100%; //
         @include card-border();
-        width: 100%;
       }
     }
     #about-img-cont {
@@ -196,12 +194,15 @@ main {
       padding: 0;
       margin: 0;
       img {
-        max-width: 500px;
+        max-width: 100%;
+        @include card-border();
+        @include box-shadow();
       }
     }
     .modular {
-      @include box-shadow;
-      background-color: white;
+      min-height: 5rem;
+      height: min-content;
+      margin: 1rem; //
     }
     .container {
       display: flex;
@@ -215,17 +216,18 @@ main {
       flex-wrap: nowrap; //
       margin: 1rem 0rem;
       padding: 1rem;
-      background-color: $white;
+      background-color: white; //
       @include card-border();
-      // @include box-shadow(); ////// TURN ON FOR DESK
+      @include box-shadow(); ////// TURN ON FOR DESK
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669); 
+      }
       h2 {
         text-align: center;
         font-family: $karla;
         color: $dark-brown;
-      }
-      img {
-        @include card-border();
-        max-width: 100%;
       }
       label {
         // solved issue of internal links directing to behind fixed header
@@ -254,6 +256,7 @@ main {
       .expand-icon {
         align-self: center;
         color: $purple;
+        cursor: pointer;
       }
       #expand-check1:checked ~ #blog1,
       #expand-check2:checked ~ #blog2,
@@ -277,6 +280,7 @@ main {
       font-size: 0.8rem;
     }
     .info {
+      min-width: 15rem;
       text-align: center;
     }
     .blog-time {
@@ -294,6 +298,9 @@ main {
   .logo {
     width: 50px;
     border-radius: 0%;
+    &:hover {
+      transform: scale(1.01);
+    }
   }
 }
 
@@ -318,6 +325,11 @@ footer {
 @media only screen and (min-width: 600px) {
   body {
     font-size: 1rem;
+    #main-container {
+      #mob-nav-icon {
+        padding-left: 3vw;
+      }
+    }
     main {
       .content {
         display: flex;
@@ -328,17 +340,24 @@ footer {
         padding: 1rem 3rem;
         .card {
           justify-content: center;
-          background-color: red;
         }
-        .modular {
-          min-height: 5rem;
-          height: min-content;
-          width: 20rem;
-          margin: 2rem; //
-        }
+        // .modular {
+        //   min-height: 5rem;
+        //   height: min-content;
+        //   // width: 40%;
+        //   // width: 100%;
+        //   // max-width: 40vw; //
+        //   margin: 1rem; //
+        // }
         .container {
           justify-content: space-evenly;
           width: 100%;
+        }
+        img {
+          max-width: 500px;
+        }
+        #about-img {
+          max-width: 500px;
         }
         .doc {
           width: 100%;
@@ -348,27 +367,86 @@ footer {
   }
 }
 
-
-
 //DESKTOP//
 @media only screen and (min-width: 992px) {
   body {
-    #main-container {
-      #mob-nav-icon {
-        display: none;
+    header {
+      position: relative;
+      height: 7rem;
+      box-shadow: none;
+      #header-cont {
+        transform: scale(2);
+        padding-right: 5rem;
       }
-      #desk-nav-icon {
-        z-index: 999;
-        display: inline-block;
-        position: fixed;
-        padding: 1rem;
-        font-size: 2rem;
-        color: $brown;
+    }
+    #main-container {
+      position: absolute;
+      top: 0;
+      height: 7rem;
+      #nav-button {
+        position: relative;
+        text-align: center;
+        line-height: 300%;
+        #mob-nav-icon {
+          display: none;
+        }
+        #desk-nav-icon {
+          z-index: 999;
+          display: inline-block;
+          position: fixed;
+          padding: 1rem;
+          font-size: 2rem;
+          color: $brown;
+          transition: 1s;
+          #menu-text {
+            font-family: $karla;
+            font-size: 2rem;
+            transition: 0.2s;
+            &::selection {
+              background-color: transparent;
+            }
+          }
+          #arrows {
+            position: absolute;
+            display: block;
+            left: -2rem;
+            transition: 0.2s;
+            .arrow {
+              display: block;
+              font-size: 1.5rem;
+              -webkit-text-stroke: 2px $white;
+              // margin: -1px;
+              transform: scale(1.8, 1);
+            }
+          }
+        }
+        #menu-text:hover {
+          cursor: pointer;
+          transform: translateX(0.5rem);
+        }
+        #menu-text:hover ~ #arrows {
+          transform: translateX(5.5rem);
+        }
+      }
+      #nav-list {
+        margin-top: 8rem;
+        width: 25vw;
+        transform: translateX(-25vw);
+      }
+      #nav-check:checked ~ #nav-list {
+        transform: translateX(0vw);
+      }
+      #nav-check:checked ~ main {
+        transform: translateX(25vw);
       }
       main {
+        top: 7rem;
+        padding-left: 5rem;
         .content {
           .card {
-            background-color: blue;
+          }
+          .article {
+            max-width: 60rem;
           }
         }
       }

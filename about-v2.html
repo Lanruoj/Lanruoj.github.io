@@ -31,13 +31,18 @@
     <!-- MOBILE NAV MENU -->
 
     <section id="main-container">
-        <!-- DESK MENU TEXT BUTTON/ICON -->
-        <input type="checkbox" id="desk-nav-button" />
-        <label for="desk-nav-button" id="desk-nav-icon">menu</label>
-        <!-- MOBILE HAMBURGER BUTTON/ICON -->
-        <input type="checkbox" id="mob-nav-button" />
-        <label for="mob-nav-button">
+        <!-- BUTTON/ICON FOR NAV MENU -->
+        <input type="checkbox" id="nav-check" />
+        <label for="nav-check" id="nav-button">
+            <!-- MOBILE BUTTON -->
             <span class="fa-solid fa-bars" id="mob-nav-icon">
+            </span>
+            <!-- DESKTOP BUTTON -->
+            <span id="desk-nav-icon">
+                <span id="menu-text">menu</span>
+                <span id="arrows">
+                    <i class="fa-solid fa-long-arrow-alt-left arrow"></i><i class="fa-solid fa-long-arrow-alt-right arrow"></i>
+                </span>
             </span>
         </label>
         <!-- NAV LIST MENU -->
@@ -50,7 +55,6 @@
             <li><a href="./contact-v2.html">contact</a></li>
             </div>
         </nav>
-        </header>
 
         <main>
             <section class="content">
