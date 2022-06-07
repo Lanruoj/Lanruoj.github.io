@@ -83,7 +83,7 @@ body nav {
   margin-top: 6rem;
   left: -2rem;
   width: 50vw;
-  height: 75vh;
+  height: 60vh;
   max-height: 30rem;
   padding: 2rem 0;
   background-color: rgb(156, 150, 135);
@@ -166,10 +166,22 @@ main .content .dropdown-cont {
 }
 main .content .dropdown-cont .dropdown-icon {
   cursor: pointer;
+  color: rgb(76, 0, 255);
+  transition: 0.2s;
+}
+main .content .dropdown-cont .dropdown-icon:hover {
+  color: rgb(35, 0, 139);
 }
 main .content .dropdown-cont .dropdown-list {
   display: none;
   list-style: none;
+}
+main .content .dropdown-cont .dropdown-list li {
+  margin: 1rem;
+}
+main .content .dropdown-cont .dropdown-list li a {
+  font-family: "Monaco", monospace;
+  color: rgb(76, 0, 255);
 }
 main .content .dropdown-cont #dropdown-check:checked ~ .dropdown-list {
   display: block;
@@ -183,7 +195,7 @@ main .content figure {
 main .content figure img {
   display: block;
   margin: 1rem auto;
-  max-width: 100%;
+  width: 100%;
   border-radius: 1rem 1rem 1rem 1rem;
 }
 main .content #about-img-cont {
@@ -257,6 +269,9 @@ main .content .card .card-list div ul li {
   color: rgb(35, 0, 139);
   font-size: 0.9rem;
 }
+main .content .card figure img {
+  max-width: 500px;
+}
 main .content .card label {
   position: relative;
 }
@@ -280,6 +295,10 @@ main .content .card .expand-icon {
   align-self: center;
   color: rgb(76, 0, 255);
   cursor: pointer;
+  transition: 0.2s;
+}
+main .content .card .expand-icon:hover {
+  color: rgb(35, 0, 139);
 }
 main .content .card #expand-check1:checked ~ #blog1,
 main .content .card #expand-check2:checked ~ #blog2,
@@ -387,7 +406,7 @@ footer #footer-text {
     overflow: hidden;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    color: rgb(35, 0, 139);
+    color: rgb(83, 75, 58);
   }
 }
 @media only screen and (min-width: 992px) {
@@ -416,7 +435,7 @@ footer #footer-text {
     z-index: 999;
     display: inline-block;
     position: fixed;
-    padding: 2rem 0 2rem 3rem;
+    padding: 2rem 0 2rem 1rem;
     font-size: 2rem;
     color: rgb(83, 75, 58);
     transition: 1s;
@@ -446,7 +465,7 @@ footer #footer-text {
     transform: translateX(0.5rem);
   }
   body #nav-button #menu-text:hover ~ #arrows {
-    transform: translateX(5.5rem);
+    transform: translateX(5rem);
   }
   body nav {
     top: 2rem;

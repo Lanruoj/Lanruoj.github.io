@@ -115,7 +115,7 @@ body {
     margin-top: 6rem;
     left: -2rem;
     width: 50vw;
-    height: 75vh;
+    height: 60vh;
     max-height: 30rem;
     padding: 2rem 0;
     background-color: $light-brown;
@@ -195,10 +195,22 @@ main {
       width: 100vw; // prevents wrap
       .dropdown-icon {
         cursor: pointer;
+        color: $purple;
+        transition: 0.2s;
+        &:hover {
+          color: $dark-purple;
+        }
       }
       .dropdown-list {
         display: none;
         list-style: none;
+        li {
+          margin: 1rem;
+          a {
+            font-family: $monaco;
+            color: $purple;
+          }
+        }
       }
       #dropdown-check:checked ~ .dropdown-list {
         display: block;
@@ -212,7 +224,7 @@ main {
       img {
         display: block;
         margin: 1rem auto; //
-        max-width: 100%; //
+        width: 100%; //
         @include card-border();
       }
     }
@@ -287,6 +299,11 @@ main {
           }
         }
       }
+      figure {
+        img {
+          max-width: 500px;
+        }
+      }
       label {
         position: relative;
         a {
@@ -314,6 +331,10 @@ main {
         align-self: center;
         color: $purple;
         cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          color: $dark-purple;
+        }
       }
       #expand-check1:checked ~ #blog1,
       #expand-check2:checked ~ #blog2,
@@ -423,7 +444,7 @@ footer {
           overflow: hidden;
           writing-mode: vertical-rl;
           transform: rotate(180deg);
-          color: $dark-purple;
+          color: $brown;
         }
       }
     }
@@ -455,7 +476,7 @@ footer {
         z-index: 999;
         display: inline-block;
         position: fixed;
-        padding: 2rem 0 2rem 3rem;
+        padding: 2rem 0 2rem 1rem;
         font-size: 2rem;
         color: $brown;
         transition: 1s;
@@ -485,7 +506,7 @@ footer {
         transform: translateX(0.5rem);
       }
       #menu-text:hover ~ #arrows {
-        transform: translateX(5.5rem);
+        transform: translateX(5rem);
       }
     }
     nav {
