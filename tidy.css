@@ -30,7 +30,6 @@ body header {
 }
 body header #header-cont {
   position: absolute;
-  justify-self: flex-end;
   padding-right: 1rem;
   pointer-events: none;
 }
@@ -38,7 +37,8 @@ body header #header-cont #header-text {
   z-index: 11;
   font-family: "Rammetto One", cursive;
   font-size: 1.7rem;
-  color: rgb(69, 62, 47);
+  letter-spacing: 1rem;
+  color: rgb(76, 0, 255);
 }
 body header #header-cont #header-text::selection {
   background-color: transparent;
@@ -46,10 +46,10 @@ body header #header-cont #header-text::selection {
 body header #header-cont #header-circle {
   position: absolute;
   top: -4.5rem;
-  left: 1.2rem;
+  left: 0.5rem;
   height: 7rem;
   width: 7rem;
-  background-color: rgb(76, 0, 255);
+  background-color: rgb(156, 150, 135);
   border-radius: 50%;
   mix-blend-mode: multiply;
 }

@@ -60,14 +60,15 @@ body {
     @include box-shadow();
     #header-cont {
       position: absolute;
-      justify-self: flex-end;
+      // justify-self: flex-end;
       padding-right: 1rem;
       pointer-events: none;
       #header-text {
         z-index: 11;
         font-family: $rammetto;
         font-size: 1.7rem;
-        color: $dark-brown;
+        letter-spacing: 1rem;
+        color: $purple;
         &::selection {
           background-color: transparent;
         }
@@ -75,10 +76,10 @@ body {
       #header-circle {
         position: absolute;
         top: -4.5rem;
-        left: 1.2rem;
+        left: 0.5rem;
         height: 7rem;
         width: 7rem;
-        background-color: $purple;
+        background-color: $light-brown;
         border-radius: 50%;
         mix-blend-mode: multiply;
       }
