@@ -38,7 +38,7 @@ $monaco: "Monaco", monospace;
 }
 html,
 body {
-  min-height: 100vh;
+  height: 100vh; // don't use min-height, it'll add another scrollbar!
   overflow-x: hidden;
 }
 body {
@@ -137,62 +137,6 @@ body {
       }
     }
   }
-  // #main-container {
-  //   // #desk-nav-icon {
-  //   //   display: none;
-  //   // }
-  //   // #nav-check {
-  //   //   display: none;
-  //   // }
-  //   // #nav-check:checked ~ nav {
-  //   //   transform: translateX(0vw);
-  //   // }
-  //   // #nav-check:checked ~ main {
-  //   //   transform: translateX(50vw);
-  //   // }
-  //   // #mob-nav-icon {
-  //   //   position: fixed;
-  //   //   padding: 1rem;
-  //   //   padding-left: 5vw; //
-  //   //   font-size: 2rem;
-  //   //   z-index: 999;
-  //   //   color: $brown;
-  //   // }
-  //   // nav {
-  //   //   z-index: 9;
-  //   //   position: fixed;
-  //   //   display: flex;
-  //   //   flex-direction: column;
-  //   //   justify-content: center;
-  //   //   align-items: center;
-  //   //   margin-top: 6rem;
-  //   //   left: -2rem;
-  //   //   width: 50vw;
-  //   //   height: 75vh;
-  //   //   padding: 5rem;
-  //   //   background-color: $white;
-  //   //   @include box-shadow();
-  //   //   @include card-border();
-  //   //   transform: translateX(-50vw);
-  //   //   transition: 0.5s;
-  //   //   &:hover {
-  //   //     box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
-  //   //   }
-  //   //   #nav-list {
-  //   //     display: flex;
-  //   //     flex-direction: column;
-  //   //     justify-content: space-between;
-  //   //     height: 100%;
-  //   //     list-style: none;
-  //   //     li {
-  //   //       padding-left: 2rem;
-  //   //       text-align: center;
-  //   //       font-family: $karla;
-  //   //       font-size: 1.5rem;
-  //   //     }
-  //   //   }
-  //   // }
-  // }
   p {
     color: $black;
   }
@@ -205,9 +149,7 @@ main {
   background-color: $white; //
   position: relative;
   top: 4rem;
-  min-height: 100vh;
   min-width: 100vw;
-  // padding: 0;
   padding: 0 0 5rem 0;
   font-family: $karla;
   transform: translateX(0vw);
@@ -243,11 +185,6 @@ main {
     }
     .dropdown-cont {
       margin: 1rem;
-      // position: fixed;
-      // top: 10rem;
-      // left: 2rem;
-      // display: flex;
-      // justify-content: center;
       text-align: center;
       width: 100vw; // prevents wrap
       .dropdown-icon {
@@ -298,12 +235,7 @@ main {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-      // align-items: space-evenly; //
-      // flex-wrap: wrap;
       width: 100%;
-      // * {
-      //   // align-self: center;
-      // }
     }
     .card {
       display: flex;
@@ -325,7 +257,6 @@ main {
         color: $dark-brown;
       }
       label {
-        // solved issue of internal links directing to behind fixed header
         position: relative;
         a {
           position: absolute;
@@ -387,7 +318,6 @@ main {
     }
     iframe {
       min-height: 50vh;
-      // display: none;    //// TURN ON FOR MOBILE/DESKTOP
     }
     .doc {
       width: 100%;
@@ -401,7 +331,6 @@ main {
     }
   }
 }
-
 footer {
   z-index: 10;
   position: fixed;
@@ -426,11 +355,6 @@ footer {
     #mob-nav-icon {
       padding-left: 3vw;
     }
-    // #main-container {
-    //   #mob-nav-icon {
-    //     padding-left: 3vw;
-    //   }
-    // }
     main {
       .content {
         display: flex;
@@ -447,9 +371,6 @@ footer {
           width: 100%; //
           margin: 1rem; //
         }
-        .container {
-          // flex-wrap: nowrap;
-        }
         #about-img {
           max-width: 500px;
         }
@@ -458,15 +379,12 @@ footer {
           display: block;
           position: absolute;
           top: 2rem;
-          right: 0;
-          // height: 100vh;
+          right: 1rem;
           overflow: hidden;
-          writing-mode: vertical-lr;
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
           color: $dark-purple;
         }
-        // .doc {
-        //   width: 80%;
-        // }
       }
     }
   }
@@ -476,8 +394,6 @@ footer {
 @media only screen and (min-width: 992px) {
   body {
     position: relative;
-    // top: 0;
-    // height: 7rem;
     header {
       position: relative;
       height: 6rem;
@@ -520,7 +436,6 @@ footer {
             display: block;
             font-size: 1.5rem;
             -webkit-text-stroke: 2px $white;
-            // margin: -1px;
             transform: scale(1.8, 1);
           }
         }
@@ -534,7 +449,6 @@ footer {
       }
     }
     nav {
-      // margin-top: 8rem;
       top: 2rem;
       width: 25vw;
       height: 60vh;
@@ -551,8 +465,6 @@ footer {
       top: 0;
       padding-left: 5rem;
       .content {
-        .card {
-        }
         .article {
           max-width: 60rem;
         }
@@ -561,80 +473,5 @@ footer {
         }
       }
     }
-    // #main-container {
-    //   position: absolute;
-    //   top: 0;
-    //   height: 7rem;
-    //   #nav-button {
-    //     position: relative;
-    //     text-align: center;
-    //     line-height: 300%;
-    //     #mob-nav-icon {
-    //       display: none;
-    //     }
-    //     #desk-nav-icon {
-    //       z-index: 999;
-    //       display: inline-block;
-    //       position: fixed;
-    //       padding: 1rem;
-    //       font-size: 2rem;
-    //       color: $brown;
-    //       transition: 1s;
-    //       #menu-text {
-    //         font-family: $karla;
-    //         font-size: 2rem;
-    //         transition: 0.2s;
-    //         &::selection {
-    //           background-color: transparent;
-    //         }
-    //       }
-    //       #arrows {
-    //         position: absolute;
-    //         display: block;
-    //         left: -2rem;
-    //         transition: 0.2s;
-    //         .arrow {
-    //           display: block;
-    //           font-size: 1.5rem;
-    //           -webkit-text-stroke: 2px $white;
-    //           // margin: -1px;
-    //           transform: scale(1.8, 1);
-    //         }
-    //       }
-    //     }
-    //     #menu-text:hover {
-    //       cursor: pointer;
-    //       transform: translateX(0.5rem);
-    //     }
-    //     #menu-text:hover ~ #arrows {
-    //       transform: translateX(5.5rem);
-    //     }
-    //   }
-    //   nav {
-    //     margin-top: 8rem;
-    //     width: 25vw;
-    //     transform: translateX(-25vw);
-    //   }
-    //   #nav-check:checked ~ nav {
-    //     transform: translateX(0vw);
-    //   }
-    //   #nav-check:checked ~ main {
-    //     transform: translateX(25vw);
-    //   }
-    //   main {
-    //     top: 7rem;
-    //     padding-left: 5rem;
-    //     .content {
-    //       .card {
-    //       }
-    //       .article {
-    //         max-width: 60rem;
-    //       }
-    //       .modular {
-    //         width: 40%; //
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
