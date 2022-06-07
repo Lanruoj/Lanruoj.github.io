@@ -293,10 +293,11 @@ main .content .card label a {
 }
 main .content .card ul {
   text-align: center;
+  list-style: none;
 }
 main .content .card ul li img {
   width: 80%;
-  max-width: 500px;
+  max-width: 300px;
 }
 main .content .card form {
   display: flex;
@@ -530,6 +531,17 @@ footer #footer-text {
   }
   body main .content .modular {
     width: 40%;
+  }
+  body main .content .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 40%;
+  }
+  body main .content .column .card {
+    width: 100%;
+    min-width: 20rem;
   }
 }
 
