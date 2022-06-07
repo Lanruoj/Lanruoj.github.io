@@ -235,7 +235,7 @@ main {
       align-items: center;
       min-height: 5rem;
       height: min-content;
-      margin: 1rem; //
+      // margin: 1rem; //
     }
     .container {
       display: flex;
@@ -257,10 +257,35 @@ main {
         transform: scale(1.01);
         box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
       }
-      h2 {
+      h2,
+      h3 {
         text-align: center;
-        font-family: $karla;
+        font-family: $monaco;
         color: $dark-brown;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+      .card-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        div {
+          margin: 0.5rem;
+          ul {
+            list-style: none;
+            li {
+              font-family: $monaco;
+              color: $dark-purple;
+              font-size: 0.9rem;
+            }
+          }
+        }
       }
       label {
         position: relative;
@@ -332,8 +357,9 @@ main {
   .logo {
     width: 50px;
     border-radius: 0%;
+    transition: 0.2s;
     &:hover {
-      transform: scale(1.01);
+      transform: scale(1.05);
     }
   }
 }
