@@ -14,7 +14,6 @@ body {
   background-color: rgb(249, 247, 242);
   position: relative;
   font-size: 1rem;
-  list-style: none;
 }
 body header {
   z-index: 10;
@@ -116,7 +115,7 @@ body p {
 }
 body a {
   text-decoration: none;
-  color: rgb(83, 75, 58);
+  color: rgb(76, 0, 255);
 }
 
 main {
@@ -162,15 +161,25 @@ main .content #page-sub {
 main .content .dropdown-cont {
   margin: 1rem;
   text-align: center;
-  width: 100vw;
+  border-radius: 50%;
 }
 main .content .dropdown-cont .dropdown-icon {
-  cursor: pointer;
+  font-family: "Monaco", monospace;
   color: rgb(76, 0, 255);
+  cursor: pointer;
   transition: 0.2s;
 }
 main .content .dropdown-cont .dropdown-icon:hover {
   color: rgb(35, 0, 139);
+}
+main .content .dropdown-cont .dropdown-icon .down-arrows {
+  transition: 0.2s;
+}
+main .content .dropdown-cont .dropdown-icon a {
+  color: rgb(83, 75, 58);
+}
+main .content .dropdown-cont .dropdown-icon a:hover ~ .down-arrows {
+  transform: translateY(0.2rem);
 }
 main .content .dropdown-cont .dropdown-list {
   display: none;
@@ -218,6 +227,9 @@ main .content .modular {
   min-height: 5rem;
   height: min-content;
 }
+main .content .article {
+  max-width: 40rem;
+}
 main .content .container {
   display: flex;
   flex-direction: row;
@@ -251,25 +263,29 @@ main .content .card h2 {
 main .content .card h3 {
   font-size: 1rem;
 }
-main .content .card .card-list {
+main .content .card .card-lists {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
 }
-main .content .card .card-list div {
+main .content .card .card-lists div {
   margin: 0.5rem;
 }
-main .content .card .card-list div ul {
+main .content .card .card-lists div ul {
   list-style: none;
 }
-main .content .card .card-list div ul li {
+main .content .card .card-lists div ul li {
   font-family: "Monaco", monospace;
   color: rgb(35, 0, 139);
   font-size: 0.9rem;
 }
+main .content .card .card-lists div ul li img {
+  max-width: 10px;
+}
 main .content .card figure img {
+  width: 80%;
   max-width: 500px;
 }
 main .content .card label {
@@ -278,6 +294,13 @@ main .content .card label {
 main .content .card label a {
   position: absolute;
   top: -10rem;
+}
+main .content .card ul {
+  text-align: center;
+}
+main .content .card ul li img {
+  width: 80%;
+  max-width: 500px;
 }
 main .content .card form {
   display: flex;
@@ -300,11 +323,11 @@ main .content .card .expand-icon {
 main .content .card .expand-icon:hover {
   color: rgb(35, 0, 139);
 }
-main .content .card #expand-check1:checked ~ #blog1,
-main .content .card #expand-check2:checked ~ #blog2,
-main .content .card #expand-check3:checked ~ #blog3,
-main .content .card #expand-check4:checked ~ #blog4,
-main .content .card #expand-check5:checked ~ #blog5 {
+main .content .card #expand-check1:checked ~ #card1,
+main .content .card #expand-check2:checked ~ #card2,
+main .content .card #expand-check3:checked ~ #card3,
+main .content .card #expand-check4:checked ~ #card4,
+main .content .card #expand-check5:checked ~ #card5 {
   max-height: 500rem;
   -webkit-mask-image: none;
   mask-image: none;
@@ -324,7 +347,7 @@ main .content .info {
   min-width: 15rem;
   text-align: center;
 }
-main .content .blog-time {
+main .content .card-time {
   text-align: center;
   display: block;
   font-family: "Monaco", monospace;
@@ -502,9 +525,6 @@ footer #footer-text {
   body main {
     top: 0;
     padding-left: 5rem;
-  }
-  body main .content .article {
-    max-width: 60rem;
   }
   body main .content .modular {
     width: 40%;
