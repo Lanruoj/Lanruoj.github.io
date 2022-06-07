@@ -416,6 +416,7 @@ footer #footer-text {
     transform: translateX(25vw);
   }
   body main {
+    top: 0;
     padding-left: 5rem;
   }
   body main .content .article {

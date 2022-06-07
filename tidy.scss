@@ -301,9 +301,9 @@ main {
       align-items: space-evenly; //
       // flex-wrap: wrap;
       width: 100%;
-      * {
-        // align-self: center;
-      }
+      // * {
+      //   // align-self: center;
+      // }
     }
     .card {
       display: flex;
@@ -537,7 +537,7 @@ footer {
       transform: translateX(25vw);
     }
     main {
-      // top: 7rem;
+      top: 0;
       padding-left: 5rem;
       .content {
         .card {
