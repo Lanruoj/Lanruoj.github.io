@@ -16,7 +16,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>About / TK</title>
+    <title>Journal / TK</title>
 </head>
 
 <body>
@@ -57,53 +57,52 @@
         </ul>
     </nav>
 
-        <main>
-            <section class="content">
-                <!-- PAGE SUBHEADING -->
-                <span class="page-subheading">
-                    <h2>about . about . about . about . about . about . about . about . about</h2>
-                </span>
+    <main>
+        <section class="content">
+            <!-- PAGE SUBHEADING -->
+            <h2 id="page-sub">journal</h2>
 
+            <!-- LIST OF BLOG POSTS -->
+            <div class="dropdown-cont">
+                <label for="dropdown-check" class="dropdown-icon">
+                    List
+                    <br>
+                    <i class="fa-solid fa-angle-double-down"></i>
+                </label>
+                <input type="checkbox" id="dropdown-check" />
+                <ul class="dropdown-list">
+                    <li><a href="#anchor-blog1">Blog Post One</a></li>
+                    <li><a href="#anchor-blog2">Blog Post Two</a></li>
+                    <li><a href="#anchor-blog3">Blog Post Three</a></li>
+                    <li><a href="#anchor-blog4">Blog Post Four</a></li>
+                    <li><a href="#anchor-blog5">Blog Post Five</a></li>
+                </ul>
+            </div>
 
-                <!-- LIST OF BLOG POSTS -->
-                <div class="dropdown-cont">
-                    <label for="dropdown-check" class="dropdown-icon">
-                        List
-                        <br>
-                        <i class="fa-solid fa-angle-double-down"></i>
-                    </label>
-                    <input type="checkbox" id="dropdown-check"/>
-                    <ul class="dropdown-list">
-                        <li><a href="#anchor-blog1">Blog Post One</a></li>
-                        <li><a href="#anchor-blog2">Blog Post Two</a></li>
-                        <li><a href="#anchor-blog3">Blog Post Three</a></li>
-                        <li><a href="#anchor-blog4">Blog Post Four</a></li>
-                        <li><a href="#anchor-blog5">Blog Post Five</a></li>
-                    </ul>
-                </div>
-
-                <div class="card article">
-                    <label for="expand-check1" class="expand-icon">+/-
-                        <a id="anchor-blog1"></a>
-                    </label>
-                    <input type="checkbox" id="expand-check1" />
-                    <article class="expand" id="blog1">
-                        <h2>Blog post one</h2>
-                        <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
-                            tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
-                            Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
-                            sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
-                            vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
-                            condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
-                            pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
-                            id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit.
-                        <figure>
-                            <img src="./img/archie.png" alt="archie cat">
-                            <figcaption>My beautiful cat, Archie</figcaption>
-                        </figure> Donec tellus lacus, placerat a semper ut, suscipit et
+            <div class="card article">
+                <label for="expand-check1" class="expand-icon">+/-
+                    <a id="anchor-blog1"></a>
+                </label>
+                <input type="checkbox" id="expand-check1" />
+                <article class="expand" id="blog1">
+                    <h2>Blog post one</h2>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
+                        tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
+                        Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
+                        sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
+                        vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
+                        condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
+                        pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
+                        id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit.
+                    </p>
+                    <figure>
+                        <img src="./img/archie.png" alt="archie cat">
+                        <figcaption>My beautiful cat, Archie</figcaption>
+                    </figure>
+                    <p>Donec tellus lacus, placerat a semper ut, suscipit et
                         mi. Pellentesque habitant morbi tristique senectus et netus et
                         malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
                         dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
@@ -156,53 +155,55 @@
                         Aenean ultrices ligula eu suscipit ullamcorper. Aliquam aliquet, ipsum
                         ut volutpat sodales, leo magna faucibus risus, sed scelerisque neque
                         odio quis metus. Curabitur rutrum est ac tortor vulputate tincidunt.
-                        </p>
-                    </article>
-                </div>
+                    </p>
+                </article>
+            </div>
 
-                <div class="card article">
-                    <label for="expand-check2" class="expand-icon">+/-
-                        <a id="anchor-blog2"></a>
-                    </label>
-                    <input type="checkbox" id="expand-check2" />
-                    <article class="expand" id="blog2">
-                        <h2>Blog post two</h2>
-                        <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
-                            tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
-                            Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
-                            sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
-                            vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
-                            condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
-                            pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
-                            id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
-                            mi. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
-                            dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
-                            vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
-                            tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat
-                            sem. Donec sit amet sem et odio eleifend sollicitudin. Quisque
-                            convallis egestas nulla vel vehicula. Donec sodales diam turpis,
-                            facilisis congue est consequat nec. Quisque mauris dui, condimentum
-                            eleifend finibus eu, pretium at nisl. Nulla vel fringilla elit. Aenean
-                            in eros hendrerit orci vulputate viverra eu eget sapien. Curabitur
-                            placerat aliquet nisi sed ullamcorper. Ut eros diam, venenatis ut
-                            dignissim at, vehicula vel turpis. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Sed tincidunt id justo a posuere. Morbi
-                            consectetur ornare ornare. Sed eros dui, accumsan vel nibh sed,
-                            ultricies rhoncus lorem. Vestibulum varius, lorem posuere lobortis
-                            convallis, massa nibh sodales lorem, at rutrum neque lectus nec metus.
-                            Sed consectetur ante sit amet augue consequat porta. Integer risus
-                            nisl, venenatis nec commodo quis, maximus eget tellus. In dictum
-                            laoreet ligula, ut porta risus consequat at. Nulla vehicula tellus non
-                            dapibus sagittis. Maecenas luctus sagittis felis, ac tempus neque
-                            dictum ut.
-                        <figure>
-                            <img src="./img/havana.jpeg" alt="havana brown cat">
-                            <figcaption>A beautiful Havana Brown cat</figcaption>
-                        </figure>
+            <div class="card article">
+                <label for="expand-check2" class="expand-icon">+/-
+                    <a id="anchor-blog2"></a>
+                </label>
+                <input type="checkbox" id="expand-check2" />
+                <article class="expand" id="blog2">
+                    <h2>Blog post two</h2>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
+                        tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
+                        Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
+                        sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
+                        vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
+                        condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
+                        pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
+                        id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
+                        mi. Pellentesque habitant morbi tristique senectus et netus et
+                        malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
+                        dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
+                        vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
+                        tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat
+                        sem. Donec sit amet sem et odio eleifend sollicitudin. Quisque
+                        convallis egestas nulla vel vehicula. Donec sodales diam turpis,
+                        facilisis congue est consequat nec. Quisque mauris dui, condimentum
+                        eleifend finibus eu, pretium at nisl. Nulla vel fringilla elit. Aenean
+                        in eros hendrerit orci vulputate viverra eu eget sapien. Curabitur
+                        placerat aliquet nisi sed ullamcorper. Ut eros diam, venenatis ut
+                        dignissim at, vehicula vel turpis. Interdum et malesuada fames ac ante
+                        ipsum primis in faucibus. Sed tincidunt id justo a posuere. Morbi
+                        consectetur ornare ornare. Sed eros dui, accumsan vel nibh sed,
+                        ultricies rhoncus lorem. Vestibulum varius, lorem posuere lobortis
+                        convallis, massa nibh sodales lorem, at rutrum neque lectus nec metus.
+                        Sed consectetur ante sit amet augue consequat porta. Integer risus
+                        nisl, venenatis nec commodo quis, maximus eget tellus. In dictum
+                        laoreet ligula, ut porta risus consequat at. Nulla vehicula tellus non
+                        dapibus sagittis. Maecenas luctus sagittis felis, ac tempus neque
+                        dictum ut.
+                    </p>
+                    <figure>
+                        <img src="./img/havana.jpeg" alt="havana brown cat">
+                        <figcaption>A beautiful Havana Brown cat</figcaption>
+                    </figure>
+                    <p>
                         Vestibulum rhoncus, massa ac suscipit dapibus, sem ex
                         eleifend dolor, vel commodo risus enim id velit. Ut ullamcorper turpis
                         felis, non aliquam sapien varius ut. Nullam arcu nibh, sodales a
@@ -233,39 +234,41 @@
                         Aenean ultrices ligula eu suscipit ullamcorper. Aliquam aliquet, ipsum
                         ut volutpat sodales, leo magna faucibus risus, sed scelerisque neque
                         odio quis metus. Curabitur rutrum est ac tortor vulputate tincidunt.
-                        </p>
-                    </article>
-                </div>
+                    </p>
+                </article>
+            </div>
 
-                <div class="card article">
-                    <label for="expand-check3" class="expand-icon">+/-
-                        <a id="anchor-blog3"></a>
-                    </label>
-                    <input type="checkbox" id="expand-check3" />
-                    <article class="expand" id="blog3">
-                        <h2>Blog post three</h2>
-                        <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
-                            tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
-                            Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
-                            sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
-                            vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
-                            condimentum tempus.
-                            Nunc erat velit, molestie vehicula ligula id,
-                            pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
-                            id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
-                            mi. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
-                            dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
-                            vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
-                            tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat
-                            sem. Donec sit amet sem et odio eleifend sollicitudin.
-                        <figure>
-                            <img src="./img/tattoo.jpg" alt="Me getting a tattoo in Porto, Portugal">
-                            <figcaption>Me getting a tattoo in Porto, Portugal</figcaption>
-                        </figure> Quisque
+            <div class="card article">
+                <label for="expand-check3" class="expand-icon">+/-
+                    <a id="anchor-blog3"></a>
+                </label>
+                <input type="checkbox" id="expand-check3" />
+                <article class="expand" id="blog3">
+                    <h2>Blog post three</h2>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
+                        tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
+                        Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
+                        sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
+                        vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
+                        condimentum tempus.
+                        Nunc erat velit, molestie vehicula ligula id,
+                        pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
+                        id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
+                        mi. Pellentesque habitant morbi tristique senectus et netus et
+                        malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
+                        dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
+                        vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
+                        tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat
+                        sem. Donec sit amet sem et odio eleifend sollicitudin.
+                    </p>
+                    <figure>
+                        <img src="./img/tattoo.jpg" alt="Me getting a tattoo in Porto, Portugal">
+                        <figcaption>Me getting a tattoo in Porto, Portugal</figcaption>
+                    </figure>
+                    <p> Quisque
                         convallis egestas nulla vel vehicula. Donec sodales diam turpis,
                         facilisis congue est consequat nec. Quisque mauris dui, condimentum
                         eleifend finibus eu, pretium at nisl. Nulla vel fringilla elit. Aenean
@@ -310,37 +313,39 @@
                         Aenean ultrices ligula eu suscipit ullamcorper. Aliquam aliquet, ipsum
                         ut volutpat sodales, leo magna faucibus risus, sed scelerisque neque
                         odio quis metus. Curabitur rutrum est ac tortor vulputate tincidunt.
-                        </p>
-                    </article>
-                </div>
+                    </p>
+                </article>
+            </div>
 
-                <div class="card article">
-                    <label for="expand-check4" class="expand-icon">+/-
-                        <a id="anchor-blog4"></a>
-                    </label>
-                    <input type="checkbox" id="expand-check4" />
-                    <article class="expand" id="blog4">
-                        <h2>Blog post four</h2>
-                        <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
-                            tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
-                            Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
-                            sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
-                            vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
-                            condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
-                            pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
-                            id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
-                            mi. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
-                            dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
-                            vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
-                            tincidunt elit.
-                        <figure>
-                            <img src="./img/band.png" alt="Band page">
-                            <figcaption>My band page</figcaption>
-                        </figure>
+            <div class="card article">
+                <label for="expand-check4" class="expand-icon">+/-
+                    <a id="anchor-blog4"></a>
+                </label>
+                <input type="checkbox" id="expand-check4" />
+                <article class="expand" id="blog4">
+                    <h2>Blog post four</h2>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
+                        tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
+                        Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
+                        sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
+                        vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
+                        condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
+                        pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
+                        id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
+                        mi. Pellentesque habitant morbi tristique senectus et netus et
+                        malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
+                        dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
+                        vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
+                        tincidunt elit.
+                    </p>
+                    <figure>
+                        <img src="./img/band.png" alt="Band page">
+                        <figcaption>My band page</figcaption>
+                    </figure>
+                    <p>
                         Cras id sem posuere, condimentum elit vel, volutpat
                         sem. Donec sit amet sem et odio eleifend sollicitudin. Quisque
                         convallis egestas nulla vel vehicula. Donec sodales diam turpis,
@@ -387,48 +392,50 @@
                         Aenean ultrices ligula eu suscipit ullamcorper. Aliquam aliquet, ipsum
                         ut volutpat sodales, leo magna faucibus risus, sed scelerisque neque
                         odio quis metus. Curabitur rutrum est ac tortor vulputate tincidunt.
-                        </p>
-                    </article>
-                </div>
+                    </p>
+                </article>
+            </div>
 
-                <div class="card article">
-                    <label for="expand-check5" class="expand-icon">+/-
-                        <a id="anchor-blog5"></a>
-                    </label>
-                    <input type="checkbox" id="expand-check5" />
-                    <article class="expand" id="blog5">
-                        <h2>Blog post five</h2>
-                        <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
-                            tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
-                            Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
-                            sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
-                            vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
-                            condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
-                            pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
-                            id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
-                            mi. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
-                            dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
-                            vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
-                            tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat
-                            sem. Donec sit amet sem et odio eleifend sollicitudin. Quisque
-                            convallis egestas nulla vel vehicula. Donec sodales diam turpis,
-                            facilisis congue est consequat nec. Quisque mauris dui, condimentum
-                            eleifend finibus eu, pretium at nisl. Nulla vel fringilla elit. Aenean
-                            in eros hendrerit orci vulputate viverra eu eget sapien. Curabitur
-                            placerat aliquet nisi sed ullamcorper. Ut eros diam, venenatis ut
-                            dignissim at, vehicula vel turpis. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Sed tincidunt id justo a posuere. Morbi
-                            consectetur ornare ornare. Sed eros dui, accumsan vel nibh sed,
-                            ultricies rhoncus lorem. Vestibulum varius, lorem posuere lobortis
-                            convallis, massa nibh sodales lorem, at rutrum neque lectus nec metus.
-                        <figure>
-                            <img src="./img/buttons.png" alt="Checkbox training">
-                            <figcaption>Learning how to use the checkbox hack</figcaption>
-                        </figure>
+            <div class="card article">
+                <label for="expand-check5" class="expand-icon">+/-
+                    <a id="anchor-blog5"></a>
+                </label>
+                <input type="checkbox" id="expand-check5" />
+                <article class="expand" id="blog5">
+                    <h2>Blog post five</h2>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex
+                        tellus. Nulla et orci interdum, congue nisl in, ultricies massa.
+                        Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor
+                        sem, sed ullamcorper felis laoreet in. Donec vitae porta nibh. Duis
+                        vestibulum tincidunt enim in lobortis. Fusce ut nunc eget enim
+                        condimentum tempus. Nunc erat velit, molestie vehicula ligula id,
+                        pellentesque ornare neque. Quisque placerat enim nec metus efficitur,
+                        id lobortis enim euismod. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
+                        mi. Pellentesque habitant morbi tristique senectus et netus et
+                        malesuada fames ac turpis egestas. Praesent ut velit id diam finibus
+                        dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit
+                        vehicula ligula. Proin sit amet nunc fringilla, mollis diam ac,
+                        tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat
+                        sem. Donec sit amet sem et odio eleifend sollicitudin. Quisque
+                        convallis egestas nulla vel vehicula. Donec sodales diam turpis,
+                        facilisis congue est consequat nec. Quisque mauris dui, condimentum
+                        eleifend finibus eu, pretium at nisl. Nulla vel fringilla elit. Aenean
+                        in eros hendrerit orci vulputate viverra eu eget sapien. Curabitur
+                        placerat aliquet nisi sed ullamcorper. Ut eros diam, venenatis ut
+                        dignissim at, vehicula vel turpis. Interdum et malesuada fames ac ante
+                        ipsum primis in faucibus. Sed tincidunt id justo a posuere. Morbi
+                        consectetur ornare ornare. Sed eros dui, accumsan vel nibh sed,
+                        ultricies rhoncus lorem. Vestibulum varius, lorem posuere lobortis
+                        convallis, massa nibh sodales lorem, at rutrum neque lectus nec metus.
+                    </p>
+                    <figure>
+                        <img src="./img/buttons.png" alt="Checkbox training">
+                        <figcaption>Learning how to use the checkbox hack</figcaption>
+                    </figure>
+                    <p>
                         Sed consectetur ante sit amet augue consequat porta. Integer risus
                         nisl, venenatis nec commodo quis, maximus eget tellus. In dictum
                         laoreet ligula, ut porta risus consequat at. Nulla vehicula tellus non
@@ -463,18 +470,12 @@
                         Aenean ultrices ligula eu suscipit ullamcorper. Aliquam aliquet, ipsum
                         ut volutpat sodales, leo magna faucibus risus, sed scelerisque neque
                         odio quis metus. Curabitur rutrum est ac tortor vulputate tincidunt.
-                        </p>
-                    </article>
-                </div>
+                    </p>
+                </article>
+            </div>
 
-
-
-
-
-
-            </section>
-
-        </main>
+        </section>
+    </main>
     <footer>
         <p id="footer-text">&copy; Tané Kaio, 2022</p>
     </footer>

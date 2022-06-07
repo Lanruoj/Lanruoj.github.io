@@ -238,7 +238,7 @@ main {
     align-items: center;
     padding: 1rem;
     background-color: $white;
-    .page-subheading {
+    #page-sub {
       display: none;
     }
     .dropdown-cont {
@@ -452,6 +452,17 @@ footer {
         }
         #about-img {
           max-width: 500px;
+        }
+        #page-sub {
+          z-index: 999;
+          display: block;
+          position: absolute;
+          top: 2rem;
+          right: 0;
+          // height: 100vh;
+          overflow: hidden;
+          writing-mode: vertical-lr;
+          color: $dark-purple;
         }
         // .doc {
         //   width: 80%;
