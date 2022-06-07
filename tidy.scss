@@ -91,7 +91,7 @@ body {
   #nav-check {
     display: none;
   }
-  #nav-check:checked ~ nav {
+  #nav-check:checked ~ #nav-main {
     transform: translateX(0vw);
   }
   #nav-check:checked ~ main {
@@ -105,7 +105,7 @@ body {
     font-size: 2rem;
     color: $brown;
   }
-  nav {
+  #nav-main {
     z-index: 9;
     position: fixed;
     display: flex;
@@ -189,7 +189,7 @@ main {
     #page-sub {
       display: none;
     }
-    .dropdown-cont {
+    .nav-sub {
       margin: 1rem;
       text-align: center;
       border-radius: 50%;
@@ -436,7 +436,7 @@ footer {
     #nav-check:checked ~ main {
       transform: translateX(10rem);
     }
-    nav {
+    #nav-main {
       width: 25vw;
       max-width: 10rem;
       transform: translateX(-10rem);
@@ -534,7 +534,7 @@ footer {
         transform: translateX(5rem);
       }
     }
-    nav {
+    #nav-main {
       top: 2rem;
       max-width: 13rem;
       height: 60vh;
@@ -560,7 +560,7 @@ footer {
         }
       }
     }
-    #nav-check:checked ~ nav {
+    #nav-check:checked ~ #nav-main {
       transform: translateX(0);
     }
     #nav-check:checked ~ main {

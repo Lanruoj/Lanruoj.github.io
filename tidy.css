@@ -58,7 +58,7 @@ body #desk-nav-icon {
 body #nav-check {
   display: none;
 }
-body #nav-check:checked ~ nav {
+body #nav-check:checked ~ #nav-main {
   transform: translateX(0vw);
 }
 body #nav-check:checked ~ main {
@@ -72,7 +72,7 @@ body #mob-nav-icon {
   font-size: 2rem;
   color: rgb(83, 75, 58);
 }
-body nav {
+body #nav-main {
   z-index: 9;
   position: fixed;
   display: flex;
@@ -91,23 +91,23 @@ body nav {
   transform: translateX(-50vw);
   transition: 0.5s;
 }
-body nav:hover {
+body #nav-main:hover {
   box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
 }
-body nav #nav-list {
+body #nav-main #nav-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   list-style: none;
 }
-body nav #nav-list li {
+body #nav-main #nav-list li {
   padding-left: 2rem;
   text-align: center;
   font-family: "Karla", sans-serif;
   font-size: 1.2rem;
 }
-body nav #nav-list li a {
+body #nav-main #nav-list li a {
   color: rgb(249, 247, 242);
 }
 body p {
@@ -158,44 +158,44 @@ main .content {
 main .content #page-sub {
   display: none;
 }
-main .content .dropdown-cont {
+main .content .nav-sub {
   margin: 1rem;
   text-align: center;
   border-radius: 50%;
 }
-main .content .dropdown-cont .dropdown-icon {
+main .content .nav-sub .dropdown-icon {
   font-family: "Monaco", monospace;
   color: rgb(76, 0, 255);
   cursor: pointer;
   transition: 0.2s;
 }
-main .content .dropdown-cont .dropdown-icon:hover {
+main .content .nav-sub .dropdown-icon:hover {
   color: rgb(35, 0, 139);
 }
-main .content .dropdown-cont .dropdown-icon .down-arrows {
+main .content .nav-sub .dropdown-icon .down-arrows {
   transition: 0.2s;
 }
-main .content .dropdown-cont .dropdown-icon a {
+main .content .nav-sub .dropdown-icon a {
   color: rgb(83, 75, 58);
 }
-main .content .dropdown-cont .dropdown-icon a:hover ~ .down-arrows {
+main .content .nav-sub .dropdown-icon a:hover ~ .down-arrows {
   transform: translateY(0.2rem);
 }
-main .content .dropdown-cont .dropdown-list {
+main .content .nav-sub .dropdown-list {
   display: none;
   list-style: none;
 }
-main .content .dropdown-cont .dropdown-list li {
+main .content .nav-sub .dropdown-list li {
   margin: 1rem;
 }
-main .content .dropdown-cont .dropdown-list li a {
+main .content .nav-sub .dropdown-list li a {
   font-family: "Monaco", monospace;
   color: rgb(76, 0, 255);
 }
-main .content .dropdown-cont #dropdown-check:checked ~ .dropdown-list {
+main .content .nav-sub #dropdown-check:checked ~ .dropdown-list {
   display: block;
 }
-main .content .dropdown-cont #dropdown-check {
+main .content .nav-sub #dropdown-check {
   display: none;
 }
 main .content figure {
@@ -396,7 +396,7 @@ footer #footer-text {
   body #nav-check:checked ~ main {
     transform: translateX(10rem);
   }
-  body nav {
+  body #nav-main {
     width: 25vw;
     max-width: 10rem;
     transform: translateX(-10rem);
@@ -490,7 +490,7 @@ footer #footer-text {
   body #nav-button #menu-text:hover ~ #arrows {
     transform: translateX(5rem);
   }
-  body nav {
+  body #nav-main {
     top: 2rem;
     max-width: 13rem;
     height: 60vh;
@@ -498,14 +498,14 @@ footer #footer-text {
     transform: translateX(-13rem);
     align-items: flex-start;
   }
-  body nav li {
+  body #nav-main li {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: nowrap;
     margin-left: 1rem;
   }
-  body nav li a::before {
+  body #nav-main li a::before {
     content: "cd ./";
     color: rgb(76, 0, 255);
     font-family: "Monaco", monospace;
@@ -513,10 +513,10 @@ footer #footer-text {
     opacity: 0;
     transition: 0.1s;
   }
-  body nav li a:hover::before {
+  body #nav-main li a:hover::before {
     opacity: 1;
   }
-  body #nav-check:checked ~ nav {
+  body #nav-check:checked ~ #nav-main {
     transform: translateX(0);
   }
   body #nav-check:checked ~ main {
