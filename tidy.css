@@ -53,31 +53,27 @@ body header #header-cont #header-circle {
   border-radius: 50%;
   mix-blend-mode: multiply;
 }
-body #main-container {
-  width: 100vw;
-  height: 4rem;
-}
-body #main-container #desk-nav-icon {
+body #desk-nav-icon {
   display: none;
 }
-body #main-container #nav-check {
+body #nav-check {
   display: none;
 }
-body #main-container #nav-check:checked ~ nav {
+body #nav-check:checked ~ nav {
   transform: translateX(0vw);
 }
-body #main-container #nav-check:checked ~ main {
+body #nav-check:checked ~ main {
   transform: translateX(50vw);
 }
-body #main-container #mob-nav-icon {
+body #mob-nav-icon {
+  z-index: 999;
   position: fixed;
   padding: 1rem;
   padding-left: 5vw;
   font-size: 2rem;
-  z-index: 999;
   color: rgb(83, 75, 58);
 }
-body #main-container nav {
+body nav {
   z-index: 9;
   position: fixed;
   display: flex;
@@ -95,17 +91,17 @@ body #main-container nav {
   transform: translateX(-50vw);
   transition: 0.5s;
 }
-body #main-container nav:hover {
+body nav:hover {
   box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
 }
-body #main-container nav #nav-list {
+body nav #nav-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   list-style: none;
 }
-body #main-container nav #nav-list li {
+body nav #nav-list li {
   padding-left: 2rem;
   text-align: center;
   font-family: "Karla", sans-serif;
@@ -201,6 +197,9 @@ main .content #about-img-cont img {
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 main .content .modular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 5rem;
   height: min-content;
   margin: 1rem;
@@ -322,7 +321,7 @@ footer #footer-text {
   body {
     font-size: 1rem;
   }
-  body #main-container #mob-nav-icon {
+  body #mob-nav-icon {
     padding-left: 3vw;
   }
   body main .content {
@@ -346,29 +345,28 @@ footer #footer-text {
   }
 }
 @media only screen and (min-width: 992px) {
+  body {
+    position: relative;
+  }
   body header {
     position: relative;
-    height: 7rem;
+    height: 6rem;
     box-shadow: none;
   }
   body header #header-cont {
-    transform: scale(2);
+    transform: scale(1.5);
     padding-right: 5rem;
   }
-  body #main-container {
+  body #nav-button {
     position: absolute;
     top: 0;
-    height: 7rem;
-  }
-  body #main-container #nav-button {
-    position: relative;
     text-align: center;
     line-height: 300%;
   }
-  body #main-container #nav-button #mob-nav-icon {
+  body #nav-button #mob-nav-icon {
     display: none;
   }
-  body #main-container #nav-button #desk-nav-icon {
+  body #nav-button #desk-nav-icon {
     z-index: 999;
     display: inline-block;
     position: fixed;
@@ -377,52 +375,53 @@ footer #footer-text {
     color: rgb(83, 75, 58);
     transition: 1s;
   }
-  body #main-container #nav-button #desk-nav-icon #menu-text {
+  body #nav-button #desk-nav-icon #menu-text {
     font-family: "Karla", sans-serif;
     font-size: 2rem;
     transition: 0.2s;
   }
-  body #main-container #nav-button #desk-nav-icon #menu-text::selection {
+  body #nav-button #desk-nav-icon #menu-text::selection {
     background-color: transparent;
   }
-  body #main-container #nav-button #desk-nav-icon #arrows {
+  body #nav-button #desk-nav-icon #arrows {
     position: absolute;
     display: block;
     left: -2rem;
     transition: 0.2s;
   }
-  body #main-container #nav-button #desk-nav-icon #arrows .arrow {
+  body #nav-button #desk-nav-icon #arrows .arrow {
     display: block;
     font-size: 1.5rem;
     -webkit-text-stroke: 2px rgb(249, 247, 242);
     transform: scale(1.8, 1);
   }
-  body #main-container #nav-button #menu-text:hover {
+  body #nav-button #menu-text:hover {
     cursor: pointer;
     transform: translateX(0.5rem);
   }
-  body #main-container #nav-button #menu-text:hover ~ #arrows {
+  body #nav-button #menu-text:hover ~ #arrows {
     transform: translateX(5.5rem);
   }
-  body #main-container nav {
-    margin-top: 8rem;
+  body nav {
+    top: 2rem;
     width: 25vw;
+    height: 60vh;
+    margin-bottom: 10rem;
     transform: translateX(-25vw);
   }
-  body #main-container #nav-check:checked ~ nav {
+  body #nav-check:checked ~ nav {
     transform: translateX(0vw);
   }
-  body #main-container #nav-check:checked ~ main {
+  body #nav-check:checked ~ main {
     transform: translateX(25vw);
   }
-  body #main-container main {
-    top: 7rem;
+  body main {
     padding-left: 5rem;
   }
-  body #main-container main .content .article {
+  body main .content .article {
     max-width: 60rem;
   }
-  body #main-container main .content .modular {
+  body main .content .modular {
     width: 40%;
   }
 }

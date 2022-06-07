@@ -28,49 +28,47 @@
             <div id="header-circle"></div>
         </div>
     </header>
-    <!-- MOBILE NAV MENU -->
 
-    <section id="main-container">
-        <!-- BUTTON/ICON FOR NAV MENU -->
-        <input type="checkbox" id="nav-check" />
-        <label for="nav-check" id="nav-button">
-            <!-- MOBILE BUTTON -->
-            <span class="fa-solid fa-bars" id="mob-nav-icon">
+    <!-- BUTTON/ICON FOR NAV MENU -->
+    <input type="checkbox" id="nav-check" />
+    <label for="nav-check" id="nav-button">
+        <!-- MOBILE BUTTON -->
+        <span class="fa-solid fa-bars" id="mob-nav-icon">
+        </span>
+        <!-- DESKTOP BUTTON -->
+        <span id="desk-nav-icon">
+            <span id="menu-text">menu</span>
+            <span id="arrows">
+                <i class="fa-solid fa-long-arrow-alt-left arrow"></i><i
+                    class="fa-solid fa-long-arrow-alt-right arrow"></i>
             </span>
-            <!-- DESKTOP BUTTON -->
-            <span id="desk-nav-icon">
-                <span id="menu-text">menu</span>
-                <span id="arrows">
-                    <i class="fa-solid fa-long-arrow-alt-left arrow"></i><i
-                        class="fa-solid fa-long-arrow-alt-right arrow"></i>
-                </span>
+        </span>
+    </label>
+    <!-- NAV LIST MENU -->
+    <nav>
+        <ul id="nav-list">
+            <li><a href="./about-v2.html">about</a></li>
+            <li><a href="./code-v2.html">code</a></li>
+            <!-- <li><a href="./personal.html">personal</a></li> -->
+            <li><a href="./journal-v2.html">journal</a></li>
+            <li><a href="./resume-v2.html">resume</a></li>
+            <li><a href="./contact-v2.html">contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="content">
+            <!-- PAGE SUBHEADING -->
+            <span class="page-subheading">
+                <h2>about . about . about . about . about . about . about . about . about</h2>
             </span>
-        </label>
-        <!-- NAV LIST MENU -->
-        <nav>
-            <ul id="nav-list">
-                <li><a href="./about-v2.html">about</a></li>
-                <li><a href="./code-v2.html">code</a></li>
-                <!-- <li><a href="./personal.html">personal</a></li> -->
-                <li><a href="./journal-v2.html">journal</a></li>
-                <li><a href="./resume-v2.html">resume</a></li>
-                <li><a href="./contact-v2.html">contact</a></li>
-                </div>
-            </ul>
-        </nav>
 
-        <main>
-            <section class="content">
-                <!-- PAGE SUBHEADING -->
-                <span class="page-subheading">
-                    <h2>about . about . about . about . about . about . about . about . about</h2>
-                </span>
+            <figure id="about-img-cont">
+                <img id="about-img" class="img" src="./img/nz-port.jpg" alt="An image of me">
+            </figure>
 
-                <figure id="about-img-cont">
-                    <img id="about-img" class="img" src="./img/nz-port.jpg" alt="An image of me">
-                </figure>
-
-                <article class="card article">
+            <div class="modular">
+                <article class="card article modular">
                     <h2>About me</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex tellus. Nulla et orci
                         interdum,
@@ -84,9 +82,7 @@
                         eget enim condimentum tempus.
                     </p>
                 </article>
-            </section>
 
-            <section class="content">
                 <div class="container">
                     <form action="./code.html">
                         <input type="submit" value="Code" class="button" />
@@ -95,9 +91,11 @@
                         <input type="submit" value="Resume" class="button" />
                     </form>
                 </div>
-            </section>
-        </main>
-    </section>
+
+            </div>
+        </section>
+    </main>
+    <!-- </section> -->
     <footer>
         <p id="footer-text">&copy; Tané Kaio, 2022</p>
     </footer>
