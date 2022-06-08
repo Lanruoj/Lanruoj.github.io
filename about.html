@@ -2,110 +2,144 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css" />
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet" />
-  <!-- FONT-AWESOME ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./tidy.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono&display=swap" rel="stylesheet">
+    <!-- FONT-AWESOME ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>About / TK</title>
+    <title>About / TK</title>
 </head>
 
 <body>
-  <header>
-    <h1>portfolio</h1>
-    <div id="head-circle"></div>
-  </header>
-  <!-- MOBILE MENU -->
-  <nav id="nav-cont-mob">
-    <input type="checkbox" id="nav-button-mob" />
-    <label for="nav-button-mob"><span class="fa-solid fa-bars" id="nav-icon-mob"></span></label>
-    <label for="nav-button-mob"><span id="blank-span">Me<br />nu</span></label>
-    <div id="nav-links-mob">
-      <ul class="nav-list" id="nav-list-mob">
-        <li><a href="./about.html">about</a></li>
-        <li><a href="./code.html">code</a></li>
-        <!-- <li><a href="./personal.html">personal</a></li> -->
-        <li><a href="./journal.html">journal</a></li>
-        <li><a href="./resume.html">resume</a></li>
-        <li><a href="./contact.html">contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- DESKTOP MENU -->
-  <input type="checkbox" id="nav-button-desk" />
-  <label for="nav-button-desk" id="menu-text-desk">menu<br /><span class="fa-solid fa-arrows-alt-h"
-      id="arrow"></span></label>
-  <nav id="nav-cont-desk">
-    <ul class="nav-list" id="nav-list-desk">
-      <li><a href="./about.html">about</a></li>
-      <li><a href="./code.html">code</a></li>
-      <!-- <li><a href="./personal.html">personal</a></li> -->
-      <li><a href="./journal.html">journal</a></li>
-      <li><a href="./resume.html">resume</a></li>
-      <li><a href="./contact.html">contact</a></li>
-      <li><img id="portrait" src="./img/tattoo.jpg" alt="Portrait" /></li>
-    </ul>
-  </nav>
+    <!-- HEADER MODULE -->
+    <header>
+        <!-- HEADER TITLE+CIRCLE -->
+        <div id="header-cont">
+            <h1 id="header-text">lanruoj</h1>
+            <div id="header-circle"></div>
+        </div>
+    </header>
 
-  <main>
-    <!-- PAGE SUBHEADING -->
-    <h2 class="desk-page-sub">about . about . about . about . about . about . about . about . about</h2>
+    <!-- BUTTON/ICON FOR NAV MENU -->
+    <input type="checkbox" id="nav-check" />
+    <label for="nav-check" id="nav-button">
+        <!-- MOBILE BUTTON -->
+        <span class="fa-solid fa-bars" id="mob-nav-icon">
+        </span>
+        <!-- DESKTOP BUTTON -->
+        <span id="desk-nav-icon">
+            <span id="menu-text">menu</span>
+            <span id="arrows">
+                <i class="fa-solid fa-long-arrow-alt-left arrow"></i><i
+                    class="fa-solid fa-long-arrow-alt-right arrow"></i>
+            </span>
+        </span>
+    </label>
+    <!-- NAV LIST MENU -->
+    <nav id="nav-main">
+        <ul id="nav-list">
+            <li><a href="./about.html">about</a></li>
+            <li><a href="./code.html">code</a></li>
+            <li><a href="./personal.html">personal</a></li>
+            <li><a href="./journal.html">journal</a></li>
+            <li><a href="./resume.html">resume</a></li>
+            <li><a href="./contact.html">contact</a></li>
+        </ul>
+    </nav>
 
-    <figure id="about-img-cont">
-      <img id="about-img" class="img" src="./img/nz-port.jpg" alt="An image of me">
-    </figure>
-    <section class="card">
-      <h2>About me</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec ex tellus. Nulla et orci interdum, congue
-        nisl in, ultricies massa. Pellentesque lobortis velit a faucibus ornare. Duis convallis tortor sem, sed
-        ullamcorper felis laoreet in. Donec vitae porta nibh. Duis vestibulum tincidunt enim in lobortis. Fusce ut nunc
-        eget enim condimentum tempus. Nunc erat velit, molestie vehicula ligula id, pellentesque ornare neque. Quisque
-        placerat enim nec metus efficitur, id lobortis enim euismod.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, placerat a semper ut, suscipit et
-        mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut
-        velit id diam finibus dignissim. Maecenas nulla velit, commodo ac justo a, hendrerit vehicula ligula. Proin sit
-        amet nunc fringilla, mollis diam ac, tincidunt elit. Cras id sem posuere, condimentum elit vel, volutpat sem.
-        Donec sit amet sem et odio eleifend sollicitudin. Quisque convallis egestas nulla vel vehicula. Donec sodales
-        diam turpis, facilisis congue est consequat nec. Quisque mauris dui, condimentum eleifend finibus eu, pretium at
-        nisl. Nulla vel fringilla elit. Aenean in eros hendrerit orci vulputate viverra eu eget sapien. Curabitur
-        placerat aliquet nisi sed ullamcorper.
-      </p>
-    </section>
+    <main>
+        <section class="content">
+            <!-- PAGE SUBHEADING -->
+            <h2 id="page-sub">about</h2>
 
-    <!-- <div id="about-buttons">
-      <form class="button-cont" action="./code.html">
-        <input type="submit" value="See my code" class="button" />
-      </form>
-      <form class="button-cont" action="./resume.html">
-        <input type="submit" value="See my resume" class="button" />
-      </form>
-    </div> -->
-    <div class="button-cont">
-      <form action="./code.html">
-        <input type="submit" value="See my code" class="button" />
-      </form>
-      <form action="./resume.html">
-        <input type="submit" value="See my resume" class="button" />
-      </form>
-    </div>
+            <figure id="about-img-cont">
+                <img id="about-img" class="img" src="./img/nz-port.jpg" alt="An image of me">
+            </figure>
 
-  </main>
+            <div class="cont">
+                <article class="card article">
+                    <h2>About me</h2>
+                    <p>
+                        <em>Hey there!</em>
+                        I'm Tané - a 26 year old currently based in the lush surroundings of the foothills of the
+                        Dandenong Ranges in Melbourne, Victoria. As a student of Web Development at Coder Academy I
+                        spend most of my time learning and practising code, sharpening my problem solving skills and
+                        learning more about the world of tech.
+                        <br>
+                        My adventure into the world of coding may not have started long ago, however I've already
+                        learned an immense amount of valuable practical lessons and industry specific knowledge. Below
+                        are some of the tools and skills I've learned so far:
+                    </p>
+                </article>
 
-  <footer>
-    <p>&copy; Tané Kaio, 2022</p>
-    <form action="./contact.html">
-      <input type="submit" value="Contact me" id="contact-button" />
-    </form>
-  </footer>
+                <section class="card article">
+                    <div class="card-list-grid">
+                        <div>
+                            <h3>Languages</h3>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>SCSS</li>
+                                <li>Bash/ZSH</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Software</h3>
+                            <ul>
+                                <li>Visual Studio Code</li>
+                                <li>Git</li>
+                                <li>Github</li>
+                                <li>Balsamiq</li>
+                                <li>Trello</li>
+                                <li>CLI</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Workflow</h3>
+                            <ul>
+                                <li>Agile Project Management</li>
+                                <li>Kanban board</li>
+                                <li>Wireframes</li>
+                                <li>CSS / HTML Validators</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Principles</h3>
+                            <ul>
+                                <li>Semantic HTML</li>
+                                <li>Mobile-first design</li>
+                                <li>Responsive layouts</li>
+                                <li>Basic UI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="wide-cont">
+                    <form action="./code.html">
+                        <input type="submit" value="Code" class="button" />
+                    </form>
+                    <form action="./resume.html">
+                        <input type="submit" value="Resume" class="button" />
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p id="footer-text">&copy; Tané Kaio, 2022</p>
+    </footer>
 </body>
 
 </html>

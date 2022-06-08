@@ -2,123 +2,157 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css" />
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet" />
-  <!-- FONT-AWESOME ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./tidy.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono&display=swap" rel="stylesheet">
+    <!-- FONT-AWESOME ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>Code / TK</title>
+    <title>Code / TK</title>
 </head>
 
 <body>
-  <header>
-    <h1>portfolio</h1>
-    <div id="head-circle"></div>
-  </header>
-  <!-- MOBILE MENU -->
-  <nav id="nav-cont-mob">
-    <input type="checkbox" id="nav-button-mob" />
-    <label for="nav-button-mob"><span class="fa-solid fa-bars" id="nav-icon-mob"></span></label>
-    <!-- <label for="nav-button-mob"><span id="blank-span">Me<br />nu</span></label> -->
-    <div id="nav-links-mob">
-      <ul class="nav-list" id="nav-list-mob">
-        <li><a href="./about.html">about</a></li>
-        <li><a href="./code.html">code</a></li>
-        <!-- <li><a href="./personal.html">personal</a></li> -->
-        <li><a href="./journal.html">journal</a></li>
-        <li><a href="./resume.html">resume</a></li>
-        <li><a href="./contact.html">contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- DESKTOP MENU -->
-  <input type="checkbox" id="nav-button-desk" />
-  <label for="nav-button-desk" id="menu-text-desk">menu<br /><span class="fa-solid fa-arrows-alt-h"
-      id="arrow"></span></label>
-  <nav id="nav-cont-desk">
-    <ul class="nav-list" id="nav-list-desk">
-      <li><a href="./about.html">about</a></li>
-      <li><a href="./code.html">code</a></li>
-      <!-- <li><a href="./personal.html">personal</a></li> -->
-      <li><a href="./journal.html">journal</a></li>
-      <li><a href="./resume.html">resume</a></li>
-      <li><a href="./contact.html">contact</a></li>
-      <li><img id="portrait" src="./img/archie.png" alt="Portrait" /></li>
-    </ul>
-  </nav>
+    <!-- HEADER MODULE -->
+    <header>
+        <!-- HEADER TITLE+CIRCLE -->
+        <div id="header-cont">
+            <h1 id="header-text">lanruoj</h1>
+            <div id="header-circle"></div>
+        </div>
+    </header>
 
+    <!-- BUTTON/ICON FOR NAV MENU -->
+    <input type="checkbox" id="nav-check" />
+    <label for="nav-check" id="nav-button">
+        <!-- MOBILE BUTTON -->
+        <span class="fa-solid fa-bars" id="mob-nav-icon">
+        </span>
+        <!-- DESKTOP BUTTON -->
+        <span id="desk-nav-icon">
+            <span id="menu-text">menu</span>
+            <span id="arrows">
+                <i class="fa-solid fa-long-arrow-alt-left arrow"></i><i
+                    class="fa-solid fa-long-arrow-alt-right arrow"></i>
+            </span>
+        </span>
+    </label>
+    <!-- NAV LIST MENU -->
+    <nav id="nav-main">
+        <ul id="nav-list">
+            <li><a href="./about.html">about</a></li>
+            <li><a href="./code.html">code</a></li>
+            <li><a href="./personal.html">personal</a></li>
+            <li><a href="./journal.html">journal</a></li>
+            <li><a href="./resume.html">resume</a></li>
+            <li><a href="./contact.html">contact</a></li>
+        </ul>
+    </nav>
 
-  <main>
-    <h2 class="desk-page-sub">code . code . code . code . code . code . code . code . code . code . code . code . code .
-      code . code . code</h2>
+    <main>
+        <section class="content">
+            <!-- PAGE SUBHEADING -->
+            <h2 id="page-sub">code</h2>
 
+            <div class="wide-cont">
+                <nav class="nav-sub">
+                    <label for="dropdown-check" class="dropdown-icon">
+                        <a>contents</a>
+                        <br>
+                        <i class="fa-solid fa-angle-double-down down-arrows"></i>
+                    </label>
+                    <input type="checkbox" id="dropdown-check" />
+                    <ul class="dropdown-list card">
+                        <li><a href="#anchor-card1">Portfolio</a></li>
+                        <li><a href="#anchor-card2">Band webpage</a></li>
+                        <li><a href="#anchor-card3">Checkbox hack</a></li>
+                        <li><a href="#anchor-card4">Responsive design</a></li>
+                        <!-- <li><a href="#anchor-card5">Rainbow circles</a></li> -->
+                    </ul>
+                </nav>
+            </div>
 
-    <div class="card-modular">
-      <article>
-        <h2>Band webpage</h2>
-        <figure class="card-modular-img">
-          <a href="https://github.com/Lanruoj/CA-W3-Ibis-Responsive-Challenge" target="_blank"><img src="./img/band.png"
-              alt="Band challenge webpage"></a>
-          <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-          <figcaption>Creating a page about a band I like using HTML.</figcaption>
-        </figure>
-      </article>
-    </div>
+            <article class="card modular">
+                <span>
+                <a id="anchor-card1"></a>
+                </span>
+                <h2>Portfolio</h2>
+                <figure>
+                    <a href="https://github.com/Lanruoj/Lanruoj.github.io" target="_blank"><img
+                            src="./img/portfolio.png" alt="Screenshot of Portfolio about page"></a>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <figcaption>My portfolio site for Coder Academy's T1A2 assignment</figcaption>
+                </figure>
+                <form action="./journal.html#anchor-card1">
+                    <input type="submit" value="Article" class="button blog-anchor" />
+                </form>
+            </article>
 
-    <div class="card-modular">
-      <article>
-        <h2>:checked hide/show buttons</h2>
-        <figure class="card-modular-img">
-          <a href="https://github.com/Lanruoj/CA-W2-Example-Page" target="_blank"><img src="./img/buttons.png"
-              alt="Contact form with hide/show buttons"></a>
-          <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-          <figcaption>Learning how to create "buttons" with checkboxes and hiding/showing content with them.
-          </figcaption>
-        </figure>
-      </article>
-    </div>
+            <article class="card modular">
+                <span>
+                    <a id="anchor-card2"></a>
+                    </span>
+                <h2>Band webpage</h2>
+                <figure>
+                    <a href="https://github.com/Lanruoj/CA-W3-Ibis-Responsive-Challenge" target="_blank"><img
+                            src="./img/band.png" alt="Band challenge webpage"></a>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <figcaption>Creating a page about a band I like using HTML.</figcaption>
+                </figure>
+                <form action="./journal.html#anchor-card2">
+                    <input type="submit" value="Article" class="button blog-anchor" />
+                </form>
+            </article>
 
-    <div class="card-modular">
-      <article>
-        <h2>Portfolio</h2>
-        <figure class="card-modular-img">
-          <a href="https://github.com/Lanruoj/Lanruoj.github.io" target="_blank"><img src="./img/portfolio.png"
-              alt="Screenshot of Portfolio about page"></a>
-          <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-          <figcaption>My portfolio site for Coder Academy's T1A2 assignment</figcaption>
-        </figure>
-      </article>
-    </div>
+            <article class="card modular">
+                <span>
+                    <a id="anchor-card3"></a>
+                    </span>
+                <h2>:checked hide/show buttons</h2>
+                <figure>
+                    <a href="https://github.com/Lanruoj/CA-W2-Example-Page" target="_blank"><img src="./img/buttons.png"
+                            alt="Contact form with hide/show buttons"></a>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <figcaption>Learning how to create "buttons" with checkboxes and hiding/showing content with
+                        them.
+                    </figcaption>
+                </figure>
+                <form action="./journal.html#anchor-card3">
+                    <input type="submit" value="Article" class="button blog-anchor" />
+                </form>
+            </article>
 
-    <div class="card-modular">
-      <article>
-        <h2>Responsive design challenge</h2>
-        <figure class="card-modular-img">
-          <a href="https://github.com/Lanruoj/CA-W3-Ibis-Responsive-Challenge" target="_blank"><img src="./img/ibis.png"
-              alt="Ibis responsive screenshot"></a>
-          <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
-          <figcaption>Adding a hamburger nav-menu + practising responsive design using the mobile-first principle.
-          </figcaption>
-        </figure>
-      </article>
-    </div>
+            <article class="card modular">
+                <span>
+                    <a id="anchor-card4"></a>
+                    </span>
+                <h2>Responsive design challenge</h2>
+                <figure>
+                    <a href="https://github.com/Lanruoj/CA-W3-Ibis-Responsive-Challenge" target="_blank"><img
+                            src="./img/ibis.png" alt="Ibis responsive screenshot"></a>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <figcaption>Adding a hamburger nav-menu + practising responsive design using the mobile-first
+                        principle.
+                    </figcaption>
+                </figure>
+                <form action="./journal.html#anchor-card4">
+                    <input type="submit" value="Article" class="button blog-anchor" />
+                </form>
+            </article>
 
-  </main>
-  <footer>
-    <p>&copy; Tané Kaio, 2022</p>
-    <form action="./contact.html">
-      <input type="submit" value="Contact me" id="contact-button" />
-    </form>
-  </footer>
+        </section>
+    </main>
+    <footer>
+        <p id="footer-text">&copy; Tané Kaio, 2022</p>
+    </footer>
 </body>
 
 </html>
