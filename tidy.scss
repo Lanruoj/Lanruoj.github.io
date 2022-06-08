@@ -16,6 +16,7 @@ $clear: rgb(255, 255, 255, 0);
 $karla: "Karla", sans-serif;
 $rammetto: "Rammetto One", cursive;
 $monaco: "Monaco", monospace;
+$spline: "Spline Sans Mono", monospace;
 //MIXINS
 @mixin box-shadow() {
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
@@ -25,10 +26,9 @@ $monaco: "Monaco", monospace;
 }
 @mixin purple-gradient() {
   background-image: linear-gradient(
-    120deg,
+    to right,
     $light-purple,
-    $purple,
-    $dark-purple
+    $purple
   );
 }
 //UNIVERSAL
@@ -46,7 +46,6 @@ body {
   background-color: $white; //
   position: relative;
   font-size: 1rem;
-  // list-style: none; //
   header {
     z-index: 10;
     position: fixed;
@@ -60,15 +59,14 @@ body {
     @include box-shadow();
     #header-cont {
       position: absolute;
-      // justify-self: flex-end;
       padding-right: 1rem;
       pointer-events: none;
       #header-text {
         z-index: 11;
-        font-family: $rammetto;
-        font-size: 1.7rem;
-        letter-spacing: 1rem;
-        color: $purple;
+        font-family: $monaco;
+        font-size: 2rem;
+        // letter-spacing: 1rem;
+        color: $brown;
         &::selection {
           background-color: transparent;
         }
@@ -79,9 +77,10 @@ body {
         left: 0.5rem;
         height: 7rem;
         width: 7rem;
-        background-color: $light-brown;
+        // background-image: radial-gradient(3rem at center, $purple 60%, rgb(0,0,0,0));
+        background-color: $purple;
         border-radius: 50%;
-        mix-blend-mode: multiply;
+        mix-blend-mode: lighten;
       }
     }
   }
@@ -118,12 +117,13 @@ body {
     height: 60vh;
     max-height: 30rem;
     padding: 2rem 0;
-    background-color: $light-brown;
+    background-color: $white;
     @include box-shadow();
     @include card-border();
     transform: translateX(-50vw);
     transition: 0.5s;
     &:hover {
+      background-color: white;
       box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
     }
     #nav-list {
@@ -135,10 +135,10 @@ body {
       li {
         padding-left: 2rem;
         text-align: center;
-        font-family: $karla;
+        font-family: $spline;
         font-size: 1.2rem;
         a {
-          color: $white;
+          color: $purple;
         }
       }
     }
@@ -167,11 +167,12 @@ main {
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
     text-align: center;
     font-size: 0.8rem;
+    font-family: $spline;
     color: white;
     @include purple-gradient();
+    @include box-shadow();
     background-size: 200% 100%;
     background-position: 100% 0;
-    filter: hue-rotate(0);
     transition: 0.3s;
     cursor: pointer;
     &:hover {
@@ -194,18 +195,15 @@ main {
       text-align: center;
       border-radius: 50%;
       .dropdown-icon {
-        font-family: $monaco;
+        font-family: $spline;
         color: $purple;
         cursor: pointer;
         transition: 0.2s;
-        &:hover {
-          color: $dark-purple;
-        }
         .down-arrows {
           transition: 0.2s;
         }
         a {
-          color: $brown;
+          color: $purple;
         }
         a:hover ~ .down-arrows {
           transform: translateY(0.2rem);
@@ -217,7 +215,7 @@ main {
         li {
           margin: 1rem;
           a {
-            font-family: $monaco;
+            font-family: $spline;
             color: $purple;
           }
         }
@@ -284,7 +282,7 @@ main {
       h3 {
         text-align: center;
         font-family: $monaco;
-        color: $dark-brown;
+        color: $brown;
       }
       h2 {
         font-size: 1.3rem;
@@ -292,7 +290,13 @@ main {
       h3 {
         font-size: 1rem;
       }
-      .card-lists {
+      .card-list {
+        text-align: center;
+        h3 {
+          font-size: 1rem;
+        }
+      }
+      .card-list-grid {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -303,8 +307,8 @@ main {
           ul {
             list-style: none;
             li {
-              font-family: $monaco;
-              color: $dark-purple;
+              font-family: $spline;
+              color: $black;
               font-size: 0.9rem;
             }
           }
@@ -506,7 +510,7 @@ footer {
         color: $brown;
         transition: 1s;
         #menu-text {
-          font-family: $karla;
+          font-family: $monaco;
           font-size: 2rem;
           transition: 0.2s;
           &::selection {

@@ -34,10 +34,9 @@ body header #header-cont {
 }
 body header #header-cont #header-text {
   z-index: 11;
-  font-family: "Rammetto One", cursive;
-  font-size: 1.7rem;
-  letter-spacing: 1rem;
-  color: rgb(76, 0, 255);
+  font-family: "Monaco", monospace;
+  font-size: 2rem;
+  color: rgb(83, 75, 58);
 }
 body header #header-cont #header-text::selection {
   background-color: transparent;
@@ -48,9 +47,9 @@ body header #header-cont #header-circle {
   left: 0.5rem;
   height: 7rem;
   width: 7rem;
-  background-color: rgb(156, 150, 135);
+  background-color: rgb(76, 0, 255);
   border-radius: 50%;
-  mix-blend-mode: multiply;
+  mix-blend-mode: lighten;
 }
 body #desk-nav-icon {
   display: none;
@@ -85,13 +84,14 @@ body #nav-main {
   height: 60vh;
   max-height: 30rem;
   padding: 2rem 0;
-  background-color: rgb(156, 150, 135);
+  background-color: rgb(249, 247, 242);
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
   border-radius: 1rem 1rem 1rem 1rem;
   transform: translateX(-50vw);
   transition: 0.5s;
 }
 body #nav-main:hover {
+  background-color: white;
   box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
 }
 body #nav-main #nav-list {
@@ -104,11 +104,11 @@ body #nav-main #nav-list {
 body #nav-main #nav-list li {
   padding-left: 2rem;
   text-align: center;
-  font-family: "Karla", sans-serif;
+  font-family: "Spline Sans Mono", monospace;
   font-size: 1.2rem;
 }
 body #nav-main #nav-list li a {
-  color: rgb(249, 247, 242);
+  color: rgb(76, 0, 255);
 }
 body p {
   color: rgb(57, 57, 57);
@@ -135,11 +135,12 @@ main .button {
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   text-align: center;
   font-size: 0.8rem;
+  font-family: "Spline Sans Mono", monospace;
   color: white;
-  background-image: linear-gradient(120deg, rgb(116, 56, 255), rgb(76, 0, 255), rgb(35, 0, 139));
+  background-image: linear-gradient(to right, rgb(116, 56, 255), rgb(76, 0, 255));
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
   background-size: 200% 100%;
   background-position: 100% 0;
-  filter: hue-rotate(0);
   transition: 0.3s;
   cursor: pointer;
 }
@@ -164,19 +165,16 @@ main .content .nav-sub {
   border-radius: 50%;
 }
 main .content .nav-sub .dropdown-icon {
-  font-family: "Monaco", monospace;
+  font-family: "Spline Sans Mono", monospace;
   color: rgb(76, 0, 255);
   cursor: pointer;
   transition: 0.2s;
-}
-main .content .nav-sub .dropdown-icon:hover {
-  color: rgb(35, 0, 139);
 }
 main .content .nav-sub .dropdown-icon .down-arrows {
   transition: 0.2s;
 }
 main .content .nav-sub .dropdown-icon a {
-  color: rgb(83, 75, 58);
+  color: rgb(76, 0, 255);
 }
 main .content .nav-sub .dropdown-icon a:hover ~ .down-arrows {
   transform: translateY(0.2rem);
@@ -189,7 +187,7 @@ main .content .nav-sub .dropdown-list li {
   margin: 1rem;
 }
 main .content .nav-sub .dropdown-list li a {
-  font-family: "Monaco", monospace;
+  font-family: "Spline Sans Mono", monospace;
   color: rgb(76, 0, 255);
 }
 main .content .nav-sub #dropdown-check:checked ~ .dropdown-list {
@@ -254,7 +252,7 @@ main .content .card h2,
 main .content .card h3 {
   text-align: center;
   font-family: "Monaco", monospace;
-  color: rgb(69, 62, 47);
+  color: rgb(83, 75, 58);
 }
 main .content .card h2 {
   font-size: 1.3rem;
@@ -262,22 +260,28 @@ main .content .card h2 {
 main .content .card h3 {
   font-size: 1rem;
 }
-main .content .card .card-lists {
+main .content .card .card-list {
+  text-align: center;
+}
+main .content .card .card-list h3 {
+  font-size: 1rem;
+}
+main .content .card .card-list-grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
 }
-main .content .card .card-lists div {
+main .content .card .card-list-grid div {
   margin: 0.5rem;
 }
-main .content .card .card-lists div ul {
+main .content .card .card-list-grid div ul {
   list-style: none;
 }
-main .content .card .card-lists div ul li {
-  font-family: "Monaco", monospace;
-  color: rgb(35, 0, 139);
+main .content .card .card-list-grid div ul li {
+  font-family: "Spline Sans Mono", monospace;
+  color: rgb(57, 57, 57);
   font-size: 0.9rem;
 }
 main .content .card figure img {
@@ -464,7 +468,7 @@ footer #footer-text {
     transition: 1s;
   }
   body #nav-button #desk-nav-icon #menu-text {
-    font-family: "Karla", sans-serif;
+    font-family: "Monaco", monospace;
     font-size: 2rem;
     transition: 0.2s;
   }
