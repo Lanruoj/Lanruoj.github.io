@@ -159,6 +159,7 @@ main .content {
 main .content .top-card {
   text-align: center;
   max-width: 40rem;
+  height: min-content;
 }
 main .content .top-card h2 {
   font-family: "Spline Sans Mono", monospace;
@@ -577,6 +578,9 @@ footer #footer-text {
   }
   body main .content {
     flex-wrap: wrap;
+  }
+  body main .content .top-card {
+    width: 100%;
   }
   body main .content .top-card h2 {
     font-size: 3rem;

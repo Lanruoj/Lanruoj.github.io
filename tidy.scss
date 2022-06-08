@@ -190,6 +190,7 @@ main {
     .top-card {
       text-align: center;
       max-width: 40rem;
+      height: min-content;
       h2 {
         font-family: $spline;
         font-size: 2rem;
@@ -620,6 +621,7 @@ footer {
       .content {
         flex-wrap: wrap;
         .top-card {
+          width: 100%;
           h2 {
             font-size: 3rem;
           }
