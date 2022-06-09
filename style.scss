@@ -101,11 +101,12 @@ body {
     max-height: 30rem;
     padding: 2rem 0;
     background-color: $white;
-    @include box-shadow();
-    @include card-border();
+    // @include box-shadow();
+    // @include card-border();
     transform: translateX(-50vw);
     transition: 0.5s;
     &:hover {
+          @include card-border();
       box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
     }
     #nav-list {
@@ -507,16 +508,24 @@ footer {
         #about-img {
           max-width: 500px;
         }
+        // #page-sub {
+        //   z-index: 999;
+        //   display: block;
+        //   position: absolute;
+        //   top: 2rem;
+        //   right: 1rem;
+        //   overflow: hidden;
+        //   writing-mode: vertical-rl;
+        //   transform: rotate(90deg);
+        //   color: $brown;
+        // }
         #page-sub {
-          z-index: 999;
-          display: block;
           position: absolute;
-          top: 2rem;
-          right: 1rem;
-          overflow: hidden;
-          writing-mode: vertical-rl;
-          transform: rotate(180deg);
-          color: $brown;
+          display: block;
+          top: 3rem;
+          height: 2rem;
+          right: 0rem;
+          transform: rotate(270deg);
         }
       }
     }
@@ -535,7 +544,7 @@ footer {
         transform: scale(1.5);
         padding-right: 5rem;
         img {
-          width: 7rem;
+          width: 8rem;
         }
       }
     }
@@ -597,8 +606,14 @@ footer {
         //   opacity: 0;
         //   transition: 0.1s;
         // }
-        a:hover::before {
-          opacity: 1;
+        // a:hover::before {
+        //   opacity: 1;
+        // }
+        a {
+          transition: 0.2s;
+        }
+        a:hover {
+          transform: translateX(0.5rem);
         }
       }
     }
@@ -618,6 +633,7 @@ footer {
           flex-wrap: wrap;
           justify-content: center;
           width: 100%;
+          max-height: 50rem;
         }
         .top-card {
           width: 100%;

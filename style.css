@@ -69,12 +69,11 @@ body #nav-main {
   max-height: 30rem;
   padding: 2rem 0;
   background-color: rgb(249, 247, 242);
-  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
-  border-radius: 1rem 1rem 1rem 1rem;
   transform: translateX(-50vw);
   transition: 0.5s;
 }
 body #nav-main:hover {
+  border-radius: 1rem 1rem 1rem 1rem;
   box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
 }
 body #nav-main #nav-list {
@@ -467,15 +466,12 @@ footer #footer-text {
     max-width: 500px;
   }
   body main .content #page-sub {
-    z-index: 999;
-    display: block;
     position: absolute;
-    top: 2rem;
-    right: 1rem;
-    overflow: hidden;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    color: rgb(83, 75, 58);
+    display: block;
+    top: 3rem;
+    height: 2rem;
+    right: 0rem;
+    transform: rotate(270deg);
   }
 }
 @media only screen and (min-width: 992px) {
@@ -492,7 +488,7 @@ footer #footer-text {
     padding-right: 5rem;
   }
   body header #header-cont img {
-    width: 7rem;
+    width: 8rem;
   }
   body #nav-button {
     position: absolute;
@@ -545,8 +541,11 @@ footer #footer-text {
     flex-wrap: nowrap;
     margin-left: 1rem;
   }
-  body #nav-main li a:hover::before {
-    opacity: 1;
+  body #nav-main li a {
+    transition: 0.2s;
+  }
+  body #nav-main li a:hover {
+    transform: translateX(0.5rem);
   }
   body #nav-check:checked ~ #nav-main {
     transform: translateX(0);
@@ -566,6 +565,7 @@ footer #footer-text {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    max-height: 50rem;
   }
   body main .content .top-card {
     width: 100%;
