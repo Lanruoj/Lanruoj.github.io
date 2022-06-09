@@ -75,7 +75,6 @@ body #nav-main {
   transition: 0.5s;
 }
 body #nav-main:hover {
-  background-color: white;
   box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
 }
 body #nav-main #nav-list {
@@ -93,6 +92,9 @@ body #nav-main #nav-list li {
 }
 body #nav-main #nav-list li a {
   color: rgb(76, 0, 255);
+}
+body #nav-main #nav-list li a img {
+  height: 1.5rem;
 }
 body p {
   color: rgb(57, 57, 57);
@@ -534,22 +536,14 @@ footer #footer-text {
     height: 60vh;
     margin-bottom: 10rem;
     transform: translateX(-13rem);
-    align-items: flex-start;
+    align-items: center;
   }
   body #nav-main li {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: nowrap;
     margin-left: 1rem;
-  }
-  body #nav-main li a::before {
-    content: "cd ./";
-    color: rgb(76, 0, 255);
-    font-family: "Monaco", monospace;
-    font-size: 1rem;
-    opacity: 0;
-    transition: 0.1s;
   }
   body #nav-main li a:hover::before {
     opacity: 1;
