@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./tidy.css" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,12 +21,12 @@
 </head>
 
 <body>
+    
     <!-- HEADER MODULE -->
     <header>
         <!-- HEADER TITLE+CIRCLE -->
         <div id="header-cont">
-            <h1 id="header-text">t. kaio</h1>
-            <div id="header-circle"></div>
+            <img src="./img/tsk.png" alt="header-logo">
         </div>
     </header>
 
@@ -38,22 +38,18 @@
         </span>
         <!-- DESKTOP BUTTON -->
         <span id="desk-nav-icon">
-            <span id="menu-text">menu</span>
-            <span id="arrows">
-                <i class="fa-solid fa-long-arrow-alt-left arrow"></i><i
-                    class="fa-solid fa-long-arrow-alt-right arrow"></i>
-            </span>
+            <img id="menu-text" src="./img/menu-circle.png" alt="tsk">
         </span>
     </label>
     <!-- NAV LIST MENU -->
     <nav id="nav-main">
         <ul id="nav-list">
-            <li><a href="./about.html">about</a></li>
-            <li><a href="./code.html">code</a></li>
-            <li><a href="./personal.html">personal</a></li>
-            <li><a href="./journal.html">journal</a></li>
-            <li><a href="./resume.html">resume</a></li>
-            <li><a href="./contact.html">contact</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./code.html">Code</a></li>
+            <li><a href="./personal.html">Personal</a></li>
+            <li><a href="./journal.html">Journal</a></li>
+            <li><a href="./resume.html">Resume</a></li>
+            <li><a href="./contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -61,12 +57,13 @@
         <section class="content">
             <!-- PAGE SUBHEADING -->
             <h2 id="page-sub">about</h2>
-
             <figure id="about-img-cont">
                 <img id="about-img" src="./img/nz-port.jpg" alt="An image of me">
             </figure>
 
-            <div class="cont">
+            <!-- BIO/SKILLS -->
+            <div class="flex-cont">
+                <div class="wide-cont">
                 <article class="top-card article">
                     <h2>About me</h2>
                     <p>
@@ -81,8 +78,31 @@
                         are some of the tools and skills I've learned so far:
                     </p>
                 </article>
+                </div>
 
-                <section class="card article">
+                <article class="card modular gallery">
+                    <div>
+                    <h2>Bio</h2>
+                    <dl>
+                        <dt>Name: </dt>
+                        <dd>Tané Kaio</dd>
+                        
+                        <dt>Age: </dt>
+                        <dd>26</dd>
+
+                        <dt>Gender: </dt>
+                        <dd>He/him</dd>
+
+                        <dt>Location: </dt>
+                        <dd>Ferntree Gully, Victoria, Australia</dd>
+
+                        <dt>Occupation: </dt>
+                        <dd>Student of Web Development</dd>
+                    </dl>
+                    </div>
+                </article>
+
+                <article class="card modular gallery">
                     <div class="card-list-grid">
                         <div>
                             <h3>Languages</h3>
@@ -105,6 +125,29 @@
                                 <li>CLI</li>
                             </ul>
                         </div>
+                        <!-- <div>
+                            <h3>Workflow</h3>
+                            <ul>
+                                <li>Agile Project Management</li>
+                                <li>Kanban board</li>
+                                <li>Wireframes</li>
+                                <li>CSS / HTML Validators</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Principles</h3>
+                            <ul>
+                                <li>Semantic HTML</li>
+                                <li>Mobile-first design</li>
+                                <li>Responsive layouts</li>
+                                <li>Basic UI</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </article>
+
+                <article class="card modular gallery">
+                    <div class="card-list-grid">
                         <div>
                             <h3>Workflow</h3>
                             <ul>
@@ -124,26 +167,19 @@
                             </ul>
                         </div>
                     </div>
-                </section>
+                </article>
+            </div>
+        </section>
 
-                <div class="wide-cont">
-                    <form action="./code.html">
-                        <input type="submit" value="Code" class="button" />
-                    </form>
-                    <form action="./resume.html">
-                        <input type="submit" value="Resume" class="button" />
-                    </form>
+        <!-- PERSONAL INTERESTS SECTION -->
+        <section class="content">
+            <div class="wide-cont">
+                <div class="top-card">
+                    <h2>Personal interests</h2>
+                    <p>As much as we try, I believe it's impossible to <em>truly</em> seperate our professional and
+                        personal worlds, as they always seem to have an influence on each other. Below are some of the
+                        things that interest me in my spare time and inform how I approach my professional work.</p>
                 </div>
-            </div>
-            </section>
-
-            <section class="content">
-            
-                <div class="wide-cont">
-            <div class="top-card">
-                <h2>Personal interests</h2>
-                <p>As much as we try, I believe it's impossible to <em>truly</em> seperate our professional and personal worlds, as they always seem to have an influence on each other. Below are some of the things that interest me in my spare time and inform how I approach my professional work.</p>
-            </div>
             </div>
 
             <div class="card modular gallery">
@@ -269,7 +305,8 @@
                 <article class="expand" id="card4">
                     <h2>Travel</h2>
                     <p>
-                        There is nothing quite like throwing yourself into a completely new and foreign environment for learning new things about yourself and finding new ways of interpreting the world.
+                        There is nothing quite like throwing yourself into a completely new and foreign environment for
+                        learning new things about yourself and finding new ways of interpreting the world.
                     </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt justo velit, id
@@ -288,6 +325,14 @@
                 </article>
             </div>
 
+            <div class="wide-cont">
+                <form action="./code.html">
+                    <input type="submit" value="Code" class="button" />
+                </form>
+                <form action="./resume.html">
+                    <input type="submit" value="Resume" class="button" />
+                </form>
+            </div>
         </section>
     </main>
     <footer>
