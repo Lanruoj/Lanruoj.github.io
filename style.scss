@@ -25,11 +25,7 @@ $spline: "Spline Sans Mono", monospace;
   border-radius: 1rem 1rem 1rem 1rem;
 }
 @mixin purple-gradient() {
-  background-image: linear-gradient(
-    to right,
-    $light-purple,
-    $purple
-  );
+  background-image: linear-gradient(to right, $light-purple, $purple);
 }
 //UNIVERSAL
 * {
@@ -113,7 +109,7 @@ body {
     transform: translateX(-50vw);
     transition: 0.5s;
     &:hover {
-          @include card-border();
+      @include card-border();
       box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.669);
     }
     #nav-list {
@@ -130,10 +126,9 @@ body {
         a {
           color: $purple;
           img {
-          height: 1.5rem;
+            height: 1.2rem;
           }
         }
-
       }
     }
   }
@@ -297,8 +292,8 @@ main {
       h2,
       h3 {
         text-align: center;
-        font-family: $monaco;
-        color: $brown;
+        font-family: $spline;
+        color: $purple;
       }
       h2 {
         font-size: 1.3rem;
@@ -311,6 +306,7 @@ main {
         margin: 1rem;
         h3 {
           font-size: 1rem;
+          color: $black;
         }
       }
       //LISTS WITHIN CARD//
@@ -339,10 +335,11 @@ main {
         }
       }
       .anchor {
-                  position: absolute;
-          top: -10rem;
+        position: absolute;
+        top: -10rem;
       }
-      label, span {
+      label,
+      span {
         position: relative;
         a {
           position: absolute;
@@ -586,17 +583,22 @@ footer {
       margin-bottom: 10rem;
       transform: translateX(-13rem); //
       align-items: center;
-      li {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: nowrap;
-        margin-left: 1rem;
-        a {
-          transition: 0.2s;
-        }
-        a:hover {
-          transform: translateX(0.5rem);
+      #nav-list {
+        li {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: nowrap;
+          margin-left: 1rem;
+          a {
+            transition: 0.2s;
+            img {
+              height: 1.5rem;
+            }
+          }
+          a:hover {
+            transform: translateX(0.5rem);
+          }
         }
       }
     }
@@ -611,7 +613,7 @@ footer {
       padding-left: 5rem;
       .content {
         flex-wrap: wrap;
-        .flex-cont{
+        .flex-cont {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
@@ -625,6 +627,7 @@ footer {
             font-size: 3rem;
           }
         }
+        //BETTER FOR FLEX WRAPPING
         .modular {
           width: 40%; //
         }

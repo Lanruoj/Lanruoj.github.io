@@ -25,7 +25,7 @@
     <header>
         <!-- HEADER TITLE+CIRCLE -->
         <div id="header-cont">
-            <img src="./img/tsk.png" alt="header-logo">
+            <img src="./img/graphics/tsk-sun.svg" alt="header-logo">
         </div>
     </header>
 
@@ -37,31 +37,31 @@
         </span>
         <!-- DESKTOP BUTTON -->
         <span id="desk-nav-icon">
-            <img id="menu-text" src="./img/graphics/menu.png" alt="tsk">
+            <img id="menu-text" src="./img/graphics/menu-sun.svg" alt="tsk">
         </span>
     </label>
     <!-- NAV LIST MENU -->
     <nav id="nav-main">
         <ul id="nav-list">
-            <li><a href="./about.html"><img src="./img/about1.png"></a></li>
-            <li><a href="./code.html"><img src="./img/code.png"></a></li>
-            <li><a href="./personal.html"><img src="./img/personalsmall.png"></a></li>
-            <li><a href="./journal.html"><img src="./img/journalsmall.png"></a></li>
-            <li><a href="./resume.html"><img src="./img/resumesmall.png"></a></li>
-            <li><a href="./contact.html"><img src="./img/contactsmall.png"></a></li>
+            <li><a href="./about.html"><img src="./img/graphics/about.svg"></a></li>
+            <li><a href="./code.html"><img src="./img/graphics/code.svg"></a></li>
+            <li><a href="./personal.html"><img src="./img/graphics/personal.svg"></a></li>
+            <li><a href="./journal.html"><img src="./img/graphics/journal.svg"></a></li>
+            <li><a href="./resume.html"><img src="./img/graphics/resume.svg"></a></li>
+            <li><a href="./contact.html"><img src="./img/graphics/contact.svg"></a></li>
         </ul>
     </nav>
 
     <main>
         <section class="content">
-            <!-- PAGE SUBHEADING -->
-            <img id="page-sub" src="./img/codesmall.png">
 
+            <!-- PAGE HEADING AND DESCRIPTION -->
             <div class="top-card">
                 <h2>Code projects</h2>
                 <p>Learning by doing is perhaps the most effective way for me to learn new things. In the short amount of time that I've been coding, I've already embarked on several projects and have been challenged to create solutions to problems. Below is an ever-growing showcase of some of them.</p>
             </div>
 
+            <!-- PAGE CONTENTS DROPDOWN MENU -->
             <div class="wide-cont">
                 <nav class="nav-sub">
                     <label for="dropdown-check" class="dropdown-icon">
@@ -80,6 +80,7 @@
                 </nav>
             </div>
 
+            <!-- PROJECTS LIST -->
             <article class="card modular gallery">
                 <span>
                 <a id="anchor-card1"></a>
@@ -116,7 +117,7 @@
                 <span>
                     <a id="anchor-card3"></a>
                     </span>
-                <h2>:checked hide/show buttons</h2>
+                <h2>Checkbox hack buttons</h2>
                 <figure>
                     <a href="https://github.com/Lanruoj/CA-W2-Example-Page" target="_blank"><img src="./img/buttons.png"
                             alt="Contact form with hide/show buttons"></a>
@@ -134,6 +135,23 @@
                 <span>
                     <a id="anchor-card4"></a>
                     </span>
+                <h2>Rainbow circles</h2>
+                <figure>
+                    <a href="https://github.com/Lanruoj/ca_css_rainbow_circles_challenge" target="_blank"><img
+                            src="./img/circles.png" alt="Rainbow circles"></a>
+                    <time class="blog-time" datetime="2022-05-31 12:36">31-05-2022 12:36pm</time>
+                    <figcaption>Creating rainbow coloured concentric circles using CSS.
+                    </figcaption>
+                </figure>
+                <form action="./journal.html#anchor-card4">
+                    <input type="submit" value="Article" class="button blog-anchor" />
+                </form>
+            </article>
+
+            <article class="card modular gallery">
+                <span>
+                    <a id="anchor-card5"></a>
+                    </span>
                 <h2>Responsive design challenge</h2>
                 <figure>
                     <a href="https://github.com/Lanruoj/CA-W3-Ibis-Responsive-Challenge" target="_blank"><img
@@ -143,13 +161,15 @@
                         principle.
                     </figcaption>
                 </figure>
-                <form action="./journal.html#anchor-card4">
+                <form action="./journal.html#anchor-card5">
                     <input type="submit" value="Article" class="button blog-anchor" />
                 </form>
             </article>
 
+
         </section>
     </main>
+    <!-- FOOTER -->
     <footer>
         <p id="footer-text">&copy; Tané Kaio, 2022</p>
     </footer>

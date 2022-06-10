@@ -95,7 +95,7 @@ body #nav-main #nav-list li a {
   color: rgb(76, 0, 255);
 }
 body #nav-main #nav-list li a img {
-  height: 1.5rem;
+  height: 1.2rem;
 }
 body p {
   color: rgb(57, 57, 57);
@@ -252,8 +252,8 @@ main .content .card:hover {
 main .content .card h2,
 main .content .card h3 {
   text-align: center;
-  font-family: "Monaco", monospace;
-  color: rgb(83, 75, 58);
+  font-family: "Spline Sans Mono", monospace;
+  color: rgb(76, 0, 255);
 }
 main .content .card h2 {
   font-size: 1.3rem;
@@ -267,6 +267,7 @@ main .content .card .card-list {
 }
 main .content .card .card-list h3 {
   font-size: 1rem;
+  color: rgb(57, 57, 57);
 }
 main .content .card .card-list-grid {
   display: flex;
@@ -294,10 +295,12 @@ main .content .card .anchor {
   position: absolute;
   top: -10rem;
 }
-main .content .card label, main .content .card span {
+main .content .card label,
+main .content .card span {
   position: relative;
 }
-main .content .card label a, main .content .card span a {
+main .content .card label a,
+main .content .card span a {
   position: absolute;
   top: -10rem;
 }
@@ -523,17 +526,20 @@ footer #footer-text {
     transform: translateX(-13rem);
     align-items: center;
   }
-  body #nav-main li {
+  body #nav-main #nav-list li {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
     margin-left: 1rem;
   }
-  body #nav-main li a {
+  body #nav-main #nav-list li a {
     transition: 0.2s;
   }
-  body #nav-main li a:hover {
+  body #nav-main #nav-list li a img {
+    height: 1.5rem;
+  }
+  body #nav-main #nav-list li a:hover {
     transform: translateX(0.5rem);
   }
   body #nav-check:checked ~ #nav-main {
