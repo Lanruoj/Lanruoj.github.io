@@ -115,12 +115,6 @@ main {
   transform: translateX(0vw);
   transition: 0.5s;
 }
-main dl dt {
-  float: left;
-}
-main dl dd {
-  float: right;
-}
 main .button {
   padding: 0.5rem 1rem;
   min-width: 5rem;

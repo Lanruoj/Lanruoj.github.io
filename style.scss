@@ -46,7 +46,7 @@ body {
   background-color: $white; //
   position: relative;
   font-size: 1rem;
-  //MOBILE HEADER MODULE//
+  //HEADER MODULE - WITH STYLING FOR MOBILE//
   header {
     z-index: 10;
     position: fixed;
@@ -58,6 +58,7 @@ body {
     width: 100vw;
     background-color: $white;
     @include box-shadow();
+    //HEADER TITLE/GRAPHIC CONTAINER//
     #header-cont {
       position: absolute;
       padding-right: 1rem;
@@ -67,18 +68,23 @@ body {
       }
     }
   }
+  //HIDES DESKTOP NAV BUTTON//
   #desk-nav-icon {
     display: none;
   }
+  //HIDES THE CHECKBOX <INPUT>//
   #nav-check {
     display: none;
   }
+  //SLIDES NAV MENU ACROSS//
   #nav-check:checked ~ #nav-main {
     transform: translateX(0vw);
   }
+  //SLIDES PAGE CONTENT ACROSS TOO//
   #nav-check:checked ~ main {
     transform: translateX(50vw);
   }
+  //HAMBURGER ICON//
   #mob-nav-icon {
     z-index: 999;
     position: fixed;
@@ -87,6 +93,7 @@ body {
     font-size: 2rem;
     color: $brown;
   }
+  //ACTUAL NAV MENU LIST//
   #nav-main {
     z-index: 9;
     position: fixed;
@@ -138,6 +145,7 @@ body {
     color: $purple;
   }
 }
+//MAIN SECTION//
 main {
   background-color: $white; //
   position: relative;
@@ -147,14 +155,7 @@ main {
   font-family: $karla;
   transform: translateX(0vw);
   transition: 0.5s;
-  dl {
-    dt {
-      float: left;
-    }
-    dd {
-      float: right;
-    }
-  }
+  //BUTTON STYLING//
   .button {
     padding: 0.5rem 1rem;
     min-width: 5rem;
@@ -174,6 +175,7 @@ main {
       background-position: 0 0;
     }
   }
+  //CLASS FOR SECTIONS OF RELATED CONTENT//
   .content {
     position: relative;
     display: flex;
@@ -198,6 +200,7 @@ main {
     #page-sub {
       display: none;
     }
+    //PAGE CONTENTS DROPDOWN MENU//
     .nav-sub {
       margin: 1rem;
       text-align: center;
@@ -244,6 +247,7 @@ main {
         @include card-border();
       }
     }
+    //ABOUT PORTRAIT CONTAINER//
     #about-img-cont {
       align-self: center;
       padding: 0;
@@ -257,6 +261,7 @@ main {
         margin-top: -1rem;
       }
     }
+    //MODULAR CARD//
     .modular {
       display: flex;
       flex-direction: column;
@@ -265,6 +270,7 @@ main {
       height: min-content;
       width: 100%;
     }
+    //CONTAINER THAT TAKES UP FULL WIDTH SO IT DOESN'T WRAP//
     .wide-cont {
       display: flex;
       flex-direction: row;
@@ -272,6 +278,7 @@ main {
       margin: 1rem 0;
       width: 100%;
     }
+    //CARD STYLING//
     .card {
       display: flex;
       flex-direction: column;
@@ -306,6 +313,7 @@ main {
           font-size: 1rem;
         }
       }
+      //LISTS WITHIN CARD//
       .card-list-grid {
         display: flex;
         flex-direction: row;
@@ -356,6 +364,7 @@ main {
         flex-direction: row;
         justify-content: center;
       }
+      //EXPANDABLE CARD STYLING//
       .expand {
         max-height: 20rem;
         overflow: hidden;
@@ -376,6 +385,7 @@ main {
           color: $dark-purple;
         }
       }
+      //EXPAND BUTTON FUNCTION//
       #expand-check1:checked ~ #card1,
       #expand-check2:checked ~ #card2,
       #expand-check3:checked ~ #card3,
@@ -444,6 +454,7 @@ footer {
     font-family: $karla;
   }
 }
+//HOME PAGE HERO TITLE STYLING AND ANIMATION//
 #welcome-text {
   text-align: center;
   font-family: $spline;
@@ -455,7 +466,6 @@ footer {
   -webkit-text-fill-color: transparent;
   background-size: 200%;
   animation: welcome-animation 2s infinite;
-  // animation: welcome-appear 3s;
   &::first-letter {
     font-size: 300%;
     color: $dark-purple;
@@ -472,17 +482,6 @@ footer {
     background-position: 0 50%;
   }
 }
-// @keyframes welcome-appear {
-//   0% {
-//     opacity: 0%;
-//   }
-//   50% {
-//     opacity: 50%;
-//   }
-//   100% {
-//     opacity: 100%;
-//   }
-// }
 
 //TABLET & LANDSCAPE PHONE//
 @media only screen and (min-width: 600px) {
@@ -521,26 +520,6 @@ footer {
         #about-img {
           max-width: 500px;
         }
-        // #page-sub {
-        //   z-index: 999;
-        //   display: block;
-        //   position: absolute;
-        //   top: 2rem;
-        //   right: 1rem;
-        //   overflow: hidden;
-        //   writing-mode: vertical-rl;
-        //   transform: rotate(90deg);
-        //   color: $brown;
-        // }
-
-        // #page-sub {
-        //   position: absolute;  //// TURNED OFF PAGE SUB 
-        //   display: block;
-        //   top: 3rem;
-        //   height: 2rem;
-        //   right: 0rem;
-        //   transform: rotate(270deg);
-        // }
       }
     }
   }
@@ -550,6 +529,7 @@ footer {
 @media only screen and (min-width: 992px) {
   body {
     position: relative; //
+    //MODIFICATIONS TO HEADER MODULE FOR LARGER SCREENS//
     header {
       position: relative;
       height: 7rem;
@@ -562,6 +542,7 @@ footer {
         }
       }
     }
+    //MODIFICATIONS TO NAV SYSTEM//
     #nav-button {
       position: absolute;
       top: 0;
@@ -608,21 +589,9 @@ footer {
       li {
         display: flex;
         flex-direction: row;
-        // justify-content: space-evenly;
         justify-content: center;
         flex-wrap: nowrap;
         margin-left: 1rem;
-        // a::before {
-        //   content: "cd ./";
-        //   color: $purple;
-        //   font-family: $monaco;
-        //   font-size: 1rem;
-        //   opacity: 0;
-        //   transition: 0.1s;
-        // }
-        // a:hover::before {
-        //   opacity: 1;
-        // }
         a {
           transition: 0.2s;
         }
