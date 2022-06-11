@@ -1,7 +1,8 @@
 # T1A2 Portfolio assignment - Tané Kaio 2022
 
 [Portfolio website](https://lanruoj.github.io/)  
-[Github repository](https://github.com/Lanruoj/Lanruoj.github.io)
+[Github repository](https://github.com/Lanruoj/Lanruoj.github.io)  
+[Trello board](https://trello.com/b/BUdvHsC6/t1a2-portfolio-kanban-tan%C3%A9-kaio)
 
 ## Purpose
 The purpose of this website is for me to showcase my evolving skills as a web developer, not only in the hopes of impressing a recruiter from the tech industry, but to practise and develop experience with what I'm learning. It is a way of challenging myself to learn more, push the boundaries of my abilities and have a visual representation of the hard work I've been putting into my studies.
@@ -47,6 +48,10 @@ List of tools:
 * W3C Validation tools
 * Bear notes app
 * Mac terminal CLI
+
+## Screenshots/wireframes
+
+
 
 
 
