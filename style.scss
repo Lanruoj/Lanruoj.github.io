@@ -1,5 +1,5 @@
 //COLOURS
-$white: rgb(249, 247, 242);
+$white: #f9f6f1;
 $mint: rgb(217, 235, 201);
 $light-brown: rgb(156, 150, 135);
 $brown: rgb(83, 75, 58);
@@ -11,7 +11,7 @@ $light-purple: rgb(116, 56, 255);
 $purple: rgb(76, 0, 255);
 $dark-purple: rgb(35, 0, 139);
 $lavendar: rgb(145, 152, 229);
-$pale-orange: rgb(230, 100, 101);
+$pale-orange: #FFBD59;
 $clear: rgb(255, 255, 255, 0);
 //FONTS
 $karla: "Karla", sans-serif;
@@ -460,11 +460,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: transparent;
-}
-#home-body {
-  background-image: url("./img/leaves.JPG");
-  background-size: 1500px;
+  background-color: $dark-pine;
 }
 #welcome-title {
   width: 80%;
@@ -473,6 +469,7 @@ footer {
 #welcome-text {
   text-align: center;
   font-size: 1.5rem;
+  font-family: $monaco;
   color: $white;
 }
 @keyframes welcome-animation {
@@ -495,14 +492,9 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background-color: transparent;
     h2 {
       font-size: 10rem;
     }
-  }
-  #home-body {
-    background-image: url("./img/leaves.JPG");
-    background-size: 2000px;
   }
   body {
     font-size: 1rem;
@@ -549,7 +541,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: transparent;
     #welcome-title {
       width: 30%;
     }

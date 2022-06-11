@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  background-color: rgb(249, 247, 242);
+  background-color: #f9f6f1;
   position: relative;
   font-size: 1rem;
 }
@@ -24,7 +24,7 @@ body header {
   align-items: center;
   height: 4rem;
   width: 100vw;
-  background-color: rgb(249, 247, 242);
+  background-color: #f9f6f1;
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 body header #header-cont {
@@ -68,7 +68,7 @@ body #nav-main {
   height: 60vh;
   max-height: 30rem;
   padding: 2rem 0;
-  background-color: rgb(249, 247, 242);
+  background-color: #f9f6f1;
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
   border-radius: 1rem 1rem 1rem 1rem;
   transform: translateX(-50vw);
@@ -106,7 +106,7 @@ body a {
 }
 
 main {
-  background-color: rgb(249, 247, 242);
+  background-color: #f9f6f1;
   position: relative;
   top: 4rem;
   min-width: 100vw;
@@ -141,7 +141,7 @@ main .content {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: rgb(249, 247, 242);
+  background-color: #f9f6f1;
 }
 main .content .article {
   max-width: 40rem;
@@ -239,7 +239,7 @@ main .content .card {
   margin: 1rem 0rem;
   padding: 1rem;
   max-width: 40rem;
-  background-color: rgb(249, 247, 242);
+  background-color: #f9f6f1;
   border-radius: 1rem 1rem 1rem 1rem;
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
   transition: 0.2s;
@@ -393,7 +393,7 @@ footer {
   height: 5vh;
   bottom: 0vh;
   padding: 1rem;
-  background-color: rgb(249, 247, 242);
+  background-color: #f9f6f1;
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.669);
 }
 footer #footer-text {
@@ -407,12 +407,7 @@ footer #footer-text {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: transparent;
-}
-
-#home-body {
-  background-image: url("./img/leaves.JPG");
-  background-size: 1500px;
+  background-color: #324031;
 }
 
 #welcome-title {
@@ -423,13 +418,14 @@ footer #footer-text {
 #welcome-text {
   text-align: center;
   font-size: 1.5rem;
-  color: rgb(249, 247, 242);
+  font-family: "Monaco", monospace;
+  color: #f9f6f1;
 }
 
 @keyframes welcome-animation {
   0% {
     opacity: 0;
-    color: rgb(249, 247, 242);
+    color: #f9f6f1;
   }
   100% {
     opacity: 1;
@@ -444,17 +440,11 @@ footer #footer-text {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background-color: transparent;
   }
   #home-body h2,
 #home-sec h2,
 #home-main h2 {
     font-size: 10rem;
-  }
-
-  #home-body {
-    background-image: url("./img/leaves.JPG");
-    background-size: 2000px;
   }
 
   body {
@@ -498,7 +488,6 @@ footer #footer-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: transparent;
   }
   #home-body #welcome-title,
 #home-sec #welcome-title,
