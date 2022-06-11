@@ -400,21 +400,21 @@ footer #footer-text {
   font-family: "Karla", sans-serif;
 }
 
+#home-body,
+#home-sec,
+#home-main {
+  background-color: #324031;
+}
+
 #welcome-text {
   text-align: center;
   font-family: "Spline Sans Mono", monospace;
-  font-size: 2.8rem;
+  font-size: 4rem;
+  color: rgb(249, 247, 242);
+  word-break: break-word;
   margin-bottom: 2rem;
-  background: linear-gradient(to right, blue, rgb(35, 0, 139), rgb(76, 0, 255));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-size: 200%;
   animation: welcome-animation 2s infinite;
-}
-#welcome-text::first-letter {
-  font-size: 300%;
-  color: rgb(35, 0, 139);
 }
 
 @keyframes welcome-animation {
