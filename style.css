@@ -151,7 +151,7 @@ main .content .top-card {
   max-width: 40rem;
   height: min-content;
 }
-main .content .top-card h2 {
+main .content h2 {
   font-family: "Spline Sans Mono", monospace;
   font-size: 2rem;
   color: rgb(76, 0, 255);
@@ -403,37 +403,62 @@ footer #footer-text {
 #home-body,
 #home-sec,
 #home-main {
-  background-color: #324031;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: transparent;
+}
+
+#home-body {
+  background-image: url("./img/leaves.JPG");
+  background-size: 1500px;
+}
+
+#welcome-title {
+  width: 80%;
+  animation: welcome-animation 3s forwards;
 }
 
 #welcome-text {
   text-align: center;
-  font-family: "Spline Sans Mono", monospace;
-  font-size: 4rem;
+  font-size: 1.5rem;
   color: rgb(249, 247, 242);
-  word-break: break-word;
-  margin-bottom: 2rem;
-  background-size: 200%;
-  animation: welcome-animation 2s infinite;
 }
 
 @keyframes welcome-animation {
   0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+    opacity: 0;
+    color: rgb(249, 247, 242);
   }
   100% {
-    background-position: 0 50%;
+    opacity: 1;
+    color: orange;
   }
 }
 @media only screen and (min-width: 600px) {
+  #home-body,
+#home-sec,
+#home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: transparent;
+  }
+  #home-body h2,
+#home-sec h2,
+#home-main h2 {
+    font-size: 10rem;
+  }
+
+  #home-body {
+    background-image: url("./img/leaves.JPG");
+    background-size: 2000px;
+  }
+
   body {
     font-size: 1rem;
-  }
-  body #welcome-text {
-    font-size: 5rem;
   }
   body #mob-nav-icon {
     padding-left: 3vw;
@@ -467,6 +492,20 @@ footer #footer-text {
   }
 }
 @media only screen and (min-width: 992px) {
+  #home-body,
+#home-sec,
+#home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+  }
+  #home-body #welcome-title,
+#home-sec #welcome-title,
+#home-main #welcome-title {
+    width: 30%;
+  }
+
   body {
     position: relative;
   }
@@ -509,6 +548,7 @@ footer #footer-text {
     font-size: 2rem;
     border-radius: 50%;
     transform: rotate(-10deg);
+    -webkit-user-drag: none;
     transition: 0.2s;
   }
   body #nav-button #desk-nav-icon #menu-text:hover {
@@ -538,6 +578,7 @@ footer #footer-text {
   }
   body #nav-main #nav-list li a img {
     height: 1.5rem;
+    -webkit-user-drag: none;
   }
   body #nav-main #nav-list li a:hover {
     transform: translateX(0.5rem);
@@ -566,7 +607,7 @@ footer #footer-text {
     width: 100%;
     max-width: 40rem;
   }
-  body main .content .top-card h2 {
+  body main .content h2 {
     font-size: 3rem;
   }
   body main .content .modular {

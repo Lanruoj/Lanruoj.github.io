@@ -187,11 +187,11 @@ main {
       text-align: center;
       max-width: 40rem;
       height: min-content;
-      h2 {
-        font-family: $spline;
-        font-size: 2rem;
-        color: $purple;
-      }
+    }
+    h2 {
+      font-family: $spline;
+      font-size: 2rem;
+      color: $purple;
     }
     #page-sub {
       display: none;
@@ -456,45 +456,56 @@ footer {
 #home-body,
 #home-sec,
 #home-main {
-  background-color: $dark-pine;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: transparent;
+}
+#home-body {
+  background-image: url("./img/leaves.JPG");
+  background-size: 1500px;
+}
+#welcome-title {
+  width: 80%;
+  animation: welcome-animation 3s forwards;
 }
 #welcome-text {
   text-align: center;
-  font-family: $spline;
-  font-size: 4rem;
+  font-size: 1.5rem;
   color: $white;
-  word-break: break-word;
-  margin-bottom: 2rem;
-  // // background: linear-gradient(to right, blue, $dark-purple, $purple);
-  // // background-clip: text;
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
-  background-size: 200%;
-  animation: welcome-animation 2s infinite;
-  // &::first-letter {
-  //   font-size: 300%;
-  //   color: $dark-purple;
-  // }
 }
 @keyframes welcome-animation {
   0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+    opacity: 0;
+    color: $white;
   }
   100% {
-    background-position: 0 50%;
+    opacity: 1;
+    color: orange;
   }
 }
 
 //TABLET & LANDSCAPE PHONE//
 @media only screen and (min-width: 600px) {
+  #home-body,
+  #home-sec,
+  #home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: transparent;
+    h2 {
+      font-size: 10rem;
+    }
+  }
+  #home-body {
+    background-image: url("./img/leaves.JPG");
+    background-size: 2000px;
+  }
   body {
     font-size: 1rem;
-    #welcome-text {
-      font-size: 5rem;
-    }
     #mob-nav-icon {
       padding-left: 3vw;
     }
@@ -532,6 +543,17 @@ footer {
 
 //DESKTOP//
 @media only screen and (min-width: 992px) {
+  #home-body,
+  #home-sec,
+  #home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    #welcome-title {
+      width: 30%;
+    }
+  }
   body {
     position: relative; //
     //MODIFICATIONS TO HEADER MODULE FOR LARGER SCREENS//
@@ -573,6 +595,7 @@ footer {
           font-size: 2rem;
           border-radius: 50%;
           transform: rotate(-10deg);
+          -webkit-user-drag: none; // stops dragging of image links
           transition: 0.2s;
           &:hover {
             cursor: pointer;
@@ -602,6 +625,7 @@ footer {
             transition: 0.2s;
             img {
               height: 1.5rem;
+              -webkit-user-drag: none;
             }
           }
           a:hover {
@@ -631,9 +655,9 @@ footer {
         .top-card {
           width: 100%;
           max-width: 40rem;
-          h2 {
-            font-size: 3rem;
-          }
+        }
+        h2 {
+          font-size: 3rem;
         }
         //BETTER FOR FLEX WRAPPING
         .modular {

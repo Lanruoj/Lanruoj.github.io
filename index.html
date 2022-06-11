@@ -21,46 +21,19 @@
 </head>
 
 <body id="home-body">
-    <!-- HEADER MODULE -->
-    <header>
-        <!-- HEADER TITLE+CIRCLE -->
-        <div id="header-cont">
-            <img src="./img/graphics/tsk-sun.svg" alt="header-logo">
-        </div>
-    </header>
-
-    <!-- BUTTON/ICON FOR NAV MENU -->
-    <input type="checkbox" id="nav-check" />
-    <label for="nav-check" id="nav-button">
-        <!-- MOBILE BUTTON -->
-        <span class="fa-solid fa-bars" id="mob-nav-icon">
-        </span>
-        <!-- DESKTOP BUTTON -->
-        <span id="desk-nav-icon">
-            <img id="menu-text" src="./img/graphics/menu-sun.svg" alt="Menu">
-        </span>
-    </label>
-    <!-- NAV LIST MENU -->
-    <nav id="nav-main">
-        <ul id="nav-list">
-            <li><a href="./about.html"><img src="./img/graphics/about.svg" alt="About"></a></li>
-            <li><a href="./code.html"><img src="./img/graphics/code.svg" alt="Code"></a></li>
-            <li><a href="./journal.html"><img src="./img/graphics/journal.svg" alt="Journal"></a></li>
-            <li><a href="./personal.html"><img src="./img/graphics/personal.svg" alt="Personal"></a></li>
-            <li><a href="./resume.html"><img src="./img/graphics/resume.svg" alt="Resume"></a></li>
-            <li><a href="./contact.html"><img src="./img/graphics/contact.svg" alt="Contact"></a></li>
-        </ul>
-    </nav>
-
     <!-- MAIN CONTENT -->
     <main id="home-main">
         <section class="content" id="home-sec">
-
             <!-- HERO TITLE TEXT -->
-            <h2 id="welcome-text">Design<br/>Create<br/>Grow<br/></h2>
+                <figure>
+                    <img id="welcome-title" src="./img/graphics/hero.svg" alt="DESIGN CREATE GROW">
+                </figure>
+            <div class="wide-cont">
+                <h3 id="welcome-text">Portfolio of web developer,<br /> Tané Kaio</h3>
+            </div>
 
             <!-- BUTTON TO ENTER/GO TO ABOUT -->
-            <div class="cont">
+            <div class="wide-cont">
                 <form action="./about.html">
                     <input type="submit" value="Enter" class="button" />
                 </form>
@@ -68,10 +41,6 @@
         </section>
 
     </main>
-    <!-- FOOTER -->
-    <footer>
-        <p id="footer-text">&copy; Tané Kaio, 2022</p>
-    </footer>
 </body>
 
 </html>
