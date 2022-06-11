@@ -53,8 +53,6 @@ List of tools:
 
 
 
-
-
 ## References
 
 Coyier, C. (2012). Set Text on a Circle. [online] CSS-Tricks. Available at: https://css-tricks.com/set-text-on-a-circle/ [Accessed 10 Jun. 2022].
