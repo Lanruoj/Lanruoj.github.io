@@ -384,6 +384,7 @@ main {
         }
       }
       //EXPAND BUTTON FUNCTION//
+      #expand-check0:checked ~ #card0,
       #expand-check1:checked ~ #card1,
       #expand-check2:checked ~ #card2,
       #expand-check3:checked ~ #card3,
@@ -393,6 +394,7 @@ main {
         -webkit-mask-image: none;
         mask-image: none;
       }
+      #expand-check0,
       #expand-check1,
       #expand-check2,
       #expand-check3,

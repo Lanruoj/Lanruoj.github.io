@@ -333,6 +333,7 @@ main .content .card .expand-icon {
 main .content .card .expand-icon:hover {
   color: rgb(35, 0, 139);
 }
+main .content .card #expand-check0:checked ~ #card0,
 main .content .card #expand-check1:checked ~ #card1,
 main .content .card #expand-check2:checked ~ #card2,
 main .content .card #expand-check3:checked ~ #card3,
@@ -342,6 +343,7 @@ main .content .card #expand-check5:checked ~ #card5 {
   -webkit-mask-image: none;
   mask-image: none;
 }
+main .content .card #expand-check0,
 main .content .card #expand-check1,
 main .content .card #expand-check2,
 main .content .card #expand-check3,
@@ -446,7 +448,6 @@ footer #footer-text {
 #home-main h2 {
     font-size: 10rem;
   }
-
   body {
     font-size: 1rem;
   }
@@ -494,7 +495,6 @@ footer #footer-text {
 #home-main #welcome-title {
     width: 30%;
   }
-
   body {
     position: relative;
   }
@@ -619,7 +619,6 @@ footer #footer-text {
   body main .content .column .card .button {
     transform: scale(1);
   }
-
   .button {
     transform: scale(1.2);
   }
