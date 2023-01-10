@@ -354,6 +354,10 @@ main .content .card #expand-check5 {
 main .content .card #card2 {
   justify-self: baseline;
 }
+main .content .card .contact-link {
+  text-decoration: none;
+  color: black;
+}
 main .content figcaption {
   text-align: center;
   font-family: "Monaco", monospace;
@@ -436,16 +440,16 @@ footer #footer-text {
 }
 @media only screen and (min-width: 600px) {
   #home-body,
-#home-sec,
-#home-main {
+  #home-sec,
+  #home-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
   }
   #home-body h2,
-#home-sec h2,
-#home-main h2 {
+  #home-sec h2,
+  #home-main h2 {
     font-size: 10rem;
   }
   body {
@@ -484,15 +488,15 @@ footer #footer-text {
 }
 @media only screen and (min-width: 992px) {
   #home-body,
-#home-sec,
-#home-main {
+  #home-sec,
+  #home-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   #home-body #welcome-title,
-#home-sec #welcome-title,
-#home-main #welcome-title {
+  #home-sec #welcome-title,
+  #home-main #welcome-title {
     width: 30%;
   }
   body {

@@ -11,7 +11,7 @@ $light-purple: rgb(116, 56, 255);
 $purple: rgb(76, 0, 255);
 $dark-purple: rgb(35, 0, 139);
 $lavendar: rgb(145, 152, 229);
-$pale-orange: #FFBD59;
+$pale-orange: #ffbd59;
 $clear: rgb(255, 255, 255, 0);
 //FONTS
 $karla: "Karla", sans-serif;
@@ -404,6 +404,10 @@ main {
       }
       #card2 {
         justify-self: baseline;
+      }
+      .contact-link {
+        text-decoration: none;
+        color: black;
       }
     }
     figcaption {
