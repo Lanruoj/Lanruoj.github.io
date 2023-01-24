@@ -27,7 +27,7 @@ Some features of my site include:
 
 ## Here is a rough sitemap of the navigation flow:
 
-![Sitemap](./docs/sitemap.png)
+![Sitemap](./docs/wireframes/sitemap.png)
 
 ## Target audience
 
